@@ -42,7 +42,7 @@ Windows 7 and later are supported
 - Debian 8
 
 
-### Technologies
+## Technologies
 * [Node](https://nodejs.org/en/)
 * [puppeteer](https://github.com/GoogleChrome/puppeteer)
 
