@@ -1,6 +1,14 @@
 # WBOT
 A simple BOT for web.whatsapp
 
+<a href="#preview">Previwew</a> •
+<a href="#features">Features</a> •
+<a href="#downloads">Downloads</a> •
+<a href="#technologies">Technologies</a> •
+<a href="#why">Why?</a> •
+<a href="#goals">Goals</a> •
+<a href="#faq">FAQ</a> •
+
 ## Preview
 
 ![Screenshot gif](./screenshot/screenshot.gif)
@@ -11,6 +19,11 @@ A simple BOT for web.whatsapp
 * 💯 Totally Free for personal use
 * 🔒 Complete Privacy. Your data stays with you always
 
+## Downloads
+
+macOS | Windows | Linux
+-----------------| ---| ---|
+[Download v1.0](https://github.com/vasani-arpit/WBOT/releases/download/v1.0/WBOT-mac-v1.0.zip) | [Download v1.0](https://github.com/vasani-arpit/WBOT/releases/download/v1.0/WBOT-win-v1.0.zip) | [Download v1.0](https://github.com/vasani-arpit/WBOT/releases/download/v1.0/WBOT-linux-v1.0.zip)
 
 
 ## Supported Platforms
