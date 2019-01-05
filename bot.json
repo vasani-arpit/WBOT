@@ -1,0 +1,57 @@
+{
+    "appconfig": {
+        "headless": false
+    },
+    "bot": [{
+            "contains": [],
+            "exact": ["hi"],
+            "response": "hello"
+        },
+        {
+            "contains": [],
+            "exact": ["hello"],
+            "response": "hi"
+        },
+        {
+            "contains": [],
+            "exact": ["hy"],
+            "response": "hi"
+        },
+        {
+            "contains": [],
+            "exact": ["hiee"],
+            "response": "hi"
+        },
+        {
+            "contains": [],
+            "exact": ["hey"],
+            "response": "hi"
+        },
+        {
+            "contains": ["michhami","dukkadam"],
+            "exact": [],
+            "response": "Michhami Dukkadam 🙏"
+        },
+        {
+            "contains": ["happy","birthday","bday"],
+            "exact": [],
+            "response": "Thank you"
+        },
+        {
+            "contains": [],
+            "exact": ["hbd"],
+            "response": "Thank you"
+        },
+        {
+            "contains": ["શુભકામના","જન્મદિન"],
+            "exact": [],
+            "response": "આભાર 🙏"
+        },
+        {
+            "contains": ["janmdin","hardik","shubhkaamna"],
+            "exact": [],
+            "response": "aabhar 🙏"
+        }
+    ],
+    "blocked": ["919727045514", "919228794463", "917575049224", "918160183583"]
+}
