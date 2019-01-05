@@ -1,13 +1,14 @@
 # WBOT
 A simple BOT for web.whatsapp
 
-<a href="#preview">Previwew</a> •
+<a href="#preview">Preview</a> •
 <a href="#features">Features</a> •
 <a href="#downloads">Downloads</a> •
-<a href="#technologies">Technologies</a> •
+<a href="#how-to-start-the-bot">How to?</a> •
+<a href="#technologies">Technologies Used</a> •
 <a href="#why">Why?</a> •
 <a href="#goals">Goals</a> •
-<a href="#faq">FAQ</a> •
+<a href="#faq">FAQ</a>
 
 ## Preview
 
@@ -41,6 +42,34 @@ Windows 7 and later are supported
 - Fedora 21
 - Debian 8
 
+## How to start the BOT?
+
+### steps
+
+After download extract the zip and command prompt or terminal at that location there will be a file named wbot-* run it and you should be good to go.
+
+### Configurations 
+
+Basic Configuration is in bot.json file like replying to Hi, hello and happy birthday. you can add/remove yours if you need. keep in mind that you need to restart the wbot to see the effect of change. make sure json is valid. use VSCode or [jsonlint](https://jsonlint.com/) to validate json.
+
+### bot.json 
+
+**appconfig**
+
+This is where all the application related(node application behavior and such things) config will stay. will add more in future.
+
+**bot**
+
+An array of object. Properties are self explanatory. 
+
+- **Contains** If message has one of that word anywhere in the message
+- **exact** If message is exactly as one of the messages form array
+
+- **Response** If any of the above conditions becomes true then corresponding response string will be sent as message to the user or group.
+
+**Blocked**
+
+Array of numbers with county code to which this bot reply to.
 
 ## Technologies
 * [Node](https://nodejs.org/en/)
@@ -68,7 +97,7 @@ If you think WBOT delivers these, let me know by putting a star on this project 
 
 Yes, it's built with [NodeJS](https://nodejs.org/en/). Please see the [Technologies](#technologies) section for more info.
 
-* **What boilerplate did you use**
+* **What boilerplate did you use?**
 
 None. The idea was to get a better understanding of how things work together, But I do take a cue from other projects.
 
@@ -79,13 +108,13 @@ None. The idea was to get a better understanding of how things work together, Bu
   - [qrcode-terminal](https://www.npmjs.com/package/qrcode-terminal) to generate QRCode in terminal 
 
 
-* **Apart from development, what else do you do?**
+* **Apart from development, What else do you do?**
 
 I do motion design and UI/UX development.
 
 * **Are you available for hire?**
 
-I have a full-time job as a software developer here at technobrains.net. I am available as a freelance consultant during my spare time please let me know what you have in mind.
+I have a full-time job as a software developer at technobrains.net. I am available as a freelance consultant during my spare time please let me know what you have in mind.
 
 * **How do I contact you?**
 
