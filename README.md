@@ -60,7 +60,7 @@ This is where all the application related(node application behavior and such thi
 
 **bot**
 
-An array of object. Properties are self explanatory. 
+An array of object. Properties of Object are self explanatory. 
 
 - **Contains** If message has one of that word anywhere in the message
 - **exact** If message is exactly as one of the messages form array
@@ -69,7 +69,7 @@ An array of object. Properties are self explanatory.
 
 **Blocked**
 
-Array of numbers with county code to which this bot reply to.
+Array of numbers with county code to which this bot will not reply to.
 
 ## Technologies
 * [Node](https://nodejs.org/en/)
