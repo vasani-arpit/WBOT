@@ -24,7 +24,7 @@ A simple BOT for web.whatsapp
 
 macOS | Windows | Linux
 -----------------| ---| ---|
-[Download v0.2-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.2-beta/wbot-mac-v0.2.zip) | [Download v0.2-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.2-beta/wbot-win-v0.2.zip) | [Download v0.2-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.2-beta/wbot-linux-v0.2.zip)
+[Download v0.3-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.3-beta/wbot-mac-v0.3.zip) | [Download v0.3-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.3-beta/wbot-win-0.3.zip) | [Download v0.3-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.3-beta/wbot-linux-v0.3.zip)
 
 
 ## Supported Platforms
