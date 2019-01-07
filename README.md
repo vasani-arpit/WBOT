@@ -12,7 +12,7 @@ A simple BOT for web.whatsapp
 
 ## Preview
 
-![Screenshot gif](./screenshot/screenshot.gif)
+![Screenshot gif](https://user-images.githubusercontent.com/6497827/50764700-988a2f80-1299-11e9-8fe3-eafc3e10149f.gif)
 
 ## Features
 
