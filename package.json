@@ -1,0 +1,44 @@
+{
+  "name": "wbot",
+  "version": "1.0.0",
+  "description": "A simple whatsapp reply bot using puppeteer.",
+  "main": "src/index.js",
+  "scripts": {
+    "app": "node src/index.js",
+    "pack": "pkg ."
+  },
+  "bin": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vasani-arpit/WBOT"
+  },
+  "keywords": [
+    "whatsapp",
+    "bot",
+    "automation"
+  ],
+  "private": true,
+  "pkg": {
+    "scripts": "src/**/*.js",
+    "targets": [
+      "win",
+      "linux",
+      "macos"
+    ]
+  },
+  "author": "Arpit Vasani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vasani-arpit/WBOT/issues"
+  },
+  "homepage": "https://github.com/vasani-arpit/WBOT#readme",
+  "dependencies": {
+    "cli-progress": "^2.1.1",
+    "ora": "^3.0.0",
+    "puppeteer": "^1.11.0",
+    "qrcode-terminal": "^0.12.0"
+  },
+  "devDependencies": {
+    "pkg": "^4.3.5"
+  }
+}
