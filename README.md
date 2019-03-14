@@ -1,5 +1,9 @@
 # WBOT
-A simple BOT for web.whatsapp
+
+  [![Support me on Patreon][badge_patreon]][patreon] [![Buy me a book][badge_amazon]][amazon] [![PayPal][badge_paypal]][paypal-donations] 
+
+
+> A simple BOT for web.whatsapp
 
 <a href="#preview">Preview</a> •
 <a href="#features">Features</a> •
@@ -119,3 +123,12 @@ I have a full-time job as a software developer at technobrains.net. I am availab
 * **How do I contact you?**
 
 If you find an issue, please report it here. For everything else, please drop me a line at vasani.arpit@gmail.com
+
+
+[badge_paypal]: https://user-images.githubusercontent.com/6497827/53698092-42032280-3dfe-11e9-8054-1597c62d344e.png
+[badge_patreon]: https://user-images.githubusercontent.com/6497827/53698102-4af3f400-3dfe-11e9-9749-4104ceb6ea3c.png
+[badge_amazon]: https://user-images.githubusercontent.com/6497827/53698105-51826b80-3dfe-11e9-9e63-b14ad6ad7c19.png
+
+[patreon]: https://www.patreon.com/arpit_vasani
+[amazon]: http://amzn.in/iCUjhKZ
+[paypal-donations]: https://www.paypal.me/arpitvasani
