@@ -5,6 +5,7 @@ var spinner = require("./step");
 var utils = require("./utils");
 var qrcode = require('qrcode-terminal');
 var path = require("path");
+var argv = require('yargs').argv;
 
 //console.log(ps);
 
@@ -47,17 +48,28 @@ async function Main() {
         spinner.stop("Downloading chrome ... done!");
         //console.log(revisionInfo.executablePath);
         spinner.start("Launching Chrome");
+        var pptrArgv = [];
+        if (argv.proxyURI) {
+            pptrArgv.push( '--proxy-server=' + argv.proxyURI );
+        }
         const browser = await puppeteer.launch({
             executablePath: revisionInfo.executablePath,
             headless: true,
             userDataDir: path.join(process.cwd(), "ChromeSession"),
-            devtools: false
+            devtools: false,
+            args: pptrArgv
         });
         spinner.stop("Launching Chrome ... done!");
+        if (argv.proxyURI) {
+            spinner.info("Using a Proxy Server");
+        }
         spinner.start("Opening Whatsapp");
         page = await browser.pages();
         if (page.length > 0) {
             page = page[0];
+            if (argv.proxyURI) {
+                await page.authenticate({ username: argv.username , password: argv.password });
+            }
             page.setUserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3336.0 Safari/537.36")
             await page.goto('https://web.whatsapp.com', {
                 waitUntil: 'networkidle0',
