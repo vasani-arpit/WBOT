@@ -54,7 +54,7 @@ async function Main() {
         }
         const browser = await puppeteer.launch({
             executablePath: revisionInfo.executablePath,
-            headless: true,
+            headless: botjson.headless,
             userDataDir: path.join(process.cwd(), "ChromeSession"),
             devtools: false,
             args: pptrArgv
@@ -75,6 +75,9 @@ async function Main() {
                 waitUntil: 'networkidle0',
                 timeout: 0
             });
+            if (botjson.darkmode) {
+                page.addStyleTag({ path: "./src/style.css" });
+            }
             //console.log(contents);
             var filepath = path.join(__dirname, "WAPI.js");
             await page.addScriptTag({path: require.resolve(filepath)});
