@@ -31,7 +31,7 @@ async function Main() {
      * If local chrome is not there then this function will download it first. then use it for automation. 
      */
     async function downloadAndStartThings() {
-        let botjson = utils.externalInjection("bot.json");
+        let botjson = await utils.externalInjection("bot.json");
         spinner.start("Downloading chrome\n");
         const browserFetcher = puppeteer.createBrowserFetcher({
             path: process.cwd()
@@ -52,9 +52,10 @@ async function Main() {
         if (argv.proxyURI) {
             pptrArgv.push( '--proxy-server=' + argv.proxyURI );
         }
+        botjsonConfigs = JSON.parse(botjson);
         const browser = await puppeteer.launch({
             executablePath: revisionInfo.executablePath,
-            headless: botjson.headless,
+            headless: botjsonConfigs.appconfig.headless,
             userDataDir: path.join(process.cwd(), "ChromeSession"),
             devtools: false,
             args: pptrArgv
@@ -75,7 +76,7 @@ async function Main() {
                 waitUntil: 'networkidle0',
                 timeout: 0
             });
-            if (botjson.darkmode) {
+            if (botjsonConfigs.appconfig.darkmode) {
                 page.addStyleTag({ path: "./src/style.css" });
             }
             //console.log(contents);

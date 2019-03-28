@@ -1,6 +1,6 @@
 {
     "appconfig": {
-        "headless": true,
+        "headless": false,
         "darkmode": true
     },
     "bot": [{
