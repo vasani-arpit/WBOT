@@ -6,6 +6,7 @@ var utils = require("./utils");
 var qrcode = require('qrcode-terminal');
 var path = require("path");
 var argv = require('yargs').argv;
+var configs = require('../bot');
 
 //console.log(ps);
 
@@ -14,11 +15,15 @@ var argv = require('yargs').argv;
 async function Main() {
 
     try {
+        console.log(configs);
         var page;
         await downloadAndStartThings();
         var isLogin = await checkLogin();
         if (!isLogin) {
             await getAndShowQR();
+        }
+        if (configs.smartreply.suggestions.length >= 0) {
+            setupSmartReply();
         }
     } catch (e) {
         console.error("Looks like you got an error.");
@@ -54,7 +59,7 @@ async function Main() {
         }
         const browser = await puppeteer.launch({
             executablePath: revisionInfo.executablePath,
-            headless: true,
+            headless: false,
             userDataDir: path.join(process.cwd(), "ChromeSession"),
             devtools: false,
             args: pptrArgv
@@ -93,15 +98,13 @@ async function Main() {
     async function checkLogin() {
         spinner.start("Page is loading");
         //TODO: avoid using delay and make it in a way that it would react to the event. 
-        utils.delay(3000);
+        await utils.delay(10000);
         //console.log("loaded");
         var output = await page.evaluate("WAPI.isLoggedIn();");
         //console.log("\n" + output);
         if (output) {
             spinner.stop("Looks like you are already logged in");
             console.log(await page.evaluate("window.chrome;"));
-            console.log(await page.evaluate("window.outerWidth;"));
-            console.log(await page.evaluate("window.outerHeight;"));
 
         } else {
             spinner.info("You are not logged in. Please scan the QR below");
@@ -128,6 +131,27 @@ async function Main() {
             spinner.stop("Looks like you are logged in now");
             console.log("Welcome, WBOT is up and running");
         }
+    }
+
+    async function setupSmartReply() {
+        console.log("setting up smart reply");
+        page.waitForSelector("#main", { timeout: 0 }).then(() => {
+            console.log("looks like you have opened an chat. let me add those suggestions");
+            page.evaluate(_ => {
+                var main = document.querySelector("#main");
+                main.innerHTML += `
+                <div style="height: 40px;flex: 0 0 auto;order: 2;padding-right: 9%;">
+                    <div class="_3_7SH _3DFk6 message-out" style="    background-color: #EEEEEE;    border-radius: 90px;	margin-right: 5px;">
+                        <div class="Tkt2p"><div class="copyable-text">
+                            <div>
+                                <span dir="ltr" class="selectable-text copyable-text" style="">Okay</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+            })
+        })
     }
 
 }
