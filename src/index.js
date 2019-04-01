@@ -139,16 +139,22 @@ async function Main() {
             console.log("looks like you have opened an chat. let me add those suggestions");
             page.evaluate(_ => {
                 var main = document.querySelector("#main");
-                main.innerHTML += `
-                <div style="height: 40px;flex: 0 0 auto;order: 2;padding-right: 9%;">
+                var suggestions = "";
+                intents.smartreply.suggestions.reverse().map((item)=>{
+                    suggestions += `
                     <div class="_3_7SH _3DFk6 message-out" style="    background-color: #EEEEEE;    border-radius: 90px;	margin-right: 5px;">
-                        <div class="Tkt2p"><div class="copyable-text">
-                            <div>
-                                <span dir="ltr" class="selectable-text copyable-text" style="">Okay</span>
+                        <div class="Tkt2p">
+                            <div class="copyable-text">
+                                <div>
+                                    <span dir="ltr" class="selectable-text copyable-text">${item}</span>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>`
+                })
+                main.innerHTML += `
+                <div style="height: 40px;flex: 0 0 auto;order: 2;padding-right: 9%;">
+                    ${suggestions}
                 </div>`;
             })
         })
