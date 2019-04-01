@@ -70,7 +70,8 @@ async function Main() {
             if (argv.proxyURI) {
                 await page.authenticate({ username: argv.username , password: argv.password });
             }
-            page.setUserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3336.0 Safari/537.36")
+            page.setUserAgent("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 "
+            + "(KHTML, like Gecko) Chrome/65.0.3312.0 Safari/537.36");
             await page.goto('https://web.whatsapp.com', {
                 waitUntil: 'networkidle0',
                 timeout: 0
@@ -95,14 +96,10 @@ async function Main() {
         //TODO: avoid using delay and make it in a way that it would react to the event. 
         utils.delay(3000);
         //console.log("loaded");
-        var output = await page.evaluate("WAPI.isLoggedIn();");
+        var output = await page.evaluate("localStorage['last-wid']");
         //console.log("\n" + output);
         if (output) {
             spinner.stop("Looks like you are already logged in");
-            console.log(await page.evaluate("window.chrome;"));
-            console.log(await page.evaluate("window.outerWidth;"));
-            console.log(await page.evaluate("window.outerHeight;"));
-
         } else {
             spinner.info("You are not logged in. Please scan the QR below");
         }
