@@ -55,6 +55,7 @@ async function Main() {
         if (argv.proxyURI) {
             pptrArgv.push('--proxy-server=' + argv.proxyURI);
         }
+        botjsonConfigs = JSON.parse(botjson);
         const browser = await puppeteer.launch({
             executablePath: revisionInfo.executablePath,
             headless: appconfig.appconfig.headless,
@@ -78,6 +79,9 @@ async function Main() {
                 waitUntil: 'networkidle0',
                 timeout: 0
             });
+            if (botjsonConfigs.appconfig.darkmode) {
+                page.addStyleTag({ path: "./src/style.css" });
+            }
             //console.log(contents);
             var filepath = path.join(__dirname, "WAPI.js");
             await page.addScriptTag({ path: require.resolve(filepath) });
