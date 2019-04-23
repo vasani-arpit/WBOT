@@ -8,6 +8,10 @@ WAPI.waitNewMessages(false, (data) => {
         }
         if (message.type == "chat") {
             //message.isGroupMsg to check if this is a group
+            if (message.isGroupMsg == true && intents.appconfig.isGroupReply == false) {
+                console.log("Message received in group and group reply is off. so will not take any actions.");
+                return;
+            }
             var exactMatch = intents.bot.find(obj => obj.exact.find(ex => ex == message.body.toLowerCase()));
             if (exactMatch != undefined) {
                 WAPI.sendSeen(message.from._serialized);
