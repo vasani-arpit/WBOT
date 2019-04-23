@@ -15,7 +15,7 @@ var configs = require('../bot');
 async function Main() {
 
     try {
-        console.log(configs);
+        //console.log(configs);
         var page;
         await downloadAndStartThings();
         var isLogin = await checkLogin();
@@ -28,6 +28,7 @@ async function Main() {
     } catch (e) {
         console.error("Looks like you got an error.");
         page.screenshot({ path: path.join(process.cwd(), "error.png") })
+        console.warn(e);
         console.error("Don't worry errors are good. They help us improve. A screenshot has already been saved as error.png in current directory. Please mail it on vasani.arpit@gmail.com along with the steps to reproduce it.");
         throw e;
     }
@@ -104,7 +105,7 @@ async function Main() {
         //console.log("\n" + output);
         if (output) {
             spinner.stop("Looks like you are already logged in");
-            console.log(await page.evaluate("window.chrome;"));
+            //console.log(await page.evaluate("window.chrome;"));
 
         } else {
             spinner.info("You are not logged in. Please scan the QR below");
@@ -138,24 +139,35 @@ async function Main() {
         page.waitForSelector("#main", { timeout: 0 }).then(() => {
             console.log("looks like you have opened an chat. let me add those suggestions");
             page.evaluate(_ => {
-                var main = document.querySelector("#main");
+                var main = document.body;
                 var suggestions = "";
-                intents.smartreply.suggestions.reverse().map((item)=>{
+                intents.smartreply.suggestions.reverse().map((item) => {
                     suggestions += `
-                    <div class="_3_7SH _3DFk6 message-out" style="    background-color: #EEEEEE;    border-radius: 90px;	margin-right: 5px;">
-                        <div class="Tkt2p">
+                    <div class="" style="    background-color: #EEEEEE;    border-radius: 90px;	margin-right: 5px;">
+                        <div>
                             <div class="copyable-text">
                                 <div>
-                                    <span dir="ltr" class="selectable-text copyable-text">${item}</span>
+                                    <span dir="ltr" class="">${item}</span>
                                 </div>
                             </div>
                         </div>
                     </div>`
                 })
-                main.innerHTML += `
-                <div style="height: 40px;flex: 0 0 auto;order: 2;padding-right: 9%;">
-                    ${suggestions}
-                </div>`;
+                // main.innerHTML += `
+                // <div style="height: 40px;flex: 0 0 auto;order: 2;padding-right: 9%; position: absolute;
+                // top: 0;
+                // right: 0;
+                // z-index: 119;">
+                //     ${suggestions}
+                // </div>`;
+                var div = document.createElement("DIV");
+                div.style.height = "40px";
+                div.style.position = "absolute";
+                div.style.top = 0;
+                div.style.right = 0;
+                div.style.zIndex = 119;
+                div.appendChild(document.createTextNode("okay"));
+                document.body.appendChild(div);
             })
         })
     }
