@@ -62,6 +62,10 @@ Basic Configuration is in bot.json file like replying to Hi, hello and happy bir
 
 This is where all the application related(node application behavior and such things) config will stay. will add more in future.
 
+- **headless** Whether to start chrome as headless or not. this is regarding #4. Apparently, Whatsapp doesn't allow headless instances.
+- **darkmode** Enables dark theme in Whatsapp web. Useless if you select headless true
+- **isGroupReply** Whether to send replies in group or not. If set to false Bot will not reply if message received in group chat.
+
 **bot**
 
 An array of object. Properties of Object are self explanatory. 
