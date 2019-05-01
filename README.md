@@ -138,4 +138,4 @@ If you find an issue, please report it here. For everything else, please drop me
 [paypal-donations]: https://www.paypal.me/arpitvasani
 
 ## Legal
-This code is in no way affiliated with, authorized, maintained, sponsored or endorsed by WhatsApp or any of its affiliates or subsidiaries. This is an independent and unofficial software. Use at your own risk. **Commercial use is code/repo strictly poohibited.**
+This code is in no way affiliated with, authorized, maintained, sponsored or endorsed by WhatsApp or any of its affiliates or subsidiaries. This is an independent and unofficial software. Use at your own risk. **Commercial use of this code/repo is strictly poohibited.**
