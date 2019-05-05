@@ -8,6 +8,7 @@ var path = require("path");
 var argv = require('yargs').argv;
 var rev = require("./detectRev");
 var constants = require("./constants");
+var configs = require("../bot");
 
 //console.log(ps);
 
@@ -172,12 +173,11 @@ async function Main() {
                 div.style.top = 0;
                 div.style.right = 0;
                 div.style.zIndex = 119;
-                div.appendChild(document.createTextNode("okay"));
+                div.innerHTML = suggestions;
                 document.body.appendChild(div);
             })
         })
     }
-
 }
 
 Main();
