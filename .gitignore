@@ -61,3 +61,4 @@ typings/
 .next
 ChromeSession
 win*
+chromium-data
