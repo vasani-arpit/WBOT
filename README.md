@@ -28,7 +28,7 @@
 
 macOS | Windows | Linux
 -----------------| ---| ---|
-[Download v0.4-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.4-beta/WBOT-mac-0.4.zip) | [Download v0.4-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.4-beta/WBOT-win-0.4.zip) | [Download v0.4-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.4-beta/WBOT-linux-0.4.zip)
+[Download v0.5-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.5-beta/WBOT-mac-0.5.zip) | [Download v0.5-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.5-beta/WBOT-win-0.5.zip) | [Download v0.5-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.5-beta/WBOT-linux-0.5.zip)
 
 
 ## Supported Platforms
@@ -122,7 +122,7 @@ I do motion design and UI/UX development.
 
 * **Are you available for hire?**
 
-I have a full-time job as a software developer at technobrains.net. I am available as a freelance consultant during my spare time please let me know what you have in mind.
+I have a full-time job as a software developer at technobrains.net and at mindtechconsultancy.com. I am available as a freelance consultant during my spare time please let me know what you have in mind.
 
 * **How do I contact you?**
 
@@ -138,4 +138,4 @@ If you find an issue, please report it here. For everything else, please drop me
 [paypal-donations]: https://www.paypal.me/arpitvasani
 
 ## Legal
-This code is in no way affiliated with, authorized, maintained, sponsored or endorsed by WhatsApp or any of its affiliates or subsidiaries. This is an independent and unofficial software. Use at your own risk. **Commercial use of this code/repo is strictly poohibited.**
+This code is in no way affiliated with, authorized, maintained, sponsored or endorsed by WhatsApp or any of its affiliates or subsidiaries. This is an independent and unofficial software. Use at your own risk. **Commercial use of this code/repo is strictly prohibited.**

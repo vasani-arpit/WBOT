@@ -18,12 +18,11 @@ switch (platform) {
 
 this.getRevNumber = function () {
     return new Promise((resolve) => {
-        fetch('https://omahaproxy.appspot.com/all.json', { method: "get" })
+        fetch('https://omahaproxy.appspot.com/all.json?os=' + chromePlatform, { method: "get" })
             .then(res => res.json())
             .then(json => {
                 //console.log(json);
-                var currentOS = json.find(x => x.os == chromePlatform);
-                var betaChannel = currentOS.versions.find(x => x.channel == "beta").branch_base_position;
+                var betaChannel = json[0].versions.find(x => x.channel == "stable").branch_base_position;
                 resolve(betaChannel);
             });
     })
