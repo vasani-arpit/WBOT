@@ -1,6 +1,8 @@
 {
     "appconfig": {
-        "headless": false
+        "headless": false,
+        "darkmode": true,
+        "isGroupReply":false
     },
     "bot": [{
             "contains": [],

@@ -28,7 +28,7 @@
 
 macOS | Windows | Linux
 -----------------| ---| ---|
-[Download v0.3-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.3-beta/wbot-mac-v0.3.zip) | [Download v0.3-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.3-beta/wbot-win-0.3.zip) | [Download v0.3-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.3-beta/wbot-linux-v0.3.zip)
+[Download v0.4-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.4-beta/WBOT-mac-0.4.zip) | [Download v0.4-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.4-beta/WBOT-win-0.4.zip) | [Download v0.4-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.4-beta/WBOT-linux-0.4.zip)
 
 
 ## Supported Platforms
@@ -61,6 +61,10 @@ Basic Configuration is in bot.json file like replying to Hi, hello and happy bir
 **appconfig**
 
 This is where all the application related(node application behavior and such things) config will stay. will add more in future.
+
+- **headless** Whether to start chrome as headless or not. this is regarding #4. Apparently, Whatsapp doesn't allow headless instances.
+- **darkmode** Enables dark theme in Whatsapp web. Useless if you select headless true
+- **isGroupReply** Whether to send replies in group or not. If set to false Bot will not reply if message received in group chat.
 
 **bot**
 
@@ -132,3 +136,6 @@ If you find an issue, please report it here. For everything else, please drop me
 [patreon]: https://www.patreon.com/arpit_vasani
 [amazon]: http://amzn.in/iCUjhKZ
 [paypal-donations]: https://www.paypal.me/arpitvasani
+
+## Legal
+This code is in no way affiliated with, authorized, maintained, sponsored or endorsed by WhatsApp or any of its affiliates or subsidiaries. This is an independent and unofficial software. Use at your own risk. **Commercial use of this code/repo is strictly poohibited.**
