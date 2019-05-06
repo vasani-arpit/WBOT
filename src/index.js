@@ -140,43 +140,23 @@ async function Main() {
             console.log("Welcome, WBOT is up and running");
         }
     }
-
+    
     async function setupSmartReply() {
         console.log("setting up smart reply");
-        page.waitForSelector("#main", { timeout: 0 }).then(() => {
+        await page.waitForSelector("#main", { timeout: 0 }).then(async () => {
             console.log("looks like you have opened an chat. let me add those suggestions");
-            page.evaluate(_ => {
-                var main = document.body;
-                var suggestions = "";
-                intents.smartreply.suggestions.reverse().map((item) => {
-                    suggestions += `
-                    <div class="" style="    background-color: #EEEEEE;    border-radius: 90px;	margin-right: 5px;">
-                        <div>
-                            <div class="copyable-text">
-                                <div>
-                                    <span dir="ltr" class="">${item}</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>`
-                })
-                // main.innerHTML += `
-                // <div style="height: 40px;flex: 0 0 auto;order: 2;padding-right: 9%; position: absolute;
-                // top: 0;
-                // right: 0;
-                // z-index: 119;">
-                //     ${suggestions}
-                // </div>`;
-                var div = document.createElement("DIV");
-                div.style.height = "40px";
-                div.style.position = "absolute";
-                div.style.top = 0;
-                div.style.right = 0;
-                div.style.zIndex = 119;
-                div.innerHTML = suggestions;
-                document.body.appendChild(div);
-            })
-        })
+            await page.exposeFunction("sendMessage", async message => {
+                return new Promise(async (resolve, reject) => {
+                    //TODO: send message to the currently open chat using power of puppeteer 
+                    await page.type("div.selectable-text", "Hello");
+                    var buttons = await page.$$("footer button");
+                    console.log(buttons.length);
+                    await page.click("#main > footer > div.copyable-area > div:nth-child(3) > button");
+                });
+            });
+            await page.evaluate(_ => WAPI.addOptions());
+        });
+
     }
 }
 

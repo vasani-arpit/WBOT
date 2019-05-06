@@ -31,3 +31,22 @@ WAPI.waitNewMessages(false, (data) => {
         }
     });
 });
+WAPI.addOptions = function () {
+    var suggestions = "";
+    intents.smartreply.suggestions.reverse().map((item) => {
+        suggestions += `<button 
+                                        style="background-color: #eeeeee;
+                                        margin: 5px;
+                                        padding: 5px 10px;
+                                        font-size: inherit;
+                                        border-radius: 50px;">${item}</button>`;
+    });
+    var div = document.createElement("DIV");
+    div.style.height = "40px";
+    div.style.textAlign = "center";
+    div.innerHTML = suggestions;
+    div.classList.add("grGJn");
+    var mainDiv = document.querySelector("#main");
+    mainDiv.insertBefore(div, mainDiv.children[mainDiv.children.length - 3]);
+    window.sendMessage().then(text => consolve.log(text));
+}
