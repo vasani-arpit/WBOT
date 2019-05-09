@@ -52,6 +52,11 @@ Windows 7 and later are supported
 
 After download extract the zip and command prompt or terminal at that location there will be a file named wbot-* run it and you should be good to go.
 
+for linux you need to provide exacutable permission before you exacute the binary do
+```
+chmod +x wbot-linux && wbot-linux
+```
+
 ### Configurations 
 
 Basic Configuration is in bot.json file like replying to Hi, hello and happy birthday. you can add/remove yours if you need. keep in mind that you need to restart the wbot to see the effect of change. make sure json is valid. use VSCode or [jsonlint](https://jsonlint.com/) to validate json.
