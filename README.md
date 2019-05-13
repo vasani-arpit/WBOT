@@ -122,6 +122,10 @@ None. The idea was to get a better understanding of how things work together, Bu
   - [mime-types](https://www.npmjs.com/package/mime-types) detect mime file sent
   - [utf8](https://www.npmjs.com/package/utf8) convert decode string for uft8 format in file sent
 
+* **Convert Online File for Base64 Encode**
+
+  - https://www.base64-image.de/ 
+
 * **Apart from development, What else do you do?**
 
 I do motion design and UI/UX development.
