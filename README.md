@@ -119,7 +119,8 @@ None. The idea was to get a better understanding of how things work together, Bu
   - [Ora](https://www.npmjs.com/package/ora) for spinner 
   - [cli-progress](https://www.npmjs.com/package/cli-progress) for download progress bar in terminal
   - [qrcode-terminal](https://www.npmjs.com/package/qrcode-terminal) to generate QRCode in terminal 
-
+  - [mime-types](https://www.npmjs.com/package/mime-types) detect mime file sent
+  - [utf8](https://www.npmjs.com/package/utf8) convert decode string for uft8 format in file sent
 
 * **Apart from development, What else do you do?**
 
