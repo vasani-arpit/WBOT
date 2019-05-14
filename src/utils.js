@@ -3,7 +3,7 @@ var fs = require("fs");
 this.injection = function (filename) {
     return new Promise((resolve, reject) => {
         var filepath = path.join(__dirname, filename);
-        console.log("reading file from" + (filepath));
+        //console.log("reading file from" + (filepath));
         fs.readFile(filepath, 'utf8', (err, data) => {
             if (err) return reject(err);
             console.log("1 "+data);
@@ -14,7 +14,7 @@ this.injection = function (filename) {
 
 this.externalInjection = function (filename) {
     return new Promise((resolve, reject) => {
-        console.log("reading file from" + process.cwd());
+        //console.log("reading file from" + process.cwd());
         var filepath = path.join(process.cwd(), filename);
         fs.readFile(filepath, 'utf8', (err, data) => {
             if (err) return reject(err);
