@@ -15,7 +15,11 @@ WAPI.waitNewMessages(false, (data) => {
             var exactMatch = intents.bot.find(obj => obj.exact.find(ex => ex == message.body.toLowerCase()));
             if (exactMatch != undefined) {
                 WAPI.sendSeen(message.from._serialized);
-                WAPI.sendMessage2(message.from._serialized, exactMatch.response);
+                if(exactMatch.type == 'text') {
+                    WAPI.sendMessage2(message.from._serialized, exactMatch.response);
+                } else if(exactMatch.type == 'file') {
+                    WAPI.sendImage(exactMatch.base64encode, message.from._serialized, exactMatch.file, exactMatch.response);
+                }
                 console.log(`Replying with ${exactMatch.response}`);
             } else {
                 console.log("No exact match found");
@@ -23,7 +27,11 @@ WAPI.waitNewMessages(false, (data) => {
             var PartialMatch = intents.bot.find(obj => obj.contains.find(ex => message.body.toLowerCase().search(ex) > -1));
             if (PartialMatch != undefined) {
                 WAPI.sendSeen(message.from._serialized);
-                WAPI.sendMessage2(message.from._serialized, PartialMatch.response);
+                if(PartialMatch.type == 'text') {
+                    WAPI.sendMessage2(message.from._serialized, PartialMatch.response);
+                } else if(PartialMatch.type == 'file') {
+                    WAPI.sendImage(PartialMatch.base64encode, message.from._serialized, PartialMatch.file, PartialMatch.response);
+                }                
                 console.log(`Replying with ${PartialMatch.response}`);
             } else {
                 console.log("No partial match found");
