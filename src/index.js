@@ -117,7 +117,8 @@ async function Main() {
     //TODO: add logic to refresh QR.
     async function getAndShowQR() {
         //TODO: avoid using delay and make it in a way that it would react to the event. 
-        await utils.delay(10000);
+        //await utils.delay(10000);
+        await page.waitForSelector("img[alt='Scan me!']");
         var imageData = await page.evaluate(`document.querySelector("img[alt='Scan me!']").parentElement.getAttribute("data-ref")`);
         //console.log(imageData);
         qrcode.generate(imageData, { small: true });
