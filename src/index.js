@@ -7,6 +7,7 @@ var qrcode = require('qrcode-terminal');
 var path = require("path");
 var argv = require('yargs').argv;
 var rev = require("./detectRev");
+var constants = require("./constants");
 
 //console.log(ps);
 
@@ -22,7 +23,7 @@ async function Main() {
             await getAndShowQR();
         }
     } catch (e) {
-        console.error("Looks like you got an error.");
+        console.error("Looks like you got an error." + e);
         page.screenshot({ path: path.join(process.cwd(), "error.png") })
         console.error("Don't worry errors are good. They help us improve. A screenshot has already been saved as error.png in current directory. Please mail it on vasani.arpit@gmail.com along with the steps to reproduce it.");
         throw e;
@@ -55,12 +56,14 @@ async function Main() {
         if (argv.proxyURI) {
             pptrArgv.push('--proxy-server=' + argv.proxyURI);
         }
+        const extraArguments = Object.assign({});
+        extraArguments.userDataDir = constants.DEFAULT_DATA_DIR;
         const browser = await puppeteer.launch({
             executablePath: revisionInfo.executablePath,
             headless: appconfig.appconfig.headless,
             userDataDir: path.join(process.cwd(), "ChromeSession"),
             devtools: false,
-            args: pptrArgv
+            args: constants.DEFAULT_CHROMIUM_ARGS, ...extraArguments, ...pptrArgv
         });
         spinner.stop("Launching Chrome ... done!");
         if (argv.proxyURI) {
@@ -79,7 +82,7 @@ async function Main() {
                 timeout: 0
             });
             if (appconfig.appconfig.darkmode) {
-                page.addStyleTag({ path: "./src/style.css" });
+                page.addStyleTag({ path: path.join(__dirname, "style.css") });
             }
             //console.log(contents);
             var filepath = path.join(__dirname, "WAPI.js");

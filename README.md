@@ -28,7 +28,7 @@
 
 macOS | Windows | Linux
 -----------------| ---| ---|
-[Download v0.3-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.3-beta/wbot-mac-v0.3.zip) | [Download v0.3-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.3-beta/wbot-win-0.3.zip) | [Download v0.3-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.3-beta/wbot-linux-v0.3.zip)
+[Download v0.5-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.5-beta/WBOT-mac-0.5.zip) | [Download v0.5-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.5-beta/WBOT-win-0.5.zip) | [Download v0.5-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.5-beta/WBOT-linux-0.5.zip)
 
 
 ## Supported Platforms
@@ -51,6 +51,11 @@ Windows 7 and later are supported
 ### steps
 
 After download extract the zip and command prompt or terminal at that location there will be a file named wbot-* run it and you should be good to go.
+
+for linux you need to provide exacutable permission before you exacute the binary do
+```
+chmod +x wbot-linux && wbot-linux
+```
 
 ### Configurations 
 
@@ -122,7 +127,7 @@ I do motion design and UI/UX development.
 
 * **Are you available for hire?**
 
-I have a full-time job as a software developer at technobrains.net. I am available as a freelance consultant during my spare time please let me know what you have in mind.
+I have a full-time job as a software developer at technobrains.net and at mindtechconsultancy.com. I am available as a freelance consultant during my spare time please let me know what you have in mind.
 
 * **How do I contact you?**
 
@@ -136,3 +141,6 @@ If you find an issue, please report it here. For everything else, please drop me
 [patreon]: https://www.patreon.com/arpit_vasani
 [amazon]: http://amzn.in/iCUjhKZ
 [paypal-donations]: https://www.paypal.me/arpitvasani
+
+## Legal
+This code is in no way affiliated with, authorized, maintained, sponsored or endorsed by WhatsApp or any of its affiliates or subsidiaries. This is an independent and unofficial software. Use at your own risk. **Commercial use of this code/repo is strictly prohibited.**
