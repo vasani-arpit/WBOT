@@ -82,7 +82,7 @@ async function Main() {
                 timeout: 0
             });
             if (appconfig.appconfig.darkmode) {
-                page.addStyleTag({ path: path.join(__dirname, "style.css") });
+                page.addStyleTag({ path: "./src/style.css" });
             }
             //console.log(contents);
             var filepath = path.join(__dirname, "WAPI.js");
