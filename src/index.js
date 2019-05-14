@@ -1,4 +1,4 @@
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-core');
 const _cliProgress = require('cli-progress');
 require("./welcome");
 var spinner = require("./step");
