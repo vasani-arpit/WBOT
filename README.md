@@ -16,7 +16,12 @@
 
 ## Preview
 
+### Quick preview
 ![Screenshot gif](https://user-images.githubusercontent.com/6497827/50764700-988a2f80-1299-11e9-8fe3-eafc3e10149f.gif)
+
+### Full YouTube Video
+
+[![Video thumbnail](https://img.youtube.com/vi/y7LAbdoNBJA/0.jpg)](https://www.youtube.com/watch?v=y7LAbdoNBJA)
 
 ## Features
 
@@ -73,7 +78,7 @@ This is where all the application related(node application behavior and such thi
 
 **bot**
 
-An array of object. Properties of Object are self explanatory. 
+An array of objects. Properties of Object are self explanatory. 
 
 - **Contains** If message has one of that word anywhere in the message
 - **exact** If message is exactly as one of the messages form array
@@ -101,7 +106,7 @@ With that in mind, I know that WBOT would need to satisfy these criteria:
 * 🔒 Does not touch user’s data
 * 💰 Free! for personal use
 
-If you think WBOT delivers these, let me know by putting a star on this project 😉
+If you think WBOT delivers these, let me know by putting a star 🌟 on this project 😉
 
 
 ## FAQ
