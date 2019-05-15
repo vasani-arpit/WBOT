@@ -140,9 +140,22 @@ async function Main() {
             console.log("Welcome, WBOT is up and running");
         }
     }
-    
+
     async function setupSmartReply() {
         console.log("setting up smart reply");
+        await page.waitForSelector(".app");
+        await page.evaluate(() => {
+            var observer = new MutationObserver((mutations) => {                
+                for (var mutation of mutations) {
+                    console.log(mutation);
+                    if (mutation.addedNodes.length && mutation.addedNodes[0].id === 'main') {
+                        //newChat(mutation.addedNodes[0].querySelector('.copyable-text span').innerText);
+                        console.log("%cYay !!","font-size:x-large");
+                    }
+                }
+            });
+            observer.observe(document.querySelector('.app'), { attributes: false, childList: true, subtree: true });
+        });
         await page.waitForSelector("#main", { timeout: 0 }).then(async () => {
             console.log("looks like you have opened an chat. let me add those suggestions");
             await page.exposeFunction("sendMessage", async message => {
