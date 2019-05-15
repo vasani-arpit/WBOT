@@ -13,21 +13,23 @@ WAPI.waitNewMessages(false, (data) => {
                 return;
             }
             var exactMatch = intents.bot.find(obj => obj.exact.find(ex => ex == message.body.toLowerCase()));
+            var response = "";
             if (exactMatch != undefined) {
-                WAPI.sendSeen(message.from._serialized);
-                WAPI.sendMessage2(message.from._serialized, exactMatch.response);
+                response = exactMatch.response;
                 console.log(`Replying with ${exactMatch.response}`);
             } else {
+                response = intents.noMatch;
                 console.log("No exact match found");
             }
             var PartialMatch = intents.bot.find(obj => obj.contains.find(ex => message.body.toLowerCase().search(ex) > -1));
             if (PartialMatch != undefined) {
-                WAPI.sendSeen(message.from._serialized);
-                WAPI.sendMessage2(message.from._serialized, PartialMatch.response);
+                response = PartialMatch.response;
                 console.log(`Replying with ${PartialMatch.response}`);
             } else {
                 console.log("No partial match found");
             }
+            WAPI.sendSeen(message.from._serialized);
+            WAPI.sendMessage2(message.from._serialized, response);
         }
     });
 });
