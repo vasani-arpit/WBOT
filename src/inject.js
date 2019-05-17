@@ -33,7 +33,7 @@ WAPI.waitNewMessages(false, (data) => {
 });
 WAPI.addOptions = function () {
     var suggestions = "";
-    intents.smartreply.suggestions.reverse().map((item) => {
+    intents.smartreply.suggestions.map((item) => {
         suggestions += `<button style="background-color: #eeeeee;
                                 margin: 5px;
                                 padding: 5px 10px;
@@ -56,7 +56,7 @@ WAPI.addOptions = function () {
             window.sendMessage(event.target.textContent).then(text => console.log(text));
         });
     }
-    console.log(mainDiv.children[mainDiv.children.length - 5].querySelector("div > div"));
+    mainDiv.children[mainDiv.children.length - 5].querySelector("div > div div[tabindex]").scrollTop += 100;
 
     
 }

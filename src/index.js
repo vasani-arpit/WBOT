@@ -161,14 +161,13 @@ async function Main() {
             console.log("looks like you have opened an chat. let me add those suggestions");
             await page.exposeFunction("sendMessage", async message => {
                 return new Promise(async (resolve, reject) => {
-                    //TODO: send message to the currently open chat using power of puppeteer 
+                    //send message to the currently open chat using power of puppeteer 
                     await page.type("div.selectable-text[data-tab]", message);
                     var buttons = await page.$$("footer button");
                     //console.log(buttons.length);
                     await page.click("#main > footer > div.copyable-area > div:nth-child(3) > button");
                 });
             });
-            await page.evaluate(_ => WAPI.addOptions());
         });
 
     }
