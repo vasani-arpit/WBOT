@@ -58,7 +58,5 @@ WAPI.addOptions = function () {
             window.sendMessage(event.target.textContent).then(text => console.log(text));
         });
     }
-    mainDiv.children[mainDiv.children.length - 5].querySelector("div > div div[tabindex]").scrollTop += 100;
-
-    
+    mainDiv.children[mainDiv.children.length - 5].querySelector("div > div div[tabindex]").scrollTop += 100;   
 }
