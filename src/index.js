@@ -145,12 +145,13 @@ async function Main() {
         console.log("setting up smart reply");
         await page.waitForSelector(".app");
         await page.evaluate(() => {
-            var observer = new MutationObserver((mutations) => {                
+            var observer = new MutationObserver((mutations) => {
                 for (var mutation of mutations) {
-                    console.log(mutation);
+                    //console.log(mutation);
                     if (mutation.addedNodes.length && mutation.addedNodes[0].id === 'main') {
                         //newChat(mutation.addedNodes[0].querySelector('.copyable-text span').innerText);
-                        console.log("%cYay !!","font-size:x-large");
+                        console.log("%cChat changed !!","font-size:x-large");
+                        WAPI.addOptions();
                     }
                 }
             });
@@ -161,9 +162,9 @@ async function Main() {
             await page.exposeFunction("sendMessage", async message => {
                 return new Promise(async (resolve, reject) => {
                     //TODO: send message to the currently open chat using power of puppeteer 
-                    await page.type("div.selectable-text", "Hello");
+                    await page.type("div.selectable-text[data-tab]", message);
                     var buttons = await page.$$("footer button");
-                    console.log(buttons.length);
+                    //console.log(buttons.length);
                     await page.click("#main > footer > div.copyable-area > div:nth-child(3) > button");
                 });
             });
