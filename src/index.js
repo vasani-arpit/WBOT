@@ -1,4 +1,4 @@
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-core');
 const _cliProgress = require('cli-progress');
 require("./welcome");
 var spinner = require("./step");
@@ -69,7 +69,7 @@ async function Main() {
             headless: appconfig.appconfig.headless,
             userDataDir: path.join(process.cwd(), "ChromeSession"),
             devtools: false,
-            args: constants.DEFAULT_CHROMIUM_ARGS, ...extraArguments, ...pptrArgv
+            args: [...constants.DEFAULT_CHROMIUM_ARGS, ...pptrArgv], ...extraArguments
         });
         spinner.stop("Launching Chrome ... done!");
         if (argv.proxyURI) {
@@ -88,7 +88,7 @@ async function Main() {
                 timeout: 0
             });
             if (appconfig.appconfig.darkmode) {
-                page.addStyleTag({ path: "./src/style.css" });
+                page.addStyleTag({ path: path.join(__dirname, "style.css") });
             }
             //console.log(contents);
             var filepath = path.join(__dirname, "WAPI.js");
@@ -123,7 +123,8 @@ async function Main() {
     //TODO: add logic to refresh QR.
     async function getAndShowQR() {
         //TODO: avoid using delay and make it in a way that it would react to the event. 
-        await utils.delay(10000);
+        //await utils.delay(10000);
+        await page.waitForSelector("img[alt='Scan me!']");
         var imageData = await page.evaluate(`document.querySelector("img[alt='Scan me!']").parentElement.getAttribute("data-ref")`);
         //console.log(imageData);
         qrcode.generate(imageData, { small: true });

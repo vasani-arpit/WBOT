@@ -16,7 +16,12 @@
 
 ## Preview
 
+### Quick preview
 ![Screenshot gif](https://user-images.githubusercontent.com/6497827/50764700-988a2f80-1299-11e9-8fe3-eafc3e10149f.gif)
+
+### Full YouTube Video
+
+[![Video thumbnail](https://img.youtube.com/vi/y7LAbdoNBJA/0.jpg)](https://www.youtube.com/watch?v=y7LAbdoNBJA)
 
 ## Features
 
@@ -52,6 +57,11 @@ Windows 7 and later are supported
 
 After download extract the zip and command prompt or terminal at that location there will be a file named wbot-* run it and you should be good to go.
 
+for linux you need to provide exacutable permission before you exacute the binary do
+```
+chmod +x wbot-linux && wbot-linux
+```
+
 ### Configurations 
 
 Basic Configuration is in bot.json file like replying to Hi, hello and happy birthday. you can add/remove yours if you need. keep in mind that you need to restart the wbot to see the effect of change. make sure json is valid. use VSCode or [jsonlint](https://jsonlint.com/) to validate json.
@@ -68,7 +78,7 @@ This is where all the application related(node application behavior and such thi
 
 **bot**
 
-An array of object. Properties of Object are self explanatory. 
+An array of objects. Properties of Object are self explanatory. 
 
 - **Contains** If message has one of that word anywhere in the message
 - **exact** If message is exactly as one of the messages form array
@@ -78,6 +88,10 @@ An array of object. Properties of Object are self explanatory.
 **Blocked**
 
 Array of numbers with county code to which this bot will not reply to.
+
+**noMatch**
+
+Default reply message when no exact match found in BOT
 
 ## Technologies
 * [Node](https://nodejs.org/en/)
@@ -96,7 +110,7 @@ With that in mind, I know that WBOT would need to satisfy these criteria:
 * 🔒 Does not touch user’s data
 * 💰 Free! for personal use
 
-If you think WBOT delivers these, let me know by putting a star on this project 😉
+If you think WBOT delivers these, let me know by putting a star 🌟 on this project 😉
 
 
 ## FAQ
