@@ -89,6 +89,10 @@ An array of objects. Properties of Object are self explanatory.
 
 Array of numbers with county code to which this bot will not reply to.
 
+**noMatch**
+
+Default reply message when no exact match found in BOT
+
 ## Technologies
 * [Node](https://nodejs.org/en/)
 * [puppeteer](https://github.com/GoogleChrome/puppeteer)
