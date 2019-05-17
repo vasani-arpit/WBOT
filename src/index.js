@@ -63,7 +63,7 @@ async function Main() {
             headless: appconfig.appconfig.headless,
             userDataDir: path.join(process.cwd(), "ChromeSession"),
             devtools: false,
-            args: constants.DEFAULT_CHROMIUM_ARGS, ...extraArguments, ...pptrArgv
+            args: [...constants.DEFAULT_CHROMIUM_ARGS, ...pptrArgv], ...extraArguments
         });
         spinner.stop("Launching Chrome ... done!");
         if (argv.proxyURI) {
