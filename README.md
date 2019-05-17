@@ -3,7 +3,7 @@
   [![Support me on Patreon][badge_patreon]][patreon] [![Buy me a book][badge_amazon]][amazon] [![PayPal][badge_paypal]][paypal-donations] 
 
 
-> A simple BOT for web.whatsapp
+> A simple Nodejs BOT for whatsapp web
 
 <a href="#preview">Preview</a> •
 <a href="#features">Features</a> •
@@ -19,9 +19,12 @@
 ### Quick preview
 ![Screenshot gif](https://user-images.githubusercontent.com/6497827/50764700-988a2f80-1299-11e9-8fe3-eafc3e10149f.gif)
 
+<!---
 ### Full YouTube Video
 
 [![Video thumbnail](https://img.youtube.com/vi/y7LAbdoNBJA/0.jpg)](https://www.youtube.com/watch?v=y7LAbdoNBJA)
+
+-->
 
 ## Features
 
@@ -92,6 +95,13 @@ Array of numbers with county code to which this bot will not reply to.
 **noMatch**
 
 Default reply message when no exact match found in BOT
+
+**smartreply**
+
+An object which contains suggestions and it's configs.
+
+- **suggestions** An Array of suggestions
+- **clicktosend** Whether to send or just write message when user clicks on suggestion
 
 ## Technologies
 * [Node](https://nodejs.org/en/)

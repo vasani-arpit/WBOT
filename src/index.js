@@ -25,8 +25,9 @@ async function Main() {
             await getAndShowQR();
         }
         if (configs.smartreply.suggestions.length >= 0) {
-            setupSmartReply();
+            await setupSmartReply();
         }
+        console.log("WBOT is ready !! Let those message come.");
     } catch (e) {
         console.error("Looks like you got an error." + e);
         page.screenshot({ path: path.join(process.cwd(), "error.png") })
@@ -143,7 +144,7 @@ async function Main() {
     }
 
     async function setupSmartReply() {
-        console.log("setting up smart reply");
+        spinner.start("setting up smart reply");
         await page.waitForSelector(".app");
         await page.evaluate(() => {
             var observer = new MutationObserver((mutations) => {
@@ -158,8 +159,8 @@ async function Main() {
             });
             observer.observe(document.querySelector('.app'), { attributes: false, childList: true, subtree: true });
         });
-        await page.waitForSelector("#main", { timeout: 0 }).then(async () => {
-            console.log("looks like you have opened an chat. let me add those suggestions");
+        spinner.stop("setting up smart reply ... done!");
+        page.waitForSelector("#main", { timeout: 0 }).then(async () => {
             await page.exposeFunction("sendMessage", async message => {
                 return new Promise(async (resolve, reject) => {
                     //send message to the currently open chat using power of puppeteer 
