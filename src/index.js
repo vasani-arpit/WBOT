@@ -8,6 +8,7 @@ var path = require("path");
 var argv = require('yargs').argv;
 var rev = require("./detectRev");
 var constants = require("./constants");
+var configs = require("../bot");
 
 //console.log(ps);
 
@@ -16,15 +17,21 @@ var constants = require("./constants");
 async function Main() {
 
     try {
+        //console.log(configs);
         var page;
         await downloadAndStartThings();
         var isLogin = await checkLogin();
         if (!isLogin) {
             await getAndShowQR();
         }
+        if (configs.smartreply.suggestions.length >= 0) {
+            await setupSmartReply();
+        }
+        console.log("WBOT is ready !! Let those message come.");
     } catch (e) {
         console.error("Looks like you got an error." + e);
         page.screenshot({ path: path.join(process.cwd(), "error.png") })
+        console.warn(e);
         console.error("Don't worry errors are good. They help us improve. A screenshot has already been saved as error.png in current directory. Please mail it on vasani.arpit@gmail.com along with the steps to reproduce it.");
         throw e;
     }
@@ -102,7 +109,7 @@ async function Main() {
     async function checkLogin() {
         spinner.start("Page is loading");
         //TODO: avoid using delay and make it in a way that it would react to the event. 
-        utils.delay(3000);
+        await utils.delay(10000);
         //console.log("loaded");
         var output = await page.evaluate("localStorage['last-wid']");
         //console.log("\n" + output);
@@ -136,6 +143,35 @@ async function Main() {
         }
     }
 
+    async function setupSmartReply() {
+        spinner.start("setting up smart reply");
+        await page.waitForSelector(".app");
+        await page.evaluate(() => {
+            var observer = new MutationObserver((mutations) => {
+                for (var mutation of mutations) {
+                    //console.log(mutation);
+                    if (mutation.addedNodes.length && mutation.addedNodes[0].id === 'main') {
+                        //newChat(mutation.addedNodes[0].querySelector('.copyable-text span').innerText);
+                        console.log("%cChat changed !!", "font-size:x-large");
+                        WAPI.addOptions();
+                    }
+                }
+            });
+            observer.observe(document.querySelector('.app'), { attributes: false, childList: true, subtree: true });
+        });
+        spinner.stop("setting up smart reply ... done!");
+        page.waitForSelector("#main", { timeout: 0 }).then(async () => {
+            await page.exposeFunction("sendMessage", async message => {
+                return new Promise(async (resolve, reject) => {
+                    //send message to the currently open chat using power of puppeteer 
+                    await page.type("div.selectable-text[data-tab]", message);
+                    if (configs.smartreply.clicktosend) {
+                        await page.click("#main > footer > div.copyable-area > div:nth-child(3) > button");
+                    }
+                });
+            });
+        });
+    }
 }
 
 Main();
