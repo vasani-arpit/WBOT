@@ -146,7 +146,7 @@ async function Main() {
     async function setupSmartReply() {
         spinner.start("setting up smart reply");
         await page.waitForSelector(".app");
-        await page.evaluate(() => {
+        await page.evaluate(`
             var observer = new MutationObserver((mutations) => {
                 for (var mutation of mutations) {
                     //console.log(mutation);
@@ -158,7 +158,7 @@ async function Main() {
                 }
             });
             observer.observe(document.querySelector('.app'), { attributes: false, childList: true, subtree: true });
-        });
+        `);
         spinner.stop("setting up smart reply ... done!");
         page.waitForSelector("#main", { timeout: 0 }).then(async () => {
             await page.exposeFunction("sendMessage", async message => {
