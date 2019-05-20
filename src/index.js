@@ -103,6 +103,9 @@ async function Main() {
                 console.log("there was an error \n" + err);
             });
             spinner.stop("Opening Whatsapp ... done!");
+            page.exposeFunction("log", (message) => {
+                console.log(message);
+            })
         }
     }
 
@@ -139,7 +142,7 @@ async function Main() {
         }
         if (isLoggedIn) {
             spinner.stop("Looks like you are logged in now");
-            console.log("Welcome, WBOT is up and running");
+            //console.log("Welcome, WBOT is up and running");
         }
     }
 
