@@ -3,7 +3,7 @@
   [![Support me on Patreon][badge_patreon]][patreon] [![Buy me a book][badge_amazon]][amazon] [![PayPal][badge_paypal]][paypal-donations] 
 
 
-> A simple BOT for web.whatsapp
+> A simple Nodejs BOT for whatsapp web
 
 <a href="#preview">Preview</a> •
 <a href="#features">Features</a> •
@@ -16,7 +16,15 @@
 
 ## Preview
 
+### Quick preview
 ![Screenshot gif](https://user-images.githubusercontent.com/6497827/50764700-988a2f80-1299-11e9-8fe3-eafc3e10149f.gif)
+
+<!---
+### Full YouTube Video
+
+[![Video thumbnail](https://img.youtube.com/vi/y7LAbdoNBJA/0.jpg)](https://www.youtube.com/watch?v=y7LAbdoNBJA)
+
+-->
 
 ## Features
 
@@ -73,7 +81,7 @@ This is where all the application related(node application behavior and such thi
 
 **bot**
 
-An array of object. Properties of Object are self explanatory. 
+An array of objects. Properties of Object are self explanatory. 
 
 - **Contains** If message has one of that word anywhere in the message
 - **exact** If message is exactly as one of the messages form array
@@ -83,6 +91,17 @@ An array of object. Properties of Object are self explanatory.
 **Blocked**
 
 Array of numbers with county code to which this bot will not reply to.
+
+**noMatch**
+
+Default reply message when no exact match found in BOT
+
+**smartreply**
+
+An object which contains suggestions and it's configs.
+
+- **suggestions** An Array of suggestions
+- **clicktosend** Whether to send or just write message when user clicks on suggestion
 
 ## Technologies
 * [Node](https://nodejs.org/en/)
@@ -101,7 +120,7 @@ With that in mind, I know that WBOT would need to satisfy these criteria:
 * 🔒 Does not touch user’s data
 * 💰 Free! for personal use
 
-If you think WBOT delivers these, let me know by putting a star on this project 😉
+If you think WBOT delivers these, let me know by putting a star 🌟 on this project 😉
 
 
 ## FAQ
