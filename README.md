@@ -104,6 +104,7 @@ An object which contains suggestions and it's configs.
 - **clicktosend** Whether to send or just write message when user clicks on suggestion
 
 here is how that looks
+
 ![smart reply gif](https://user-images.githubusercontent.com/6497827/58412366-f1653380-8093-11e9-8427-1ca19235faed.gif)
 
 
