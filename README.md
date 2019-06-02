@@ -36,7 +36,7 @@
 
 macOS | Windows | Linux
 -----------------| ---| ---|
-[Download v0.5-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.5-beta/WBOT-mac-0.5.zip) | [Download v0.5-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.5-beta/WBOT-win-0.5.zip) | [Download v0.5-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.5-beta/WBOT-linux-0.5.zip)
+[Download v0.6-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.6-beta/WBOT-mac-0.6.zip) | [Download v0.6-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.6-beta/WBOT-win-0.6.zip) | [Download v0.6-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.6-beta/WBOT-linux-0.6.zip)
 
 
 ## Supported Platforms
