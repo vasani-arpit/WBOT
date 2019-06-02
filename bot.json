@@ -1,7 +1,7 @@
 {
     "appconfig": {
         "headless": false,
-        "darkmode": true,
+        "darkmode": false,
         "isGroupReply":false
     },
     "bot": [{
@@ -55,5 +55,10 @@
             "response": "aabhar 🙏"
         }
     ],
-    "blocked": []
+    "blocked": [],
+    "noMatch":"",
+    "smartreply":{
+        "suggestions":["👍","Ha","aevu m?","Okay","Thanks"],
+        "clicktosend":true
+    }
 }
