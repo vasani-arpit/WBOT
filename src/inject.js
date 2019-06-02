@@ -49,7 +49,8 @@ WAPI.addOptions = function () {
     div.innerHTML = suggestions;
     div.classList.add("grGJn");
     var mainDiv = document.querySelector("#main");
-    mainDiv.insertBefore(div, mainDiv.children[mainDiv.children.length - 3]);
+    var footer =  document.querySelector("footer");
+    footer.insertBefore(div, footer.firstChild);
     var suggestions = document.body.querySelectorAll(".reply-options");
     for (let i = 0; i < suggestions.length; i++) {
         const suggestion = suggestions[i];
