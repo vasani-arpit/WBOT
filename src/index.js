@@ -106,6 +106,7 @@ async function Main() {
             page.exposeFunction("log", (message) => {
                 console.log(message);
             })
+            page.exposeFunction("getFile", utils.getFileInBase64);
         }
     }
 

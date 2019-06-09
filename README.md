@@ -1,6 +1,6 @@
 # WBOT
 
-  [![Support me on Patreon][badge_patreon]][patreon] [![Buy me a book][badge_amazon]][amazon] [![PayPal][badge_paypal]][paypal-donations] 
+ [![Support me on Patreon][badge_patreon]][patreon] [![Buy me a book][badge_amazon]][amazon] [![PayPal][badge_paypal]][paypal-donations] 
 
 
 > A simple Nodejs BOT for whatsapp web
@@ -36,7 +36,7 @@
 
 macOS | Windows | Linux
 -----------------| ---| ---|
-[Download v0.5-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.5-beta/WBOT-mac-0.5.zip) | [Download v0.5-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.5-beta/WBOT-win-0.5.zip) | [Download v0.5-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.5-beta/WBOT-linux-0.5.zip)
+[Download v0.7-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.7-beta/wbot-mac-0.7.zip) | [Download v0.7-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.7-beta/wbot-linux-0.7.zip) | [Download v0.7-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.7-beta/wbot-win-0.7.zip)
 
 
 ## Supported Platforms
@@ -86,6 +86,8 @@ An array of objects. Properties of Object are self explanatory.
 - **exact** If message is exactly as one of the messages form array
 
 - **Response** If any of the above conditions becomes true then corresponding response string will be sent as message to the user or group.
+
+- **file** name of the file (from current directory) which you want to send along with response 
 
 **Blocked**
 
@@ -142,7 +144,11 @@ None. The idea was to get a better understanding of how things work together, Bu
   - [Ora](https://www.npmjs.com/package/ora) for spinner 
   - [cli-progress](https://www.npmjs.com/package/cli-progress) for download progress bar in terminal
   - [qrcode-terminal](https://www.npmjs.com/package/qrcode-terminal) to generate QRCode in terminal 
+  - [mime](https://www.npmjs.com/package/mime) detect mime file sent
 
+* **Convert Online File for Base64 Encode**
+
+  - https://www.base64-image.de/ 
 
 * **Apart from development, What else do you do?**
 
@@ -160,10 +166,19 @@ If you find an issue, please report it here. For everything else, please drop me
 [badge_paypal]: https://user-images.githubusercontent.com/6497827/53698092-42032280-3dfe-11e9-8054-1597c62d344e.png
 [badge_patreon]: https://user-images.githubusercontent.com/6497827/53698102-4af3f400-3dfe-11e9-9749-4104ceb6ea3c.png
 [badge_amazon]: https://user-images.githubusercontent.com/6497827/53698105-51826b80-3dfe-11e9-9e63-b14ad6ad7c19.png
+[twitter_logo]: https://user-images.githubusercontent.com/6497827/57843958-c30e6b00-77ec-11e9-97bd-dfbc800f96a9.png
+[telegram_logo]: https://user-images.githubusercontent.com/6497827/57844175-2ac4b600-77ed-11e9-8488-f2d45efa7497.png
 
 [patreon]: https://www.patreon.com/arpit_vasani
 [amazon]: http://amzn.in/iCUjhKZ
 [paypal-donations]: https://www.paypal.me/arpitvasani
+[twitter]: https://twitter.com/ArpitVasani
+[telegram]: http://t.me/Arpit_Vasani
 
 ## Legal
 This code is in no way affiliated with, authorized, maintained, sponsored or endorsed by WhatsApp or any of its affiliates or subsidiaries. This is an independent and unofficial software. Use at your own risk. **Commercial use of this code/repo is strictly prohibited.**
+
+## Contact Me
+
+[![Contact me on twitter][twitter_logo]][twitter]
+[![Contact me on telegram][telegram_logo]][telegram]

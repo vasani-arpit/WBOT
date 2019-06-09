@@ -30,6 +30,15 @@ WAPI.waitNewMessages(false, (data) => {
             }
             WAPI.sendSeen(message.from._serialized);
             WAPI.sendMessage2(message.from._serialized, response);
+            console.log();
+            if ((exactMatch || PartialMatch).file != undefined) {
+                window.getFile((exactMatch || PartialMatch).file).then((base64Data) => {
+                    //console.log(file);
+                    WAPI.sendImage(base64Data, message.from._serialized, (exactMatch || PartialMatch).file);
+                }).catch((error) => {
+                    window.log("Error in sending file\n" + error);
+                })
+            }
         }
     });
 });
@@ -49,7 +58,7 @@ WAPI.addOptions = function () {
     div.innerHTML = suggestions;
     div.classList.add("grGJn");
     var mainDiv = document.querySelector("#main");
-    var footer =  document.querySelector("footer");
+    var footer = document.querySelector("footer");
     footer.insertBefore(div, footer.firstChild);
     var suggestions = document.body.querySelectorAll(".reply-options");
     for (let i = 0; i < suggestions.length; i++) {
@@ -59,5 +68,5 @@ WAPI.addOptions = function () {
             window.sendMessage(event.target.textContent).then(text => console.log(text));
         });
     }
-    mainDiv.children[mainDiv.children.length - 5].querySelector("div > div div[tabindex]").scrollTop += 100;   
+    mainDiv.children[mainDiv.children.length - 5].querySelector("div > div div[tabindex]").scrollTop += 100;
 }
