@@ -106,7 +106,7 @@ async function Main() {
             page.exposeFunction("log", (message) => {
                 console.log(message);
             })
-            page.exposeFunction("getFile", getFile);
+            page.exposeFunction("getFile", utils.getFileInBase64);
         }
     }
 
@@ -175,12 +175,6 @@ async function Main() {
                 });
             });
         });
-    }
-    /**
-     * Get local file in base64 to reply to message
-     */
-    function getFile() {
-        return "base64";
     }
 }
 
