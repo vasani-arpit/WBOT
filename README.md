@@ -87,6 +87,8 @@ An array of objects. Properties of Object are self explanatory.
 
 - **Response** If any of the above conditions becomes true then corresponding response string will be sent as message to the user or group.
 
+- **file** name of the file (from current directory) which you want to send along with response 
+
 **Blocked**
 
 Array of numbers with county code to which this bot will not reply to.
