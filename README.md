@@ -124,7 +124,7 @@ With that in mind, I know that WBOT would need to satisfy these criteria:
 * 🔒 Does not touch user’s data
 * 💰 Free! for personal use
 
-If you think WBOT delivers these, let me know by putting a star 🌟 on this project 😉
+If you think WBOT delivers these, let me know by putting a star ⭐ on this project
 
 
 ## FAQ
