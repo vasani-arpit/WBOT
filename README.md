@@ -1,4 +1,4 @@
-# WBOT
+# 🤖 WBOT 
 
  [![Support me on Patreon][badge_patreon]][patreon] [![Buy me a book][badge_amazon]][amazon] [![PayPal][badge_paypal]][paypal-donations] 
 
@@ -14,7 +14,7 @@
 <a href="#goals">Goals</a> •
 <a href="#faq">FAQ</a>
 
-## Preview
+## 🔍 Preview 
 
 ### Quick preview
 ![Screenshot gif](https://user-images.githubusercontent.com/6497827/58411958-1dcc8000-8093-11e9-8aeb-5747efe10266.gif)
@@ -26,13 +26,13 @@
 
 -->
 
-## Features
+## ⚡ Features 
 
 * 🎨 Highly customizable json
 * 💯 Totally Free for personal use
 * 🔒 Complete Privacy. Your data stays with you always
 
-## Downloads
+## ⬇ Downloads ⬇
 
 macOS | Windows | Linux
 -----------------| ---| ---|
@@ -107,7 +107,7 @@ here is how that looks
 ![smart reply gif](https://user-images.githubusercontent.com/6497827/58412366-f1653380-8093-11e9-8427-1ca19235faed.gif)
 
 
-## Technologies
+## 💻 Technologies
 * [Node](https://nodejs.org/en/)
 * [puppeteer](https://github.com/GoogleChrome/puppeteer)
 
@@ -169,10 +169,10 @@ If you find an issue, please report it here. For everything else, please drop me
 [twitter]: https://twitter.com/ArpitVasani
 [telegram]: http://t.me/Arpit_Vasani
 
-## Legal
+## 📃 Legal
 This code is in no way affiliated with, authorized, maintained, sponsored or endorsed by WhatsApp or any of its affiliates or subsidiaries. This is an independent and unofficial software. Use at your own risk. **Commercial use of this code/repo is strictly prohibited.**
 
-## Contact Me
+## 👋 Contact Me 👋
 
 [![Contact me on twitter][twitter_logo]][twitter]
 [![Contact me on telegram][telegram_logo]][telegram]
