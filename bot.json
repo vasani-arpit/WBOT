@@ -12,12 +12,14 @@
         {
             "contains": [],
             "exact": ["hello"],
-            "response": "hi"
+            "response": "hi",
+            "file":"noFile.png"
         },
         {
             "contains": [],
             "exact": ["hy"],
-            "response": "hi"
+            "response": "hi",
+            "file":"github.png"
         },
         {
             "contains": [],
@@ -53,6 +55,12 @@
             "contains": ["janmdin","hardik","shubhkaamna"],
             "exact": [],
             "response": "aabhar 🙏"
+        },
+        {
+            "contains": [],
+            "exact": ["github"],
+            "response": "Git Hub Logo",
+            "file":"github.png"
         }
     ],
     "blocked": [],

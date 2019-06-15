@@ -87,6 +87,8 @@ An array of objects. Properties of Object are self explanatory.
 
 - **Response** If any of the above conditions becomes true then corresponding response string will be sent as message to the user or group.
 
+- **file** name of the file (from current directory) which you want to send along with response 
+
 **Blocked**
 
 Array of numbers with county code to which this bot will not reply to.
@@ -142,7 +144,11 @@ None. The idea was to get a better understanding of how things work together, Bu
   - [Ora](https://www.npmjs.com/package/ora) for spinner 
   - [cli-progress](https://www.npmjs.com/package/cli-progress) for download progress bar in terminal
   - [qrcode-terminal](https://www.npmjs.com/package/qrcode-terminal) to generate QRCode in terminal 
+  - [mime](https://www.npmjs.com/package/mime) detect mime file sent
 
+* **Convert Online File for Base64 Encode**
+
+  - https://www.base64-image.de/ 
 
 * **Apart from development, What else do you do?**
 
