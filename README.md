@@ -31,6 +31,7 @@
 * 🎨 Highly customizable json
 * 💯 Totally Free for personal use
 * 🔒 Complete Privacy. Your data stays with you always
+* 👥 Multiple instances 
 
 ## ⬇ Downloads ⬇
 
@@ -64,6 +65,8 @@ for linux you need to provide exacutable permission before you exacute the binar
 ```
 chmod +x wbot-linux && wbot-linux
 ```
+
+*I haven't tested Mac and Linix binaries. If you find any issues using them feel free to raise one from [here](https://github.com/vasani-arpit/WBOT/issues/new)*
 
 ### Configurations 
 
