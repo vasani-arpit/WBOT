@@ -149,10 +149,6 @@ None. The idea was to get a better understanding of how things work together, Bu
   - [qrcode-terminal](https://www.npmjs.com/package/qrcode-terminal) to generate QRCode in terminal 
   - [mime](https://www.npmjs.com/package/mime) detect mime file sent
 
-* **Convert Online File for Base64 Encode**
-
-  - https://www.base64-image.de/ 
-
 * **Apart from development, What else do you do?**
 
 I do motion design and UI/UX development.
