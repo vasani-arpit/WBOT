@@ -696,7 +696,7 @@ window.WAPI.ReplyMessage = function (idMessage, message, done) {
                             continue;
                         }
                         done(WAPI._serializeMessageObj(msg));
-                        return True;
+                        return true;
                     }
                     trials += 1;
                     console.log(trials);
@@ -784,7 +784,7 @@ window.WAPI.sendMessage = function (id, message, done) {
                             continue;
                         }
                         done(WAPI._serializeMessageObj(msg));
-                        return True;
+                        return true;
                     }
                     trials += 1;
                     console.log(trials);
