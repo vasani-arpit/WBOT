@@ -1,4 +1,4 @@
-# 🤖 WBOT 
+# WBOT 
 
  [![Support me on Patreon][badge_patreon]][patreon] [![Buy me a book][badge_amazon]][amazon] [![PayPal][badge_paypal]][paypal-donations] 
 
@@ -31,12 +31,13 @@
 * 🎨 Highly customizable json
 * 💯 Totally Free for personal use
 * 🔒 Complete Privacy. Your data stays with you always
+* 👥 Multiple instances 
 
 ## ⬇ Downloads ⬇
 
 macOS | Windows | Linux
 -----------------| ---| ---|
-[Download v0.7-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.7-beta/wbot-mac-0.7.zip) | [Download v0.7-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.7-beta/wbot-linux-0.7.zip) | [Download v0.7-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.7-beta/wbot-win-0.7.zip)
+[Download v0.8-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.8-beta/wbot-mac-0.8.zip) | [Download v0.8-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.8-beta/wbot-win-0.8.zip) | [Download v0.8-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.8-beta/wbot-linux-0.8.zip)
 
 
 ## Supported Platforms
@@ -64,6 +65,8 @@ for linux you need to provide exacutable permission before you exacute the binar
 ```
 chmod +x wbot-linux && wbot-linux
 ```
+
+*I haven't tested Mac and Linix binaries. If you find any issues using them feel free to raise one from [here](https://github.com/vasani-arpit/WBOT/issues/new)*
 
 ### Configurations 
 
@@ -145,10 +148,6 @@ None. The idea was to get a better understanding of how things work together, Bu
   - [cli-progress](https://www.npmjs.com/package/cli-progress) for download progress bar in terminal
   - [qrcode-terminal](https://www.npmjs.com/package/qrcode-terminal) to generate QRCode in terminal 
   - [mime](https://www.npmjs.com/package/mime) detect mime file sent
-
-* **Convert Online File for Base64 Encode**
-
-  - https://www.base64-image.de/ 
 
 * **Apart from development, What else do you do?**
 
