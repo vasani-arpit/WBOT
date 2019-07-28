@@ -1,6 +1,25 @@
 WAPI.waitNewMessages(false, (data) => {
     console.log(data)
     data.forEach((message) => {
+        //fetch API to send and receive response from server
+        fetch(intents.appconfig.webhook, {
+            method: "POST",
+            body: JSON.stringify(message)
+        }).then((resp) => resp.json()).then(function (data) {
+            //response/data received from server
+            console.log(data);
+            WAPI.sendSeen(message.from._serialized);
+            //replying to the user based on data
+            WAPI.sendMessage2(message.from._serialized, data.Response);
+            //sending files if there is any 
+            if (data.files.length > 0) {
+                data.files.forEach((file) => {
+                    WAPI.sendImage(file.file, data.From, file.name);
+                })
+            }
+        }).catch(function (error) {
+            console.log(error);
+        });
         window.log(`Message from ${message.from.user} checking..`);
         if (intents.blocked.indexOf(message.from.user) >= 0) {
             window.log("number is blocked by BOT. no reply");

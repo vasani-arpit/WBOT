@@ -3,6 +3,7 @@
         "headless": false,
         "darkmode": false,
         "isGroupReply":false
+        "webhook":"http://localhost:3000/api"
     },
     "bot": [{
             "contains": [],
