@@ -183,4 +183,4 @@ This code is in no way affiliated with, authorized, maintained, sponsored or end
 
 [![Contact me on twitter][twitter_logo]][twitter]
 [![Contact me on telegram][telegram_logo]][telegram]
-[![Mail me][gmail_logo][gmail]]
+[![Mail me][gmail_logo]][gmail]
