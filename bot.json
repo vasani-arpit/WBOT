@@ -2,8 +2,8 @@
     "appconfig": {
         "headless": false,
         "darkmode": false,
-        "isGroupReply":false
-        "webhook":"http://localhost:3000/api"
+        "isGroupReply":false,
+        "webhook":"http://localhost:3000/api/incoming-webhook"
     },
     "bot": [{
             "contains": [],

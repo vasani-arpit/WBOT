@@ -80,6 +80,7 @@ async function Main() {
         page = await browser.pages();
         if (page.length > 0) {
             page = page[0];
+            page.setBypassCSP(true);
             if (argv.proxyURI) {
                 await page.authenticate({ username: argv.username, password: argv.password });
             }

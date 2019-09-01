@@ -2,9 +2,14 @@ WAPI.waitNewMessages(false, (data) => {
     console.log(data)
     data.forEach((message) => {
         //fetch API to send and receive response from server
+        message.text = message.body;
+        message.type = 'message';
         fetch(intents.appconfig.webhook, {
             method: "POST",
-            body: JSON.stringify(message)
+            body: JSON.stringify(message),
+            headers: {
+                'Content-Type': 'application/json'
+            }
         }).then((resp) => resp.json()).then(function (data) {
             //response/data received from server
             console.log(data);
