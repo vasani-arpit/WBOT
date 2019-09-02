@@ -15,7 +15,7 @@ WAPI.waitNewMessages(false, (data) => {
             console.log(data);
             WAPI.sendSeen(message.from._serialized);
             //replying to the user based on data
-            WAPI.sendMessage2(message.from._serialized, data.Response);
+            WAPI.sendMessage2(message.from._serialized, data.text);
             //sending files if there is any 
             if (data.files.length > 0) {
                 data.files.forEach((file) => {
