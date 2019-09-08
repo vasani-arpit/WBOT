@@ -3,7 +3,7 @@
         "headless": false,
         "darkmode": false,
         "isGroupReply":false,
-        "webhook":"http://localhost:3001/api/incoming-webhook"
+        "webhook":"https://lazy-cow-87.localtunnel.me/api/messages"
     },
     "bot": [{
             "contains": [],

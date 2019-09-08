@@ -2,25 +2,30 @@ WAPI.waitNewMessages(false, (data) => {
     console.log(data)
     data.forEach((message) => {
         //fetch API to send and receive response from server
-        message.text = message.body;
-        message.type = 'message';
+        body = {};
+        body.text = message.body;
+        body.type = 'message';
+        body.user = message.from._serialized;
+        //body.original = message;
         fetch(intents.appconfig.webhook, {
             method: "POST",
-            body: JSON.stringify(message),
+            body: JSON.stringify(body),
             headers: {
                 'Content-Type': 'application/json'
             }
-        }).then((resp) => resp.json()).then(function (data) {
-            //response/data received from server
-            console.log(data);
+        }).then((resp) => resp.json()).then(function (response) {
+            //response received from server
+            console.log(response);
             WAPI.sendSeen(message.from._serialized);
-            //replying to the user based on data
-            WAPI.sendMessage2(message.from._serialized, data.text);
+            //replying to the user based on response
+            WAPI.sendMessage2(message.from._serialized, response[0].text);
             //sending files if there is any 
-            if (data.files.length > 0) {
-                data.files.forEach((file) => {
-                    WAPI.sendImage(file.file, data.From, file.name);
-                })
+            if(response.files){
+                if (response.files.length > 0) {
+                    response.files.forEach((file) => {
+                        WAPI.sendImage(file.file, response.From, file.name);
+                    })
+                }
             }
         }).catch(function (error) {
             console.log(error);
