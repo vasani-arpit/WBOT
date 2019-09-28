@@ -93,10 +93,7 @@ async function Main() {
                 page.addStyleTag({ path: path.join(__dirname, "style.css") });
             }
             //console.log(contents);
-            var filepath = path.join(__dirname, "WAPI.js");
-            await page.addScriptTag({ path: require.resolve(filepath) });
-            filepath = path.join(__dirname, "inject.js");
-            await page.addScriptTag({ path: require.resolve(filepath) });
+            await injectScripts(page);
             botjson.then((data) => {
                 page.evaluate("var intents = " + data);
                 //console.log(data);
@@ -109,6 +106,19 @@ async function Main() {
             })
             page.exposeFunction("getFile", utils.getFileInBase64);
         }
+    }
+
+    async function injectScripts(page) {
+        page.waitForSelector('[data-icon=laptop]')
+            .then(async () => {
+                var filepath = path.join(__dirname, "WAPI.js");
+                await page.addScriptTag({ path: require.resolve(filepath) });
+                filepath = path.join(__dirname, "inject.js");
+                await page.addScriptTag({ path: require.resolve(filepath) });
+            })
+            .catch(() => {
+                console.log("User is not logged in. Waited 30 seconds.");
+            })
     }
 
     async function checkLogin() {
