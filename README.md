@@ -136,11 +136,11 @@ If you think WBOT delivers these, let me know by putting a star ⭐ on this proj
 
 * **Is this app built with NodeJS?**
 
-Yes, it's built with [NodeJS](https://nodejs.org/en/). Please see the [Technologies](#technologies) section for more info.
+  Yes, it's built with [NodeJS](https://nodejs.org/en/). Please see the [Technologies](#technologies) section for more info.
 
 * **What boilerplate did you use?**
 
-None. The idea was to get a better understanding of how things work together, But I do take a cue from other projects.
+  None. The idea was to get a better understanding of how things work together, But I do take a cue from other projects.
 
 * **What npm modules did you use?**
 
@@ -151,28 +151,33 @@ None. The idea was to get a better understanding of how things work together, Bu
 
 * **Apart from development, What else do you do?**
 
-I do motion design and UI/UX development.
+  I do motion design and UI/UX development.
 
 * **Are you available for hire?**
 
-I have a full-time job as a software developer at technobrains.net and at mindtechconsultancy.com. I am available as a freelance consultant during my spare time please let me know what you have in mind.
+  I have a full-time job as a software developer at technobrains.net and at mindtechconsultancy.com. I am available as a freelance consultant during my spare time please let me know what you have in mind.
 
 * **How do I contact you?**
 
-If you find an issue, please report it here. For everything else, please drop me a line at vasani.arpit@gmail.com
+  If you find an issue, please report it here. For everything else, please drop me a line at vasani.arpit@gmail.com
 
+* **Do you have any other projects?**
+
+  I thought you'd never ask. Yes, I do. [SMA](https://github.com/vasani-arpit/Social-Media-Automation) is one of them.
 
 [badge_paypal]: https://user-images.githubusercontent.com/6497827/53698092-42032280-3dfe-11e9-8054-1597c62d344e.png
 [badge_patreon]: https://user-images.githubusercontent.com/6497827/53698102-4af3f400-3dfe-11e9-9749-4104ceb6ea3c.png
 [badge_amazon]: https://user-images.githubusercontent.com/6497827/53698105-51826b80-3dfe-11e9-9e63-b14ad6ad7c19.png
 [twitter_logo]: https://user-images.githubusercontent.com/6497827/57843958-c30e6b00-77ec-11e9-97bd-dfbc800f96a9.png
 [telegram_logo]: https://user-images.githubusercontent.com/6497827/57844175-2ac4b600-77ed-11e9-8488-f2d45efa7497.png
+[gmail_logo]: https://user-images.githubusercontent.com/6497827/62424751-c1b85480-b6f0-11e9-97de-096c0a980829.png
 
 [patreon]: https://www.patreon.com/arpit_vasani
 [amazon]: http://amzn.in/iCUjhKZ
 [paypal-donations]: https://www.paypal.me/arpitvasani
 [twitter]: https://twitter.com/ArpitVasani
 [telegram]: http://t.me/Arpit_Vasani
+[gmail]: mailto:vasani.arpit@gmail.com?subject=Regarding%20Wbot&body=Hi
 
 ## 📃 Legal
 This code is in no way affiliated with, authorized, maintained, sponsored or endorsed by WhatsApp or any of its affiliates or subsidiaries. This is an independent and unofficial software. Use at your own risk. **Commercial use of this code/repo is strictly prohibited.**
@@ -181,3 +186,4 @@ This code is in no way affiliated with, authorized, maintained, sponsored or end
 
 [![Contact me on twitter][twitter_logo]][twitter]
 [![Contact me on telegram][telegram_logo]][telegram]
+[![Mail me][gmail_logo]][gmail]
