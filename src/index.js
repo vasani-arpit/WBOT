@@ -89,11 +89,8 @@ async function Main() {
                 waitUntil: 'networkidle0',
                 timeout: 0
             });
-            if (appconfig.appconfig.darkmode) {
-                page.addStyleTag({ path: path.join(__dirname, "style.css") });
-            }
             //console.log(contents);
-            await injectScripts(page);
+            //await injectScripts(page);
             botjson.then((data) => {
                 page.evaluate("var intents = " + data);
                 //console.log(data);
@@ -109,16 +106,20 @@ async function Main() {
     }
 
     async function injectScripts(page) {
-        page.waitForSelector('[data-icon=laptop]')
-            .then(async () => {
-                var filepath = path.join(__dirname, "WAPI.js");
-                await page.addScriptTag({ path: require.resolve(filepath) });
-                filepath = path.join(__dirname, "inject.js");
-                await page.addScriptTag({ path: require.resolve(filepath) });
-            })
-            .catch(() => {
-                console.log("User is not logged in. Waited 30 seconds.");
-            })
+        return new Promise(async (resolve, reject) => {
+            await page.waitForSelector('[data-icon=laptop]')
+                .then(async () => {
+                    var filepath = path.join(__dirname, "WAPI.js");
+                    await page.addScriptTag({ path: require.resolve(filepath) });
+                    filepath = path.join(__dirname, "inject.js");
+                    await page.addScriptTag({ path: require.resolve(filepath) });
+                    resolve(true);
+                })
+                .catch(() => {
+                    console.log("User is not logged in. Waited 30 seconds.");
+                    reject(false);
+                })
+        })
     }
 
     async function checkLogin() {
@@ -145,12 +146,12 @@ async function Main() {
         //console.log(imageData);
         qrcode.generate(imageData, { small: true });
         spinner.start("Waiting for scan \nKeep in mind that it will expire after few seconds");
-        var isLoggedIn = await page.evaluate("WAPI.isLoggedIn();");
+        var isLoggedIn = await injectScripts(page);
         while (!isLoggedIn) {
             //console.log("page is loading");
             //TODO: avoid using delay and make it in a way that it would react to the event. 
             await utils.delay(300);
-            isLoggedIn = await page.evaluate("WAPI.isLoggedIn();");
+            isLoggedIn = await injectScripts(page);
         }
         if (isLoggedIn) {
             spinner.stop("Looks like you are logged in now");
