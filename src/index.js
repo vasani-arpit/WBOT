@@ -106,20 +106,18 @@ async function Main() {
     }
 
     async function injectScripts(page) {
-        return new Promise(async (resolve, reject) => {
-            await page.waitForSelector('[data-icon=laptop]')
-                .then(async () => {
-                    var filepath = path.join(__dirname, "WAPI.js");
-                    await page.addScriptTag({ path: require.resolve(filepath) });
-                    filepath = path.join(__dirname, "inject.js");
-                    await page.addScriptTag({ path: require.resolve(filepath) });
-                    resolve(true);
-                })
-                .catch(() => {
-                    console.log("User is not logged in. Waited 30 seconds.");
-                    reject(false);
-                })
-        })
+        return await page.waitForSelector('[data-icon=laptop]')
+            .then(async () => {
+                var filepath = path.join(__dirname, "WAPI.js");
+                await page.addScriptTag({ path: require.resolve(filepath) });
+                filepath = path.join(__dirname, "inject.js");
+                await page.addScriptTag({ path: require.resolve(filepath) });
+                return true;
+            })
+            .catch(() => {
+                console.log("User is not logged in. Waited 30 seconds.");
+                return false;
+            })
     }
 
     async function checkLogin() {
@@ -131,6 +129,7 @@ async function Main() {
         //console.log("\n" + output);
         if (output) {
             spinner.stop("Looks like you are already logged in");
+            await injectScripts(page);
         } else {
             spinner.info("You are not logged in. Please scan the QR below");
         }
