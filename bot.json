@@ -1,8 +1,8 @@
 {
     "appconfig": {
         "headless": false,
-        "darkmode": false,
-        "isGroupReply":false
+        "isGroupReply":false,
+        "webhook":"https://lazy-cow-87.localtunnel.me/api/messages"
     },
     "bot": [{
             "contains": [],

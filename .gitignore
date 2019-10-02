@@ -59,6 +59,6 @@ typings/
 
 # next.js build output
 .next
-ChromeSession
+ChromeSession*
 win*
 chromium-data
