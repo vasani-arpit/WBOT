@@ -1,3 +1,5 @@
+
+
 # WBOT 
 
  [![Support me on Patreon][badge_patreon]][patreon] [![Buy me a book][badge_amazon]][amazon] [![PayPal][badge_paypal]][paypal-donations] 
@@ -47,7 +49,7 @@ Following platforms are supported by Wbot:
 The minimum version supported is macOS 10.9.
 
 **Windows**
-Windows 7 and later are supported
+Windows 7 and later are supported.
 
 **Linux:**
 
@@ -57,11 +59,12 @@ Windows 7 and later are supported
 
 ## How to start the BOT?
 
-### steps
+### STEPS
 
-After download extract the zip and command prompt or terminal at that location there will be a file named wbot-* run it and you should be good to go.
+After downloading, extract the zip file and navigate to that location in your terminal. There will be a file named wbot-* . Run it and you should be good to go.
 
-for linux you need to provide exacutable permission before you exacute the binary do
+For Linux you need to provide executable permission before you execute the binary. 
+Run the command - 
 ```
 chmod +x wbot-linux && wbot-linux
 ```
@@ -70,16 +73,16 @@ chmod +x wbot-linux && wbot-linux
 
 ### Configurations 
 
-Basic Configuration is in bot.json file like replying to Hi, hello and happy birthday. you can add/remove yours if you need. keep in mind that you need to restart the wbot to see the effect of change. make sure json is valid. use VSCode or [jsonlint](https://jsonlint.com/) to validate json.
+Basic configuration is in bot.json file like replying to Hi, hello and happy birthday. You can add/remove yours if you need. Keep in mind that you need to restart the wbot to see the effects of your changes. Make sure the JSON is valid. Use VSCode or [jsonlint](https://jsonlint.com/) to validate the JSON.
 
 ### bot.json 
 
 **appconfig**
 
-This is where all the application related(node application behavior and such things) config will stay. will add more in future.
+This is where all the application related (node application behavior and such things) config will stay. Will add more in future.
 
-- **headless** Whether to start chrome as headless or not. this is regarding #4. Apparently, Whatsapp doesn't allow headless instances.
-- **isGroupReply** Whether to send replies in group or not. If set to false Bot will not reply if message received in group chat.
+- **headless** whether to start chrome as headless or not. this is regarding #4. Apparently, Whatsapp doesn't allow headless instances.
+- **isGroupReply** whether to send replies in group or not. If set to false, Bot will not reply if message received in group chat.
 
 **bot**
 
@@ -119,7 +122,7 @@ here is how that looks
 
 ## Why?
 
-The main reason I decided to build this is that I need a simple tool to reply to my "happy birthday" message. I know it is kind of blunt and rude but it would take me 2-3 days to reply to all and by that time that moment would be gone. I just need a good solution to this problem. I really don't need a full-fledged AI-BOT or BOT with NLU (or some other acronym). I believe there are many people who also have such need.
+The main reason I decided to build this is that I needed a simple tool to reply to my "happy birthday" messages. I know it is kind of blunt and rude but it would take me 2-3 days to reply to all and by that time that moment would be gone. I needed a good solution to this problem. I really don't need a full-fledged AI-BOT or BOT with NLU (or some other acronym). I believe there are many people who also have such needs.
 
 ## Goals
 With that in mind, I know that WBOT would need to satisfy these criteria:
@@ -187,3 +190,4 @@ This code is in no way affiliated with, authorized, maintained, sponsored or end
 [![Contact me on twitter][twitter_logo]][twitter]
 [![Contact me on telegram][telegram_logo]][telegram]
 [![Mail me][gmail_logo]][gmail]
+
