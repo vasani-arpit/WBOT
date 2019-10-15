@@ -69,7 +69,7 @@ Run the command -
 chmod +x wbot-linux && wbot-linux
 ```
 
-*I haven't tested Mac and Linix binaries. If you find any issues using them feel free to raise one from [here](https://github.com/vasani-arpit/WBOT/issues/new)*
+*I haven't tested Mac and Linux binaries. If you find any issues using them feel free to raise one from [here](https://github.com/vasani-arpit/WBOT/issues/new)*
 
 ### Configurations 
 
