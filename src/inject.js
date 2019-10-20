@@ -1,6 +1,6 @@
 WAPI.waitNewMessages(false, (data) => {
-    console.log(data)
-    data.forEach((message) => {
+    console.log(data);
+    data.forEach(async (message) => {
         //fetch API to send and receive response from server
         body = {};
         body.text = message.body;
@@ -44,16 +44,16 @@ WAPI.waitNewMessages(false, (data) => {
             var exactMatch = intents.bot.find(obj => obj.exact.find(ex => ex == message.body.toLowerCase()));
             var response = "";
             if (exactMatch != undefined) {
-                response = exactMatch.response;
-                window.log(`Replying with ${exactMatch.response}`);
+                response = await resolveSpintax(exactMatch.response);
+              window.log(`Replying with ${response}`);
             } else {
-                response = intents.noMatch;
-                console.log("No exact match found");
+                response = await resolveSpintax(intents.noMatch);
+              console.log("No exact match found. So replying with ${response} instead");
             }
             var PartialMatch = intents.bot.find(obj => obj.contains.find(ex => message.body.toLowerCase().search(ex) > -1));
             if (PartialMatch != undefined) {
-                response = PartialMatch.response;
-                window.log(`Replying with ${PartialMatch.response}`);
+                response = await resolveSpintax(PartialMatch.response);
+              window.log(`Replying with ${response}`);
             } else {
                 console.log("No partial match found");
             }

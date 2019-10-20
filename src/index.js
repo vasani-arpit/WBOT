@@ -1,5 +1,6 @@
 const puppeteer = require('puppeteer-core');
 const _cliProgress = require('cli-progress');
+const spintax = require('mel-spintax');
 require("./welcome");
 var spinner = require("./step");
 var utils = require("./utils");
@@ -102,6 +103,7 @@ async function Main() {
                 console.log(message);
             })
             page.exposeFunction("getFile", utils.getFileInBase64);
+            page.exposeFunction("resolveSpintax", spintax.unspin);
         }
     }
 
