@@ -435,9 +435,7 @@ window.WAPI.getUnreadMessagesInChat = function (id, includeMe, includeNotificati
     if (done !== undefined) done(output);
     // return result list
     return output;
-}
-;
-
+};
 
 /**
  * Load more messages in chat object from store by ID

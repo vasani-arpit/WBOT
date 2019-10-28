@@ -37,6 +37,11 @@
             "response": "Michhami Dukkadam 🙏"
         },
         {
+            "contains": ["Good","Morning"],
+            "exact": [],
+            "response": "Good morning!"
+        },
+        {
             "contains": ["happy","birthday","bday"],
             "exact": [],
             "response": "Thank you"
