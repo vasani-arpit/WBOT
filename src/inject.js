@@ -1,7 +1,8 @@
-WAPI.waitNewMessages(false, (data) => {
+WAPI.waitNewMessages(false, async (data) => {
     console.log(data);
-    data.forEach(async (message) => {
+    for (let i = 0; i < data.length; i++) {
         //fetch API to send and receive response from server
+        let message = data[i];
         body = {};
         body.text = message.body;
         body.type = 'message';
@@ -20,7 +21,7 @@ WAPI.waitNewMessages(false, (data) => {
             //replying to the user based on response
             WAPI.sendMessage2(message.from._serialized, response[0].text);
             //sending files if there is any 
-            if(response.files){
+            if (response.files) {
                 if (response.files.length > 0) {
                     response.files.forEach((file) => {
                         WAPI.sendImage(file.file, response.From, file.name);
@@ -45,15 +46,15 @@ WAPI.waitNewMessages(false, (data) => {
             var response = "";
             if (exactMatch != undefined) {
                 response = await resolveSpintax(exactMatch.response);
-              window.log(`Replying with ${response}`);
+                window.log(`Replying with ${response}`);
             } else {
                 response = await resolveSpintax(intents.noMatch);
-              console.log("No exact match found. So replying with ${response} instead");
+                window.log(`No exact match found. So replying with ${response} instead`);
             }
             var PartialMatch = intents.bot.find(obj => obj.contains.find(ex => message.body.toLowerCase().search(ex) > -1));
             if (PartialMatch != undefined) {
                 response = await resolveSpintax(PartialMatch.response);
-              window.log(`Replying with ${response}`);
+                window.log(`Replying with ${response}`);
             } else {
                 console.log("No partial match found");
             }
@@ -69,7 +70,7 @@ WAPI.waitNewMessages(false, (data) => {
                 })
             }
         }
-    });
+    }
 });
 WAPI.addOptions = function () {
     var suggestions = "";
