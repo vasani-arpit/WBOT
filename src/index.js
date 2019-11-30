@@ -6,7 +6,6 @@ var utils = require("./utils");
 var qrcode = require('qrcode-terminal');
 var path = require("path");
 var argv = require('yargs').argv;
-var rev = require("./detectRev");
 var constants = require("./constants");
 var configs = require("../bot");
 
@@ -49,7 +48,7 @@ async function Main() {
         });
         const progressBar = new _cliProgress.Bar({}, _cliProgress.Presets.shades_grey);
         progressBar.start(100, 0);
-        var revNumber = await rev.getRevNumber();
+        var revNumber = await getRevNumber();
         const revisionInfo = await browserFetcher.download(revNumber, (download, total) => {
             //console.log(download);
             var percentage = (download * 100) / total;
@@ -103,6 +102,11 @@ async function Main() {
             })
             page.exposeFunction("getFile", utils.getFileInBase64);
         }
+    }
+
+    // Get preferred chromium revision
+    async function getRevNumber() {
+        return Number(JSON.parse(JSON.stringify(puppeteer))._launcher._preferredRevision);
     }
 
     async function injectScripts(page) {
