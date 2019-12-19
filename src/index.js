@@ -9,7 +9,8 @@ var argv = require('yargs').argv;
 var rev = require("./detectRev");
 var constants = require("./constants");
 var configs = require("../bot");
-
+const dialogflow = require('dialogflow');
+const uuid = require('uuid');
 //console.log(ps);
 
 //console.log(process.cwd());
@@ -175,6 +176,24 @@ async function Main() {
             observer.observe(document.querySelector('.app'), { attributes: false, childList: true, subtree: true });
         `);
         spinner.stop("setting up smart reply ... done!");
+        await page.exposeFunction("sendtoBot", async (serial,message) => {
+            console.log('serial', serial)
+            console.log('message', message)
+            var responses = await dailogflow(message)
+            console.log('Detected intent');
+            const result = responses[0].queryResult;
+            console.log(`  Query: ${result.queryText}`);
+            console.log(`  Response: ${result.fulfillmentText}`);
+            if (result.intent) {
+                await page.evaluate((to, msg) => {
+                    WAPI.sendMessage2(to, msg);
+                },serial, result.fulfillmentText)
+                console.log(`  Intent: ${result.intent.displayName}`);
+            } else {
+                console.log(`  No intent matched.`);
+            }
+            return "yes"
+        });
         page.waitForSelector("#main", { timeout: 0 }).then(async () => {
             await page.exposeFunction("sendMessage", async message => {
                 return new Promise(async (resolve, reject) => {
@@ -187,6 +206,32 @@ async function Main() {
             });
         });
     }
+
+    async function dailogflow(message) {
+        var appconfig = await utils.externalInjection("bot.json");
+        appconfig = JSON.parse(appconfig);
+        const sessionId = uuid.v4();
+        const languageCode = "en-US";
+        let projectId = appconfig.appconfig.projectId;
+        let config = {
+            credentials: {
+                private_key: appconfig.appconfig.privateKey,
+                client_email: appconfig.appconfig.clientEmail
+            }
+        }
+        const sessionClient = new dialogflow.SessionsClient(config);
+        const sessionPath = sessionClient.sessionPath(projectId, sessionId);
+        const request = {
+            session: sessionPath,
+            queryInput: {
+                text: {
+                    text: message,
+                    languageCode: languageCode,
+                },
+            },
+        };
+        return await sessionClient.detectIntent(request)
+    };
 }
 
 Main();

@@ -54,7 +54,11 @@ WAPI.waitNewMessages(false, (data) => {
             if (PartialMatch != undefined) {
                 response = PartialMatch.response;
                 window.log(`Replying with ${PartialMatch.response}`);
-            } else {
+            } else if (intents.appconfig.dailogflow == true) {
+                window.log('inside dailogflow function');
+                window.sendtoBot(message.from._serialized, message.body).then(text => window.log(text)); 
+            }
+            else {
                 console.log("No partial match found");
             }
             WAPI.sendSeen(message.from._serialized);
