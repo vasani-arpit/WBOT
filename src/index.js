@@ -37,7 +37,7 @@ async function Main() {
     }
 
     /**
-     * If local chrome is not there then this function will download it first. then use it for automation. 
+     * If local chrome is not there then this function will download it first. then use it for automation.
      */
     async function downloadAndStartThings() {
         let botjson = utils.externalInjection("bot.json");
@@ -122,7 +122,7 @@ async function Main() {
 
     async function checkLogin() {
         spinner.start("Page is loading");
-        //TODO: avoid using delay and make it in a way that it would react to the event. 
+        //TODO: avoid using delay and make it in a way that it would react to the event.
         await utils.delay(10000);
         //console.log("loaded");
         var output = await page.evaluate("localStorage['last-wid']");
@@ -138,17 +138,17 @@ async function Main() {
 
     //TODO: add logic to refresh QR.
     async function getAndShowQR() {
-        //TODO: avoid using delay and make it in a way that it would react to the event. 
+        //TODO: avoid using delay and make it in a way that it would react to the event.
         //await utils.delay(10000);
-        await page.waitForSelector("img[alt='Scan me!']");
-        var imageData = await page.evaluate(`document.querySelector("img[alt='Scan me!']").parentElement.getAttribute("data-ref")`);
+        await page.waitForSelector("canvas[role='img']");
+        var imageData = await page.evaluate(`document.querySelector("canvas[role='img']").parentElement.getAttribute("data-ref")`);
         //console.log(imageData);
         qrcode.generate(imageData, { small: true });
         spinner.start("Waiting for scan \nKeep in mind that it will expire after few seconds");
         var isLoggedIn = await injectScripts(page);
         while (!isLoggedIn) {
             //console.log("page is loading");
-            //TODO: avoid using delay and make it in a way that it would react to the event. 
+            //TODO: avoid using delay and make it in a way that it would react to the event.
             await utils.delay(300);
             isLoggedIn = await injectScripts(page);
         }
@@ -178,7 +178,7 @@ async function Main() {
         page.waitForSelector("#main", { timeout: 0 }).then(async () => {
             await page.exposeFunction("sendMessage", async message => {
                 return new Promise(async (resolve, reject) => {
-                    //send message to the currently open chat using power of puppeteer 
+                    //send message to the currently open chat using power of puppeteer
                     await page.type("div.selectable-text[data-tab]", message);
                     if (configs.smartreply.clicktosend) {
                         await page.click("#main > footer > div.copyable-area > div:nth-child(3) > button");
