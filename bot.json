@@ -2,9 +2,10 @@
     "appconfig": {
         "headless": false,
         "isGroupReply":false,
-        "webhook":"https://lazy-cow-87.localtunnel.me/api/messages"
+        "webhook":"http://localhost:8080/api/v1/whatsapp/hook"
     },
-    "bot": [{
+    "bot": [
+        {
             "contains": [],
             "exact": ["hi"],
             "response": "hello"
@@ -12,61 +13,19 @@
         {
             "contains": [],
             "exact": ["hello"],
-            "response": "hi",
-            "file":"noFile.png"
-        },
-        {
-            "contains": [],
-            "exact": ["hy"],
-            "response": "hi",
-            "file":"github.png"
-        },
-        {
-            "contains": [],
-            "exact": ["hiee"],
             "response": "hi"
         },
         {
             "contains": [],
-            "exact": ["hey"],
-            "response": "hi"
-        },
-        {
-            "contains": ["michhami","dukkadam"],
-            "exact": [],
-            "response": "Michhami Dukkadam 🙏"
-        },
-        {
-            "contains": ["happy","birthday","bday"],
-            "exact": [],
-            "response": "Thank you"
-        },
-        {
-            "contains": [],
-            "exact": ["hbd"],
-            "response": "Thank you"
-        },
-        {
-            "contains": ["શુભકામના","જન્મદિન"],
-            "exact": [],
-            "response": "આભાર 🙏"
-        },
-        {
-            "contains": ["janmdin","hardik","shubhkaamna"],
-            "exact": [],
-            "response": "aabhar 🙏"
-        },
-        {
-            "contains": [],
-            "exact": ["github"],
-            "response": "Git Hub Logo",
+            "exact": ["hola"],
+            "response": "hola amigo, soy representante legal de github.!",
             "file":"github.png"
         }
     ],
     "blocked": [],
     "noMatch":"",
     "smartreply":{
-        "suggestions":["👍","Ha","aevu m?","Okay","Thanks"],
+        "suggestions":[],
         "clicktosend":true
     }
 }

@@ -2,6 +2,8 @@ var os = require("os");
 var platform = os.platform();
 var chromePlatform;
 const fetch = require("node-fetch");
+const fs = require('fs');
+const https = require('https');
 
 switch (platform) {
     case "win32":

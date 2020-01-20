@@ -810,6 +810,17 @@ window.WAPI.sendMessage = function (id, message, done) {
     }
 };
 
+window.WAPI.sendImage2 = function (id, imgBase64, filename, caption, done) {
+    var chat = WAPI.getChat(id);
+    var mediaBlob = window.WAPI.base64ImageToFile(imgBase64, filename);
+    var mc = new Store.MediaCollection();
+    mc.processFiles([mediaBlob], chat, 1).then(() => {
+        var media = mc.models[0];
+        media.sendToChat(chat, { caption });
+        if (done !== undefined) done(true);
+    });
+}
+
 window.WAPI.sendMessage2 = function (id, message, done) {
     var chat = WAPI.getChat(id);
     if (chat !== undefined) {
@@ -1217,18 +1228,18 @@ window.WAPI.getBufferedNewMessages = function (done) {
 /** End new messages observable functions **/
 
 window.WAPI.sendImage = function (imgBase64, chatid, filename, caption, done) {
-//var idUser = new window.Store.UserConstructor(chatid);
-var idUser = new window.Store.UserConstructor(chatid, { intentionallyUsePrivateConstructor: true });
-// create new chat
-return Store.Chat.find(idUser).then((chat) => {
-    var mediaBlob = window.WAPI.base64ImageToFile(imgBase64, filename);
-    var mc = new Store.MediaCollection();
-    mc.processFiles([mediaBlob], chat, 1).then(() => {
-        var media = mc.models[0];
-        media.sendToChat(chat, { caption: caption });
-        if (done !== undefined) done(true);
+    //var idUser = new window.Store.UserConstructor(chatid);
+    var idUser = new window.Store.UserConstructor(chatid, { intentionallyUsePrivateConstructor: true });
+    // create new chat
+    return Store.Chat.find(idUser).then((chat) => {
+        var mediaBlob = window.WAPI.base64ImageToFile(imgBase64, filename);
+        var mc = new Store.MediaCollection();
+        mc.processFiles([mediaBlob], chat, 1).then(() => {
+            var media = mc.models[0];
+            media.sendToChat(chat, { caption: caption });
+            if (done !== undefined) done(true);
+        });
     });
-});
 }
 
 window.WAPI.base64ImageToFile = function (b64Data, filename) {
