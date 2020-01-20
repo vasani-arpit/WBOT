@@ -2,34 +2,36 @@ WAPI.waitNewMessages(false, (data) => {
     console.log(data)
     data.forEach((message) => {
         //fetch API to send and receive response from server
-        body = {};
-        body.text = message.body;
-        body.type = 'message';
-        body.user = message.from._serialized;
-        //body.original = message;
-        fetch(intents.appconfig.webhook, {
-            method: "POST",
-            body: JSON.stringify(body),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }).then((resp) => resp.json()).then(function (response) {
-            //response received from server
-            console.log(response);
-            WAPI.sendSeen(message.from._serialized);
-            //replying to the user based on response
-            WAPI.sendMessage2(message.from._serialized, response[0].text);
-            //sending files if there is any 
-            if(response.files){
-                if (response.files.length > 0) {
-                    response.files.forEach((file) => {
-                        WAPI.sendImage(file.file, response.From, file.name);
-                    })
+        if(intents.appconfig.webapi != undefined && intents.appconfig.webapi) {
+            body = {};
+            body.text = message.body;
+            body.type = 'message';
+            body.user = message.from._serialized;
+            //body.original = message;
+            fetch(intents.appconfig.webhook, {
+                method: "POST",
+                body: JSON.stringify(body),
+                headers: {
+                    'Content-Type': 'application/json'
                 }
-            }
-        }).catch(function (error) {
-            console.log(error);
-        });
+            }).then((resp) => resp.json()).then(function (response) {
+                //response received from server
+                console.log(response);
+                WAPI.sendSeen(message.from._serialized);
+                //replying to the user based on response
+                WAPI.sendMessage2(message.from._serialized, response[0].text);
+                //sending files if there is any 
+                if(response.files){
+                    if (response.files.length > 0) {
+                        response.files.forEach((file) => {
+                            WAPI.sendImage(file.file, response.From, file.name);
+                        })
+                    }
+                }
+            }).catch(function (error) {
+                console.log(error);
+            });
+        }
         window.log(`Message from ${message.from.user} checking..`);
         if (intents.blocked.indexOf(message.from.user) >= 0) {
             window.log("number is blocked by BOT. no reply");
