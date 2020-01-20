@@ -29,10 +29,14 @@ async function Main() {
         }
         console.log("WBOT is ready !! Let those message come.");
     } catch (e) {
-        console.error("Looks like you got an error." + e);
-        page.screenshot({ path: path.join(process.cwd(), "error.png") })
+        console.error("\nLooks like you got an error. " + e);
+        try {
+            page.screenshot({ path: path.join(process.cwd(), "error.png") })
+        } catch (s) {
+            console.error("Can't create shreenshot, X11 not running?. " + s);
+        }
         console.warn(e);
-        console.error("Don't worry errors are good. They help us improve. A screenshot has already been saved as error.png in current directory. Please mail it on vasani.arpit@gmail.com along with the steps to reproduce it.");
+        console.error("Don't worry errors are good. They help us improve. A screenshot has already been saved as error.png in current directory. Please mail it on vasani.arpit@gmail.com along with the steps to reproduce it.\n");
         throw e;
     }
 
