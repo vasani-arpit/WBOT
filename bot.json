@@ -6,9 +6,10 @@
         "webhook":"https://lazy-cow-87.localtunnel.me/api/messages"
     },
     "bot": [{
-            "contains": [],
-            "exact": ["hi"],
-            "response": "hello"
+            "contains": ["amzn.to"],
+            "exact": [""],
+            "response": "",
+            "command": "echo"
         },
         {
             "contains": [],

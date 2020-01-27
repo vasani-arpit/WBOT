@@ -1,13 +1,14 @@
 WAPI.waitNewMessages(false, (data) => {
     console.log(data)
     data.forEach((message) => {
+        // compose parameters send to API or ececute
+        body = {};
+        body.text = message.body;
+        body.type = 'message';
+        body.user = message.from._serialized;
+        //body.original = message;
         //fetch API to send and receive response from server
         if(intents.appconfig.webapi != undefined && intents.appconfig.webapi) {
-            body = {};
-            body.text = message.body;
-            body.type = 'message';
-            body.user = message.from._serialized;
-            //body.original = message;
             fetch(intents.appconfig.webhook, {
                 method: "POST",
                 body: JSON.stringify(body),
@@ -43,11 +44,13 @@ WAPI.waitNewMessages(false, (data) => {
                 window.log("Message received in group and group reply is off. so will not take any actions.");
                 return;
             }
-            var exactMatch = intents.bot.find(obj => obj.exact.find(ex => ex == message.body.toLowerCase()));
             var response = "";
+            var execute = "";
+            var exactMatch = intents.bot.find(obj => obj.exact.find(ex => ex == message.body.toLowerCase()));
             if (exactMatch != undefined) {
                 response = exactMatch.response;
-                window.log(`Replying with ${exactMatch.response}`);
+                execute = exactMatch.execute;
+                window.log(`Replying with ${exactMatch.response} ${exactMatch.execute}`);
             } else {
                 response = intents.noMatch;
                 console.log("No exact match found");
@@ -55,12 +58,14 @@ WAPI.waitNewMessages(false, (data) => {
             var PartialMatch = intents.bot.find(obj => obj.contains.find(ex => message.body.toLowerCase().search(ex) > -1));
             if (PartialMatch != undefined) {
                 response = PartialMatch.response;
-                window.log(`Replying with ${PartialMatch.response}`);
+                execute = exactMatch.execute;
+                window.log(`Replying with ${exactMatch.response} ${exactMatch.execute}`);
             } else {
                 console.log("No partial match found");
             }
+            // send message seen and send respone if response is not empty or null
             WAPI.sendSeen(message.from._serialized);
-            WAPI.sendMessage2(message.from._serialized, response);
+            if (response && response.len !== 0) { WAPI.sendMessage2(message.from._serialized, response); }
             console.log();
             if ((exactMatch || PartialMatch).file != undefined) {
                 window.getFile((exactMatch || PartialMatch).file).then((base64Data) => {
@@ -70,6 +75,16 @@ WAPI.waitNewMessages(false, (data) => {
                     window.log("Error in sending file\n" + error);
                 })
             }
+            // execute program
+            // if execute && execute.len !== 0) {
+               process.exec( 'echo' , ['JSON.stringify(body)'], function (error, stdout, stderr) {
+                   console.log('stdout: ' + stdout);
+                   console.log('stderr: ' + stderr);
+                   if (error !== null) {
+                      console.log('exec error: ' + error);
+                   }
+               });
+            // }
         }
     });
 });
