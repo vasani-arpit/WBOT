@@ -33,6 +33,7 @@
   },
   "homepage": "https://github.com/vasani-arpit/WBOT#readme",
   "dependencies": {
+    "axios": "^0.19.2",
     "cli-progress": "^2.1.1",
     "mime": "^2.4.4",
     "node-fetch": "^2.3.0",

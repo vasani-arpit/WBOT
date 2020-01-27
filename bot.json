@@ -2,7 +2,8 @@
     "appconfig": {
         "headless": false,
         "isGroupReply":false,
-        "webhook":"https://lazy-cow-87.localtunnel.me/api/messages"
+        "webhook":"http://localhost:1337/api/whatsapp/v1/hook",
+        "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywicGhvbmUiOiIrNTIxNjY4MTQ4MzU4NiIsImVtYWlsIjoiZW5yaXF1ZWJlbmF2aWRlc21AZ21haWwuY29tIiwicm9sZSI6IndoYXRzYXBwIiwiaWF0IjoxNTgwMTQzNDgzLCJleHAiOjE2MTE3MDEwODN9.RntHr7uHh5afOsmW_BLQXugZmPpqh7KoIaSf7y1yUjM"
     },
     "bot": [{
             "contains": [],
