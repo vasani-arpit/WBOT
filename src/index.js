@@ -9,6 +9,7 @@ var argv = require('yargs').argv;
 var rev = require("./detectRev");
 var constants = require("./constants");
 var configs = require("../bot");
+var child = require('child_process');
 
 //console.log(ps);
 
