@@ -1,8 +1,9 @@
 WAPI.waitNewMessages(false, (data) => {
-    console.log(data)
     data.forEach((message) => {
         window.log(`Message from ${message.from.user} checking..`);
+        
         if (intents.appconfig.webhook) {
+            console.log(`Message from ${message.from.user} checking..`);
             //fetch API to send and receive response from server
             body = {};
             body.text = message.body;
@@ -13,21 +14,28 @@ WAPI.waitNewMessages(false, (data) => {
                 method: "POST",
                 body: JSON.stringify(body),
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${intents.appconfig.token}`
                 }
-            }).then((resp) => resp.json()).then(function (response) {
-                //response received from server
-                WAPI.sendSeen(message.from._serialized);
-                //replying to the user based on response
-                WAPI.sendMessage2(message.from._serialized, response.text, () => {
-                    if (response.files && response.files.length > 0) {
-                        response.files.forEach((file) => {
-                            WAPI.sendImage2(message.from._serialized, file.base64, file.name);
-                        })
-                    }
-                });
+            }).then(function (rawRes) {
+                console.log('Response', rawRes);
+                rawRes.json()
+                    .then((response) => {
+                        console.log('Json', response);
+        
+                        //response received from server
+                        WAPI.sendSeen(message.from._serialized);
+                        //replying to the user based on response
+                        WAPI.sendMessage2(message.from._serialized, response.text, () => {
+                            if (response.files && response.files.length > 0) {
+                                response.files.forEach((file) => {
+                                    WAPI.sendImage2(message.from._serialized, file.base64, file.name);
+                                })
+                            }
+                        });
+                    });
             }).catch(function (error) {
-                console.log(error);
+                console.error(error);
             });
         }
         if (intents.blocked.indexOf(message.from.user) >= 0) {
