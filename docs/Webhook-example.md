@@ -22,10 +22,10 @@ here are the steps
     });
 
     app.post('/api/incoming-webhook', (req, res) => res.send(
-        {
+        [{
           "text": "Look, Reply from Webhook!",
           "type": "message"
-        }
+        }]
     ))
     app.get('/', (req, res) => res.send('Hello World!'))
 
