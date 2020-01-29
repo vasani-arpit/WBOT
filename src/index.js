@@ -29,10 +29,14 @@ async function Main() {
         }
         console.log("WBOT is ready !! Let those message come.");
     } catch (e) {
-        console.error("Looks like you got an error." + e);
-        page.screenshot({ path: path.join(process.cwd(), "error.png") })
+        console.error("\nLooks like you got an error. " + e);
+        try {
+            page.screenshot({ path: path.join(process.cwd(), "error.png") })
+        } catch (s) {
+            console.error("Can't create shreenshot, X11 not running?. " + s);
+        }
         console.warn(e);
-        console.error("Don't worry errors are good. They help us improve. A screenshot has already been saved as error.png in current directory. Please mail it on vasani.arpit@gmail.com along with the steps to reproduce it.");
+        console.error("Don't worry errors are good. They help us improve. A screenshot has already been saved as error.png in current directory. Please mail it on vasani.arpit@gmail.com along with the steps to reproduce it.\n");
         throw e;
     }
 
@@ -140,8 +144,9 @@ async function Main() {
     async function getAndShowQR() {
         //TODO: avoid using delay and make it in a way that it would react to the event. 
         //await utils.delay(10000);
-        await page.waitForSelector("img[alt='Scan me!']");
-        var imageData = await page.evaluate(`document.querySelector("img[alt='Scan me!']").parentElement.getAttribute("data-ref")`);
+        var scanme = "img[alt='Scan me!'], canvas";
+        await page.waitForSelector(scanme);
+        var imageData = await page.evaluate(`document.querySelector("${scanme}").parentElement.getAttribute("data-ref")`);
         //console.log(imageData);
         qrcode.generate(imageData, { small: true });
         spinner.start("Waiting for scan \nKeep in mind that it will expire after few seconds");
