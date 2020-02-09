@@ -8,12 +8,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
+    - name: Get tag from package.json
+      id: get-tag
+      run: |
+        sudo apt update
+        sudo apt install -y jq
+        echo ::set-output name=tag::$(cat package.json | jq -r .version)
     - name: Bump version and push tag
       id: create_tag
       uses: anothrNick/github-tag-action@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        WITH_V: true
+        CUSTOM_TAG: v${{ steps.get-tag.outputs.tag }}
     - name: Build project
       uses: ./.github/build
       env:
