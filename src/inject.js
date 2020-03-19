@@ -1,5 +1,4 @@
 WAPI.waitNewMessages(false, async (data) => {
-    console.log(data);
     for (let i = 0; i < data.length; i++) {
         //fetch API to send and receive response from server
         let message = data[i];
