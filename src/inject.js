@@ -20,10 +20,10 @@ WAPI.waitNewMessages(false, (data) => {
             //replying to the user based on response
             WAPI.sendMessage2(message.from._serialized, response[0].text);
             //sending files if there is any 
-            if(response.files){
-                if (response.files.length > 0) {
-                    response.files.forEach((file) => {
-                        WAPI.sendImage(file.file, response.From, file.name);
+            if(response[0].files){
+                if (response[0].files.length > 0) {
+                    response[0].files.forEach((file) => {
+                        WAPI.sendImage(file.file, message.from._serialized , file.name);
                     })
                 }
             }
