@@ -39,7 +39,7 @@
 
 macOS | Windows | Linux
 -----------------| ---| ---|
-[Download v0.9-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.9-beta/wbot-mac-0.9.zip) | [Download v0.9-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.9-beta/wbot-win-0.9.zip) | [Download v0.9-beta](https://github.com/vasani-arpit/WBOT/releases/download/v0.9-beta/wbot-linux-0.9.zip)
+[Download Latest Release](https://github.com/vasani-arpit/WBOT/releases/latest/download/WBOT-mac.zip) | [Download Latest Release](https://github.com/vasani-arpit/WBOT/releases/latest/download/WBOT-win.zip) | [Download Latest Release](https://github.com/vasani-arpit/WBOT/releases/latest/download/WBOT-linux.zip)
 
 
 ## Supported Platforms
@@ -68,6 +68,9 @@ Run the command -
 ```
 chmod +x wbot-linux && wbot-linux
 ```
+
+Note: on Linux you need a running display server (X11 or Wayland).
+If you run Linux on a headless server or wan't to run chmomium without visible display try ```xvfb-run wbot-linux```.
 
 *I haven't tested Mac and Linux binaries. If you find any issues using them feel free to raise one from [here](https://github.com/vasani-arpit/WBOT/issues/new)*
 
@@ -113,6 +116,22 @@ An object which contains suggestions and it's configs.
 here is how that looks
 
 ![smart reply gif](https://user-images.githubusercontent.com/6497827/58412366-f1653380-8093-11e9-8427-1ca19235faed.gif)
+
+
+## Run the latest code from github
+
+**This is only recommended for advanced 'node.js' users.**
+
+open a Terminal and create a new directory in your home directory, e.g. 'node' and goto there.
+Now download and run the latest code from github by:
+
+```
+git clone https://github.com/vasani-arpit/WBOT.git
+cd WBOT
+node src/index.js
+```
+
+If you run Linux on a headless server or wan't to run chmomium without visible display try ```xvfb-run wbot-linux```.
 
 
 ## 💻 Technologies

@@ -7,11 +7,6 @@
 /**
  * This script contains WAPI functions that need to be run in the context of the webpage
  */
-
-/**
- * Auto discovery the webpack object references of instances that contains all functions used by the WAPI
- * functions and creates the Store object.
- */
 /**
  * This script contains WAPI functions that need to be run in the context of the webpage
  */
@@ -26,8 +21,7 @@ if (!window.Store) {
             let foundCount = 0;
             let neededObjects = [
                 { id: "Store", conditions: (module) => (module.Chat && module.Msg) ? module : null },
-                { id: "MediaCollection", conditions: (module) => (module.default && module.default.prototype && module.default.prototype.processFiles !== undefined) ? module.default : null },
-                { id: "ChatClass", conditions: (module) => (module.default && module.default.prototype && module.default.prototype.Collection !== undefined && module.default.prototype.Collection === "Chat") ? module : null },
+                { id: "MediaCollection", conditions: (module) => (module.default && module.default.prototype && module.default.prototype.processAttachments) ? module.default : null },
                 { id: "MediaProcess", conditions: (module) => (module.BLOB) ? module : null },
                 { id: "Wap", conditions: (module) => (module.createGroup) ? module : null },
                 { id: "ServiceWorker", conditions: (module) => (module.default && module.default.killServiceWorker) ? module : null },
@@ -73,7 +67,7 @@ if (!window.Store) {
                                 window.Store[needObj.id] = needObj.foundedModule;
                             }
                         });
-                        window.Store.ChatClass.default.prototype.sendMessage = function (e) {
+                        window.Store.sendMessage = function (e) {
                             return window.Store.SendTextMsgToChat(this, ...arguments);
                         }
                         return window.Store;
@@ -82,7 +76,19 @@ if (!window.Store) {
             }
         }
 
-        webpackJsonp([], { 'parasite': (x, y, z) => getStore(z) }, ['parasite']);
+        if (typeof webpackJsonp === 'function') {
+            webpackJsonp([], {'parasite': (x, y, z) => getStore(z)}, ['parasite']);
+        } else {
+            webpackJsonp.push([
+                ['parasite'],
+                {
+                    parasite: function (o, e, t) {
+                        getStore(t);
+                    }
+                },
+                [['parasite']]
+            ]);
+        }
     })();
 }
 
@@ -201,7 +207,7 @@ window.WAPI.createGroup = function (name, contactsId) {
 
 window.WAPI.leaveGroup = function (groupId) {
     groupId = typeof groupId == "string" ? groupId : groupId._serialized;
-    var group = window.Store.Chat.get(groupId);
+    var group = WAPI.getChat(groupId);
     return group.sendExit()
 };
 
@@ -299,6 +305,7 @@ window.WAPI.getAllGroups = function (done) {
 window.WAPI.getChat = function (id, done) {
     id = typeof id == "string" ? id : id._serialized;
     const found = window.Store.Chat.get(id);
+    found.sendMessage = (found.sendMessage) ? found.sendMessage : function () { return window.Store.sendMessage.apply(this, arguments); };
     if (done !== undefined) done(found);
     return found;
 }
@@ -316,7 +323,7 @@ window.WAPI.sendImageFromDatabasePicBot = function (picId, chatId, caption) {
     if (msgWithImg === undefined) {
         return false;
     }
-    var chatSend = window.Store.Chat.get(chatId);
+    var chatSend = WAPI.getChat(chatId);
     if (chatSend === undefined) {
         return false;
     }
@@ -341,7 +348,7 @@ window.WAPI.sendImageFromDatabasePicBot = function (picId, chatId, caption) {
 };
 
 window.WAPI.sendMessageWithThumb = function (thumb, url, title, description, chatId, done) {
-    var chatSend = window.Store.Chat.get(chatId);
+    var chatSend = WAPI.getChat(chatId);
     if (chatSend === undefined) {
         if (done !== undefined) done(false);
         return false;
@@ -368,7 +375,7 @@ window.WAPI.getNewId = function () {
 };
 
 window.WAPI.getChatById = function (id, done) {
-    let found = window.Store.Chat.get(id);
+    let found = WAPI.getChat(id);
     if (found) {
         found = WAPI._serializeChatObj(found);
     } else {
@@ -400,7 +407,7 @@ window.WAPI.getChatById = function (id, done) {
  */
 window.WAPI.getUnreadMessagesInChat = function (id, includeMe, includeNotifications, done) {
     // get chat and its messages
-    let chat     = window.Store.Chat.get(id);
+    let chat     = WAPI.getChat(id);
     let messages = chat.msgs._models;
 
     // initialize result list
@@ -447,7 +454,7 @@ window.WAPI.getUnreadMessagesInChat = function (id, includeMe, includeNotificati
  * @returns None
  */
 window.WAPI.loadEarlierMessages = function (id, done) {
-    const found = window.Store.Chat.get(id);
+    const found = WAPI.getChat(id);
     if (done !== undefined) {
         found.loadEarlierMsgs().then(function () {
             done()
@@ -465,7 +472,7 @@ window.WAPI.loadEarlierMessages = function (id, done) {
  * @returns None
  */
 window.WAPI.loadAllEarlierMessages = function (id, done) {
-    const found = window.Store.Chat.get(id);
+    const found = WAPI.getChat(id);
     x = function () {
         if (!found.msgs.msgLoadState.noEarlierMsgs) {
             found.loadEarlierMsgs().then(x);
@@ -482,7 +489,7 @@ window.WAPI.asyncLoadAllEarlierMessages = function (id, done) {
 };
 
 window.WAPI.areAllMessagesLoaded = function (id, done) {
-    const found = window.Store.Chat.get(id);
+    const found = WAPI.getChat(id);
     if (!found.msgs.msgLoadState.noEarlierMsgs) {
         if (done) done(false);
         return false
@@ -501,9 +508,9 @@ window.WAPI.areAllMessagesLoaded = function (id, done) {
  */
 
 window.WAPI.loadEarlierMessagesTillDate = function (id, lastMessage, done) {
-    const found = window.Store.Chat.get(id);
+    const found = WAPI.getChat(id);
     x = function () {
-        if (found.msgs.models[0].t > lastMessage) {
+        if (found.msgs.models[0].t > lastMessage && !found.msgs.msgLoadState.noEarlierMsgs) {
             found.loadEarlierMsgs().then(x);
         } else {
             done();
@@ -604,6 +611,14 @@ window.WAPI.isLoggedIn = function (done) {
     return isLogged;
 };
 
+window.WAPI.isConnected = function (done) {
+    // Phone Disconnected icon appears when phone is disconnected from the tnternet
+    const isConnected = document.querySelector('*[data-icon="alert-phone"]') !== null ? false : true;
+
+    if (done !== undefined) done(isConnected);
+    return isConnected;
+};
+
 window.WAPI.processMessageObj = function (messageObj, includeMe, includeNotifications) {
     if (messageObj.isNotification) {
         if (includeNotifications)
@@ -619,7 +634,7 @@ window.WAPI.processMessageObj = function (messageObj, includeMe, includeNotifica
 };
 
 window.WAPI.getAllMessagesInChat = function (id, includeMe, includeNotifications, done) {
-    const chat     = window.Store.Chat.get(id);
+    const chat     = WAPI.getChat(id);
     let   output   = [];
     const messages = chat.msgs._models;
 
@@ -638,7 +653,7 @@ window.WAPI.getAllMessagesInChat = function (id, includeMe, includeNotifications
 };
 
 window.WAPI.getAllMessageIdsInChat = function (id, includeMe, includeNotifications, done) {
-    const chat     = window.Store.Chat.get(id);
+    const chat     = WAPI.getChat(id);
     let   output   = [];
     const messages = chat.msgs._models;
 
@@ -678,7 +693,7 @@ window.WAPI.ReplyMessage = function (idMessage, message, done) {
     }
     messageObject = messageObject.value();
 
-    const chat = window.Store.Chat.get(messageObject.chat.id)
+    const chat = WAPI.getChat(messageObject.chat.id)
     if (chat !== undefined) {
         if (done !== undefined) {
             chat.sendMessage(message, null, messageObject).then(function () {
@@ -696,7 +711,7 @@ window.WAPI.ReplyMessage = function (idMessage, message, done) {
                             continue;
                         }
                         done(WAPI._serializeMessageObj(msg));
-                        return true;
+                        return True;
                     }
                     trials += 1;
                     console.log(trials);
@@ -766,7 +781,7 @@ window.WAPI.sendMessageToID = function (id, message, done) {
 }
 
 window.WAPI.sendMessage = function (id, message, done) {
-    var chat = window.Store.Chat.get(id);
+    var chat = WAPI.getChat(id);
     if (chat !== undefined) {
         if (done !== undefined) {
             chat.sendMessage(message).then(function () {
@@ -784,7 +799,7 @@ window.WAPI.sendMessage = function (id, message, done) {
                             continue;
                         }
                         done(WAPI._serializeMessageObj(msg));
-                        return true;
+                        return True;
                     }
                     trials += 1;
                     console.log(trials);
@@ -808,7 +823,7 @@ window.WAPI.sendMessage = function (id, message, done) {
 };
 
 window.WAPI.sendMessage2 = function (id, message, done) {
-    var chat = window.Store.Chat.get(id);
+    var chat = WAPI.getChat(id);
     if (chat !== undefined) {
         try {
             if (done !== undefined) {
@@ -1050,7 +1065,7 @@ window.WAPI.getBatteryLevel = function (done) {
 
 window.WAPI.deleteConversation = function (chatId, done) {
     let userId       = new window.Store.UserConstructor(chatId, {intentionallyUsePrivateConstructor: true});
-    let conversation = window.Store.Chat.get(userId);
+    let conversation = WAPI.getChat(userId);
 
     if (!conversation) {
         if (done !== undefined) {
@@ -1059,7 +1074,7 @@ window.WAPI.deleteConversation = function (chatId, done) {
         return false;
     }
 
-    window.Store.SendDelete(conversation, false).then(() => {
+    window.Store.sendDelete(conversation, false).then(() => {
         if (done !== undefined) {
             done(true);
         }
@@ -1074,7 +1089,7 @@ window.WAPI.deleteConversation = function (chatId, done) {
 
 window.WAPI.deleteMessage = function (chatId, messageArray, revoke=false, done) {
     let userId       = new window.Store.UserConstructor(chatId, {intentionallyUsePrivateConstructor: true});
-    let conversation = window.Store.Chat.get(userId);
+    let conversation = WAPI.getChat(userId);
 
     if(!conversation) {
         if(done !== undefined) {
@@ -1219,8 +1234,8 @@ var idUser = new window.Store.UserConstructor(chatid, { intentionallyUsePrivateC
 // create new chat
 return Store.Chat.find(idUser).then((chat) => {
     var mediaBlob = window.WAPI.base64ImageToFile(imgBase64, filename);
-    var mc = new Store.MediaCollection();
-    mc.processFiles([mediaBlob], chat, 1).then(() => {
+    var mc = new Store.MediaCollection(chat);
+    mc.processAttachments([{file: mediaBlob}, 1], chat, 1).then(() => {
         var media = mc.models[0];
         media.sendToChat(chat, { caption: caption });
         if (done !== undefined) done(true);
@@ -1253,7 +1268,7 @@ window.WAPI.sendContact = function (to, contact) {
         contact = [contact];
     }
     contact = contact.map((c) => {
-        return window.Store.Chat.get(c).__x_contact;
+        return WAPI.getChat(c).__x_contact;
     });
 
     if (contact.length > 1) {
@@ -1359,22 +1374,13 @@ window.WAPI.contactUnblock = function (id, done) {
  * @param {*} done - function - Callback function to be called when a new message arrives.
  */
 window.WAPI.removeParticipantGroup = function (idGroup, idParticipant, done) {
-    const metaDataGroup = window.Store.GroupMetadata.get(idGroup);
-    if (metaDataGroup === undefined) {
-        done(false); return false;
-    }
-    
-    const participant = metaDataGroup.participants.get(idParticipant);
-    if (participant === undefined) {
-        done(false); return false;
-    }
-    
-    metaDataGroup.participants.removeParticipants([participant]).then(ret => {
-        const check = metaDataGroup.participants.get(idParticipant);
-        if (check === undefined) { done(true); return true; }
-        done(false); return false; 
-    });
-    
+    window.Store.WapQuery.removeParticipants(idGroup, [idParticipant]).then(() => {
+        const metaDataGroup = window.Store.GroupMetadata.get(id)
+        checkParticipant = metaDataGroup.participants._index[idParticipant];
+        if (checkParticipant === undefined) {
+            done(true); return true;
+        }
+    })
 }
 
 /**
@@ -1384,26 +1390,14 @@ window.WAPI.removeParticipantGroup = function (idGroup, idParticipant, done) {
  * @param {*} done - function - Callback function to be called when a new message arrives.
  */
 window.WAPI.promoteParticipantAdminGroup = function (idGroup, idParticipant, done) {
-    const metaDataGroup = window.Store.GroupMetadata.get(idGroup);
-    if (metaDataGroup === undefined) {
-        done(false); return false;
-    }
-    
-    const participant = metaDataGroup.participants.get(idParticipant);
-    if (participant === undefined) {
-        done(false); return false;
-    }
-    
-    window.Wap.promoteParticipants(metaDataGroup.id, [participant.id]).then(() => {
-        const checkParticipant = metaDataGroup.participants.get(idParticipant);
-        if (checkParticipant !== undefined) { 
-            if (checkParticipant.__x_isAdmin) {
-                done(true); return true;
-            }
+    window.Store.WapQuery.promoteParticipants(idGroup, [idParticipant]).then(() => {
+        const metaDataGroup = window.Store.GroupMetadata.get(id)
+        checkParticipant = metaDataGroup.participants._index[idParticipant];
+        if (checkParticipant !== undefined && checkParticipant.isAdmin) {
+            done(true); return true;
         }
-        done(false); return false; 
-    });
-    
+        done(false); return false;
+    })
 }
 
 /**
@@ -1413,21 +1407,15 @@ window.WAPI.promoteParticipantAdminGroup = function (idGroup, idParticipant, don
  * @param {*} done - function - Callback function to be called when a new message arrives.
  */
 window.WAPI.demoteParticipantAdminGroup = function (idGroup, idParticipant, done) {
-    const metaDataGroup = window.Store.GroupMetadata.get(idGroup);
-    if (metaDataGroup === undefined) {
-        done(false); return false;
-    }
-    
-    const participant = metaDataGroup.participants.get(idParticipant);
-    if (participant === undefined) {
-        done(false); return false;
-    }
-    
-    metaDataGroup.participants.demoteParticipants([participant]).then(() => {
-        const checkParticipant = metaDataGroup.participants.get(idParticipant);
-        if (checkParticipant !== undefined && checkParticipant.__x_isAdmin) { 
+    window.Store.WapQuery.demoteParticipants(idGroup, [idParticipant]).then(() => {
+        const metaDataGroup = window.Store.GroupMetadata.get(id)
+        if (metaDataGroup === undefined) {
             done(false); return false;
         }
-        done(true); return true; 
+        checkParticipant = metaDataGroup.participants._index[idParticipant];
+        if (checkParticipant !== undefined && checkParticipant.isAdmin) {
+            done(false); return false;
+        }
+        done(true); return true;
     })
 }
