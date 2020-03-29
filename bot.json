@@ -7,7 +7,7 @@
     "bot": [{
             "contains": [],
             "exact": ["hi"],
-            "response": "hello"
+            "response": "{hello|howdy}"
         },
         {
             "contains": [],
@@ -43,6 +43,11 @@
         },
         {
             "contains": [],
+            "exact": ["how are you"],
+            "response": "i am {good {thanks| thank you}|great}. How about you?"
+        },
+        {
+            "contains": [],
             "exact": ["hbd"],
             "response": "Thank you"
         },
@@ -64,7 +69,7 @@
         }
     ],
     "blocked": [],
-    "noMatch":"",
+    "noMatch":"{🤔|👍}",
     "smartreply":{
         "suggestions":["👍","Ha","aevu m?","Okay","Thanks"],
         "clicktosend":true

@@ -1,6 +1,6 @@
 {
   "name": "wbot",
-  "version": "0.12.3",
+  "version": "0.12.4",
   "description": "A simple whatsapp reply bot using puppeteer.",
   "main": "src/index.js",
   "scripts": {
@@ -34,6 +34,7 @@
   "homepage": "https://github.com/vasani-arpit/WBOT#readme",
   "dependencies": {
     "cli-progress": "^2.1.1",
+    "mel-spintax": "^1.0.4",
     "mime": "^2.4.4",
     "node-fetch": "^2.3.0",
     "ora": "^3.0.0",
