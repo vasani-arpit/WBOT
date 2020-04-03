@@ -18,15 +18,17 @@ WAPI.waitNewMessages(false, async (data) => {
             console.log(response);
             WAPI.sendSeen(message.from._serialized);
             //replying to the user based on response
-            WAPI.sendMessage2(message.from._serialized, response[0].text);
-            //sending files if there is any 
-            if(response[0].files){
-                if (response[0].files.length > 0) {
-                    response[0].files.forEach((file) => {
-                        WAPI.sendImage(file.file, message.from._serialized , file.name);
-                    })
-                }
-            }
+            if (response && response.length > 0){
+                response.forEach(itemResponse => {
+                    WAPI.sendMessage2(message.from._serialized, itemResponse.text);
+                    //sending files if there is any 
+                    if(itemResponse.files && itemResponse.files.length > 0 ){
+                        itemResponse.files.forEach((itemFile) => {
+                            WAPI.sendImage(itemFile.file, message.from._serialized , itemFile.name);
+                        })                        
+                    }
+                });
+            } 
         }).catch(function (error) {
             console.log(error);
         });
