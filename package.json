@@ -1,6 +1,6 @@
 {
   "name": "wbot",
-  "version": "0.12.5",
+  "version": "0.12.6",
   "description": "A simple whatsapp reply bot using puppeteer.",
   "main": "src/index.js",
   "scripts": {
@@ -21,9 +21,9 @@
   "pkg": {
     "scripts": "src/**/*.js",
     "targets": [
-      "win",
-      "linux",
-      "macos"
+      "node10-win",
+      "node10-linux",
+      "node10-macos"
     ]
   },
   "author": "Arpit Vasani",
