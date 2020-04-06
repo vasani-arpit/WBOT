@@ -1,12 +1,9 @@
 [
     {
-        "bomdia":{
-            "frequence" : "once time",
-            "time": "12:30",
-            "who" : ["91293923919","dfosdfpds"],
-            "message":[{"type":"text","message":"Bom dia filho"},{
-                "type": "file","message":"Bom dia", "file":"urs//teste/photo.png"
-            }]
-        }
+        "time":{
+            "second": 0 
+        },
+        "who" : ["558296130940@c.us","558296130940@c.us"],
+        "message":"Isso aqui é um agendamento"        
     }
 ]

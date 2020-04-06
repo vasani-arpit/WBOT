@@ -12,6 +12,8 @@ var constants = require("./constants");
 var configs = require("../bot");
 
 var schedule = require('node-schedule');
+var configSchedule = require('../schedule.json');
+
 
 //console.log(ps);
 
@@ -19,16 +21,23 @@ var schedule = require('node-schedule');
 
 async function ScheduleBOT(page){
 
-    var j = schedule.scheduleJob('00 * * * * *', function(){
-        console.log('agendamento execucao')
-        page.evaluate("  WAPI.sendMessage2('558296130940@c.us','agendamento')  ")
-      });
+    console.log("✅ Config. Schedule")
+    // "opcoes":"date:(1-31) or month:(1-12) or year:2020 or dayofWeek:(1-7)"
+ 
+    configSchedule.forEach(item => {
+        schedule.scheduleJob(item.time, function(){
+            item.who.forEach(destino =>{
+                page.evaluate(`WAPI.sendMessage2('${destino}','${item.message}')`)
+            })
+            
+        });
+    });
+
+  
 
 }
 
-async function Main() {
-
-   
+async function Main() {   
 
     try {
         //console.log(configs);
@@ -41,7 +50,10 @@ async function Main() {
         if (configs.smartreply.suggestions.length >= 0) {
             await setupSmartReply();
         }
-        ScheduleBOT(page);
+
+        if (configs.appconfig.schedule == true) {
+            ScheduleBOT(page);
+        }        
         console.log("WBOT is ready !! Let those message come.");
     } catch (e) {
         console.error("\nLooks like you got an error. " + e);
@@ -211,4 +223,3 @@ async function Main() {
 }
 
 Main();
-
