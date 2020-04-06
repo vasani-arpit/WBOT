@@ -1,0 +1,12 @@
+[
+    {
+        "bomdia":{
+            "frequence" : "once time",
+            "time": "12:30",
+            "who" : ["91293923919","dfosdfpds"],
+            "message":[{"type":"text","message":"Bom dia filho"},{
+                "type": "file","message":"Bom dia", "file":"urs//teste/photo.png"
+            }]
+        }
+    }
+]

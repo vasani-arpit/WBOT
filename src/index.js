@@ -11,11 +11,24 @@ var rev = require("./detectRev");
 var constants = require("./constants");
 var configs = require("../bot");
 
+var schedule = require('node-schedule');
+
 //console.log(ps);
 
 //console.log(process.cwd());
 
+async function ScheduleBOT(page){
+
+    var j = schedule.scheduleJob('00 * * * * *', function(){
+        console.log('agendamento execucao')
+        page.evaluate("  WAPI.sendMessage2('558296130940@c.us','agendamento')  ")
+      });
+
+}
+
 async function Main() {
+
+   
 
     try {
         //console.log(configs);
@@ -28,6 +41,7 @@ async function Main() {
         if (configs.smartreply.suggestions.length >= 0) {
             await setupSmartReply();
         }
+        ScheduleBOT(page);
         console.log("WBOT is ready !! Let those message come.");
     } catch (e) {
         console.error("\nLooks like you got an error. " + e);
@@ -197,3 +211,4 @@ async function Main() {
 }
 
 Main();
+
