@@ -63,3 +63,7 @@ typings/
 ChromeSession*
 win*
 chromium-data
+
+wbot-linux
+wbot-macos
+wbot-win.exe

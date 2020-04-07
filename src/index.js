@@ -19,22 +19,21 @@ var configSchedule = require('../schedule.json');
 
 //console.log(process.cwd());
 
-async function ScheduleBOT(page){
-
+function ScheduleBOT(page){
     console.log("✅ Config. Schedule")
     // "opcoes":"date:(1-31) or month:(1-12) or year:2020 or dayofWeek:(1-7)"
  
-    configSchedule.forEach(item => {
-        schedule.scheduleJob(item.time, function(){
-            item.who.forEach(contact =>{
-                page.evaluate(`WAPI.sendMessage2('${contact}','${item.message}')`)
-            })
-            
+    return new Promise((resolve,reject)=>{
+        configSchedule.forEach(item => {
+            schedule.scheduleJob(item.time, function(){
+                item.who.forEach(contact =>{
+                    page.evaluate(`WAPI.sendMessage2('${contact}','${item.message}')`)
+                })
+                
+            });
         });
+        resolve();
     });
-
-  
-
 }
 
 async function Main() {   
@@ -52,7 +51,7 @@ async function Main() {
         }
 
         if (configs.appconfig.schedule == true) {
-            ScheduleBOT(page);
+            await ScheduleBOT(page);
         }        
         console.log("WBOT is ready !! Let those message come.");
     } catch (e) {
