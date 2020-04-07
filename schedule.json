@@ -1,9 +1,9 @@
 [
     {
         "time":{
-            "minute": 29,
-            "hour": 10,
-            "dayOfWeek":0
+            "minute": 50,
+            "hour": 23,
+            "dayOfWeek":1
         },
         "who" : ["558296130940@c.us"],
         "message":"This is a message"        
