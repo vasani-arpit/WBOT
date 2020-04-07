@@ -1,9 +1,11 @@
 [
     {
         "time":{
-            "second": 0 
+            "minute": 29,
+            "hour": 10,
+            "dayOfWeek":0
         },
-        "who" : ["558296130940@c.us","558296130940@c.us"],
-        "message":"Isso aqui é um agendamento"        
+        "who" : ["558296130940@c.us"],
+        "message":"This is a message"        
     }
 ]

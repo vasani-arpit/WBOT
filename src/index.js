@@ -26,8 +26,8 @@ async function ScheduleBOT(page){
  
     configSchedule.forEach(item => {
         schedule.scheduleJob(item.time, function(){
-            item.who.forEach(destino =>{
-                page.evaluate(`WAPI.sendMessage2('${destino}','${item.message}')`)
+            item.who.forEach(contact =>{
+                page.evaluate(`WAPI.sendMessage2('${contact}','${item.message}')`)
             })
             
         });
