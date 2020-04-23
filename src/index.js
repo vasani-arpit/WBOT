@@ -45,8 +45,8 @@ async function Main() {
      * If local chrome is not there then this function will download it first. then use it for automation. 
      */
     async function downloadAndStartThings() {
-        let botjson = utils.externalInjection("bot.json");
-        var appconfig = await utils.externalInjection("bot.json");
+        let botjson = utils.externalInjection(constants.BOT_SETTINGS_FILE);
+        var appconfig = await utils.externalInjection(constants.BOT_SETTINGS_FILE);
         appconfig = JSON.parse(appconfig);
         spinner.start("Downloading chrome\n");
         const browserFetcher = puppeteer.createBrowserFetcher({
