@@ -11,7 +11,7 @@ switch (platform) {
         chromePlatform = "mac";
         break;
     default:
-        chromePlatform = "linux"
+        chromePlatform = "linux";
         break;
 
 }

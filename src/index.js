@@ -10,6 +10,7 @@ var argv = require('yargs').argv;
 var rev = require("./detectRev");
 var constants = require("./constants");
 var configs = require("../bot");
+var fs = require('fs')
 
 //console.log(ps);
 
@@ -42,16 +43,47 @@ async function Main() {
     }
 
     /**
+     * This function will load settings from JSON configuration file
+     * @param {*} event Event name
+     * @param {*} filename Name of the file
+     * @param {*} page Handle to webpage 
+     */
+    function loadSettings(event, filename, page) 
+    {
+        // Check event type
+        if(event === "change")
+        {
+            // Load JSON settings file
+            let botJson = utils.externalInjection(filename);
+            var config = utils.externalInjection(filename);
+            
+            // Update settings
+            botJson.then((data) => {
+                page.evaluate(`var intents = ${data}`);
+            }).catch((err) => {
+                console.log(`there was an error ${err}`);
+            });
+        }
+    }
+
+    /**
      * If local chrome is not there then this function will download it first. then use it for automation. 
      */
-    async function downloadAndStartThings() {
+    async function downloadAndStartThings() 
+    {
+        // Load settings from file
         let botjson = utils.externalInjection(constants.BOT_SETTINGS_FILE);
         var appconfig = await utils.externalInjection(constants.BOT_SETTINGS_FILE);
+
+        // Parses the JSON
         appconfig = JSON.parse(appconfig);
+
+        // Download chrome
         spinner.start("Downloading chrome\n");
         const browserFetcher = puppeteer.createBrowserFetcher({
             path: process.cwd()
         });
+
         const progressBar = new _cliProgress.Bar({}, _cliProgress.Presets.shades_grey);
         progressBar.start(100, 0);
         var revNumber = await rev.getRevNumber();
@@ -70,6 +102,8 @@ async function Main() {
         }
         const extraArguments = Object.assign({});
         extraArguments.userDataDir = constants.DEFAULT_DATA_DIR;
+
+        // Launches the web browser
         const browser = await puppeteer.launch({
             executablePath: revisionInfo.executablePath,
             headless: appconfig.appconfig.headless,
@@ -77,10 +111,15 @@ async function Main() {
             devtools: false,
             args: [...constants.DEFAULT_CHROMIUM_ARGS, ...pptrArgv], ...extraArguments
         });
+
         spinner.stop("Launching Chrome ... done!");
+        
+        // Using proxy server?
         if (argv.proxyURI) {
             spinner.info("Using a Proxy Server");
         }
+
+        // Open Whatsapp Web
         spinner.start("Opening Whatsapp");
         page = await browser.pages();
         if (page.length > 0) {
@@ -96,18 +135,24 @@ async function Main() {
             });
             //console.log(contents);
             //await injectScripts(page);
+            
             botjson.then((data) => {
                 page.evaluate("var intents = " + data);
-                //console.log(data);
             }).catch((err) => {
                 console.log("there was an error \n" + err);
             });
             spinner.stop("Opening Whatsapp ... done!");
             page.exposeFunction("log", (message) => {
                 console.log(message);
-            })
+            });
             page.exposeFunction("getFile", utils.getFileInBase64);
             page.exposeFunction("resolveSpintax", spintax.unspin);
+
+            console.info("Configuring live settings loader ...");
+
+            // Register a filesystem watcher
+            watcher = fs.watch(constants.BOT_SETTINGS_FILE, { persistent: true, interval: 5000},
+                (event, filename) => loadSettings(event, filename, page));
         }
     }
 
@@ -123,7 +168,7 @@ async function Main() {
             .catch(() => {
                 console.log("User is not logged in. Waited 30 seconds.");
                 return false;
-            })
+            });
     }
 
     async function checkLogin() {
