@@ -34,6 +34,8 @@
   "homepage": "https://github.com/vasani-arpit/WBOT#readme",
   "dependencies": {
     "cli-progress": "^2.1.1",
+    "eslint": "^6.8.0",
+    "jshint": "^2.11.0",
     "mel-spintax": "^1.0.4",
     "mime": "^2.4.4",
     "node-fetch": "^2.3.0",
