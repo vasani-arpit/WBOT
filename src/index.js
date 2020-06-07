@@ -25,7 +25,7 @@ async function Main() {
         if (!isLogin) {
             await getAndShowQR();
         }
-        if (configs.smartreply.suggestions.length >= 0) {
+        if (configs.smartreply.suggestions.length > 0) {
             await setupSmartReply();
         }
         console.log("WBOT is ready !! Let those message come.");
@@ -167,7 +167,7 @@ async function Main() {
 
     async function setupSmartReply() {
         spinner.start("setting up smart reply");
-        await page.waitForSelector(".app");
+        await page.waitForSelector("#app");
         await page.evaluate(`
             var observer = new MutationObserver((mutations) => {
                 for (var mutation of mutations) {

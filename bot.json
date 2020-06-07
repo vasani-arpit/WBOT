@@ -71,7 +71,7 @@
     "blocked": [],
     "noMatch":"{🤔|👍}",
     "smartreply":{
-        "suggestions":["👍","Ha","aevu m?","Okay","Thanks"],
+        "suggestions":[],
         "clicktosend":true
     }
 }
