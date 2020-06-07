@@ -5,35 +5,37 @@ WAPI.waitNewMessages(false, async (data) => {
         body = {};
         body.text = message.body;
         body.type = 'message';
-        body.user = message.from._serialized;
+        body.user = message.chatId._serialized;
         //body.original = message;
-        fetch(intents.appconfig.webhook, {
-            method: "POST",
-            body: JSON.stringify(body),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }).then((resp) => resp.json()).then(function (response) {
-            //response received from server
-            console.log(response);
-            WAPI.sendSeen(message.from._serialized);
-            //replying to the user based on response
-            if (response && response.length > 0){
-                response.forEach(itemResponse => {
-                    WAPI.sendMessage2(message.from._serialized, itemResponse.text);
-                    //sending files if there is any 
-                    if(itemResponse.files && itemResponse.files.length > 0 ){
-                        itemResponse.files.forEach((itemFile) => {
-                            WAPI.sendImage(itemFile.file, message.from._serialized , itemFile.name);
-                        })                        
-                    }
-                });
-            } 
-        }).catch(function (error) {
-            console.log(error);
-        });
-        window.log(`Message from ${message.from.user} checking..`);
-        if (intents.blocked.indexOf(message.from.user) >= 0) {
+        if (intents.appconfig.webhook) {
+            fetch(intents.appconfig.webhook, {
+                method: "POST",
+                body: JSON.stringify(body),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then((resp) => resp.json()).then(function (response) {
+                //response received from server
+                console.log(response);
+                WAPI.sendSeen(message.chatId._serialized);
+                //replying to the user based on response
+                if (response && response.length > 0) {
+                    response.forEach(itemResponse => {
+                        WAPI.sendMessage2(message.chatId._serialized, itemResponse.text);
+                        //sending files if there is any 
+                        if (itemResponse.files && itemResponse.files.length > 0) {
+                            itemResponse.files.forEach((itemFile) => {
+                                WAPI.sendImage(itemFile.file, message.chatId._serialized, itemFile.name);
+                            })
+                        }
+                    });
+                }
+            }).catch(function (error) {
+                console.log(error);
+            });
+        }
+        window.log(`Message from ${message.chatId.user} checking..`);
+        if (intents.blocked.indexOf(message.chatId.user) >= 0) {
             window.log("number is blocked by BOT. no reply");
             return;
         }
@@ -59,13 +61,13 @@ WAPI.waitNewMessages(false, async (data) => {
             } else {
                 console.log("No partial match found");
             }
-            WAPI.sendSeen(message.from._serialized);
-            WAPI.sendMessage2(message.from._serialized, response);
+            WAPI.sendSeen(message.chatId._serialized);
+            WAPI.sendMessage2(message.chatId._serialized, response);
             console.log();
             if ((exactMatch || PartialMatch).file != undefined) {
                 window.getFile((exactMatch || PartialMatch).file).then((base64Data) => {
                     //console.log(file);
-                    WAPI.sendImage(base64Data, message.from._serialized, (exactMatch || PartialMatch).file);
+                    WAPI.sendImage(base64Data, message.chatId._serialized, (exactMatch || PartialMatch).file);
                 }).catch((error) => {
                     window.log("Error in sending file\n" + error);
                 })
