@@ -179,7 +179,7 @@ async function Main() {
                     }
                 }
             });
-            observer.observe(document.querySelector('.app'), { attributes: false, childList: true, subtree: true });
+            observer.observe(document.querySelector('#app'), { attributes: false, childList: true, subtree: true });
         `);
         spinner.stop("setting up smart reply ... done!");
         page.waitForSelector("#main", { timeout: 0 }).then(async () => {
