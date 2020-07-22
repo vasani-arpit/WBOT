@@ -1,13 +1,30 @@
 {
     "appconfig": {
         "headless": false,
-        "isGroupReply":false,
-        "webhook":""
+        "isGroupReply":true,
+        "webhook":"http://localhost:3000/api/incoming-webhook"
     },
-    "bot": [{
+    "bot": [
+        {
             "contains": [],
             "exact": ["hi"],
             "response": "{hello|howdy}"
+        },
+        {
+             "contains": ["corona","virus","covid","epidemic","pandemic"],
+             "exact": [""],
+             "response": "{I am a bot. Computer viruses frighten me.|Don't be frightened. Take a deep breath and stay safe.}"
+        },
+        {
+            "contains": [],
+            "exact": ["url","isla"],
+            "response": "http://radioislanegra.cl/"
+        },
+        {
+            "contains": [],
+            "exact": ["music"],
+            "response": "Let's play!",
+            "file":"music.mp3"
         },
         {
             "contains": [],
@@ -69,7 +86,7 @@
         }
     ],
     "blocked": [],
-    "noMatch":"{🤔|👍}",
+    "noMatch":"{}",
     "smartreply":{
         "suggestions":["Hello", "Welcome to my store !!", "Thanks for reaching out 🙏"],
         "clicktosend":true
