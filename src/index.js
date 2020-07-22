@@ -10,6 +10,7 @@ var argv = require('yargs').argv;
 var rev = require("./detectRev");
 var constants = require("./constants");
 var configs = require("../bot");
+var quizconfigs = require("../quiz");
 
 //console.log(ps);
 
@@ -28,7 +29,7 @@ async function Main() {
         if (configs.smartreply.suggestions.length > 0) {
             await setupSmartReply();
         }
-        console.log("WBOT is ready !! Let those message come.");
+        console.log("WBOT is ready !! Let those messages come.");
     } catch (e) {
         console.error("\nLooks like you got an error. " + e);
         try {
@@ -48,7 +49,16 @@ async function Main() {
         let botjson = utils.externalInjection("bot.json");
         var appconfig = await utils.externalInjection("bot.json");
         appconfig = JSON.parse(appconfig);
-        spinner.start("Downloading chrome\n");
+        let quizjson = utils.externalInjection("quiz.json");
+        var quizconfig = await utils.externalInjection("quiz.json");
+        quizconfig = JSON.parse(quizconfig);
+
+        let chatIdStorejson = utils.getDirStore(constants.DEFAULT_CHATID_STORE_DIR);
+        var chatIdStore = await utils.getDirStore(constants.DEFAULT_CHATID_STORE_DIR);
+        chatIdStore = JSON.parse(chatIdStore);
+
+	//console.log('chatIdStore = ' + JSON.stringify(chatIdStore, null, 2) + ' =');
+	spinner.start("Downloading chrome\n");
         const browserFetcher = puppeteer.createBrowserFetcher({
             path: process.cwd()
         });
@@ -102,12 +112,26 @@ async function Main() {
             }).catch((err) => {
                 console.log("there was an error \n" + err);
             });
+            quizjson.then((data) => {
+                page.evaluate("var interaction = " + data);
+                //console.log('interaction = |' + data + ' |');
+            }).catch((err) => {
+                console.log("there was an error \n" + err);
+            });
+            chatIdStorejson.then((data) => {
+                page.evaluate("var chatIdStore = " + data);
+                //console.log('chatIdStore data :' + data + ':');
+            }).catch((err) => {
+                console.log("there was an error \n" + err);
+            });
             spinner.stop("Opening Whatsapp ... done!");
             page.exposeFunction("log", (message) => {
                 console.log(message);
             })
             page.exposeFunction("getFile", utils.getFileInBase64);
             page.exposeFunction("resolveSpintax", spintax.unspin);
+
+            page.exposeFunction("putStoreFile", utils.putDirStoreEntry);
         }
     }
 
