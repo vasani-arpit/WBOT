@@ -26,3 +26,4 @@ this.DEFAULT_CHROMIUM_ARGS = [
     "--num-raster-threads=1",
 ];
 this.DEFAULT_DATA_DIR = path.join(process.cwd(), "chromium-data");
+this.DEFAULT_CHATID_STORE_DIR = path.join(process.cwd(), "chatIdStore");
