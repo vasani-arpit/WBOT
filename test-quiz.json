@@ -1,0 +1,70 @@
+{
+    "quizconfig": {
+        "oneShot": false,
+        "isGroupReply":true,
+        "webhook":"http://localhost:3000/api/incoming-webhook"
+    },
+    "quiz": {
+	"id":"Test Quiz",
+	"active": true,
+	"preamble": ["Hi #name. This is a per quiz introduction"],
+	"postamble": ["This is a per quiz conclusion.  You answered #correct_replies correctly out of #questions questions."],
+	"question": [
+		{	
+			"preamble": ["This is a per question introduction"],
+			"postamble": ["This is a per question conclusion."],
+			"text": ["Is this a question?"],
+			"answer":    [
+				{
+					"isCorrect": true,
+					"text": ["1. yes"],
+					"exact": [""],
+					"contains": ["1","yes","yep","right","course","positive"],
+					"response": "You are right. Of course it is."
+				},
+				{
+					"isCorrect": false,
+					"text": "2. no",
+					"exact": [""],
+					"contains": ["2","no","nah","nope"],
+					"response": "You are not right. The question mark gives it away"
+				},
+				{
+					"isCorrect": false,
+					"text": "3. maybe",
+					"exact": [""],
+					"contains": ["3","maybe","sometimes","it depends"],
+					"response": "You are indecisive. We should be clear about this"
+				}
+			]
+		},
+		{
+			"preamble": ["This is a second per question introduction"],
+			"text": ["Is this another question?"],
+			"answer":    [
+				{
+					"isCorrect": true,
+					"text": ["4. yes"],
+					"exact": [""],
+					"contains": ["4","yes","yep","right","course","positive"],
+					"response": "You are right. Of course it is."
+				},
+				{
+					"isCorrect": false,
+					"text": "5. no",
+					"exact": [""],
+					"contains": ["5","no","nah","nope"],
+					"response": "You are not right. The question mark gives it away"
+				},
+				{
+					"isCorrect": false,
+					"text": "6. maybe",
+					"exact": [""],
+					"contains": ["6","maybe","sometimes","it depends"],
+					"response": "You are indecisive. We should be clear about this"
+				}
+			]
+		}
+	]
+    }
+}

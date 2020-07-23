@@ -1,0 +1,321 @@
+{
+    "quizconfig": {
+        "oneShot": true,
+        "isGroupReply":true,
+        "webhook":"http://localhost:3000/api/incoming-webhook"
+    },
+    "quiz": {
+	"id":"Test Quiz",
+	"active": true,
+	"preamble": ["Hi #name, Hello! I hope you arere feeling fine. Welcome to the quizz. ","Let me ask you some questions. Select your answer by texting the number you think is correct."],
+	"postamble": ["This is a per quiz conclusion.  You answered #correct_replies correctly out of #questions questions."],
+	"question": [
+		{
+			"preamble": ["This is a per question introduction"],
+			"postamble": ["This is a per question conclusion."],
+			"text": ["What is a virus?"],
+			"answer":    [
+				{
+					"isCorrect": false,
+					"text": "1. A microscopic, single-celled organism.",
+					"exact": [""],
+					"contains": ["1","microscopic","single-celled"],
+					"response": "You are wrong. A sub-microscopic infectious agent that replicates only inside the living cells of an organism"
+				},
+				{
+					"isCorrect": true,
+					"text": "2. A sub-microscopic infectious agent that replicates only inside the living cells of an organism",
+					"exact": [""],
+					"contains": ["2","agent","infectious"],
+					"response": "You are right. A sub-microscopic infectious agent that replicates only inside the living cells of an organism"
+				},
+				{
+					"isCorrect": false,
+					"text": "3. A multicellular organism with chlorophyll as its primary photosynthetic pigment",
+					"exact": [""],
+					"contains": ["3","multicellular","chlorophyll","pigment"],
+					"response": "You are wrong. A sub-microscopic infectious agent that replicates only inside the living cells of an organism"
+				}
+			]
+		},
+		{
+			"preamble": ["This is a second per question introduction"],
+			"text": ["What is the official name of the virus as designated by the World Health Organization (WHO)?"],
+			"answer":    [
+				{
+					"isCorrect": true,
+					"text": ["1. Sars-CoV-2"],
+					"exact": [""],
+					"contains": ["1","Sars-CoV-2"],
+					"response": "You are right. It is Sars-CoV-2."
+				},
+				{
+					"isCorrect": false,
+					"text": "2. Covid-19",
+					"exact": [""],
+					"contains": ["2","Covid"],
+					"response": "You are wrong. It is Sars-CoV-2."
+				},
+				{
+					"isCorrect": false,
+					"text": "3. Corona Virus",
+					"exact": [""],
+					"contains": ["3","Corona","Virus"],
+					"response": "You are wrong. It is Sars-CoV-2."
+				}
+			]
+		},
+		{
+			"preamble": ["This is a per question introduction"],
+			"postamble": ["Well done! X of your answers are correct and y are wrong", "you are now ranking xyz from all who joined the quiz"],
+			"text": ["What does the 19 in Covid-19 stand for?"],
+			"answer":    [
+				{
+					"isCorrect": false,
+					"text": "1. It refers to the 19 molecules that make up the virus",
+					"exact": [""],
+					"contains": ["1","molecules"],
+					"response": "Wrong answer, It is the year the virus was first encountered: 2019"
+				},
+				{
+					"isCorrect": true,
+					"text": "2. It is the 19th coronavirus identified since the WHO began naming them",
+					"exact": [""],
+					"contains": ["2","19th"],
+					"response": "Wrong answer, It is the year the virus was first encountered: 2019"
+				},
+				{
+					"isCorrect": false,
+					"text": "3. It is the year the virus was first encountered: 2019",
+					"exact": [""],
+					"contains": ["3","year","2019"],
+					"response": "Right, It is the year the virus was first encountered: 2019"
+				}
+			]
+		},
+		{
+			"preamble": ["This is a per question introduction"],
+			"postamble": [],
+			"text": ["About what percentage of infected people recover without needing hospital treatment according to the World Health Organisation website?"],
+			"answer":    [
+				{
+					"isCorrect": false,
+					"text": "1. 60%",
+					"exact": [""],
+					"contains": ["1","60"],
+					"response": "No. It is 80%"
+				},
+				{
+					"isCorrect": false,
+					"text": "2. 70%",
+					"exact": [""],
+					"contains": ["2","70"],
+					"response": "No. It is 80%"
+				},
+				{
+					"isCorrect": true,
+					"text": "3. 80%",
+					"exact": [""],
+					"contains": ["3","80"],
+					"response": "Yes, 80% is correct"
+				}
+			]
+		},
+		{
+			"preamble": ["This is a per question introduction"],
+			"postamble": [],
+			"text": ["Which of these is NOT listed by the WHO as a symptom of coronavirus?"],
+			"answer":    [
+				{
+					"isCorrect": false,
+					"text": "1. Fever",
+					"exact": [""],
+					"contains": ["1","fever"],
+					"response": "Wrong, blurred vision is not listed"
+				},
+				{
+					"isCorrect": false,
+					"text": "2. Dry Cough",
+					"exact": [""],
+					"contains": ["2","dry","cough"],
+					"response": "Wrong, blurred vision is not listed"
+				},
+				{
+					"isCorrect": true,
+					"text": "3. Blurred Vision",
+					"exact": [""],
+					"contains": ["3","blurred", "vision"],
+					"response": "Yes, blurred vision is not listed"
+				}
+			]
+		},
+		{
+			"preamble": ["This is a per question introduction"],
+			"postamble": [],
+			"text": ["What is more effective at removing the coronavirus from your hands?"],
+			"answer":    [
+				{
+					"isCorrect": false,
+					"text": "1. Alcohol-based hand sanitiser",
+					"exact": [""],
+					"contains": ["1","alcohol", "hand", "sanitiser"],
+					"response": "Nope, it is soap and water"
+				},
+				{
+					"isCorrect": true,
+					"text": "2. Soap and Water",
+					"exact": [""],
+					"contains": ["2","soap","water"],
+					"response": "You are right, it is soap and water"
+				},
+				{
+					"isCorrect": false,
+					"text": "3. Sand",
+					"exact": [""],
+					"contains": ["3","sand"],
+					"response": "Nope, it is soap and water"
+				}
+			]
+		},
+		{
+			"preamble": ["This is a per question introduction"],
+			"postamble": ["Well done! X of your answers are correct and y are wrong", "you are now ranking xyz from all who joined the quiz"],
+			"text": ["How big is the coronavirus?"],
+			"answer":    [
+				{
+					"isCorrect": false,
+					"text": "1. 8 billionths of a metre in diameter",
+					"exact": [""],
+					"contains": ["1"],
+					"response": "Wrong! It is 80 billionths of a metre in diameter"
+				},
+				{
+					"isCorrect": true,
+					"text": "2. 80 billionths of a metre in diameter",
+					"exact": [""],
+					"contains": ["2"],
+					"response": "That's the one: It is 80 billionths of a metre in diameter"
+				},
+				{
+					"isCorrect": false,
+					"text": "3. 800 billionths of a metre in diameter",
+					"exact": [""],
+					"contains": ["3","800"],
+					"response": "Wrong! It is 80 billionths of a metre in diameter"
+				}
+			]
+		},
+		{
+			"preamble": ["This is a per question introduction"],
+			"postamble": [""],
+			"text": ["What does the virus attach itself to when it enters the human body?"],
+			"answer":    [
+				{
+					"isCorrect": false,
+					"text": "1. Antigens",
+					"exact": [""],
+					"contains": ["1","antigens"],
+					"response": "You are wrong, it is Ace-2 receptors in the lining of the airways"
+				},
+				{
+					"isCorrect": false,
+					"text": "2. Red Blood Cells",
+					"exact": [""],
+					"contains": ["2","red","blood","cells"],
+					"response": "Correct, it is Ace-2 receptors in the lining of the airways"
+				},
+				{
+					"isCorrect": true,
+					"text": "3. Ace-2 receptors in the lining of the airways",
+					"exact": [""],
+					"contains": ["3","Ace-2","receptors"],
+					"response": "You are wrong, it is Ace-2 receptors in the lining of the airways"
+				}
+			]
+		},
+		{
+			"preamble": ["This is a per question introduction"],
+			"postamble": [""],
+			"text": ["Which organ in the body does this coronavirus primarily attack?"],
+			"answer":    [
+				{
+					"isCorrect": true,
+					"text": "1. Lungs",
+					"exact": [""],
+					"contains": ["1","lungs"],
+					"response": "Yes, the lungs"
+				},
+				{
+					"isCorrect": false,
+					"text": "2. Liver",
+					"exact": [""],
+					"contains": ["2","liver"],
+					"response": "No, it is the lungs"
+				},
+				{
+					"isCorrect": true,
+					"text": "3. Heart",
+					"exact": [""],
+					"contains": ["3","heart"],
+					"response": "No, it is the lungs"
+				}
+			]
+		},
+		{
+			"preamble": ["This is a per question introduction"],
+			"postamble": [""],
+			"text": ["What is the R number?"],
+			"answer":    [
+				{
+					"isCorrect": false,
+					"text": "1. The percentage of confirmed coronavirus cases that lead to death",
+					"exact": [""],
+					"contains": ["1"],
+					"response": "You are wrong. R is the average number of people to whom one infected person will pass on the virus"
+				},
+				{
+					"isCorrect": false,
+					"text": "2. The average number of people to whom one infected person will pass on the virus",
+					"exact": [""],
+					"contains": ["2"],
+					"response": "You are wrong. R is the average number of people to whom one infected person will pass on the virus"
+				},
+				{
+					"isCorrect": true,
+					"text": "3. Yes, R is the average number of people to whom one infected person will pass on the virus",
+					"exact": [""],
+					"contains": ["3"],
+					"response": "The average number of people to whom one infected person will pass on the virus"
+				}
+			]
+		},
+		{
+			"preamble": ["This is a second per question introduction"],
+			"text": ["This is not the first widespread coronavirus encountered by humans. But which of these is NOT a type of coronavirus?"],
+			"answer":    [
+				{
+					"isCorrect": false,
+					"text": ["1. Severe Acute Respiratory Syndrome (SARS)"],
+					"exact": [""],
+					"contains": ["1","Sars"],
+					"response": "No, it is Ebola"
+				},
+				{
+					"isCorrect": false,
+					"text": "2. Middle East Respiratory Syndrome (MERS)",
+					"exact": [""],
+					"contains": ["2","middle","east"],
+					"response": "No, it is Ebola"
+				},
+				{
+					"isCorrect": true,
+					"text": "3. Ebola",
+					"exact": [""],
+					"contains": ["3","ebola"],
+					"response": "Ebola is correct."
+				}
+			]
+		}
+	]
+    }
+}
