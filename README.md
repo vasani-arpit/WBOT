@@ -1,9 +1,11 @@
 
-This is a fork that supports a simple WBOT quiz function - primarily for COVID info and resources directory for Uganda and Burkina Faso.
+## This Fork of WBOT
 
-TODO: default out of range answering, quiz reset command (quizzes are one-shot ATM), high score table, etc.
+> This is a fork that supports a simple WBOT quiz function - primarily for COVID info and resources directory for Uganda and Burkina Faso.
 
-NOTE: added code for quiz is brutally pragmatic in style, and not to modern js standards. but it works.
+> TODO: default out of range answering, quiz reset command (quizzes are one-shot ATM), high score table, etc.
+
+> NOTE: added code for quiz is brutally pragmatic in style, and not to modern js standards. but it works.
 
 # WBOT 
 
