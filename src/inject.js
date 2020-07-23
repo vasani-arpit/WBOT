@@ -128,7 +128,7 @@ WAPI.waitNewMessages(false, async (data) => {
                 if (itemQuiz.hasBegun == true) {
                     // RECEIVE RESPONSE
                     itemQuestion.reply.text = message.body;
-                    window.log('DEBUG: FAKE set message.body = ' + message.body);
+                    //window.log('DEBUG: FAKE set message.body = ' + message.body);
 
                     // PROCESS RESPONSE
                     var itemPartialMatch = itemQuestion.answer.find(obj => obj.contains.find(ex => message.body.toLowerCase().search(ex) > -1));
@@ -179,8 +179,11 @@ WAPI.waitNewMessages(false, async (data) => {
                         window.log("DEBUG: name = " + name);
 		        var mixed = itemQuiz.postamble.toString().replace('#name', name);
                         var correctReplies = itemQuiz.question.filter(o => o.reply.isCorrect == true);
+                        var incorrectReplies = itemQuiz.question.filter(o => o.reply.isCorrect == false);
 		        var mixed = mixed.replace('#correct_replies', correctReplies.length);
                         window.log("DEBUG: correctReplies.length = " + correctReplies.length);
+		        var mixed = mixed.replace('#incorrect_replies', incorrectReplies.length);
+                        window.log("DEBUG: incorrectReplies.length = " + incorrectReplies.length);
 		        var mixed = mixed.replace('#questions', itemQuiz.question.length);
                         window.log("DEBUG: itemQuiz.question.length = " + itemQuiz.question.length);
                         window.log("DEBUG: mixed = " + mixed);
