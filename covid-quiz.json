@@ -5,14 +5,13 @@
         "webhook":"http://localhost:3000/api/incoming-webhook"
     },
     "quiz": {
-	"id":"Test Quiz",
+	"id":"Covid Quiz 1",
 	"active": true,
-	"preamble": ["Hi #name, Hello! I hope you arere feeling fine. Welcome to the quizz. ","Let me ask you some questions. Select your answer by texting the number you think is correct."],
-	"postamble": ["This is a per quiz conclusion.  You answered #correct_replies correctly out of #questions questions."],
+	"preamble": ["Hi #name, Hello! I hope you are feeling fine. Welcome to the quiz. ","Let me ask you some questions. Select your answer by texting the number you think is correct."],
+	"postamble": ["Well done. You answered #correct_replies correctly out of #questions questions."],
 	"question": [
 		{
-			"preamble": ["This is a per question introduction"],
-			"postamble": ["This is a per question conclusion."],
+			"preamble": [""],
 			"text": ["What is a virus?"],
 			"answer":    [
 				{
@@ -39,7 +38,7 @@
 			]
 		},
 		{
-			"preamble": ["This is a second per question introduction"],
+			"preamble": [""],
 			"text": ["What is the official name of the virus as designated by the World Health Organization (WHO)?"],
 			"answer":    [
 				{
@@ -66,8 +65,7 @@
 			]
 		},
 		{
-			"preamble": ["This is a per question introduction"],
-			"postamble": ["Well done! X of your answers are correct and y are wrong", "you are now ranking xyz from all who joined the quiz"],
+			"preamble": [""],
 			"text": ["What does the 19 in Covid-19 stand for?"],
 			"answer":    [
 				{
@@ -94,8 +92,7 @@
 			]
 		},
 		{
-			"preamble": ["This is a per question introduction"],
-			"postamble": [],
+			"preamble": ["Well done! X of your answers are correct and y are wrong", "you are now ranking xyz from all who joined the quiz"],
 			"text": ["About what percentage of infected people recover without needing hospital treatment according to the World Health Organisation website?"],
 			"answer":    [
 				{
@@ -122,8 +119,7 @@
 			]
 		},
 		{
-			"preamble": ["This is a per question introduction"],
-			"postamble": [],
+			"preamble": [""],
 			"text": ["Which of these is NOT listed by the WHO as a symptom of coronavirus?"],
 			"answer":    [
 				{
@@ -150,7 +146,7 @@
 			]
 		},
 		{
-			"preamble": ["This is a per question introduction"],
+			"preamble": [""],
 			"postamble": [],
 			"text": ["What is more effective at removing the coronavirus from your hands?"],
 			"answer":    [
@@ -178,8 +174,7 @@
 			]
 		},
 		{
-			"preamble": ["This is a per question introduction"],
-			"postamble": ["Well done! X of your answers are correct and y are wrong", "you are now ranking xyz from all who joined the quiz"],
+			"preamble": [""],
 			"text": ["How big is the coronavirus?"],
 			"answer":    [
 				{
@@ -206,8 +201,7 @@
 			]
 		},
 		{
-			"preamble": ["This is a per question introduction"],
-			"postamble": [""],
+			"preamble": ["Well done! X of your answers are correct and y are wrong", "you are now ranking xyz from all who joined the quiz"],
 			"text": ["What does the virus attach itself to when it enters the human body?"],
 			"answer":    [
 				{
@@ -222,20 +216,19 @@
 					"text": "2. Red Blood Cells",
 					"exact": [""],
 					"contains": ["2","red","blood","cells"],
-					"response": "Correct, it is Ace-2 receptors in the lining of the airways"
+					"response": "You are wrong, it is Ace-2 receptors in the lining of the airways"
 				},
 				{
 					"isCorrect": true,
 					"text": "3. Ace-2 receptors in the lining of the airways",
 					"exact": [""],
 					"contains": ["3","Ace-2","receptors"],
-					"response": "You are wrong, it is Ace-2 receptors in the lining of the airways"
+					"response": "Correct, it is Ace-2 receptors in the lining of the airways"
 				}
 			]
 		},
 		{
-			"preamble": ["This is a per question introduction"],
-			"postamble": [""],
+			"preamble": [""],
 			"text": ["Which organ in the body does this coronavirus primarily attack?"],
 			"answer":    [
 				{
@@ -262,8 +255,7 @@
 			]
 		},
 		{
-			"preamble": ["This is a per question introduction"],
-			"postamble": [""],
+			"preamble": [""],
 			"text": ["What is the R number?"],
 			"answer":    [
 				{
@@ -282,15 +274,15 @@
 				},
 				{
 					"isCorrect": true,
-					"text": "3. Yes, R is the average number of people to whom one infected person will pass on the virus",
+					"text": "3. The average number of people to whom one infected person will pass on the virus",
 					"exact": [""],
 					"contains": ["3"],
-					"response": "The average number of people to whom one infected person will pass on the virus"
+					"response": "Yes, R is the average number of people to whom one infected person will pass on the virus"
 				}
 			]
 		},
 		{
-			"preamble": ["This is a second per question introduction"],
+			"preamble": [""],
 			"text": ["This is not the first widespread coronavirus encountered by humans. But which of these is NOT a type of coronavirus?"],
 			"answer":    [
 				{
@@ -319,3 +311,4 @@
 	]
     }
 }
+
