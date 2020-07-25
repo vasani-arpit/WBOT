@@ -21,11 +21,6 @@ window.log(`DEBUG:  #### INJECT CODE EXECUTED!!!`);
 //  return Function(` return (${str})`)()
 //
 //}
-name = "Adam";
-score = 2;
-ppre = `Hi ${name} you scored ${score}`;
-test = `${ppre}`;
-window.log('DEBUG: ${test} ' + test);
 
 WAPI.waitNewMessages(false, async (data) => {
     for (let i = 0; i < data.length; i++) {
