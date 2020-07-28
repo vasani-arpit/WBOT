@@ -22,6 +22,109 @@ window.log(`DEBUG:  #### INJECT CODE EXECUTED!!!`);
 //
 //}
 
+quizFillName = function (itemPhone, string) {
+    var searchStr = string;
+    var name = itemPhone.contact.pushname;
+    // window.log("TEST: in function qFN");
+    if (name == undefined) name = itemPhone.contact.name;
+    //     window.log("TEST: in function qFN: name = " + name);
+    if ((name == undefined) || (name.indexOf('#name') >= 0)) {
+        name = "";
+    //     window.log("TEST: in function qFN: name = " + name);
+    }
+    // window.log("TEST: in function qFN: searchStr = " + searchStr);
+    while (searchStr.indexOf('#name') >= 0) {
+        searchStr = searchStr.replace('#name', name);
+    }
+    return searchStr;
+}
+
+quizFillCorrectReplies = function (itemPhone, string) {
+    var searchStr = string;
+    var itemQuiz = itemPhone.quiz.find(r => r.id === interaction.quiz.id);
+    var correctReplies = itemQuiz.question.filter(o => o.reply.isCorrect == true);
+    while (searchStr.indexOf('#correct_replies') >= 0) {
+        searchStr = searchStr.replace('#correct_replies', correctReplies.length);
+    }
+    return searchStr;
+}
+
+quizFillIncorrectReplies = function (itemPhone, string) {
+    var searchStr = string;
+    var itemQuiz = itemPhone.quiz.find(r => r.id === interaction.quiz.id);
+    var incorrectReplies = itemQuiz.question.filter(o => o.reply.isCorrect == false);
+    while (searchStr.indexOf('#incorrect_replies') >= 0) {
+        searchStr = searchStr.replace('#incorrect_replies', incorrectReplies.length);
+    }
+    return searchStr;
+}
+
+
+
+
+// CompletedQuestions is an array of Questions within a Quiz to tally for
+quizResults = function (ChatID, CompletedQuestions) { // note Quiz will always be interaction.quiz for now ...
+    if ((ChatID != undefined) && (ChatID.quiz != undefined)) {
+         var itemQuiz = ChatID.quiz.find(o => o.id === interaction.quiz.id); // Quiz is hard coded for now
+         if (itemQuiz != undefined) {
+             var itemQuestions = itemQuiz.question;
+             var ChatIDQuestions = itemQuiz.question;
+             var ChatIDCompletedQuestions = itemQuiz.question.filter(o => o.isCompleted == true);
+             window.log("ChatIDQ: " + ChatIDQuestions.length + " ChatIDCQ.length = " + ChatIDCompletedQuestions.length + " CQ.length = " + CompletedQuestions.length);
+             var testCompletedQuestions = [];
+             CompletedQuestions.forEach(o => {
+                 window.log("forEach o.text: " + o.text);
+                 var q = ChatIDQuestions.find(p => p.text === o.text);
+                 // if (q != undefined) testCompletedQuestions.push(q);
+                 if (q != undefined) {
+                     window.log("forEach: o.text: " + o.text + " q.text: " + q.text);
+                     testCompletedQuestions.push(JSON.parse(JSON.stringify(q)));
+                 } else {
+                     window.log("DEBUG: qR: q is undefined");
+                 }
+             });
+             window.log('DEBUG: qR: ' + testCompletedQuestions.length);
+             //var testCompletedQuestions = CompletedQuestions.filter(o => ChatIDCompletedQuestions.filter(p => p.isCompleted == o.isCompleted));
+             
+             //var testCompletedQuestions = ChatIDCompletedQuestions.filter(o => CompletedQuestions.filter(p => p.isCompleted === o.isCompleted));
+             //window.log("TEST: testCompletedQuestions.length: " + testCompletedQuestions.length);
+             //window.log("TEST: testCompletedQuestions: " + JSON.stringify(testCompletedQuestions, null, 2));
+             // 
+             // var correctReplies = itemQuiz.question.filter(o => o.reply.isCorrect == true);
+             // var incorrectReplies = itemQuiz.question.filter(o => o.reply.isCorrect == false);
+             // var noReplies = itemQuiz.question.filter(o => o.reply.isCorrect == undefined);
+             // 
+             var correctReplies = testCompletedQuestions.filter(o => o.reply.isCorrect == true);
+             var incorrectReplies = testCompletedQuestions.filter(o => o.reply.isCorrect == false);
+             var noReplies = testCompletedQuestions.filter(o => o.reply.isCorrect == undefined);
+             return ([testCompletedQuestions.length, correctReplies.length, incorrectReplies.length, noReplies.length]);
+         }
+    }
+}
+
+var testChatID = "491704552266@c.us";
+var testGroupID = "491704552266-1588096294@g.us";
+
+window.log("TEST: chatIdStore:" + chatIdStore);
+var testPhone = chatIdStore.chat.find(o => o.chatId == testChatID);
+var testGroup = chatIdStore.chat.find(o => o.chatId == testGroupID);
+window.log("TEST: testPhone: " + testPhone);
+
+window.log("TEST: quizFillName: " + quizFillName(testPhone, "My name is #name"));
+
+//var testQuiz = testPhone.quiz.find(r => r.id === interaction.quiz.id);
+//var testQuestions = testQuiz.question.filter(o => o.isCompleted == true);
+var testPhoneCompletedQuestions = (testPhone.quiz.find(r => r.id === interaction.quiz.id)).question.filter(o => o.isCompleted == true);
+var testGroupCompletedQuestions = (testGroup.quiz.find(r => r.id === interaction.quiz.id)).question.filter(o => o.isCompleted == true);
+
+window.log("TEST: testPhoneCQ: " + testPhoneCompletedQuestions.length + "testGroupCQ: " + testGroupCompletedQuestions.length);
+//window.log("TEST: testPhoneCompletedQuestions: " + JSON.stringify(testPhoneCompletedQuestions, null, 2));
+window.log("TEST: testPhone quizResults against testPhoneCompleted: " + quizResults(testPhone, testPhoneCompletedQuestions));
+window.log("TEST: testPhone quizResults against testGroupCompleted: " + quizResults(testPhone, testGroupCompletedQuestions));
+window.log("TEST: testGroup quizResults against testGroupCompleted: " + quizResults(testGroup, testGroupCompletedQuestions));
+window.log("TEST: testGroup quizResults against testPhoneCompleted: " + quizResults(testGroup, testPhoneCompletedQuestions));
+//window.log("TEST: testGroup quizResults: " + quizResults(testGroup));
+
 WAPI.waitNewMessages(false, async (data) => {
     for (let i = 0; i < data.length; i++) {
         //fetch API to send and receive response from server
@@ -140,62 +243,58 @@ WAPI.waitNewMessages(false, async (data) => {
                     }
                 } else {
                     window.log("DEBUG: Quiz '" + itemQuiz.id + "' has started for " + itemPhone.chatId);
-                    window.log("SEND: QUIZ PREAMBLE to " + itemPhone.chatId + " quiz.preamble[]: " + itemQuiz.preamble);
+                    //window.log("SEND: QUIZ PREAMBLE to " + itemPhone.chatId + " quiz.preamble[]: " + itemQuiz.preamble);
                     //response = response.concat('\n', itemQuiz.preamble);
-                    var name = itemPhone.contact.pushname;
-                    if (name == undefined) name = itemPhone.contact.name;
-		    var mixed = itemQuiz.preamble.toString().replace('#name', name);
-                    window.log("DEBUG: mixed = " + mixed);
+                    response = quizFillName(itemPhone, itemQuiz.preamble.toString());
+                    window.log("DEBUG: response = " + response);
 
-                    WAPI.sendMessage2(itemPhone.chatId, mixed);
+                    WAPI.sendMessage2(itemPhone.chatId, response);
                     itemQuiz.hasBegun = true;
                 }
 
                 if (itemQuestion != undefined) {
-                    window.log("SEND: QUIZ QUESTION PREAMBLE to " + itemPhone.chatId + " question.preamble[]: " + itemQuestion.preamble);
-                    //response = response.concat('\n\n', itemQuestion.preamble);
-                    window.log("DEBUG: RESPONSE:" + response);
-                    WAPI.sendMessage2(itemPhone.chatId, itemQuestion.preamble.toString());
+                    if (itemQuiz.preamble != undefined) {
+                        window.log("SEND: QUIZ QUESTION PREAMBLE to " + itemPhone.chatId + " question.preamble[]: " + itemQuestion.preamble);
+                        response = itemQuestion.preamble.toString();
+		        response = quizFillName(itemPhone, response);
+                        response = quizFillCorrectReplies(itemPhone, response);
+                        response = quizFillIncorrectReplies(itemPhone, response);
+                        window.log("DEBUG: RESPONSE:" + response);
+                        WAPI.sendMessage2(itemPhone.chatId, response);
+		    }
                     window.log("SEND: QUIZ QUESTION TEXT to " + itemPhone.chatId + " question.text: " + itemQuestion.text);
                     //response = response.concat('\n\n', itemQuestion.text);
                     WAPI.sendMessage2(itemPhone.chatId, itemQuestion.text.toString());
                     // window.log("DEBUG: RESPONSE:" + response);
+                    response = "";
                     var itemAnswer = itemQuestion.answer.forEach(o => {
                         if (o.text != undefined) {
                              window.log("DEBUG: ANSWER -> " + o.text);
                              response = response.concat('\n', o.text);
                         }
                     });
+                    WAPI.sendMessage2(itemPhone.chatId, response);
                 } else {
                     window.log("DEBUG: No unanswered questions found.");
                     if (itemQuiz.postamble != undefined) {
-                        var name = itemPhone.contact.pushname;
-                        if (name == undefined) name = itemPhone.contact.name;
-                        window.log("DEBUG: name = " + name);
-		        var mixed = itemQuiz.postamble.toString().replace('#name', name);
-                        var correctReplies = itemQuiz.question.filter(o => o.reply.isCorrect == true);
-                        var incorrectReplies = itemQuiz.question.filter(o => o.reply.isCorrect == false);
-		        var mixed = mixed.replace('#correct_replies', correctReplies.length);
-                        window.log("DEBUG: correctReplies.length = " + correctReplies.length);
-		        var mixed = mixed.replace('#incorrect_replies', incorrectReplies.length);
-                        window.log("DEBUG: incorrectReplies.length = " + incorrectReplies.length);
-		        var mixed = mixed.replace('#questions', itemQuiz.question.length);
-                        window.log("DEBUG: itemQuiz.question.length = " + itemQuiz.question.length);
-                        window.log("DEBUG: mixed = " + mixed);
-                        window.log("SEND: QUIZ POSTAMBLE to " + itemPhone.chatId + " quiz.postamble[]: " + mixed);
+		        response = quizFillName(itemPhone, itemQuiz.postamble.toString());
+                        response = quizFillCorrectReplies(itemPhone, response);
+                        response = quizFillIncorrectReplies(itemPhone, response);
+		        response = response.replace('#questions', itemQuiz.question.length);
+                        window.log("SEND: QUIZ POSTAMBLE to " + itemPhone.chatId + " quiz.postamble[]: " + response);
                         // response = response.concat('\n\n', mixed);
-                        WAPI.sendMessage2(itemPhone.chatId, mixed);
+                        WAPI.sendMessage2(itemPhone.chatId, response);
                     }
                     // Quiz complete. Mark as so.
                     itemQuiz.isCompleted = true;
                 }
 
                 putStoreFile(itemPhone.chatId, JSON.stringify(itemPhone, null, 4));
-                window.log('DEBUG: chatIdStore updated for '+ itemPhone.chatId);
-                window.log('FINAL SEND:\n' + response);
-                if (KnownChatIds.includes(message.chatId._serialized) && response.length > 0) {
-                    WAPI.sendMessage2(itemPhone.chatId, response);
-                }
+                //window.log('DEBUG: chatIdStore updated for '+ itemPhone.chatId);
+                //window.log('FINAL SEND:\n' + response);
+                //if (KnownChatIds.includes(message.chatId._serialized) && response.length > 0) {
+                //    WAPI.sendMessage2(itemPhone.chatId, response);
+                //}
             }
 
             // --- QUIZ END ---
