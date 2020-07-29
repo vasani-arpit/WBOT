@@ -79,14 +79,14 @@
 					"response": "Wrong answer, It is the year the virus was first encountered: 2019"
 				},
 				{
-					"isCorrect": true,
+					"isCorrect": false,
 					"text": "🔸2. It is the 19th coronavirus identified since the WHO began naming them",
 					"exact": [""],
 					"contains": ["2","19th"],
 					"response": "Wrong answer, It is the year the virus was first encountered: 2019"
 				},
 				{
-					"isCorrect": false,
+					"isCorrect": true,
 					"text": "🔸3. It is the year the virus was first encountered: 2019",
 					"exact": [""],
 					"contains": ["3","year","2019"],
