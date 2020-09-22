@@ -106,7 +106,7 @@ Array of numbers with county code to which this bot will not reply to.
 
 Default reply message or [spintax](https://spintaxtool.appspot.com/) when no exact match found in BOT
 
-**smartreply**
+**smartreply** *(This feature is under maintenance at the moment.)*
 
 An object which contains suggestions and it's configs.
 
