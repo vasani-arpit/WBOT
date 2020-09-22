@@ -10,6 +10,8 @@ var argv = require('yargs').argv;
 var rev = require("./detectRev");
 var constants = require("./constants");
 var configs = require("../bot");
+var settings = require('./settings');
+var fs = require("fs");
 
 //console.log(ps);
 
@@ -105,7 +107,19 @@ async function Main() {
             spinner.stop("Opening Whatsapp ... done!");
             page.exposeFunction("log", (message) => {
                 console.log(message);
-            })
+            });
+
+            // When the settings file is edited multiple calls are sent to function. This will help
+            // to prevent from getting corrupted settings data
+            let timeout = 5000;
+            
+            // Register a filesystem watcher
+            fs.watch(constants.BOT_SETTINGS_FILE, (event, filename) => {
+                setTimeout(()=> {
+                    settings.LoadBotSettings(event, filename, page);
+                }, timeout);
+            });
+
             page.exposeFunction("getFile", utils.getFileInBase64);
             page.exposeFunction("resolveSpintax", spintax.unspin);
         }

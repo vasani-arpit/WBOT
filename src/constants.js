@@ -26,3 +26,8 @@ this.DEFAULT_CHROMIUM_ARGS = [
     "--num-raster-threads=1",
 ];
 this.DEFAULT_DATA_DIR = path.join(process.cwd(), "chromium-data");
+
+/**
+ * Name of the file that stores bot configuration
+ */
+this.BOT_SETTINGS_FILE = "bot.json";
