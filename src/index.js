@@ -72,6 +72,7 @@ async function Main() {
         extraArguments.userDataDir = constants.DEFAULT_DATA_DIR;
         const browser = await puppeteer.launch({
             executablePath: revisionInfo.executablePath,
+            defaultViewport: null,
             headless: appconfig.appconfig.headless,
             userDataDir: path.join(process.cwd(), "ChromeSession"),
             devtools: false,
