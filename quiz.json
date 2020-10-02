@@ -5,309 +5,92 @@
         "webhook":"http://localhost:3000/api/incoming-webhook"
     },
     "quiz": {
-	"id":"Covid Quiz 1",
+	"id":"Pearl001",
 	"active": true,
-	"preamble": ["Hello #name!\nI hope you are feeling fine.\n Welcome to the quiz.\nLet me ask you some questions.\nSelect your answer by texting the number you think is correct."],
-	"postamble": ["Well done. You answered #correct_replies correctly out of #questions questions."],
+	"preamble": ["Hello #name! I’m Pearl.\nWelcome to the Quiz for episode 1 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."],
+	"postamble": ["The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes.\nPlease contact me again. Yours, Pearl."],
 	"question": [
 		{
 			"preamble": [""],
-			"postamble": [""],
-			"text": ["➡What is a virus?"],
+			"postamble": ["Let me ask you the next question."],
+			"text": ["➡How long should one quarantine, when tested positive?"],
 			"answer":    [
 				{
 					"isCorrect": false,
-					"text": "🔸1. A microscopic, single-celled organism.",
-					"exact": [""],
-					"contains": ["1","microscopic","single-celled"],
-					"response": "You are wrong. A sub-microscopic infectious agent that replicates only inside the living cells of an organism"
-				},
-				{
-					"isCorrect": true,
-					"text": "🔸2. A sub-microscopic infectious agent that replicates only inside the living cells of an organism",
-					"exact": [""],
-					"contains": ["2","agent","infectious"],
-					"response": "You are right. A sub-microscopic infectious agent that replicates only inside the living cells of an organism"
-				},
-				{
-					"isCorrect": false,
-					"text": "🔸3. A multicellular organism with chlorophyll as its primary photosynthetic pigment",
-					"exact": [""],
-					"contains": ["3","multicellular","chlorophyll","pigment"],
-					"response": "No, that's a plant! A virus is a sub-microscopic infectious agent that replicates only inside the living cells of an organism"
-				}
-			]
-		},
-		{
-			"preamble": [""],
-			"postamble": [""],
-			"text": ["➡What is the official name of the virus as designated by the World Health Organization (WHO)?"],
-			"answer":    [
-				{
-					"isCorrect": true,
-					"text": ["🔸1. SARS-CoV-2"],
-					"exact": [""],
-					"contains": ["1","Sars-CoV-2"],
-					"response": "You are right. It is Sars-CoV-2."
-				},
-				{
-					"isCorrect": false,
-					"text": "🔸2. Covid-19",
-					"exact": [""],
-					"contains": ["2","Covid"],
-					"response": "That's not right. It is Sars-CoV-2."
-				},
-				{
-					"isCorrect": false,
-					"text": "🔸3. Corona Virus",
-					"exact": [""],
-					"contains": ["3","Corona","Virus"],
-					"response": "That's not correct. It is Sars-CoV-2."
-				}
-			]
-		},
-		{
-			"preamble": [""],
-			"postamble": [""],
-			"text": ["➡What does the 19 in Covid-19 stand for?"],
-			"answer":    [
-				{
-					"isCorrect": false,
-					"text": "🔸1. It refers to the 19 molecules that make up the virus",
-					"exact": [""],
-					"contains": ["1","molecules"],
-					"response": "Wrong answer, It is the year the virus was first encountered: 2019"
-				},
-				{
-					"isCorrect": false,
-					"text": "🔸2. It is the 19th coronavirus identified since the WHO began naming them",
-					"exact": [""],
-					"contains": ["2","19th"],
-					"response": "Wrong answer, It is the year the virus was first encountered: 2019"
-				},
-				{
-					"isCorrect": true,
-					"text": "🔸3. It is the year the virus was first encountered: 2019",
-					"exact": [""],
-					"contains": ["3","year","2019"],
-					"response": "Right, It is the year the virus was first encountered: 2019"
-				}
-			]
-		},
-		{
-			"preamble": ["Well done! #correct_replies of your answers are correct and #incorrect_replies are not correct\nKeep going to improve your score ..."],
-			"text": ["➡About what percentage of infected people recover without needing hospital treatment according to the World Health Organisation website?"],
-			"answer":    [
-				{
-					"isCorrect": false,
-					"text": "🔸1. 60%",
-					"exact": [""],
-					"contains": ["1","60"],
-					"response": "No. It is 80%"
-				},
-				{
-					"isCorrect": false,
-					"text": "🔸2. 70%",
-					"exact": [""],
-					"contains": ["2","70"],
-					"response": "No. It is 80%"
-				},
-				{
-					"isCorrect": true,
-					"text": "🔸3. 80%",
-					"exact": [""],
-					"contains": ["3","80"],
-					"response": "Yes, 80% is correct"
-				}
-			]
-		},
-		{
-			"preamble": [""],
-			"text": ["➡Which of these is NOT listed by the WHO as a symptom of coronavirus?"],
-			"answer":    [
-				{
-					"isCorrect": false,
-					"text": "🔸1. Fever",
-					"exact": [""],
-					"contains": ["1","fever"],
-					"response": "Wrong, blurred vision is not listed"
-				},
-				{
-					"isCorrect": false,
-					"text": "🔸2. Dry Cough",
-					"exact": [""],
-					"contains": ["2","dry","cough"],
-					"response": "Wrong, blurred vision is not listed"
-				},
-				{
-					"isCorrect": true,
-					"text": "🔸3. Blurred Vision",
-					"exact": [""],
-					"contains": ["3","blurred", "vision"],
-					"response": "Yes, blurred vision is not listed"
-				}
-			]
-		},
-		{
-			"preamble": [""],
-			"postamble": [],
-			"text": ["➡What is more effective at removing the coronavirus from your hands?"],
-			"answer":    [
-				{
-					"isCorrect": false,
-					"text": "🔸1. Alcohol-based hand sanitiser",
-					"exact": [""],
-					"contains": ["1","alcohol", "hand", "sanitiser"],
-					"response": "Nope, it is soap and water"
-				},
-				{
-					"isCorrect": true,
-					"text": "🔸2. Soap and Water",
-					"exact": [""],
-					"contains": ["2","soap","water"],
-					"response": "You are right, it is soap and water"
-				},
-				{
-					"isCorrect": false,
-					"text": "🔸3. Sand",
-					"exact": [""],
-					"contains": ["3","sand"],
-					"response": "Nope, it is soap and water"
-				}
-			]
-		},
-		{
-			"preamble": [""],
-			"text": ["➡How big is the coronavirus?"],
-			"answer":    [
-				{
-					"isCorrect": false,
-					"text": "🔸1. 8 billionths of a metre in diameter",
+					"text": "🔸1. When tested positive, you self quarantine until you feel better.",
 					"exact": [""],
 					"contains": ["1"],
-					"response": "Wrong! It is 80 billionths of a metre in diameter"
+					"response": "Not quite correct. Very sorry. But you must quarantine for 14 days to not spread the virus to anyone else."
 				},
 				{
 					"isCorrect": true,
-					"text": "🔸2. 80 billionths of a metre in diameter",
+					"text": "🔸2. When tested positive, it is advisable to quarantine for 14 days and to take another test to confirm that you are negative.",
 					"exact": [""],
 					"contains": ["2"],
-					"response": "That's the one: It is 80 billionths of a metre in diameter"
+					"response": "Correct. If you follow this rule, you will help with eliminating the virus and a pandemic."
 				},
 				{
 					"isCorrect": false,
-					"text": "🔸3. 800 billionths of a metre in diameter",
-					"exact": [""],
-					"contains": ["3","800"],
-					"response": "Wrong! It is 80 billionths of a metre in diameter"
-				}
-			]
-		},
-		{
-			"preamble": ["Well done! #correct_replies of your answers are correct and #incorrect_replies are not correct.\nKeep going to improve your score ..."],
-			"text": ["➡What does the virus attach itself to when it enters the human body?"],
-			"answer":    [
-				{
-					"isCorrect": false,
-					"text": "🔸1. Antigens",
-					"exact": [""],
-					"contains": ["1","antigens"],
-					"response": "You are wrong, it is Ace-2 receptors in the lining of the airways"
-				},
-				{
-					"isCorrect": false,
-					"text": "🔸2. Red Blood Cells",
-					"exact": [""],
-					"contains": ["2","red","blood","cells"],
-					"response": "You are wrong, it is Ace-2 receptors in the lining of the airways"
-				},
-				{
-					"isCorrect": true,
-					"text": "🔸3. Ace-2 receptors in the lining of the airways",
-					"exact": [""],
-					"contains": ["3","Ace-2","receptors"],
-					"response": "Correct, it is Ace-2 receptors in the lining of the airways"
-				}
-			]
-		},
-		{
-			"preamble": [""],
-			"text": ["➡Which organ in the body does this coronavirus primarily attack?"],
-			"answer":    [
-				{
-					"isCorrect": true,
-					"text": "🔸1. Lungs",
-					"exact": [""],
-					"contains": ["1","lungs"],
-					"response": "Yes, the lungs"
-				},
-				{
-					"isCorrect": false,
-					"text": "🔸2. Liver",
-					"exact": [""],
-					"contains": ["2","liver"],
-					"response": "No, it is the lungs"
-				},
-				{
-					"isCorrect": true,
-					"text": "🔸3. Heart",
-					"exact": [""],
-					"contains": ["3","heart"],
-					"response": "No, it is the lungs"
-				}
-			]
-		},
-		{
-			"preamble": [""],
-			"text": ["➡What is the R number?"],
-			"answer":    [
-				{
-					"isCorrect": false,
-					"text": "🔸1. The percentage of confirmed coronavirus cases that lead to death",
-					"exact": [""],
-					"contains": ["1"],
-					"response": "No that is the mortality rate. R is the average number of people to whom one infected person will pass on the virus"
-				},
-				{
-					"isCorrect": false,
-					"text": "🔸2. The percentage of the population that has been tested for the coronavirus",
-					"exact": [""],
-					"contains": ["2"],
-					"response": "Actually, no. The R is the average number of people to whom one infected person will pass on the virus"
-				},
-				{
-					"isCorrect": true,
-					"text": "🔸3. The average number of people to whom one infected person will pass on the virus",
+					"text": "🔸3. When tested positive, you don't quarantine, provided you have a mask and keep social distance from others.",
 					"exact": [""],
 					"contains": ["3"],
-					"response": "Yes, R is the average number of people to whom one infected person will pass on the virus"
+					"response": "If you have been tested positive you really must stay away from people for 14 days."
 				}
 			]
 		},
 		{
-			"preamble": ["This is not the first widespread coronavirus encountered by humans."],
-			"text": ["➡Which below is NOT a type of coronavirus?"],
+			"preamble": [""],
+			"postamble": ["Let me ask you the next question."],
+			"text": ["➡How long is one immune after showing signs of Covid-19?"],
+			"answer":    [
+				{
+					"isCorrect": true,
+					"text": ["🔸1. Current research shows that one is immune up to 3 months after being tested positive. Which means that people who just had the disease are probably the safest people to be around with."],
+					"exact": [""],
+					"contains": ["1"],
+					"response": "Correct."
+				},
+				{
+					"isCorrect": false,
+					"text": "🔸2. Research in Switzerland has proven that one has life-long immunity to the disease",
+					"exact": [""],
+					"contains": ["2"],
+					"response": "Absolutely not true. Fake news."
+				},
+				{
+					"isCorrect": false,
+					"text": "🔸3. There is no immunization. You can get COVID-19 immediately after you recover.",
+					"exact": [""],
+					"contains": ["3"],
+					"response": "There is a proven immunity of three months after having recovered from Covid-19."
+				}
+			]
+		},
+		{
+			"preamble": [""],
+			"postamble": ["The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes."],
+			"text": ["➡Why are there so many cases of stigmatization with Covid-19? Again, please answer by typing the number of the correct answer."],
 			"answer":    [
 				{
 					"isCorrect": false,
-					"text": ["🔸1. Severe Acute Respiratory Syndrome (SARS)"],
+					"text": "🔸1. Because some people who are infected will purposely transmit it to cause harm to others.",
 					"exact": [""],
-					"contains": ["1","SARS"],
-					"response": "No, it is Ebola"
+					"contains": ["1"],
+					"response": "No. And we sincerely hope that people are not like this. The virus is stigmatized because we know so little about it."
 				},
 				{
 					"isCorrect": false,
-					"text": "🔸2. Middle East Respiratory Syndrome (MERS)",
+					"text": "🔸2. Because it is a disease that was man-made in a laboratory.",
 					"exact": [""],
-					"contains": ["2","middle","east"],
-					"response": "No, it is Ebola"
+					"contains": ["2"],
+					"response": "Absolutely not true. Fake news."
 				},
 				{
 					"isCorrect": true,
-					"text": "🔸3. Ebola",
+					"text": "🔸3. Because there are so many unknowns about the virus: it is a new virus that has no vaccine yet, it spreads fast and affects public life.",
 					"exact": [""],
-					"contains": ["3","ebola"],
-					"response": "Ebola is correct."
+					"contains": ["3"],
+					"response": "Correct."
 				}
 			]
 		}
