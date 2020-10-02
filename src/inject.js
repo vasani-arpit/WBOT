@@ -102,28 +102,28 @@ quizResults = function (ChatID, CompletedQuestions) { // note Quiz will always b
     }
 }
 
-var testChatID = "491704552266@c.us";
-var testGroupID = "491704552266-1588096294@g.us";
-
-window.log("TEST: chatIdStore:" + chatIdStore);
-var testPhone = chatIdStore.chat.find(o => o.chatId == testChatID);
-var testGroup = chatIdStore.chat.find(o => o.chatId == testGroupID);
-window.log("TEST: testPhone: " + testPhone);
-
-window.log("TEST: quizFillName: " + quizFillName(testPhone, "My name is #name"));
-
-//var testQuiz = testPhone.quiz.find(r => r.id === interaction.quiz.id);
-//var testQuestions = testQuiz.question.filter(o => o.isCompleted == true);
-var testPhoneCompletedQuestions = (testPhone.quiz.find(r => r.id === interaction.quiz.id)).question.filter(o => o.isCompleted == true);
-var testGroupCompletedQuestions = (testGroup.quiz.find(r => r.id === interaction.quiz.id)).question.filter(o => o.isCompleted == true);
-
-window.log("TEST: testPhoneCQ: " + testPhoneCompletedQuestions.length + "testGroupCQ: " + testGroupCompletedQuestions.length);
-//window.log("TEST: testPhoneCompletedQuestions: " + JSON.stringify(testPhoneCompletedQuestions, null, 2));
-window.log("TEST: testPhone quizResults against testPhoneCompleted: " + quizResults(testPhone, testPhoneCompletedQuestions));
-window.log("TEST: testPhone quizResults against testGroupCompleted: " + quizResults(testPhone, testGroupCompletedQuestions));
-window.log("TEST: testGroup quizResults against testGroupCompleted: " + quizResults(testGroup, testGroupCompletedQuestions));
-window.log("TEST: testGroup quizResults against testPhoneCompleted: " + quizResults(testGroup, testPhoneCompletedQuestions));
-//window.log("TEST: testGroup quizResults: " + quizResults(testGroup));
+//var testChatID = "491704552266@c.us";
+//var testGroupID = "491704552266-1588096294@g.us";
+//
+//window.log("TEST: chatIdStore:" + chatIdStore);
+//var testPhone = chatIdStore.chat.find(o => o.chatId == testChatID);
+//var testGroup = chatIdStore.chat.find(o => o.chatId == testGroupID);
+//window.log("TEST: testPhone: " + testPhone);
+//
+//window.log("TEST: quizFillName: " + quizFillName(testPhone, "My name is #name"));
+//
+////var testQuiz = testPhone.quiz.find(r => r.id === interaction.quiz.id);
+////var testQuestions = testQuiz.question.filter(o => o.isCompleted == true);
+//var testPhoneCompletedQuestions = (testPhone.quiz.find(r => r.id === interaction.quiz.id)).question.filter(o => o.isCompleted == true);
+//var testGroupCompletedQuestions = (testGroup.quiz.find(r => r.id === interaction.quiz.id)).question.filter(o => o.isCompleted == true);
+//
+//window.log("TEST: testPhoneCQ: " + testPhoneCompletedQuestions.length + "testGroupCQ: " + testGroupCompletedQuestions.length);
+////window.log("TEST: testPhoneCompletedQuestions: " + JSON.stringify(testPhoneCompletedQuestions, null, 2));
+//window.log("TEST: testPhone quizResults against testPhoneCompleted: " + quizResults(testPhone, testPhoneCompletedQuestions));
+//window.log("TEST: testPhone quizResults against testGroupCompleted: " + quizResults(testPhone, testGroupCompletedQuestions));
+//window.log("TEST: testGroup quizResults against testGroupCompleted: " + quizResults(testGroup, testGroupCompletedQuestions));
+//window.log("TEST: testGroup quizResults against testPhoneCompleted: " + quizResults(testGroup, testPhoneCompletedQuestions));
+////window.log("TEST: testGroup quizResults: " + quizResults(testGroup));
 
 WAPI.waitNewMessages(false, async (data) => {
     for (let i = 0; i < data.length; i++) {
