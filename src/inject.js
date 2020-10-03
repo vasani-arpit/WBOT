@@ -65,7 +65,8 @@ WAPI.waitNewMessages(false, async (data) => {
             WAPI.sendMessage2(message.chatId._serialized, response);
             console.log();
             if ((exactMatch || PartialMatch).file != undefined) {
-                window.getFile((exactMatch || PartialMatch).file).then((base64Data) => {
+                files = await resolveSpintax((exactMatch || PartialMatch).file);
+                window.getFile(files).then((base64Data) => {
                     //console.log(file);
                     WAPI.sendImage(base64Data, message.chatId._serialized, (exactMatch || PartialMatch).file);
                 }).catch((error) => {
