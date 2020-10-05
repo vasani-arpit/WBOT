@@ -133,6 +133,13 @@ node src/index.js
 
 If you run Linux on a headless server or wan't to run chmomium without visible display try ```xvfb-run wbot-linux```.
 
+## Known bugs
+Sometimes, closing the `node` server directly does not clear browser cache. Next time when the bot is started, it runs into errors due to which smart reply is not setup correctly. A temporary fix to this is to clear `node` cache.
+
+```java-script 
+npm cache clean
+```
+
 
 ## 💻 Technologies
 * [Node](https://nodejs.org/en/)
