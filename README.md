@@ -128,6 +128,7 @@ Now download and run the latest code from github by:
 ```
 git clone https://github.com/vasani-arpit/WBOT.git
 cd WBOT
+npm install
 node src/index.js
 ```
 
