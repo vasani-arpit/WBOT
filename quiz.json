@@ -7,7 +7,7 @@
     "quiz": {
 	"id":"Pearl001",
 	"active": true,
-	"preamble": ["Hello #name! I’m Pearl.\nWelcome to the Quiz for episode 1 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."],
+	"preamble": ["Hello #name! I’m Pearl.\nWelcome to the quiz for episode 1 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."],
 	"postamble": ["The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes.\nPlease contact me again. Yours, Pearl."],
 	"question": [
 		{
