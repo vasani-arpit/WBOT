@@ -7,41 +7,8 @@
     "bot": [
         {
             "contains": [],
-            "exact": ["hi"],
-            "response": "{hello|howdy}"
-        },
-        {
-             "contains": ["corona","virus","covid","epidemic","pandemic"],
-             "exact": [""],
-             "response": "{I am a bot. Computer viruses frighten me.|Don't be frightened. Take a deep breath and stay safe.}"
-        },
-        {
-            "contains": [],
-            "exact": ["url","isla"],
-            "response": "http://radioislanegra.cl/"
-        },
-        {
-            "contains": [],
-            "exact": ["music"],
-            "response": "Let's play!",
-            "file":"music.mp3"
-        },
-        {
-            "contains": [],
-            "exact": ["hello"],
-            "response": "hi",
-            "file":"noFile.png"
-        },
-        {
-            "contains": [],
-            "exact": ["hy"],
-            "response": "hi",
-            "file":"github.png"
-        },
-        {
-            "contains": [],
-            "exact": ["how are you"],
-            "response": "i am {good {thanks| thank you}|great}. How about you?"
+            "exact": ["how are you?"],
+            "response": "I am {good {thanks| thank you}|great}. How about you?"
         },
         {
             "contains": [],
