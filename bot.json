@@ -7,13 +7,18 @@
     "bot": [
         {
             "contains": [],
+            "exact": ["hi","hello"],
+            "response": ""
+        },
+        {
+            "contains": [],
             "exact": ["how are you?"],
             "response": "I am {good {thanks| thank you}|great}. How about you?"
         },
         {
             "contains": [],
             "exact": ["script 1", "s 1", "script1","s1"],
-            "response": "Listen to The Pearl Episode 1",
+            "response": "Read The Pearl Episode 1",
             "file":"MiCT_ThePearl_Episode_001_ScriptENG.pdf"
         },
         {
@@ -24,7 +29,7 @@
         }
     ],
     "blocked": [],
-    "noMatch":"{}",
+    "noMatch":"The pearl has many hidden treasures.\nTo listen to the first episode, type\n➡audio 1\nTo read the script, type\n➡script 1",
     "smartreply":{
         "suggestions":[],
         "clicktosend":true
