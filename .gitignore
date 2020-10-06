@@ -62,4 +62,3 @@ typings/
 ChromeSession*
 win*
 chromium-data
-package-lock.json
