@@ -1,6 +1,6 @@
 {
   "name": "wbot",
-  "version": "0.14.0",
+  "version": "0.14.1",
   "description": "A simple whatsapp reply bot using puppeteer.",
   "main": "src/index.js",
   "scripts": {
@@ -27,7 +27,7 @@
     ]
   },
   "author": "Arpit Vasani",
-  "license": "ISC",
+  "license": "SEE LICENSE IN LICENSE.md",
   "bugs": {
     "url": "https://github.com/vasani-arpit/WBOT/issues"
   },
