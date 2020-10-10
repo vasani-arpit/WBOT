@@ -83,7 +83,7 @@ if($message == 'hi')
     {
         "headless": false,
         "isGroupReply":false,
-        "webhook":"http://url-to-folder/filename.php"
+        "webhook":"http://url-where-php-server-is-on/filename.php"
     }
 }
 ```
