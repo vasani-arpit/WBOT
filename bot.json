@@ -71,7 +71,7 @@
     "blocked": [],
     "noMatch":"{🤔|👍}",
     "smartreply":{
-        "suggestions":[],
+        "suggestions":["Hello", "Welcome to my store !!", "Thanks for reaching out 🙏"],
         "clicktosend":true
     }
 }
