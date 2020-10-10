@@ -180,14 +180,14 @@ async function Main() {
                     }
                 }
             });
-            observer.observe(document.querySelector('.app'), { attributes: false, childList: true, subtree: true });
+            observer.observe(document.querySelector('#app'), { attributes: false, childList: true, subtree: true });
         `);
         spinner.stop("setting up smart reply ... done!");
         page.waitForSelector("#main", { timeout: 0 }).then(async () => {
             await page.exposeFunction("sendMessage", async message => {
                 return new Promise(async (resolve, reject) => {
                     //send message to the currently open chat using power of puppeteer 
-                    await page.type("div.selectable-text[data-tab]", message);
+                    await page.type("#main div.selectable-text[data-tab]", message);
                     if (configs.smartreply.clicktosend) {
                         await page.click("#main > footer > div.copyable-area > div:nth-child(3) > button");
                     }
