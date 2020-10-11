@@ -17,19 +17,73 @@
         },
         {
             "contains": [],
+            "exact": ["quiz 1", "q 1", "quiz1","q1"],
+            "response": "Do the The Pearl Episode 1 Quiz",
+            "quiz":"Pearl001"
+        },
+        {
+            "contains": [],
             "exact": ["script 1", "s 1", "script1","s1"],
             "response": "Read The Pearl Episode 1",
             "file":"MiCT_ThePearl_Episode_001_ScriptENG.pdf"
         },
         {
             "contains": [],
+            "exact": ["script 2", "s 2", "script2","s2"],
+            "response": "Read The Pearl Episode 2",
+            "file":"MiCT_ThePearl_Episode_002_ScriptENG.pdf"
+        },
+        {
+            "contains": [],
+            "exact": ["script 3", "s 3", "script3","s3"],
+            "response": "Read The Pearl Episode 3",
+            "file":"MiCT_ThePearl_Episode_003_ScriptENG.pdf"
+        },
+        {
+            "contains": [],
+            "exact": ["script 4", "s 4", "script4","s4"],
+            "response": "Read The Pearl Episode 4",
+            "file":"MiCT_ThePearl_Episode_004_ScriptENG.pdf"
+        },
+        {
+            "contains": [],
+            "exact": ["script 5", "s 5", "script5","s5"],
+            "response": "Read The Pearl Episode 5",
+            "file":"MiCT_ThePearl_Episode_005_ScriptENG.pdf"
+        },
+        {
+            "contains": [],
             "exact": ["audio 1", "a 1", "audio1","a1"],
             "response": "Listen to The Pearl Episode 1",
             "file":"MiCT_ThePearl_Episode_001_AudioENG.mp3"
+        },
+        {
+            "contains": [],
+            "exact": ["audio 2", "a 2", "audio2","a2"],
+            "response": "Listen to The Pearl Episode 2",
+            "file":"MiCT_ThePearl_Episode_002_AudioENG.mp3"
+        },
+        {
+            "contains": [],
+            "exact": ["audio 3", "a 3", "audio3","a3"],
+            "response": "Listen to The Pearl Episode 3",
+            "file":"MiCT_ThePearl_Episode_003_AudioENG.mp3"
+        },
+        {
+            "contains": [],
+            "exact": ["audio 4", "a 4", "audio4","a4"],
+            "response": "Listen to The Pearl Episode 4",
+            "file":"MiCT_ThePearl_Episode_004_AudioENG.mp3"
+        },
+        {
+            "contains": [],
+            "exact": ["audio 5", "a 5", "audio5","a5"],
+            "response": "Listen to The Pearl Episode 5",
+            "file":"MiCT_ThePearl_Episode_005_AudioENG.mp3"
         }
     ],
     "blocked": [],
-    "noMatch":"The pearl has many hidden treasures.\nTo listen to the first episode, type\n➡audio 1\nTo read the script, type\n➡script 1",
+    "noMatch":"The pearl has many hidden treasures.\nTo listen to the first episode, type\n➡audio 1\nThe second episode\n➡audio 2\nTo read the script, type\n➡script 1",
     "smartreply":{
         "suggestions":[],
         "clicktosend":true
