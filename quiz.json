@@ -5,92 +5,92 @@
         "webhook":"http://localhost:3000/api/incoming-webhook"
     },
     "quiz": {
-	"id":"Pearl001",
+	"id":"Pearl003",
 	"active": true,
-	"preamble": ["Hello #name! I’m Pearl.\nWelcome to the quiz for episode 1 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."],
+	"preamble": ["Hello #name! I’m Pearl.\nWelcome to the quiz for episode 3 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."],
 	"postamble": ["The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes.\nPlease contact me again. Yours, Pearl."],
 	"question": [
 		{
 			"preamble": [""],
 			"postamble": ["Let me ask you the next question."],
-			"text": ["➡How long should one quarantine, when tested positive?"],
+			"text": ["➡ Which of the following statements is fake news:"],
 			"answer":    [
 				{
-					"isCorrect": false,
-					"text": "🔸1. When tested positive, you self quarantine until you feel better.",
+					"isCorrect": true,
+					"text": "🔸1. Coronavirus spreads through secondhand clothes.",
 					"exact": [""],
 					"contains": ["1"],
-					"response": "Not quite correct. Very sorry. But you must quarantine for 14 days to not spread the virus to anyone else."
+					"response": "Coronavirus does not spread through secondhand clothes. When you buy them, wear a mask and use hand sanitizer as in any social transaction. And by the way, all the statements were incorrect."
 				},
 				{
 					"isCorrect": true,
-					"text": "🔸2. When tested positive, it is advisable to quarantine for 14 days and to take another test to confirm that you are negative.",
+					"text": "🔸2. Uganda´s climate is too hot. The Coronavirus cannot spread.",
 					"exact": [""],
 					"contains": ["2"],
-					"response": "Correct. If you follow this rule, you will help with eliminating the virus and a pandemic."
+					"response": "The spread of Corona virus is not climate related. And by the way, all the statements were incorrect."
 				},
 				{
-					"isCorrect": false,
-					"text": "🔸3. When tested positive, you don't quarantine, provided you have a mask and keep social distance from others.",
+					"isCorrect": true,
+					"text": "🔸3. A mixture of garlic and honey (and if not at hand drinking cow urine) are the best remedies against getting infected with Corona.",
 					"exact": [""],
 					"contains": ["3"],
-					"response": "If you have been tested positive you really must stay away from people for 14 days."
+					"response": "There is no magic cure against Corona. Keep social distancing, wear a face mask and use hand sanitizer. And by the way, all the statements were incorrect."
 				}
 			]
 		},
 		{
 			"preamble": [""],
 			"postamble": ["Let me ask you the next question."],
-			"text": ["➡How long is one immune after showing signs of Covid-19?"],
+			"text": ["➡How can you fight fake news?"],
 			"answer":    [
 				{
 					"isCorrect": true,
-					"text": ["🔸1. Current research shows that one is immune up to 3 months after being tested positive. Which means that people who just had the disease are probably the safest people to be around with."],
+					"text": ["🔸1. Join the resistance and don’t spread junkmail."],
 					"exact": [""],
 					"contains": ["1"],
-					"response": "Correct."
+					"response": "All the answers are correct. Don’t let fake news wear you down."
 				},
 				{
 					"isCorrect": false,
-					"text": "🔸2. Research in Switzerland has proven that one has life-long immunity to the disease",
+					"text": "🔸2. Diversify your information sources.",
 					"exact": [""],
 					"contains": ["2"],
-					"response": "Absolutely not true. Fake news."
+					"response": "All the answers are correct. Don’t let fake news wear you down."
 				},
 				{
 					"isCorrect": false,
-					"text": "🔸3. There is no immunization. You can get COVID-19 immediately after you recover.",
+					"text": "🔸3. Refer to authorized sources like the WHO when checking on health issues.",
 					"exact": [""],
 					"contains": ["3"],
-					"response": "There is a proven immunity of three months after having recovered from Covid-19."
+					"response": "All the answers are correct. Don’t let fake news wear you down."
 				}
 			]
 		},
 		{
 			"preamble": [""],
 			"postamble": ["The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes."],
-			"text": ["➡Why are there so many cases of stigmatization with Covid-19? Again, please answer by typing the number of the correct answer."],
+			"text": ["➡Who must undergo a Covid-19 test for Ush 240.000?"],
 			"answer":    [
 				{
 					"isCorrect": false,
-					"text": "🔸1. Because some people who are infected will purposely transmit it to cause harm to others.",
+					"text": "🔸1. Schoolchildren who will go back to school.",
 					"exact": [""],
 					"contains": ["1"],
-					"response": "No. And we sincerely hope that people are not like this. The virus is stigmatized because we know so little about it."
+					"response": "Schoolchildren must only get tested if they have been in contact with someone tested positive and want to continue going to school. If the test turns out positive, they must quarantine. If negative, they can go back to school. Answer 3 is correct."
 				},
 				{
 					"isCorrect": false,
-					"text": "🔸2. Because it is a disease that was man-made in a laboratory.",
+					"text": "🔸2. Any aged person over 65 years.",
 					"exact": [""],
 					"contains": ["2"],
-					"response": "Absolutely not true. Fake news."
+					"response": "Elderly people must only get tested if they have been in contact with someone tested positive. If the test turns out positive, they must quarantine. Answer 3 is correct."
 				},
 				{
 					"isCorrect": true,
-					"text": "🔸3. Because there are so many unknowns about the virus: it is a new virus that has no vaccine yet, it spreads fast and affects public life.",
+					"text": "🔸3. Citizens returning form abroad.",
 					"exact": [""],
 					"contains": ["3"],
-					"response": "Correct."
+					"response": "Truck drivers, individuals seeking to know their status, citizens returning from abroad, organisations seeking to test their staff and visitors arriving into the country must undertake the test."
 				}
 			]
 		}
