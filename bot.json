@@ -21,6 +21,30 @@
             "response": "Do the The Pearl Episode 1 Quiz",
             "quiz":"Pearl001"
         },
+       {
+            "contains": [],
+            "exact": ["quiz 2", "q 2", "quiz2","q2"],
+            "response": "Do the The Pearl Episode 2 Quiz",
+            "quiz":"Pearl002"
+        },
+       {
+            "contains": [],
+            "exact": ["quiz 3", "q 3", "quiz3","q3"],
+            "response": "Do the The Pearl Episode 3 Quiz",
+            "quiz":"Pearl003"
+        },
+       {
+            "contains": [],
+            "exact": ["quiz 4", "q 4", "quiz4","q4"],
+            "response": "Do the The Pearl Episode 4 Quiz",
+            "quiz":"Pearl004"
+        },
+       {
+            "contains": [],
+            "exact": ["quiz 5", "q 5", "quiz5","q5"],
+            "response": "Do the The Pearl Episode 5 Quiz",
+            "quiz":"Pearl005"
+        },
         {
             "contains": [],
             "exact": ["script 1", "s 1", "script1","s1"],
