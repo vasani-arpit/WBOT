@@ -5,7 +5,7 @@
         "webhook":"http://localhost:3000/api/incoming-webhook"
     },
     "quiz": {
-	"id":"Pearl001",
+	"id":"Pearl003",
 	"active": true,
 	"preamble": ["Hello #name! I’m Pearl.\nWelcome to the quiz for episode 3 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."],
 	"postamble": ["The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes.\nPlease contact me again. Yours, Pearl."],
@@ -16,7 +16,7 @@
 			"text": ["➡ Which of the following statements is fake news:"],
 			"answer":    [
 				{
-					"isCorrect": false,
+					"isCorrect": true,
 					"text": "🔸1. Coronavirus spreads through secondhand clothes.",
 					"exact": [""],
 					"contains": ["1"],
@@ -30,12 +30,11 @@
 					"response": "The spread of Corona virus is not climate related. And by the way, all the statements were incorrect."
 				},
 				{
-					"isCorrect": false,
+					"isCorrect": true,
 					"text": "🔸3. A mixture of garlic and honey (and if not at hand drinking cow urine) are the best remedies against getting infected with Corona.",
 					"exact": [""],
 					"contains": ["3"],
-					"response": "There is no magic cure against Corona. Keep social distancing, wear a face mask and use hand sanitizer. And by the way, all the statements were incorrect.
-"
+					"response": "There is no magic cure against Corona. Keep social distancing, wear a face mask and use hand sanitizer. And by the way, all the statements were incorrect."
 				}
 			]
 		},
