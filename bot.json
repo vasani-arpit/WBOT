@@ -107,7 +107,7 @@
         }
     ],
     "blocked": [],
-    "noMatch":"The pearl has many hidden treasures.\nTo listen to the first episode, type\n➡audio 1\nThe second episode\n➡audio 2\nTo read the script, type\n➡script 1",
+    "noMatch":"The pearl has many hidden treasures.\nTo listen to the current episode, type\n➡audio 3\n or for the previous episode\n➡audio 2\nTo read the script, type\n➡script 3",
     "smartreply":{
         "suggestions":[],
         "clicktosend":true
