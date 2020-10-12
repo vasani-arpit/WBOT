@@ -1,0 +1,37 @@
+{
+    "appconfig": {
+        "headless": false,
+        "isGroupReply":true,
+        "webhook":"http://localhost:3000/api/incoming-webhook"
+    },
+    "bot": [
+        {
+            "contains": [],
+            "exact": ["hi","hello"],
+            "response": ""
+        },
+        {
+            "contains": [],
+            "exact": ["how are you?"],
+            "response": "I am {good {thanks| thank you}|great}. How about you?"
+        },
+        {
+            "contains": [],
+            "exact": ["script 1", "s 1", "script1","s1"],
+            "response": "Read The Pearl Episode 4",
+            "file":"MiCT_ThePearl_Episode_004_ScriptENG.pdf"
+        },
+        {
+            "contains": [],
+            "exact": ["audio 1", "a 1", "audio1","a1"],
+            "response": "Listen to The Pearl Episode 4",
+            "file":"MiCT_ThePearl_Episode_004_AudioENG.mp3"
+        }
+    ],
+    "blocked": [],
+    "noMatch":"The pearl has many hidden treasures.\nTo listen to the fourth episode, type\n➡audio 1\nTo read the script, type\n➡script 1",
+    "smartreply":{
+        "suggestions":[],
+        "clicktosend":true
+    }
+}
