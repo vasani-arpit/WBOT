@@ -208,7 +208,7 @@ WAPI.waitNewMessages(false, async (data) => {
             if (itemQuiz == undefined) {
                 window.log("DEBUG: chatId: current quiz '" + interaction.quiz.id + "' does NOT exist in " + itemPhone.chatId + "'s  profile");
                 // Populate itemPhone.itemQuiz with current quiz object
-                itemPhone.quiz.push({"id":interaction.quiz.id,"preamble":interaction.quiz.preamble,"question":[],"postamble":interaction.quiz.postamble,"isCompleted":false});
+                itemPhone.quiz.push({"id":itemQuiz.id,"preamble":interaction.quiz.preamble,"question":[],"postamble":interaction.quiz.postamble,"isCompleted":false});
                 itemQuiz = itemPhone.quiz.find(o => o.id === interaction.quiz.id);
                 for (let q of interaction.quiz.question) {
                     itemQuiz.question.push({"preamble":q.preamble,"postamble":q.postamble,"text":q.text,"answer":q.answer,"isCompleted":false,"reply":{}});
