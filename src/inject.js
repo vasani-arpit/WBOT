@@ -322,7 +322,9 @@ WAPI.waitNewMessages(false, async (data) => {
                 if ((exactMatch || PartialMatch).file != undefined) {
                     window.getFile((exactMatch || PartialMatch).file).then((base64Data) => {
                         //console.log(file);
+                        window.log("FILE SENDING: "+ (exactMatch || PartialMatch).file + " to " + itemPhone.chatId);
                         WAPI.sendImage(base64Data, message.chatId._serialized, (exactMatch || PartialMatch).file);
+                        window.log("FILE SENT: "+ (exactMatch || PartialMatch).file + " to " + itemPhone.chatId);
                     }).catch((error) => {
                         window.log("Error in sending file\n" + error);
                     })
