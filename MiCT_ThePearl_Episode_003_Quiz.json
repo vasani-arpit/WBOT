@@ -87,7 +87,7 @@
 				},
 				{
 					"isCorrect": true,
-					"text": "🔸3. Citizens returning form abroad.",
+					"text": "🔸3. Citizens returning from abroad.",
 					"exact": [""],
 					"contains": ["3"],
 					"response": "Truck drivers, individuals seeking to know their status, citizens returning from abroad, organisations seeking to test their staff and visitors arriving into the country must undertake the test."
