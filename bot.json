@@ -109,7 +109,7 @@
     "blocked": [],
     "noMatch":"The pearl has many hidden treasures.\nTo listen to the current episode, type\n➡audio 3\n or for the previous episode\n➡audio 2\nTo read the script, type\n➡script 3",
     "smartreply":{
-        "suggestions":["Hello", "Welcome to my store !!", "Thanks for reaching out 🙏"],
-        "clicktosend":true
+        "suggestions":[],
+	"clicktosend":true
     }
 }
