@@ -296,6 +296,8 @@ WAPI.waitNewMessages(false, async (data) => {
                 //if (KnownChatIds.includes(message.chatId._serialized) && response.length > 0) {
                 //    WAPI.sendMessage2(itemPhone.chatId, response);
                 //}
+            } else {
+                window.log("DEBUG: " + itemPhone.chatId  + "has already completed this quiz!!")
             }
 
             // --- QUIZ END ---
