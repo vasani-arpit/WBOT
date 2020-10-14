@@ -187,7 +187,7 @@ WAPI.waitNewMessages(false, async (data) => {
                 window.log("DEBUG: quiz: current quiz '" + interaction.quiz.id + "' is NOT active");
 
             // set a single ChatId to test
-            var itemPhone = chatIdStore.chat.find(o => o.chatId === message.chatId);
+            var itemPhone = chatIdStore.chat.find(o => o.chatId == message.chatId);
 
             // STATUS of CHAT-ID? Generate itemPhone object
             if (itemPhone == undefined) {
