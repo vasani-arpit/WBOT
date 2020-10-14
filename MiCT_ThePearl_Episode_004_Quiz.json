@@ -1,0 +1,160 @@
+{
+    "quizconfig": {
+        "oneShot": true,
+        "isGroupReply": true,
+        "webhook": "http://localhost:3000/api/incoming-webhook"
+    },
+    "quiz": {
+        "id": "Pearl004",
+        "active": true,
+        "preamble": [
+            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 4 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
+        ],
+        "postamble": [
+            "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes.\nPlease contact me again. Yours, Pearl."                                                                                                                                                                               
+        ],
+        "question": [
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "Let me ask you the next question."
+                ],
+                "text": [
+                    "➡ How many children were worldwide banned from going to school due to national lockdowns?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": false,
+                        "text": "🔸1.  500.000",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "1.700.000.000 would have been the correct answer. In Uganda alone 15 Million students were banned from school during lockdown.."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸2.  60.000.00.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "1.700.000.000 would have been the correct answer. In Uganda alone 15 Million students were banned from school during lockdown."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸3.  1.700.000.000",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Correct. In Uganda alone 15 Million students were banned from school during lockdown."
+                    }
+                ]
+            },
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "Let me ask you the next question."
+                ],
+                "text": [
+                    "➡ Who is allowed to go back to school?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": false,
+                        "text": [
+                            "🔸1. Everyone is."
+                        ],
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "No, right now only the finalists are allowed to go back to school."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸2.  Everyone who still has a living grandmother.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Not orrect. Right now, only the finalists are allowed to go back to school."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸3. Everyone who is a finalist.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Correct. Later on, more students will be allowed back to school."
+                    }
+                ]
+            },
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes."
+                ],
+                "text": [
+                    "➡What safety measures will the schools need to provide for?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": true,
+                        "text": "🔸1. Students must wear masks.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "All the answers are correct. Students should observe all Standard Operating Procedures (SOPs)."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸2. Students must wear masks and wash hands.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "All the answers are correct. Students should observe all Standard Operating Procedures (SOPs)."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸3. Students must wear masks and wash hands, there must be the two-meter distance between learners, at least 10 to 15 students can be accommodated in a standard classroom for primary and secondary and tertiary institutions and good ventilation must be ensured.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "All the answers are correct. Don’t let fake news wear you down.."
+                    }
+                ]
+            }
+        ]
+    }
+}
+

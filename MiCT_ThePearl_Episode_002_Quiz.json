@@ -1,0 +1,160 @@
+{
+    "quizconfig": {
+        "oneShot": true,
+        "isGroupReply": true,
+        "webhook": "http://localhost:3000/api/incoming-webhook"
+    },
+    "quiz": {
+        "id": "Pearl002",
+        "active": true,
+        "preamble": [
+            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 2 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
+        ],
+        "postamble": [
+            "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes.\nPlease contact me again. Yours, Pearl."                                                                                                                                                                               
+        ],
+        "question": [
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "Let me ask you the next question."
+                ],
+                "text": [
+                    "➡ Who is the highest risk group for spreading of Corona Virus in Uganda"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": false,
+                        "text": "🔸1. People coming from trips from Asia or Europe.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "No. When tested only 11% of those tested positive came from long-distance flights. Truck Drivers make up 71.8% of those tested positive."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸2. Truck Drivers.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Yes, 71.8% of those who tested positive around April 2020 were truck drivers."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸3.  Dirty children.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "No. Dirty children should learn to wash their hands and stay clean. However, 71.8% of people tested positive were truck drivers. "
+                    }
+                ]
+            },
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "Let me ask you the next question."
+                ],
+                "text": [
+                    "➡ If your sweetheart is a truck driver, you should:"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": true,
+                        "text": [
+                            "🔸1. Use condoms."
+                        ],
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "One should always use condoms, as there are other diseases like HIV, gonorrhoea and syphilis, that get transmitted sexually. But condoms don’t help against Corona. The only way to stay safe against COVId is by observing SOPs such as Social Distancing. Try other exciting means of communication and make them sexy. It´s a challenge, but maybe even fun."                                             
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸2.  Follow SOPs such as    social distancing.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Yes unfortunately this is the only safe way right now. Try other exciting means of communication and make them sexy. It´s a challenge, but maybe even fun."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸3.  Wear garlic cloves around your neck when kissing.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Garlic cloves might keep away other diseases and vampires. They might also boost your immune system. But they do not help against Corona. Only Social Distancing helps. Try other exciting means of communication and make them sexy. It´s a challenge, but maybe even fun."
+                    }
+                ]
+            },
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes."
+                ],
+                "text": [
+                    "➡ The government is aware of the health risk caused by truck drivers. The following measurements are enforced:"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": false,
+                        "text": "🔸1. Truck Drivers are banned from the roads..",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Truck Drivers are needed to bring huge amount of goods to places. Banning them would make the country collapse. They are now tested at the border. Those tested positive are not allowed to enter Uganda."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸2. Truck Drivers are tested for Covid-19 at the border. ",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Correct. And those tested positive need to quarantine before entering the country."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸3. Drones now bring food and other daily needs to the markets.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "This might be a scenario for the future, but for now truck drivers are tested at the border and those tested positive are not allowed to enter Uganda."
+                    }
+                ]
+            }
+        ]
+    }
+}
+

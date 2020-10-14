@@ -217,6 +217,7 @@ WAPI.waitNewMessages(false, async (data) => {
             } else
                 window.log("DEBUG: chatId: current quiz '" + interaction.quiz.id + "' already exists in " + itemPhone.chatId + "'s  profile");
 
+
             if (itemQuiz.isCompleted == false) {
                 // END: SETUP/LOOKUP DATASTORE STRUCTURE FOR A MESSAGE SENDER
                 // ------------------------------------------------
@@ -298,34 +299,38 @@ WAPI.waitNewMessages(false, async (data) => {
             }
 
             // --- QUIZ END ---
+            if ( (itemQuiz == undefined) || (itemQuiz.hasBegun != true || itemQuiz.isCompleted == true) ) {
 
-            var exactMatch = intents.bot.find(obj => obj.exact.find(ex => ex == message.body.toLowerCase()));
-            var response = "";
-            if (exactMatch != undefined) {
-                response = await resolveSpintax(exactMatch.response);
-                window.log(`Replying with ${response}`);
-            } else {
-                response = await resolveSpintax(intents.noMatch);
-                window.log(`No exact match found. So replying with ${response} instead`);
-            }
-            var PartialMatch = intents.bot.find(obj => obj.contains.find(ex => message.body.toLowerCase().search(ex) > -1));
-            if (PartialMatch != undefined) {
-                response = await resolveSpintax(PartialMatch.response);
-                window.log(`Replying with ${response}`);
-            } else {
-                console.log("No partial match found");
-            }
-            WAPI.sendSeen(message.chatId._serialized);
-            WAPI.sendMessage2(message.chatId._serialized, response);
-            if ((exactMatch || PartialMatch).file != undefined) {
-                files = await resolveSpintax((exactMatch || PartialMatch).file);
-                window.getFile(files).then((base64Data) => {
-                    //console.log(file);
-                    WAPI.sendImage(base64Data, message.chatId._serialized, (exactMatch || PartialMatch).file);
-                }).catch((error) => {
-                    window.log("Error in sending file\n" + error);
-                })
-            }
+                var exactMatch = intents.bot.find(obj => obj.exact.find(ex => ex == message.body.toLowerCase()));
+                var response = "";
+                if (exactMatch != undefined) {
+                    response = await resolveSpintax(exactMatch.response);
+                    window.log(`Replying with ${response}`);
+                } else {
+                    response = await resolveSpintax(intents.noMatch);
+                    window.log(`No exact match found. So replying with ${response} instead`);
+                }
+                var PartialMatch = intents.bot.find(obj => obj.contains.find(ex => message.body.toLowerCase().search(ex) > -1));
+                if (PartialMatch != undefined) {
+                    response = await resolveSpintax(PartialMatch.response);
+                    window.log(`Replying with ${response}`);
+                } else {
+                    console.log("No partial match found");
+                }
+                WAPI.sendSeen(message.chatId._serialized);
+                WAPI.sendMessage2(message.chatId._serialized, response);
+                if ((exactMatch || PartialMatch).file != undefined) {
+                    window.getFile((exactMatch || PartialMatch).file).then((base64Data) => {
+                        //console.log(file);
+                        window.log("FILE SENDING: "+ (exactMatch || PartialMatch).file + " to " + itemPhone.chatId);
+                        WAPI.sendImage(base64Data, message.chatId._serialized, (exactMatch || PartialMatch).file);
+                        window.log("FILE SENT: "+ (exactMatch || PartialMatch).file + " to " + itemPhone.chatId);
+                    }).catch((error) => {
+                        window.log("Error in sending file\n" + error);
+                    })
+                }
+	    }
+
         } else {
 		window.log(`DEBUG: Message type ${message.type} received`);
 	}

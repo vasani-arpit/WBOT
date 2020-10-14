@@ -7,86 +7,107 @@
     "bot": [
         {
             "contains": [],
-            "exact": ["hi"],
-            "response": "{hello|howdy}"
-        },
-        {
-             "contains": ["corona","virus","covid","epidemic","pandemic"],
-             "exact": [""],
-             "response": "{I am a bot. Computer viruses frighten me.|Don't be frightened. Take a deep breath and stay safe.}"
+            "exact": ["hi","hello"],
+            "response": ""
         },
         {
             "contains": [],
-            "exact": ["url","isla"],
-            "response": "http://radioislanegra.cl/"
+            "exact": ["how are you?"],
+            "response": "I am {good {thanks| thank you}|great}. How about you?"
         },
         {
             "contains": [],
-            "exact": ["music"],
-            "response": "Let's play!",
-            "file":"music.mp3"
+            "exact": ["quiz 1", "q 1", "quiz1","q1"],
+            "response": "Do the The Pearl Episode 1 Quiz",
+            "quiz":"Pearl001"
+        },
+       {
+            "contains": [],
+            "exact": ["quiz 2", "q 2", "quiz2","q2"],
+            "response": "Do the The Pearl Episode 2 Quiz",
+            "quiz":"Pearl002"
+        },
+       {
+            "contains": [],
+            "exact": ["quiz 3", "q 3", "quiz3","q3"],
+            "response": "Do the The Pearl Episode 3 Quiz",
+            "quiz":"Pearl003"
+        },
+       {
+            "contains": [],
+            "exact": ["quiz 4", "q 4", "quiz4","q4"],
+            "response": "Do the The Pearl Episode 4 Quiz",
+            "quiz":"Pearl004"
+        },
+       {
+            "contains": [],
+            "exact": ["quiz 5", "q 5", "quiz5","q5"],
+            "response": "Do the The Pearl Episode 5 Quiz",
+            "quiz":"Pearl005"
         },
         {
             "contains": [],
-            "exact": ["hello"],
-            "response": "hi",
-            "file":"noFile.png"
+            "exact": ["script 1", "s 1", "script1","s1"],
+            "response": "Read The Pearl Episode 1",
+            "file":"MiCT_ThePearl_Episode_001_ScriptENG.pdf"
         },
         {
             "contains": [],
-            "exact": ["hy"],
-            "response": "hi",
-            "file":"github.png"
+            "exact": ["script 2", "s 2", "script2","s2"],
+            "response": "Read The Pearl Episode 2",
+            "file":"MiCT_ThePearl_Episode_002_ScriptENG.pdf"
         },
         {
             "contains": [],
-            "exact": ["hiee"],
-            "response": "hi"
+            "exact": ["script 3", "s 3", "script3","s3"],
+            "response": "Read The Pearl Episode 3",
+            "file":"MiCT_ThePearl_Episode_003_ScriptENG.pdf"
         },
         {
             "contains": [],
-            "exact": ["hey"],
-            "response": "hi"
-        },
-        {
-            "contains": ["michhami","dukkadam"],
-            "exact": [],
-            "response": "Michhami Dukkadam 🙏"
-        },
-        {
-            "contains": ["happy","birthday","bday"],
-            "exact": [],
-            "response": "Thank you"
+            "exact": ["script 4", "s 4", "script4","s4"],
+            "response": "Read The Pearl Episode 4",
+            "file":"MiCT_ThePearl_Episode_004_ScriptENG.pdf"
         },
         {
             "contains": [],
-            "exact": ["how are you"],
-            "response": "i am {good {thanks| thank you}|great}. How about you?"
+            "exact": ["script 5", "s 5", "script5","s5"],
+            "response": "Read The Pearl Episode 5",
+            "file":"MiCT_ThePearl_Episode_005_ScriptENG.pdf"
         },
         {
             "contains": [],
-            "exact": ["hbd"],
-            "response": "Thank you"
-        },
-        {
-            "contains": ["શુભકામના","જન્મદિન"],
-            "exact": [],
-            "response": "આભાર 🙏"
-        },
-        {
-            "contains": ["janmdin","hardik","shubhkaamna"],
-            "exact": [],
-            "response": "aabhar 🙏"
+            "exact": ["audio 1", "a 1", "audio1","a1"],
+            "response": "Listen to The Pearl Episode 1",
+            "file":"MiCT_ThePearl_Episode_001_AudioENG.mp3"
         },
         {
             "contains": [],
-            "exact": ["github"],
-            "response": "Git Hub Logo",
-            "file":"{github.png|github-two.png}"
+            "exact": ["audio 2", "a 2", "audio2","a2"],
+            "response": "Listen to The Pearl Episode 2",
+            "file":"MiCT_ThePearl_Episode_002_AudioENG.mp3"
+        },
+        {
+            "contains": [],
+            "exact": ["audio 3", "a 3", "audio3","a3"],
+            "response": "Listen to The Pearl Episode 3",
+            "file":"MiCT_ThePearl_Episode_003_AudioENG.mp3"
+        },
+        {
+            "contains": [],
+            "exact": ["audio 4", "a 4", "audio4","a4"],
+            "response": "Listen to The Pearl Episode 4",
+            "file":"MiCT_ThePearl_Episode_004_AudioENG.mp3"
+        },
+        {
+            "contains": [],
+            "exact": ["audio 5", "a 5", "audio5","a5"],
+            "response": "Listen to The Pearl Episode 5",
+            "file":"MiCT_ThePearl_Episode_005_AudioENG.mp3"
         }
     ],
     "blocked": [],
-    "noMatch":"{}",
+    "noMatch":"The pearl has many hidden treasures.\nTo listen to the current episode, type\n➡audio 3\n or for the previous episode\n➡audio 2\nTo read the script, type\n➡script 3",
     "smartreply":{
         "suggestions":["Hello", "Welcome to my store !!", "Thanks for reaching out 🙏"],
         "clicktosend":true

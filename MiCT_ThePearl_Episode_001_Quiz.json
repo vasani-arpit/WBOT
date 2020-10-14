@@ -1,0 +1,100 @@
+{
+    "quizconfig": {
+        "oneShot": true,
+        "isGroupReply":true,
+        "webhook":"http://localhost:3000/api/incoming-webhook"
+    },
+    "quiz": {
+	"id":"Pearl001",
+	"active": true,
+	"preamble": ["Hello #name! I’m Pearl.\nWelcome to the quiz for episode 1 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."],
+	"postamble": ["The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes.\nPlease contact me again. Yours, Pearl."],
+	"question": [
+		{
+			"preamble": [""],
+			"postamble": ["Let me ask you the next question."],
+			"text": ["➡How long should one quarantine, when tested positive?"],
+			"answer":    [
+				{
+					"isCorrect": false,
+					"text": "🔸1. When tested positive, you self quarantine until you feel better.",
+					"exact": [""],
+					"contains": ["1"],
+					"response": "Not quite correct. Very sorry. But you must quarantine for 14 days to not spread the virus to anyone else."
+				},
+				{
+					"isCorrect": true,
+					"text": "🔸2. When tested positive, it is advisable to quarantine for 14 days and to take another test to confirm that you are negative.",
+					"exact": [""],
+					"contains": ["2"],
+					"response": "Correct. If you follow this rule, you will help with eliminating the virus and a pandemic."
+				},
+				{
+					"isCorrect": false,
+					"text": "🔸3. When tested positive, you don't quarantine, provided you have a mask and keep social distance from others.",
+					"exact": [""],
+					"contains": ["3"],
+					"response": "If you have been tested positive you really must stay away from people for 14 days."
+				}
+			]
+		},
+		{
+			"preamble": [""],
+			"postamble": ["Let me ask you the next question."],
+			"text": ["➡How long is one immune after showing signs of Covid-19?"],
+			"answer":    [
+				{
+					"isCorrect": true,
+					"text": ["🔸1. Current research shows that one is immune up to 3 months after being tested positive. Which means that people who just had the disease are probably the safest people to be around with."],
+					"exact": [""],
+					"contains": ["1"],
+					"response": "Correct."
+				},
+				{
+					"isCorrect": false,
+					"text": "🔸2. Research in Switzerland has proven that one has life-long immunity to the disease",
+					"exact": [""],
+					"contains": ["2"],
+					"response": "Absolutely not true. Fake news."
+				},
+				{
+					"isCorrect": false,
+					"text": "🔸3. There is no immunization. You can get COVID-19 immediately after you recover.",
+					"exact": [""],
+					"contains": ["3"],
+					"response": "There is a proven immunity of three months after having recovered from Covid-19."
+				}
+			]
+		},
+		{
+			"preamble": [""],
+			"postamble": ["The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes."],
+			"text": ["➡Why are there so many cases of stigmatization with Covid-19? Again, please answer by typing the number of the correct answer."],
+			"answer":    [
+				{
+					"isCorrect": false,
+					"text": "🔸1. Because some people who are infected will purposely transmit it to cause harm to others.",
+					"exact": [""],
+					"contains": ["1"],
+					"response": "No. And we sincerely hope that people are not like this. The virus is stigmatized because we know so little about it."
+				},
+				{
+					"isCorrect": false,
+					"text": "🔸2. Because it is a disease that was man-made in a laboratory.",
+					"exact": [""],
+					"contains": ["2"],
+					"response": "Absolutely not true. Fake news."
+				},
+				{
+					"isCorrect": true,
+					"text": "🔸3. Because there are so many unknowns about the virus: it is a new virus that has no vaccine yet, it spreads fast and affects public life.",
+					"exact": [""],
+					"contains": ["3"],
+					"response": "Correct."
+				}
+			]
+		}
+	]
+    }
+}
+

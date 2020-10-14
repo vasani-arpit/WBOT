@@ -1,0 +1,159 @@
+{
+    "quizconfig": {
+        "oneShot": true,
+        "isGroupReply": true,
+        "webhook": "http://localhost:3000/api/incoming-webhook"
+    },
+    "quiz": {
+        "id": "Pearl005",
+        "active": true,
+        "preamble": [
+            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 5 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
+        ],
+        "postamble": [
+            "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes.\nPlease contact me again. Yours, Pearl."                                                                                                                                                                               
+        ],
+        "question": [
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "Let me ask you the next question."
+                ],
+                "text": [
+                    "➡ How many refugees are there in Uganda?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": false,
+                        "text": "🔸1. 500.000",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "No, there are currently 1.200.000 refugees in Uganda, mostly from Burundi, Southern Sudan, Congo and the Horn of Africa."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸2. 700.000.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "No, there are currently 1.200.000 refugees in Uganda, mostly from Burundi, Southern Sudan, Congo and the Horn of Africa."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸3.  1.200.000",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Yes, there are currently 1.200.000 refugees in Uganda, mostly from Burundi, Southern Sudan, Congo and the Horn of Africa."
+                    }
+                ]
+            },
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "Let me ask you the next question."
+                ],
+                "text": [
+                    "➡Why are refugees not allowed to drive to the border to buy clothes?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": true,
+                        "text": [
+                            "🔸1. Because every contact outside the camp increases the risk of infection."
+                        ],
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Correct. It is hard enough to manage the health inside the camps. If refugees leave, the health threat is enormous."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸2. Because the roads are dusty and the clothes might get dirty.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "No. Clothes can be washed. But Covid-19 cannot be washed away. It is hard enough to manage the health inside the camps. If refugees leave, the health threat is enormous."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸3. Because driving can lead to motion sickness and ruin the clothes.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "No. Clothes can be washed. But Covid-19 cannot be washed away. It is hard enough to manage the health inside the camps. If refugees leave, the health threat is enormous."
+                    }
+                ]
+            },
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes."
+                ],
+                "text": [
+                    "➡ How long does the average refugee stay in a refugee camp in Uganda?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": false,
+                        "text": "🔸1. 2 years.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "No. An average refugee stays 17 years in a refugee camp in Uganda. Hence, they are allowed their own businesses."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸2. One summer.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "No. An average refugee stays 17 years in a refugee camp in Uganda. Hence, they are allowed their own businesses."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸3. 17 years.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Yes. An average refugee stays 17 years in a refugee camp in Uganda. Hence, they are allowed their own businesses."
+                    }
+                ]
+            }
+        ]
+    }
+}
