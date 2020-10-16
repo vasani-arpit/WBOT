@@ -51,14 +51,14 @@
 					"response": "All the answers are correct. Don’t let fake news wear you down."
 				},
 				{
-					"isCorrect": false,
+					"isCorrect": true,
 					"text": "🔸2. Diversify your information sources.",
 					"exact": [""],
 					"contains": ["2"],
 					"response": "All the answers are correct. Don’t let fake news wear you down."
 				},
 				{
-					"isCorrect": false,
+					"isCorrect": true,
 					"text": "🔸3. Refer to authorized sources like the WHO when checking on health issues.",
 					"exact": [""],
 					"contains": ["3"],
