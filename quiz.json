@@ -5,13 +5,13 @@
         "webhook": "http://localhost:3000/api/incoming-webhook"
     },
     "quiz": {
-        "id": "Pearl003",
+        "id": "Pearl004",
         "active": true,
         "preamble": [
-            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 3 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."                                                                                                                                                       
+            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 4 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
         ],
         "postamble": [
-            "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes.\nPlease contact me again. Yours, Pearl."                                                                 
+            "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes.\nPlease contact me again. Yours, Pearl."                                                                                                                                                                               
         ],
         "question": [
             {
@@ -22,41 +22,41 @@
                     "Let me ask you the next question."
                 ],
                 "text": [
-                    "➡ Which of the following statements is fake news:"
+                    "➡ How many children were worldwide banned from going to school due to national lockdowns?"
                 ],
                 "answer": [
                     {
-                        "isCorrect": true,
-                        "text": "🔸1. Coronavirus spreads through secondhand clothes.",
+                        "isCorrect": false,
+                        "text": "🔸1.  500.000",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "1"
                         ],
-                        "response": "Coronavirus does not spread through secondhand clothes. When you buy them, wear a mask and use hand sanitizer as in any social transaction. And by the way, all the statements were incorrect."                                                                                                
+                        "response": "1.700.000.000 would have been the correct answer. In Uganda alone 15 Million students were banned from school during lockdown.."
                     },
                     {
-                        "isCorrect": true,
-                        "text": "🔸2. Uganda´s climate is too hot. The Coronavirus cannot spread.",
+                        "isCorrect": false,
+                        "text": "🔸2.  60.000.00.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "2"
                         ],
-                        "response": "The spread of Corona virus is not climate related. And by the way, all the statements were incorrect."
+                        "response": "1.700.000.000 would have been the correct answer. In Uganda alone 15 Million students were banned from school during lockdown."
                     },
                     {
                         "isCorrect": true,
-                        "text": "🔸3. A mixture of garlic and honey (and if not at hand drinking cow urine) are the best remedies against getting infected with Corona.",
+                        "text": "🔸3.  1.700.000.000",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "3"
                         ],
-                        "response": "There is no magic cure against Corona. Keep social distancing, wear a face mask and use hand sanitizer. And by the way, all the statements were incorrect."                                                                                                                                    
+                        "response": "Correct. In Uganda alone 15 Million students were banned from school during lockdown."
                     }
                 ]
             },
@@ -68,13 +68,13 @@
                     "Let me ask you the next question."
                 ],
                 "text": [
-                    "➡How can you fight fake news?"
+                    "➡ Who is allowed to go back to school?"
                 ],
                 "answer": [
                     {
-                        "isCorrect": true,
+                        "isCorrect": false,
                         "text": [
-                            "🔸1. Join the resistance and don’t spread junkmail."
+                            "🔸1. Everyone is."
                         ],
                         "exact": [
                             ""
@@ -82,29 +82,29 @@
                         "contains": [
                             "1"
                         ],
-                        "response": "All the answers are correct. Don’t let fake news wear you down."
+                        "response": "No, right now only the finalists are allowed to go back to school."
                     },
                     {
-                        "isCorrect": :true,
-                        "text": "🔸2. Diversify your information sources.",
+                        "isCorrect": false,
+                        "text": "🔸2.  Everyone who still has a living grandmother.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "2"
                         ],
-                        "response": "All the answers are correct. Don’t let fake news wear you down."
+                        "response": "Not orrect. Right now, only the finalists are allowed to go back to school."
                     },
                     {
                         "isCorrect": true,
-                        "text": "🔸3. Refer to authorized sources like the WHO when checking on health issues.",
+                        "text": "🔸3. Everyone who is a finalist.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "3"
                         ],
-                        "response": "All the answers are correct. Don’t let fake news wear you down."
+                        "response": "Correct. Later on, more students will be allowed back to school."
                     }
                 ]
             },
@@ -113,47 +113,48 @@
                     ""
                 ],
                 "postamble": [
-                    "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes."                                                                                                 
+                    "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes."
                 ],
                 "text": [
-                    "➡Who must undergo a Covid-19 test for Ush 240.000?"
+                    "➡What safety measures will the schools need to provide for?"
                 ],
                 "answer": [
                     {
-                        "isCorrect": false,
-                        "text": "🔸1. Schoolchildren who will go back to school.",
+                        "isCorrect": true,
+                        "text": "🔸1. Students must wear masks.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "1"
                         ],
-                        "response": "Schoolchildren must only get tested if they have been in contact with someone tested positive and want to continue going to school. If the test turns out positive, they must quarantine. If negative, they can go back to school. Answer 3 is correct."
+                        "response": "All the answers are correct. Students should observe all Standard Operating Procedures (SOPs)."
                     },
                     {
-                        "isCorrect": false,
-                        "text": "🔸2. Any aged person over 65 years.",
+                        "isCorrect": true,
+                        "text": "🔸2. Students must wear masks and wash hands.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "2"
                         ],
-                        "response": "Elderly people must only get tested if they have been in contact with someone tested positive. If the test turns out positive, they must quarantine. Answer 3 is correct."
+                        "response": "All the answers are correct. Students should observe all Standard Operating Procedures (SOPs)."
                     },
                     {
                         "isCorrect": true,
-                        "text": "🔸3. Citizens returning from abroad.",
+                        "text": "🔸3. Students must wear masks and wash hands, there must be the two-meter distance between learners, at least 10 to 15 students can be accommodated in a standard classroom for primary and secondary and tertiary institutions and good ventilation must be ensured.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "3"
                         ],
-                        "response": "Truck drivers, individuals seeking to know their status, citizens returning from abroad, organisations seeking to test their staff and visitors arriving into the country must undertake the test."
+                        "response": "All the answers are correct. Don’t let fake news wear you down.."
                     }
                 ]
             }
         ]
     }
 }
+
