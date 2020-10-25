@@ -5,10 +5,10 @@
         "webhook": "http://localhost:3000/api/incoming-webhook"
     },
     "quiz": {
-        "id": "Pearl004",
+        "id": "Pearl005",
         "active": true,
         "preamble": [
-            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 4 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
+            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 5 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
         ],
         "postamble": [
             "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes.\nPlease contact me again. Yours, Pearl."                                                                                                                                                                               
@@ -22,41 +22,41 @@
                     "Let me ask you the next question."
                 ],
                 "text": [
-                    "➡ How many children were worldwide banned from going to school due to national lockdowns?"
+                    "➡ How many refugees are there in Uganda?"
                 ],
                 "answer": [
                     {
                         "isCorrect": false,
-                        "text": "🔸1.  500.000",
+                        "text": "🔸1. 500.000",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "1"
                         ],
-                        "response": "1.700.000.000 would have been the correct answer. In Uganda alone 15 Million students were banned from school during lockdown.."
+                        "response": "No, there are currently 1.200.000 refugees in Uganda, mostly from Burundi, Southern Sudan, Congo and the Horn of Africa."
                     },
                     {
                         "isCorrect": false,
-                        "text": "🔸2.  60.000.00.",
+                        "text": "🔸2. 700.000.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "2"
                         ],
-                        "response": "1.700.000.000 would have been the correct answer. In Uganda alone 15 Million students were banned from school during lockdown."
+                        "response": "No, there are currently 1.200.000 refugees in Uganda, mostly from Burundi, Southern Sudan, Congo and the Horn of Africa."
                     },
                     {
                         "isCorrect": true,
-                        "text": "🔸3.  1.700.000.000",
+                        "text": "🔸3.  1.200.000",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "3"
                         ],
-                        "response": "Correct. In Uganda alone 15 Million students were banned from school during lockdown."
+                        "response": "Yes, there are currently 1.200.000 refugees in Uganda, mostly from Burundi, Southern Sudan, Congo and the Horn of Africa."
                     }
                 ]
             },
@@ -68,13 +68,13 @@
                     "Let me ask you the next question."
                 ],
                 "text": [
-                    "➡ Who is allowed to go back to school?"
+                    "➡Why are refugees not allowed to drive to the border to buy clothes?"
                 ],
                 "answer": [
                     {
-                        "isCorrect": false,
+                        "isCorrect": true,
                         "text": [
-                            "🔸1. Everyone is."
+                            "🔸1. Because every contact outside the camp increases the risk of infection."
                         ],
                         "exact": [
                             ""
@@ -82,29 +82,29 @@
                         "contains": [
                             "1"
                         ],
-                        "response": "No, right now only the finalists are allowed to go back to school."
+                        "response": "Correct. It is hard enough to manage the health inside the camps. If refugees leave, the health threat is enormous."
                     },
                     {
                         "isCorrect": false,
-                        "text": "🔸2.  Everyone who still has a living grandmother.",
+                        "text": "🔸2. Because the roads are dusty and the clothes might get dirty.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "2"
                         ],
-                        "response": "Not orrect. Right now, only the finalists are allowed to go back to school."
+                        "response": "No. Clothes can be washed. But Covid-19 cannot be washed away. It is hard enough to manage the health inside the camps. If refugees leave, the health threat is enormous."
                     },
                     {
-                        "isCorrect": true,
-                        "text": "🔸3. Everyone who is a finalist.",
+                        "isCorrect": false,
+                        "text": "🔸3. Because driving can lead to motion sickness and ruin the clothes.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "3"
                         ],
-                        "response": "Correct. Later on, more students will be allowed back to school."
+                        "response": "No. Clothes can be washed. But Covid-19 cannot be washed away. It is hard enough to manage the health inside the camps. If refugees leave, the health threat is enormous."
                     }
                 ]
             },
@@ -116,45 +116,44 @@
                     "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes."
                 ],
                 "text": [
-                    "➡What safety measures will the schools need to provide for?"
+                    "➡ How long does the average refugee stay in a refugee camp in Uganda?"
                 ],
                 "answer": [
                     {
-                        "isCorrect": true,
-                        "text": "🔸1. Students must wear masks.",
+                        "isCorrect": false,
+                        "text": "🔸1. 2 years.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "1"
                         ],
-                        "response": "All the answers are correct. Students should observe all Standard Operating Procedures (SOPs)."
+                        "response": "No. An average refugee stays 17 years in a refugee camp in Uganda. Hence, they are allowed their own businesses."
                     },
                     {
-                        "isCorrect": true,
-                        "text": "🔸2. Students must wear masks and wash hands.",
+                        "isCorrect": false,
+                        "text": "🔸2. One summer.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "2"
                         ],
-                        "response": "All the answers are correct. Students should observe all Standard Operating Procedures (SOPs)."
+                        "response": "No. An average refugee stays 17 years in a refugee camp in Uganda. Hence, they are allowed their own businesses."
                     },
                     {
                         "isCorrect": true,
-                        "text": "🔸3. Students must wear masks and wash hands, there must be the two-meter distance between learners, at least 10 to 15 students can be accommodated in a standard classroom for primary and secondary and tertiary institutions and good ventilation must be ensured.",
+                        "text": "🔸3. 17 years.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "3"
                         ],
-                        "response": "All the answers are correct. Don’t let fake news wear you down.."
+                        "response": "Yes. An average refugee stays 17 years in a refugee camp in Uganda. Hence, they are allowed their own businesses."
                     }
                 ]
             }
         ]
     }
 }
-
