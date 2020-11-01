@@ -142,7 +142,7 @@
                         "response": "Yes, they use synthetic strands of genetic code, which looks very promising: In test trials this vaccine produced highly specific antibodies against Covid-19 in mice, which were able to neutralise the virus."
                     },
                     {
-                        "isCorrect": true,
+                        "isCorrect": false,
                         "text": "🔸3.  The scientists use a weakened form of the virus.",
                         "exact": [
                             ""
