@@ -122,7 +122,7 @@ here is how that looks
 
 **This is only recommended for advanced 'node.js' users.**
 
-open a Terminal and create a new directory in your home directory, e.g. 'node' and goto there.
+open a Terminal and create a new directory in your home directory, e.g. 'node' and go there.
 Now download and run the latest code from github by:
 
 ```
@@ -132,7 +132,7 @@ npm install
 node src/index.js
 ```
 
-If you run Linux on a headless server or wan't to run chmomium without visible display try ```xvfb-run wbot-linux```.
+If you run Linux on a headless server or want to run chromium without visible display, try ```xvfb-run wbot-linux```.
 
 ## Known bugs
 Sometimes, closing the `node` server directly does not clear browser cache. Next time when the bot is started, it runs into errors due to which smart reply is not setup correctly. A temporary fix to this is to clear `node` cache.
@@ -149,7 +149,7 @@ npm cache clean
 
 ## Why?
 
-The main reason I decided to build this is that I needed a simple tool to reply to my "happy birthday" messages. I know it is kind of blunt and rude but it would take me 2-3 days to reply to all and by that time that moment would be gone. I needed a good solution to this problem. I really don't need a full-fledged AI-BOT or BOT with NLU (or some other acronym). I believe there are many people who also have such needs.
+The main reason I decided to build this is that I needed a simple tool to reply to my "happy birthday" messages. I know it is kind of blunt and rude, but it would take me 2-3 days to reply to all and by that time that moment would be gone. I needed a good solution to this problem. I really don't need a full-fledged AI-BOT or BOT with NLU (or some other acronym). I believe there are many people who also have such needs.
 
 ## Goals
 With that in mind, I know that WBOT would need to satisfy these criteria:
