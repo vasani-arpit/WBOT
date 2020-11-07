@@ -2,7 +2,8 @@
     "appconfig": {
         "headless": false,
         "isGroupReply":false,
-        "webhook":""
+        "webhook":"",
+        "currentChrome":"http://localhost:9222/json/version"
     },
     "bot": [{
             "contains": [],

@@ -12,6 +12,7 @@ var constants = require("./constants");
 var configs = require("../bot");
 var settings = require('./settings');
 var fs = require("fs");
+const { getBrowser } = require('./getBrowser');
 
 //console.log(ps);
 
@@ -72,22 +73,15 @@ async function Main() {
         }
         const extraArguments = Object.assign({});
         extraArguments.userDataDir = constants.DEFAULT_DATA_DIR;
-        const browser = await puppeteer.launch({
-            executablePath: revisionInfo.executablePath,
-            defaultViewport: null,
-            headless: appconfig.appconfig.headless,
-            userDataDir: path.join(process.cwd(), "ChromeSession"),
-            devtools: false,
-            args: [...constants.DEFAULT_CHROMIUM_ARGS, ...pptrArgv], ...extraArguments
-        });
+        const browser = await getBrowser(puppeteer, revisionInfo, appconfig, constants, pptrArgv, extraArguments)
         spinner.stop("Launching Chrome ... done!");
         if (argv.proxyURI) {
             spinner.info("Using a Proxy Server");
         }
         spinner.start("Opening Whatsapp");
-        page = await browser.pages();
-        if (page.length > 0) {
-            page = page[0];
+        page = await browser.newPage();
+        // if (page.length > 0) {
+            //page = page[0];
             page.setBypassCSP(true);
             if (argv.proxyURI) {
                 await page.authenticate({ username: argv.username, password: argv.password });
@@ -113,17 +107,17 @@ async function Main() {
             // When the settings file is edited multiple calls are sent to function. This will help
             // to prevent from getting corrupted settings data
             let timeout = 5000;
-            
+
             // Register a filesystem watcher
             fs.watch(constants.BOT_SETTINGS_FILE, (event, filename) => {
-                setTimeout(()=> {
+                setTimeout(() => {
                     settings.LoadBotSettings(event, filename, page);
                 }, timeout);
             });
 
             page.exposeFunction("getFile", utils.getFileInBase64);
             page.exposeFunction("resolveSpintax", spintax.unspin);
-        }
+        // }
     }
 
     async function injectScripts(page) {

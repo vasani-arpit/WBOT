@@ -4,6 +4,7 @@
   - [headless](#Headless-Boolean)
   - [darkmode](#darkmode-Boolean)
   - [isGroupReply](#isGroupReply-Boolean)
+  - [currentChrome](#currentChrome)
   - webhook
 - bot
   - contains
@@ -38,6 +39,22 @@ Only works when headless is false. Adds css to the page which enables dark UI of
 Decides whether to send reply in groups or not. If set to true then BOT will also reply if incoming message is in a group.
 
 Default: false
+
+### currentChrome: String
+
+this is a address of the your existing chrome instance which has exposed remote debugging port. normally it will be 9222 which means value of this setting will be http://localhost:9222/json/version
+
+If you want to do this in windows then open properties of your chrome icon on the desktop go to shortcut and update the value of target to the following 
+
+```
+"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --profile-directory="Default" --remote-debugging-port=9222 -- "%1"
+```
+
+Close all the open chrome instances and then start the one which you updated. It should work. 
+
+**for any other OS**
+
+Basically, we are opening chrome binary(app) with two arguments --profile-directory="Default" --remote-debugging-port=9222
 
 
 
