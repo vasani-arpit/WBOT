@@ -5,13 +5,13 @@
         "webhook": "http://localhost:3000/api/incoming-webhook"
     },
     "quiz": {
-        "id": "Pearl005",
+        "id": "Pearl006",
         "active": true,
         "preamble": [
-            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 5 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
+            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 6 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
         ],
         "postamble": [
-            "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes.\nPlease contact me again. Yours, Pearl."                                                                                                                                                                               
+            "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes.\nPlease contact me again. Yours, Pearl."
         ],
         "question": [
             {
@@ -22,41 +22,41 @@
                     "Let me ask you the next question."
                 ],
                 "text": [
-                    "➡ How many refugees are there in Uganda?"
+                    "➡ Which of the following is not a discipline associated with the development of  a vaccine against Covid-19?"
                 ],
                 "answer": [
                     {
                         "isCorrect": false,
-                        "text": "🔸1. 500.000",
+                        "text": "🔸1. biotechnology",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "1"
                         ],
-                        "response": "No, there are currently 1.200.000 refugees in Uganda, mostly from Burundi, Southern Sudan, Congo and the Horn of Africa."
+                        "response": "Biotechnology is very much needed for the development of a vaccine against Covid-19, while ontology is the study of being and even though it might be interesting to engage in it, it is not particularly helpful for developing a vaccine."
                     },
                     {
-                        "isCorrect": false,
-                        "text": "🔸2. 700.000.",
+                        "isCorrect": true,
+                        "text": "🔸2. ontology.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "2"
                         ],
-                        "response": "No, there are currently 1.200.000 refugees in Uganda, mostly from Burundi, Southern Sudan, Congo and the Horn of Africa."
+                        "response": "Yes, ontology is a discipline not associated with the development of  a vaccine against Covid-19. It is the study of being and even though it might be interesting to engage in it, it is not particularly helpful for developing a vaccine. "
                     },
                     {
-                        "isCorrect": true,
-                        "text": "🔸3.  1.200.000",
+                        "isCorrect": false,
+                        "text": "🔸3.  proteomics ",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "3"
                         ],
-                        "response": "Yes, there are currently 1.200.000 refugees in Uganda, mostly from Burundi, Southern Sudan, Congo and the Horn of Africa."
+                        "response": "Proteomics is very much needed for the development of a vaccine against Covid-19. Proteomics is the study of proteins which are vital parts of living organisms. The discipline not needed in developing a vaccine is ontology, the study of being: And even though it might be interesting to engage in it, it is not particularly helpful for developing a vaccine. "
                     }
                 ]
             },
@@ -68,13 +68,13 @@
                     "Let me ask you the next question."
                 ],
                 "text": [
-                    "➡Why are refugees not allowed to drive to the border to buy clothes?"
+                    "➡ Uganda’s Vaccine Research Institute is aiming to start a COVID-19 vaccine clinical trial in December, 2020. Which European College do they partner with?"
                 ],
                 "answer": [
                     {
-                        "isCorrect": true,
+                        "isCorrect": false,
                         "text": [
-                            "🔸1. Because every contact outside the camp increases the risk of infection."
+                            "🔸1. Charité in Berlin (Germany)"
                         ],
                         "exact": [
                             ""
@@ -82,29 +82,29 @@
                         "contains": [
                             "1"
                         ],
-                        "response": "Correct. It is hard enough to manage the health inside the camps. If refugees leave, the health threat is enormous."
+                        "response": "No. Correct answer is Imperial College London."
                     },
                     {
-                        "isCorrect": false,
-                        "text": "🔸2. Because the roads are dusty and the clothes might get dirty.",
+                        "isCorrect": true,
+                        "text": "🔸2. Imperial College London (UK)",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "2"
                         ],
-                        "response": "No. Clothes can be washed. But Covid-19 cannot be washed away. It is hard enough to manage the health inside the camps. If refugees leave, the health threat is enormous."
+                        "response": "Yes, correct. They are partnering with the Imperial College London."
                     },
                     {
                         "isCorrect": false,
-                        "text": "🔸3. Because driving can lead to motion sickness and ruin the clothes.",
+                        "text": "🔸3. University Hospital Leuven (Netherlands)",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "3"
                         ],
-                        "response": "No. Clothes can be washed. But Covid-19 cannot be washed away. It is hard enough to manage the health inside the camps. If refugees leave, the health threat is enormous."
+                        "response": "No. Correct answer is Imperial College London."
                     }
                 ]
             },
@@ -116,41 +116,41 @@
                     "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes."
                 ],
                 "text": [
-                    "➡ How long does the average refugee stay in a refugee camp in Uganda?"
+                    "➡ How are the scientists in the Ugandan/ London collaboration developing a vaccine against Covid-19?"
                 ],
                 "answer": [
                     {
                         "isCorrect": false,
-                        "text": "🔸1. 2 years.",
+                        "text": "🔸1. The scientists drink Corona beer and afterwards examine their urine.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "1"
                         ],
-                        "response": "No. An average refugee stays 17 years in a refugee camp in Uganda. Hence, they are allowed their own businesses."
+                        "response": "Haha. If it would be this easy, Dr. Hope would not have so much trouble with her husband. The correct answer is: They use synthetic strands of genetic code, which looks very promising: In test trials this vaccine produced highly specific antibodies against Covid-19 in mice, which were able to neutralise the virus."
                     },
                     {
-                        "isCorrect": false,
-                        "text": "🔸2. One summer.",
+                        "isCorrect": true,
+                        "text": "🔸2. The scientists are mimicking the virus with synthetic strands of genetic code.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "2"
                         ],
-                        "response": "No. An average refugee stays 17 years in a refugee camp in Uganda. Hence, they are allowed their own businesses."
+                        "response": "Yes, they use synthetic strands of genetic code, which looks very promising: In test trials this vaccine produced highly specific antibodies against Covid-19 in mice, which were able to neutralise the virus."
                     },
                     {
-                        "isCorrect": true,
-                        "text": "🔸3. 17 years.",
+                        "isCorrect": false,
+                        "text": "🔸3.  The scientists use a weakened form of the virus.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "3"
                         ],
-                        "response": "Yes. An average refugee stays 17 years in a refugee camp in Uganda. Hence, they are allowed their own businesses."
+                        "response": "No. Some vaccines are based on a weakened form of the virus but right now the best results seem to come from using synthetic strands of genetic code: In test trials this vaccine produced highly specific antibodies against Covid-19 in mice, which were able to neutralise the virus."
                     }
                 ]
             }
