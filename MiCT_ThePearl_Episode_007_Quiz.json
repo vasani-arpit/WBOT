@@ -1,0 +1,159 @@
+{
+    "quizconfig": {
+        "oneShot": true,
+        "isGroupReply": true,
+        "webhook": "http://localhost:3000/api/incoming-webhook"
+    },
+    "quiz": {
+        "id": "Pearl007",
+        "active": true,
+        "preamble": [
+            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 7 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
+        ],
+        "postamble": [
+            "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes.\nPlease contact me again. Yours, Pearl."
+        ],
+        "question": [
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "Let me ask you the next question."
+                ],
+                "text": [
+                    "The UN is currently working together with the Ugandan government to improve the economic vulnerability of farmers and market vendors. What was one of their schemes?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": false,
+                        "text": "🔸1. Buying the fruits and vegetables and exporting it to other countries.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "No. They collaborated with local companies Safeboda and Jumia, where customers can order directly from farmers or vendors and get it delivered with bodaboda."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸2.  They have no idea how to help.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "No. They collaborated with local companies Safeboda and Jumia, where customers can order directly from farmers or vendors and get it delivered with bodaboda. "
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸3. They collaborated with local companies Safeboda and Jumia, where customers can order directly from farmers or vendors and get it delivered with bodaboda taxis.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Yes. And they believe that once this kind of e-commerce has been established, it will never leave again. "
+                    }
+                ]
+            },
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "Let me ask you the next question."
+                ],
+                "text": [
+                    "➡ When it is not Corona times, how high is the percentage of the crops in Uganda being wasted yearly?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": false,
+                        "text": [
+                            "🔸1. 60%"
+                        ],
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "No. 30% of the crops are wasted."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸2.  0,5%",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "No. 30% of the crops are wasted."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸3.  30%",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Yes."
+                    }
+                ]
+            },
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes."
+                ],
+                "text": [
+                    "➡ How expensive is a food dehydrator? "
+                ],
+                "answer": [
+                    {
+                        "isCorrect": true,
+                        "text": "🔸1. 450,000 Ugandan Shillings.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Correct. There are low-tech thermal dehydrators available now that only cost 450,000 Ugandan Shillings. Solar powered ones can cost up to 2 million Ugandan Shillings."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸2.  2 million Ugandan Shillings.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Correct. Solar powered food dehydrators can cost up to 2 million Ugandan Shillings. But there are low-tech thermal dehydrator available now that only cost 450,000 Ugandan Shillings. "
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸3.  The sun can dry fruits and vegetables.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "The sun works okay for drying vegetables. But when it comes to fruits, a dehydrator is needed. There are low-tech thermal dehydrators available now that only cost 450,000 Ugandan Shillings. Solar powered ones can cost up to 2 million Ugandan Shillings."
+                    }
+                ]
+            }
+        ]
+    }
+}

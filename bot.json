@@ -119,7 +119,7 @@
         }
     ],
     "blocked": [],
-    "noMatch":"The pearl has many hidden treasures.\nTo listen to the current episode, type\n➡ audio 6\n or for the previous episode\n➡ audio 5",
+    "noMatch":"The pearl has many hidden treasures.\nTo listen to the current episode, type\n➡ audio 7\n or for the previous episode\n➡ audio 6",
     "smartreply":{
         "suggestions":[],
 	"clicktosend":true
