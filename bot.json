@@ -116,7 +116,8 @@
             "exact": ["audio 7", "a 7", "audio7","a7"],
             "response": "Listen to The Pearl Episode 7",
             "file":"MiCT_ThePearl_Episode_007_AudioENG.mp3"
-        }{
+        },
+        {
             "contains": [],
             "exact": ["audio 8", "a 8", "audio8","a8"],
             "response": "Listen to The Pearl Episode 8",
