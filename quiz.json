@@ -5,10 +5,10 @@
         "webhook": "http://localhost:3000/api/incoming-webhook"
     },
     "quiz": {
-        "id": "Pearl006",
+        "id": "Pearl007",
         "active": true,
         "preamble": [
-            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 6 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
+            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 7 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
         ],
         "postamble": [
             "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes.\nPlease contact me again. Yours, Pearl."
@@ -22,41 +22,41 @@
                     "Let me ask you the next question."
                 ],
                 "text": [
-                    "➡ Which of the following is not a discipline associated with the development of  a vaccine against Covid-19?"
+                    "The UN is currently working together with the Ugandan government to improve the economic vulnerability of farmers and market vendors. What was one of their schemes?"
                 ],
                 "answer": [
                     {
                         "isCorrect": false,
-                        "text": "🔸1. biotechnology",
+                        "text": "🔸1. Buying the fruits and vegetables and exporting it to other countries.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "1"
                         ],
-                        "response": "Biotechnology is very much needed for the development of a vaccine against Covid-19, while ontology is the study of being and even though it might be interesting to engage in it, it is not particularly helpful for developing a vaccine."
+                        "response": "No. They collaborated with local companies Safeboda and Jumia, where customers can order directly from farmers or vendors and get it delivered with bodaboda."
                     },
                     {
-                        "isCorrect": true,
-                        "text": "🔸2. ontology.",
+                        "isCorrect": false,
+                        "text": "🔸2.  They have no idea how to help.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "2"
                         ],
-                        "response": "Yes, ontology is a discipline not associated with the development of  a vaccine against Covid-19. It is the study of being and even though it might be interesting to engage in it, it is not particularly helpful for developing a vaccine. "
+                        "response": "No. They collaborated with local companies Safeboda and Jumia, where customers can order directly from farmers or vendors and get it delivered with bodaboda. "
                     },
                     {
-                        "isCorrect": false,
-                        "text": "🔸3.  proteomics ",
+                        "isCorrect": true,
+                        "text": "🔸3. They collaborated with local companies Safeboda and Jumia, where customers can order directly from farmers or vendors and get it delivered with bodaboda taxis.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "3"
                         ],
-                        "response": "Proteomics is very much needed for the development of a vaccine against Covid-19. Proteomics is the study of proteins which are vital parts of living organisms. The discipline not needed in developing a vaccine is ontology, the study of being: And even though it might be interesting to engage in it, it is not particularly helpful for developing a vaccine. "
+                        "response": "Yes. And they believe that once this kind of e-commerce has been established, it will never leave again. "
                     }
                 ]
             },
@@ -68,13 +68,13 @@
                     "Let me ask you the next question."
                 ],
                 "text": [
-                    "➡ Uganda’s Vaccine Research Institute is aiming to start a COVID-19 vaccine clinical trial in December, 2020. Which European College do they partner with?"
+                    "➡ When it is not Corona times, how high is the percentage of the crops in Uganda being wasted yearly?"
                 ],
                 "answer": [
                     {
                         "isCorrect": false,
                         "text": [
-                            "🔸1. Charité in Berlin (Germany)"
+                            "🔸1. 60%"
                         ],
                         "exact": [
                             ""
@@ -82,29 +82,29 @@
                         "contains": [
                             "1"
                         ],
-                        "response": "No. Correct answer is Imperial College London."
+                        "response": "No. 30% of the crops are wasted."
                     },
                     {
-                        "isCorrect": true,
-                        "text": "🔸2. Imperial College London (UK)",
+                        "isCorrect": false,
+                        "text": "🔸2.  0,5%",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "2"
                         ],
-                        "response": "Yes, correct. They are partnering with the Imperial College London."
+                        "response": "No. 30% of the crops are wasted."
                     },
                     {
-                        "isCorrect": false,
-                        "text": "🔸3. University Hospital Leuven (Netherlands)",
+                        "isCorrect": true,
+                        "text": "🔸3.  30%",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "3"
                         ],
-                        "response": "No. Correct answer is Imperial College London."
+                        "response": "Yes."
                     }
                 ]
             },
@@ -116,41 +116,41 @@
                     "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes."
                 ],
                 "text": [
-                    "➡ How are the scientists in the Ugandan/ London collaboration developing a vaccine against Covid-19?"
+                    "➡ How expensive is a food dehydrator? "
                 ],
                 "answer": [
                     {
-                        "isCorrect": false,
-                        "text": "🔸1. The scientists drink Corona beer and afterwards examine their urine.",
+                        "isCorrect": true,
+                        "text": "🔸1. 450,000 Ugandan Shillings.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "1"
                         ],
-                        "response": "Haha. If it would be this easy, Dr. Hope would not have so much trouble with her husband. The correct answer is: They use synthetic strands of genetic code, which looks very promising: In test trials this vaccine produced highly specific antibodies against Covid-19 in mice, which were able to neutralise the virus."
+                        "response": "Correct. There are low-tech thermal dehydrators available now that only cost 450,000 Ugandan Shillings. Solar powered ones can cost up to 2 million Ugandan Shillings."
                     },
                     {
                         "isCorrect": true,
-                        "text": "🔸2. The scientists are mimicking the virus with synthetic strands of genetic code.",
+                        "text": "🔸2.  2 million Ugandan Shillings.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "2"
                         ],
-                        "response": "Yes, they use synthetic strands of genetic code, which looks very promising: In test trials this vaccine produced highly specific antibodies against Covid-19 in mice, which were able to neutralise the virus."
+                        "response": "Correct. Solar powered food dehydrators can cost up to 2 million Ugandan Shillings. But there are low-tech thermal dehydrator available now that only cost 450,000 Ugandan Shillings. "
                     },
                     {
                         "isCorrect": false,
-                        "text": "🔸3.  The scientists use a weakened form of the virus.",
+                        "text": "🔸3.  The sun can dry fruits and vegetables.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "3"
                         ],
-                        "response": "No. Some vaccines are based on a weakened form of the virus but right now the best results seem to come from using synthetic strands of genetic code: In test trials this vaccine produced highly specific antibodies against Covid-19 in mice, which were able to neutralise the virus."
+                        "response": "The sun works okay for drying vegetables. But when it comes to fruits, a dehydrator is needed. There are low-tech thermal dehydrators available now that only cost 450,000 Ugandan Shillings. Solar powered ones can cost up to 2 million Ugandan Shillings."
                     }
                 ]
             }
