@@ -1,0 +1,155 @@
+{
+    "quizconfig": {
+        "oneShot": true,
+        "isGroupReply": true,
+        "webhook": "http://localhost:3000/api/incoming-webhook"
+    },
+    "quiz": {
+        "id": "Pearl009",
+        "active": true,
+        "preamble": [
+            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 9 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
+        ],
+        "postamble": [
+            "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes.\nPlease contact me again. Yours, Pearl."
+        ],
+        "question": [
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "Let me ask you the next question."
+                ],
+                "text": [
+                    "➡     1. Next to rape, what other forms of violence against women are happening in Uganda right now?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": true,
+                        "text": "🔸1. Cyber-bullying and abuse through social media and smartphones.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "All of the above answers are correct. 1 Millionen women experience sexual violence in Uganda each year. This number has increased drastically due to the lockdown situation of Corona."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸2. Corrective sex: Lesbian women are forced to have sex with a man to overcome their lesbianism.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "All of the above answers are correct. 1 Millionen women experience sexual violence in Uganda each year. This number has increased drastically due to the lockdown situation of Corona. "
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸3. Revenge porn by jilted lovers.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "All of the above answers are correct. 1 Millionen women experience sexual violence in Uganda each year. This number has increased drastically due to the lockdown situation of Corona."
+                    }
+                ]
+            },
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "Let me ask you the next question."
+                ],
+                "text": "➡ Why is the lockdown especially dire to women in regard to their choice of contraception?",
+                "answer": [
+                    {
+                        "isCorrect": true,
+                        "text": "🔸1. Women cannot use their contraception in secrecy because the husbands are always around.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Yes, this is true. With husbands always around the house, women cannot use their contraception in secrecy. But answer 2 is also correct: a lot of the reproductive health centers have closed down or have run out of stock of contraceptive therefore leaving women no choice but to have unprotected sex."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸2. There is not enough access to contraceptives as a lot of reproductive health services and family planing centers have run out of stock.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Yes, this is true. A lot of the reproductive health centers have closed down or have run out of stock of contraceptive therefore leaving women no choice but to have unprotected sex. But answer 1 is also correct: With husbands always around the house, women cannot use their contraception in secrecy."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸3. They have no place to catch up on local gossip.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "No. The local reproductive health service is not the place for sharing gossip, gossip can be shared on social media. Answer 1 and 2 are correct: With husbands always around the house, women cannot use their contraception in secrecy. And with a lot of the reproductive health centers having closed down or having run out of stock of contraceptive, women are left with no choice but to have unprotected sex."
+                    }
+                ]
+            },
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes."
+                ],
+                "text": [
+                    "➡ What does the buying of sanitary napkins have to do with domestic violence?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": false,
+                        "text": "🔸1. Nothing. Sanitary napkins are for women only. Why should there be a connection to domestic violence?",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Correct. There are low-tech thermal dehydrator available now that only cost 450,000 Ugandan Shillings. Solar powered ones can cost up to 2 million Ugandan Shillings."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸2. The money for buying the sanitary napkins often comes from male family members. Some will give it only for sexual favors.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Correct. But answer three is correct as well."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸3. Sanitary napkins are a hygiene article and in many areas were stocked by NGOs. Since lockdown they have run out of supply. Now elder men in the community provide it and unfortunately will often ask sexual favors in return.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Correct. But answer two is correct as well."
+                    }
+                ]
+            }
+        ]
+    }
+}
