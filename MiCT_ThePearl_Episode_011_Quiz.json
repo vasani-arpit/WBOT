@@ -1,0 +1,159 @@
+{
+    "quizconfig": {
+        "oneShot": true,
+        "isGroupReply": true,
+        "webhook": "http://localhost:3000/api/incoming-webhook"
+    },
+    "quiz": {
+        "id": "Pearl011",
+        "active": true,
+        "preamble": [
+            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 11 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
+        ],
+        "postamble": [
+            "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes.\nPlease contact me again. Yours, Pearl."
+        ],
+        "question": [
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "Let me ask you the next question."
+                ],
+                "text": [
+                    "➡ What is a scientific election?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": true,
+                        "text": "🔸1. An election where any political campaigns should be organized exclusively by media under the guidance of the Ministry of Health (MoH) experts.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Correct."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸2. An election to which only scientist are invited.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Wrong. A scientific election is the term coined for an election where any political campaigns should be organized exclusively by media under the guidance of the Ministry of Health (MoH) experts."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸3.  An election where most of the activity will be held in the virtual realms.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Correct. And furthermore it is an election where any political campaigns should be organized exclusively by media under the guidance of the Ministry of Health (MoH) experts."
+                    }
+                ]
+            },
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "Let me ask you the next question."
+                ],
+                "text": [
+                    "➡ What is one of the controversies regarding the scientific election?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": true,
+                        "text": [
+                            "🔸1. Not everyone can be reached."
+                        ],
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Correct, as all of the above answers. The 2014 census showed that one million homesteads had television sets and 3.4 million had radio sets. This is against a voting population of about 17 million."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸2. Some candidates are not given enough media time.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Correct, as all of the above answers. The 2014 census showed that one million homesteads had television sets and 3.4 million had radio sets. This is against a voting population of about 17 million."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸3. There are so many Fake News regarding the campaigns on the internet that it is hard to distinguish them from the real campaigns.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Correct, as all of the above answers. The 2014 census showed that one million homesteads had television sets and 3.4 million had radio sets. This is against a voting population of about 17 million."
+                    }
+                ]
+            },
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes."
+                ],
+                "text": [
+                    "➡ How many people are allowed to converge at any single rally?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": false,
+                        "text": "🔸1. Mass rallies are allowed.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Wrong, mass rallies are not allowed by the Electoral Commission, only a maximum of 200 people who are observing the different SOPs are allowed at any single rally. Be safe."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸2. No more than 200 people",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Correct. The Electoral Commission only allows a maximum of 200 people who are observing the different SOPs at any single rally. Be safe."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸3.  No more than 15 people.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Wrong. The Electoral Commission allows a maximum of 200 people who are observing the different SOPs at any single rally. Be safe."
+                    }
+                ]
+            }
+        ]
+    }
+}

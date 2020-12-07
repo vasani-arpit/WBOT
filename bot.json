@@ -77,6 +77,42 @@
         },
         {
             "contains": [],
+            "exact": ["script 6", "s 6", "script6","s6"],
+            "response": "Read The Pearl Episode 6",
+            "file":"MiCT_ThePearl_Episode_006_ScriptENG.pdf"
+        },
+        {
+            "contains": [],
+            "exact": ["script 7", "s 7", "script7","s7"],
+            "response": "Read The Pearl Episode 7",
+            "file":"MiCT_ThePearl_Episode_007_ScriptENG.pdf"
+        },
+        {
+            "contains": [],
+            "exact": ["script 8", "s 8", "script8","s8"],
+            "response": "Read The Pearl Episode 8",
+            "file":"MiCT_ThePearl_Episode_008_ScriptENG.pdf"
+        },
+        {
+            "contains": [],
+            "exact": ["script 9", "s 9", "script9","s9"],
+            "response": "Read The Pearl Episode 9",
+            "file":"MiCT_ThePearl_Episode_009_ScriptENG.pdf"
+        },
+        {
+            "contains": [],
+            "exact": ["script 10", "s 10", "script10","s10"],
+            "response": "Read The Pearl Episode 10",
+            "file":"MiCT_ThePearl_Episode_010_ScriptENG.pdf"
+        },
+        {
+            "contains": [],
+            "exact": ["script 11", "s 11", "script11","s11"],
+            "response": "Read The Pearl Episode 11",
+            "file":"MiCT_ThePearl_Episode_011_ScriptENG.pdf"
+        },
+        {
+            "contains": [],
             "exact": ["audio 1", "a 1", "audio1","a1"],
             "response": "Listen to The Pearl Episode 1",
             "file":"MiCT_ThePearl_Episode_001_AudioENG.mp3"
@@ -134,6 +170,12 @@
             "exact": ["audio 10", "a 10", "audio10","a10"],
             "response": "Listen to The Pearl Episode 10",
             "file":"MiCT_ThePearl_Episode_010.mp3"
+        },
+        {
+            "contains": [],
+            "exact": ["audio 11", "a 11", "audio11","a11"],
+            "response": "Listen to The Pearl Episode 11",
+            "file":"MiCT_ThePearl_Episode_011.mp3"
         }
     ],
     "blocked": [],
