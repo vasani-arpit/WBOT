@@ -1,45 +1,30 @@
 {
     "appconfig": {
         "headless": false,
-        "isGroupReply":false,
-        "webhook":""
+        "isGroupReply": false,
+        "webhook": ""
     },
     "bot": [{
             "contains": [],
-            "exact": ["hi"],
-            "response": "{hello|howdy}"
+            "exact": ["Assalamualaikum"],
+            "response": "{Waalaikumsalam warohmatullahi wabarakaatuh}"
         },
         {
             "contains": [],
-            "exact": ["hello"],
+            "exact": ["hi"],
             "response": "hi",
-            "file":"noFile.png"
+            "file": "noFile.png"
         },
         {
             "contains": [],
             "exact": ["hy"],
             "response": "hi",
-            "file":"github.png"
+            "file": "github.png"
         },
         {
             "contains": [],
-            "exact": ["hiee"],
+            "exact": ["Hi"],
             "response": "hi"
-        },
-        {
-            "contains": [],
-            "exact": ["hey"],
-            "response": "hi"
-        },
-        {
-            "contains": ["michhami","dukkadam"],
-            "exact": [],
-            "response": "Michhami Dukkadam 🙏"
-        },
-        {
-            "contains": ["happy","birthday","bday"],
-            "exact": [],
-            "response": "Thank you"
         },
         {
             "contains": [],
@@ -52,26 +37,16 @@
             "response": "Thank you"
         },
         {
-            "contains": ["શુભકામના","જન્મદિન"],
-            "exact": [],
-            "response": "આભાર 🙏"
-        },
-        {
-            "contains": ["janmdin","hardik","shubhkaamna"],
-            "exact": [],
-            "response": "aabhar 🙏"
-        },
-        {
             "contains": [],
             "exact": ["github"],
             "response": "Git Hub Logo",
-            "file":"{github.png|github-two.png}"
+            "file": "{github.png|github-two.png}"
         }
     ],
     "blocked": [],
-    "noMatch":"{🤔|👍}",
-    "smartreply":{
-        "suggestions":["Hello", "Welcome to my store !!", "Thanks for reaching out 🙏"],
-        "clicktosend":true
+    "noMatch": "{🤔|👍}",
+    "smartreply": {
+        "suggestions": ["Hello", "Welcome to my store !!", "Thanks for reaching out 🙏"],
+        "clicktosend": true
     }
 }
