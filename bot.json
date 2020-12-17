@@ -32,9 +32,14 @@
             "response": "i am {good {thanks| thank you}|great}. How about you?"
         },
         {
-            "contains": [],
+            "contains": ["Jazakallah Khairan"],
             "exact": ["hbd"],
             "response": "Thank you"
+        },
+        {
+            "contains": ["Jazakallah Khairan"],
+            "exact": [],
+            "response": "Wajazakallahu khairan"
         },
         {
             "contains": [],
@@ -44,9 +49,9 @@
         }
     ],
     "blocked": [],
-    "noMatch": "{🤔|👍}",
+    "noMatch": "{Maaf Keyword yang anda masukkan tidak terdaftar!}",
     "smartreply": {
-        "suggestions": ["Hello", "Welcome to my store !!", "Thanks for reaching out 🙏"],
+        "suggestions": ["Assalamualaikum", "Ahlan Wa Sahlan !!", "Thanks for reaching out 🙏"],
         "clicktosend": true
     }
 }
