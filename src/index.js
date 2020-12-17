@@ -47,8 +47,8 @@ async function Main() {
      * If local chrome is not there then this function will download it first. then use it for automation. 
      */
     async function downloadAndStartThings() {
-        let botjson = utils.externalInjection("bot.json");
-        var appconfig = await utils.externalInjection("bot.json");
+        let botjson = utils.externalBotInjection(); //utils.externalInjection("bot.json");
+        var appconfig = await utils.externalBotInjection(); //utils.externalInjection("bot.json");
         appconfig = JSON.parse(appconfig);
         spinner.start("Downloading chrome\n");
         const browserFetcher = puppeteer.createBrowserFetcher({
@@ -78,7 +78,8 @@ async function Main() {
             headless: appconfig.appconfig.headless,
             userDataDir: path.join(process.cwd(), "ChromeSession"),
             devtools: false,
-            args: [...constants.DEFAULT_CHROMIUM_ARGS, ...pptrArgv], ...extraArguments
+            args: [...constants.DEFAULT_CHROMIUM_ARGS, ...pptrArgv],
+            ...extraArguments
         });
         spinner.stop("Launching Chrome ... done!");
         if (argv.proxyURI) {
@@ -113,10 +114,12 @@ async function Main() {
             // When the settings file is edited multiple calls are sent to function. This will help
             // to prevent from getting corrupted settings data
             let timeout = 5000;
-            
+
+            // bot.json
+            //load json bot file on live session
             // Register a filesystem watcher
             fs.watch(constants.BOT_SETTINGS_FILE, (event, filename) => {
-                setTimeout(()=> {
+                setTimeout(() => {
                     settings.LoadBotSettings(event, filename, page);
                 }, timeout);
             });
@@ -128,7 +131,7 @@ async function Main() {
 
     async function injectScripts(page) {
         return await page.waitForSelector('[data-icon=laptop]')
-            .then(async () => {
+            .then(async() => {
                 var filepath = path.join(__dirname, "WAPI.js");
                 await page.addScriptTag({ path: require.resolve(filepath) });
                 filepath = path.join(__dirname, "inject.js");
@@ -197,9 +200,9 @@ async function Main() {
             observer.observe(document.querySelector('#app'), { attributes: false, childList: true, subtree: true });
         `);
         spinner.stop("setting up smart reply ... done!");
-        page.waitForSelector("#main", { timeout: 0 }).then(async () => {
+        page.waitForSelector("#main", { timeout: 0 }).then(async() => {
             await page.exposeFunction("sendMessage", async message => {
-                return new Promise(async (resolve, reject) => {
+                return new Promise(async(resolve, reject) => {
                     //send message to the currently open chat using power of puppeteer 
                     await page.type("#main div.selectable-text[data-tab]", message);
                     if (configs.smartreply.clicktosend) {
