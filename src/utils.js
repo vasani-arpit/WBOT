@@ -1,4 +1,5 @@
 var path = require("path");
+var http = require('http');
 const mime = require('mime');
 var fs = require("fs");
 this.injection = function(filename) {
@@ -15,11 +16,9 @@ this.injection = function(filename) {
 
 this.externalInjection = function(filename) {
     return new Promise((resolve, reject) => {
-        //console.log("reading file from" + process.cwd());
-        //Load From Local
-        //var filepath = path.join(process.cwd(), filename);
-        //Load From Server
-        var filepath = "https://raw.githubusercontent.com/inspirasiprogrammer/WBOT/master/bot.json";
+        // console.log("reading file from" + process.cwd());
+        // Load From Local
+        var filepath = path.join(process.cwd(), filename);
         fs.readFile(filepath, 'utf8', (err, data) => {
             if (err) return reject(err);
             resolve(data);
