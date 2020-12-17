@@ -1,7 +1,7 @@
 var path = require("path");
 const mime = require('mime');
 var fs = require("fs");
-this.injection = function (filename) {
+this.injection = function(filename) {
     return new Promise((resolve, reject) => {
         var filepath = path.join(__dirname, filename);
         //console.log("reading file from" + (filepath));
@@ -13,10 +13,13 @@ this.injection = function (filename) {
     });
 }
 
-this.externalInjection = function (filename) {
+this.externalInjection = function(filename) {
     return new Promise((resolve, reject) => {
         //console.log("reading file from" + process.cwd());
-        var filepath = path.join(process.cwd(), filename);
+        //Load From Local
+        //var filepath = path.join(process.cwd(), filename);
+        //Load From Server
+        var filepath = "https://raw.githubusercontent.com/inspirasiprogrammer/WBOT/master/bot.json";
         fs.readFile(filepath, 'utf8', (err, data) => {
             if (err) return reject(err);
             resolve(data);
@@ -24,7 +27,7 @@ this.externalInjection = function (filename) {
     });
 }
 
-this.getFileInBase64 = function (filename) {
+this.getFileInBase64 = function(filename) {
     return new Promise((resolve, reject) => {
         try {
             filename = path.join(process.cwd(), filename);
