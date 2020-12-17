@@ -131,6 +131,10 @@ cd WBOT
 npm install
 node src/index.js
 ```
+Error Running on UBUNTU Linux
+[Solved]
+sudo apt install xvfb
+xvfb-run -a --server-args='-screen 0 1280x800x24 -ac -nolisten tcp -dpi 96 +extension RANDR' node ./src/index.js
 
 If you run Linux on a headless server or wan't to run chmomium without visible display try ```xvfb-run wbot-linux```.
 
