@@ -1,0 +1,159 @@
+{
+    "quizconfig": {
+        "oneShot": true,
+        "isGroupReply": true,
+        "webhook": "http://localhost:3000/api/incoming-webhook"
+    },
+    "quiz": {
+        "id": "Pearl013",
+        "active": true,
+        "preamble": [
+            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 13 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
+        ],
+        "postamble": [
+            "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes.\nPlease contact me again. Yours, Pearl."
+        ],
+        "question": [
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "Let me ask you the next question."
+                ],
+                "text": [
+                    "➡ Why might it be a good idea not to visit families in the villages during Christmas season?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": true,
+                        "text": "🔸1. Greater mobility and large gatherings can lead to new clusters of cases in parts of Uganda that might previously have been spared.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Correct."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸2. Money is sparse in times of the pandemic, and it costs too much money to travel and to buy all the presents.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Wrong. Greater mobility and large gatherings can lead to new clusters of cases in parts of Africa that might previously have been spared."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸3.  While it is fun to visit families, it might also lead to family fights that have been slumbering.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Wrong. Greater mobility and large gatherings can lead to new clusters of cases in parts of Africa that might previously have been spared."
+                    }
+                ]
+            },
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "Let me ask you the next question."
+                ],
+                "text": [
+                    "➡ Why is it not a good idea to consume alcohol during the festive days?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": true,
+                        "text": [
+                            "🔸1. Alcohol alters your thoughts, judgement, decision-making and behaviour. It is better to stay sober so that you can remain vigilant, act quickly and make decisions with a clear head, for yourself and others in your family and community."
+                        ],
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Correct."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸2. Why should it be a good idea? Alcohol is part of the celebrations. A party does not feel like one when there is no alcohol involved.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Wrong. You can have a great party without alcohol, just be creative. Make special food, drink healthy juices. Boost your immune system with a healthy alternative and celebrate life."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸3. Alcohol is not mentioned in the bible. It should not be consumed at Christmas.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Wrong. Alcohol alters your thoughts, judgement, decision-making and behaviour. It is better to stay sober so that you can remain vigilant, act quickly and make decisions with a clear head, for yourself and others in your family and community."
+                    }
+                ]
+            },
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes."
+                ],
+                "text": [
+                    "➡ Does alcohol prevent you from getting the virus?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": false,
+                        "text": "🔸1. Yes, strong alcohol kills germs.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Wrong. While alcohol (at a concentration of at least 60% by volume) works as a disinfectant on your skin, it has no such effect on viruses when ingested. In fact, consuming alcohol increases the risk of acute respiratory distress syndrome (ARDS), one of the most severe complications of COVID-19."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸2. Yes, it kills the virus in mid-air.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Wrong. It simply doesn’t. And consuming alcohol increases the risk of acute respiratory distress syndrome (ARDS), one of the most severe complications of COVID-19."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸3. No, in fact consuming alcohol increases the risk of acute respiratory distress syndrome (ARDS), one of the most severe complications of COVID-19.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Correct."
+                    }
+                ]
+            }
+        ]
+    }
+}
