@@ -5,10 +5,10 @@
         "webhook": "http://localhost:3000/api/incoming-webhook"
     },
     "quiz": {
-        "id": "Pearl010",
+        "id": "Pearl012",
         "active": true,
         "preamble": [
-            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 10 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
+            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 12 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
         ],
         "postamble": [
             "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes.\nPlease contact me again. Yours, Pearl."
@@ -22,41 +22,41 @@
                     "Let me ask you the next question."
                 ],
                 "text": [
-                    "➡ Where can you check whether a piece of information about COVID-19 is fake news or not?"
+                    "➡ What is a scientific election?"
                 ],
                 "answer": [
                     {
                         "isCorrect": false,
-                        "text": "🔸1. Ask a school teacher.",
+                        "text": "🔸1. With all the economic aid programs active, the pandemic doesn’t cost the economy anything. While one sector loses, another one wins. All is good.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "1"
                         ],
-                        "response": "Although school teachers might be able to help you, the Ministry of Health is the first place to check, as disinformation about Corona remains in place."
+                        "response": "Wrong. The pandemic is expected to cost the global economy approximately US$1 trillion during 2020."
                     },
                     {
                         "isCorrect": false,
-                        "text": "🔸2. Ask the elders.",
+                        "text": "🔸2. The pandemic is expected to cost the global economy approximately US$ 50 Million during 2020.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "2"
                         ],
-                        "response": "Although your elders might be able to help you, Ministry of Health is the first place to check on their various platforms."
+                        "response": "Wrong. The pandemic is expected to cost the global economy approximately US$1 trillion during 2020."
                     },
                     {
                         "isCorrect": true,
-                        "text": "🔸3. Check with the Ministry of Health.",
+                        "text": "🔸3.  The pandemic is expected to cost the global economy approximately US$1 trillion during 2020.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "3"
                         ],
-                        "response": "Yes. This is the place to check."
+                        "response": "Correct."
                     }
                 ]
             },
@@ -68,13 +68,13 @@
                     "Let me ask you the next question."
                 ],
                 "text": [
-                    "➡ Corona does not get transmitted through family gatherings or happy events like weddings. Is this correct or Fake News?"
+                    "➡ Why is the pandemic especially hard on the creative sector?"
                 ],
                 "answer": [
                     {
                         "isCorrect": false,
                         "text": [
-                            "🔸1. It is correct! Weddings are joyful. There is no chance for a virus to survive with so many happy vibes around."
+                            "🔸1. Artists are so sad about the pandemic that they have lost their ability to express themselves."
                         ],
                         "exact": [
                             ""
@@ -82,18 +82,29 @@
                         "contains": [
                             "1"
                         ],
-                        "response": "Wrong, it is Fake News. Happy vibes do not protect from the virus. In fact, weddings and other family gatherings are some of the most likely places to transmit the virus. If you plan an event like this, please observe the Standard Operating Procedures issued by government."
+                        "response": "Wrong. Times like these need art as a form of resilience even more than under normal circumstances and artists are eager to express themselves. But the pandemic has impacted the entire creative value chain – creation, production, distribution and access – and considerably weakened the working, social and economic conditions of artists and cultural professionals."
                     },
                     {
                         "isCorrect": true,
-                        "text": "🔸2. It is Fake News. Family gatherings like weddings or big birthday parties are very dangerous in times of Corona and should be avoided. If a wedding or another family gathering takes place, take necessary precautions. Check health sites if necessary.",
+                        "text": "🔸2. The pandemic has impacted the entire creative value chain. Artists cannot reach their audiences in the traditional ways.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "2"
                         ],
-                        "response": "Correct. It is Fake News. No matter how happy the vibes of such a gathering, many people have been infected with Corona on such events, as relatives from a wide variety of places congregate."
+                        "response": "Correct. The pandemic has impacted the entire creative value chain – creation, production, distribution and access – and considerably weakened the working, social and economic conditions of artists and cultural professionals."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸3. People are saving their money in times of economic restrictions and are less likely to spend money on art or entertainment.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Wrong. While people are willing to spend money on music and entertainment, the pandemic has impacted the entire creative value chain – creation, production, distribution and access – and considerably weakened the working, social and economic conditions of artists and cultural professionals. Artists need to find new ways, like streaming services, to distribute their works."
                     }
                 ]
             },
@@ -105,41 +116,41 @@
                     "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes."
                 ],
                 "text": [
-                    "➡ What is the Computer Misuse Act of 2011?"
+                    "➡ How much have live and public performances gone down globally since the onset of the pandemic?"
                 ],
                 "answer": [
                     {
-                        "isCorrect": false,
-                        "text": "🔸1. The Computer Misuse Act of 2011 forbids the use of computers in schools.",
+                        "isCorrect": true,
+                        "text": "🔸1. They have gone down by 30%.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "1"
                         ],
-                        "response": "Wrong. The Computer Misuse Act of 2011 states that once you forward anything using your phone, you become the author and creator of that content. Hence, if you spread Fake News, you also create them and may risk criminal prosecution."
+                        "response": "Correct."
                     },
                     {
-                        "isCorrect": true,
-                        "text": "🔸2. The Computer Misuse Act of 2011 states that once you forward anything using your phone, you become the author and creator of that content.",
+                        "isCorrect": false,
+                        "text": "🔸2. There are no live and public performances held anywhere at all.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "2"
                         ],
-                        "response": "Correct. The Computer Misuse Act of 2011 states that once you forward anything using your phone, you become the author and creator of that content. Hence, if you spread Fake News, you also create them and may risk criminal prosecution."
+                        "response": "Wrong. They have gone down by 30%."
                     },
                     {
                         "isCorrect": false,
-                        "text": "🔸3.  The Computer Misuse Act of 2011 states that computers should be used for business purposes only.",
+                        "text": "🔸3. They have gone down by 10%.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "3"
                         ],
-                        "response": "Wrong. The Computer Misuse Act of 2011 states that once you forward anything using your phone, you become the author and creator of that content. Hence, if you spread Fake News, you also create them and may risk criminal prosecution."
+                        "response": "Wrong. They have gone down by 30%."
                     }
                 ]
             }
