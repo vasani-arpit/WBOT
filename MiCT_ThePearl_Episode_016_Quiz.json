@@ -1,0 +1,159 @@
+{
+    "quizconfig": {
+        "oneShot": true,
+        "isGroupReply": true,
+        "webhook": "http://localhost:3000/api/incoming-webhook"
+    },
+    "quiz": {
+        "id": "Pearl016",
+        "active": true,
+        "preamble": [
+            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 16 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
+        ],
+        "postamble": [
+            "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes.\nPlease contact me again. Yours, Pearl."
+        ],
+        "question": [
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "Let me ask you the next question."
+                ],
+                "text": [
+                    "➡ When was Patient Zero (the first Ugandan with Covid-19) reported in Uganda?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": false,
+                        "text": "🔸1. As late as September 9th, 2020.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Wrong. The first patent diagnosed with Covid-19 was treated at Mulago National Referral Hospital on March 22nd, 2020. Since then there have been 33,360 confirmed new cases."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸2. In December 1997.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Wrong. The first patent diagnosed with Covid-19 was treated at Mulago National Referral Hospital on March 22nd, 2020. Since then there have been 33,360 confirmed new cases."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸3.  On March 22nd, 2020.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Correct. The first patent diagnosed with Covid-19 was treated at Mulago National Referral Hospital on March 22nd, 2020. Since then there have been 33,360 confirmed new cases."
+                    }
+                ]
+            },
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "Let me ask you the next question."
+                ],
+                "text": [
+                    "➡ What are the symptoms compatible with Covid-19?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": true,
+                        "text": [
+                            "🔸1. Fever, cough, myalgia or fatigue, shortness of breath, sore throat and headache. Other symptoms may include: flu-like symptoms, diarrhea and nausea, muscle ache, pneumonia and Acute Respiratory Distress Syndrome (ARDS), renal failure, pericarditis and Disseminated Intravascular Coagulation (DIC)."
+                        ],
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Correct."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸2. Incredible hunger attacks.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Wrong. Fever, cough, myalgia or fatigue, shortness of breath, sore throat and headache are symptoms associated with Covid-19. Other symptoms may include: flu-like symptoms, diarrhea and nausea, muscle ache, pneumonia and Acute Respiratory Distress Syndrome (ARDS), renal failure, pericarditis and Disseminated Intravascular Coagulation (DIC)."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸3. Impaired vision.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Wrong. Fever, cough, myalgia or fatigue, shortness of breath, sore throat and headache are symptoms associated with Covid-19. Other symptoms may include: flu-like symptoms, diarrhea and nausea, muscle ache, pneumonia and Acute Respiratory Distress Syndrome (ARDS), renal failure, pericarditis and Disseminated Intravascular Coagulation (DIC)."
+                    }
+                ]
+            },
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes."
+                ],
+                "text": [
+                    "➡ How many intensive care patients can one nurse covered in PPE (Personal Protective Equipment) take care of?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": true,
+                        "text": "🔸1. 8 - 10 patients.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Correct. One nurse will take care of 8 - 10 intensive care patients between eight and nine hours a day or night. The PPE is hot, stuffy and uncomfortable and the nurses suffer a lot."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸2. One patient.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Wrong. One nurse will take care of 8 - 10 intensive care patients between eight and nine hours a day or night. The PPE is hot, stuffy and uncomfortable and the nurses suffer a lot."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸3. 36 patients.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Wrong. One nurse will take care of 8 - 10 intensive care patients between eight and nine hours a day or night. The PPE is hot, stuffy and uncomfortable and the nurses suffer a lot."
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,159 @@
+{
+    "quizconfig": {
+        "oneShot": true,
+        "isGroupReply": true,
+        "webhook": "http://localhost:3000/api/incoming-webhook"
+    },
+    "quiz": {
+        "id": "Pearl015",
+        "active": true,
+        "preamble": [
+            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 15 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
+        ],
+        "postamble": [
+            "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes.\nPlease contact me again. Yours, Pearl."
+        ],
+        "question": [
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "Let me ask you the next question."
+                ],
+                "text": [
+                    "➡ How many adults in Uganda have disabilities according to a survey from UNICEF in 2017?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": false,
+                        "text": "🔸1. 7% of the adult population has one or more disabilities.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Wrong. 16,5 % of the adult population has one or more disabilities."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸2. 16,5 % of the adult population has one or more disabilities.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Correct."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸3.  51% of the adult population has one or more disabilities.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Wrong. 16,5 % of the adult population has one or more disabilities."
+                    }
+                ]
+            },
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "Let me ask you the next question."
+                ],
+                "text": [
+                    "➡ People with disabilities experience discrimination. Which group of disabled adults suffers the most?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": false,
+                        "text": [
+                            "🔸1. Adults with a deformity."
+                        ],
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Wrong. While 40% of adults with a deformity have experienced discrimination, 47 % of adults with dwarfism experience such unfairness."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸2. Adults with albinism.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Wrong. While 15% of adults with albinism have experienced discrimination, 47 % of adults with dwarfism experience such unfairness towards them."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸3. Adults with dwarfism.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Correct. 47% of adults with dwarfism have experienced discrimination."
+                    }
+                ]
+            },
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes."
+                ],
+                "text": [
+                    "➡ Why is it so important to receive ARVS medication regularly and without interruption?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": false,
+                        "text": "🔸1. Because doctors earn more money if one visits them regularly.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Wrong. It is important to take ARVS regularly because if not inconsistent dosing can lead to the development of drug resistance and eventually treatment failure."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸2. Because inconsistent dosing can lead to development of drug resistance and eventually treatment failure.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Correct."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸3. Because the pills go bad very quickly.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Wrong. It is important to take ARVS regularly because if not inconsistent dosing can lead to the development of drug resistance and eventually treatment failure."
+                    }
+                ]
+            }
+        ]
+    }
+}
