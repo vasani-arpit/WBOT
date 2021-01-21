@@ -233,13 +233,19 @@
         },
         {
             "contains": [],
-            "exact": ["audio 16", "a 15", "audio16","a16"],
+            "exact": ["audio 16", "a 16, "audio16","a16"],
             "response": "Listen to The Pearl Episode 16",
             "file":"MiCT_ThePearl_Episode_016_AudioENG.mp3"
+        },
+        {
+            "contains": [],
+            "exact": ["audio 17", "a 17", "audio17","a17"],
+            "response": "Listen to The Pearl Episode 17",
+            "file":"MiCT_ThePearl_Episode_017_AudioENG.mp3"
         }
     ],
     "blocked": [],
-    "noMatch":"The pearl has many hidden treasures.\nTo listen to the current episode, type\n➡ audio 16\n or for the previous episode\n➡ audio 15",
+    "noMatch":"The pearl has many hidden treasures.\nTo listen to the current episode, type\n➡ audio 17\n or for the previous episode\n➡ audio 16",
     "smartreply":{
         "suggestions":[],
 	"clicktosend":true
