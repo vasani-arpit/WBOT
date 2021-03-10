@@ -27,3 +27,8 @@ this.DEFAULT_CHROMIUM_ARGS = [
 ];
 this.DEFAULT_DATA_DIR = path.join(process.cwd(), "chromium-data");
 this.DEFAULT_CHATID_STORE_DIR = path.join(process.cwd(), "chatIdStore");
+
+/**
+ * Name of the file that stores bot configuration
+ */
+this.BOT_SETTINGS_FILE = "bot.json";
