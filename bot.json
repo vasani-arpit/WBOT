@@ -155,6 +155,24 @@
         },
         {
             "contains": [],
+            "exact": ["script 19", "s 19", "script19","s19"],
+            "response": "Read The Pearl Episode 19",
+            "file":"MiCT_ThePearl_Episode_019_ScriptENG.pdf"
+        },
+        {
+            "contains": [],
+            "exact": ["script 20", "s 20", "script20","s20"],
+            "response": "Read The Pearl Episode 20",
+            "file":"MiCT_ThePearl_Episode_020_ScriptENG.pdf"
+        },
+        {
+            "contains": [],
+            "exact": ["script 21", "s 21", "script21","s21"],
+            "response": "Read The Pearl Episode 21",
+            "file":"MiCT_ThePearl_Episode_021_ScriptENG.pdf"
+        },
+        {
+            "contains": [],
             "exact": ["audio 1", "a 1", "audio1","a1"],
             "response": "Listen to The Pearl Episode 1",
             "file":"MiCT_ThePearl_Episode_001_AudioENG.mp3"
@@ -260,10 +278,28 @@
             "exact": ["audio 18", "a 18", "audio18","a18"],
             "response": "Listen to The Pearl Episode 18",
             "file":"MiCT_ThePearl_Episode_018_AudioENG.mp3"
+        },
+        {
+            "contains": [],
+            "exact": ["audio 19", "a 19", "audio19","a19"],
+            "response": "Listen to The Pearl Episode 19",
+            "file":"MiCT_ThePearl_Episode_019_AudioENG.mp3"
+        },
+        {
+            "contains": [],
+            "exact": ["audio 20", "a 20", "audio20","a20"],
+            "response": "Listen to The Pearl Episode 20",
+            "file":"MiCT_ThePearl_Episode_020_AudioENG.mp3"
+        },
+        {
+            "contains": [],
+            "exact": ["audio 21", "a 21", "audio21","a21"],
+            "response": "Listen to The Pearl Episode 21",
+            "file":"MiCT_ThePearl_Episode_021_AudioENG.mp3"
         }
     ],
     "blocked": [],
-    "noMatch":"The pearl has many hidden treasures.\nTo listen to the current episode, type\n➡ audio 18\n or for the previous episode\n➡ audio 17",
+    "noMatch":"The pearl has many hidden treasures.\nTo listen to the current episode, type\n➡ audio 19\n or for the previous episode\n➡ audio 17",
     "smartreply":{
         "suggestions":[],
 	"clicktosend":true

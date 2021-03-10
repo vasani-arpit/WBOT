@@ -5,10 +5,10 @@
         "webhook": "http://localhost:3000/api/incoming-webhook"
     },
     "quiz": {
-        "id": "Pearl018",
+        "id": "Pearl021",
         "active": true,
         "preamble": [
-            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 18 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
+            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 21 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
         ],
         "postamble": [
             "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes.\nPlease contact me again. Yours, Pearl."
@@ -22,41 +22,41 @@
                     "Let me ask you the next question."
                 ],
                 "text": [
-                    "➡ How many psychiatrists are registered in Uganda to treat issues of depression?"
+                    "➡ When meeting a 'friend/stranger' from facebook physically for the first time, what should you keep in mind?"
                 ],
                 "answer": [
                     {
                         "isCorrect": false,
-                        "text": "🔸1. There are 500 registered psychiatrists.",
+                        "text": "🔸1. Nothing. I know this person through their facebook site and have nothing to fear.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "1"
                         ],
-                        "response": "Wrong. There are 47 psychiatrists, most of them in the Kampala area."
+                        "response": "Wrong. While we hope you have nothing to fear, there are some guidelines to follow. Please check on: https://www.facebook.com/help/728437264275111"
                     },
                     {
-                        "isCorrect": true,
-                        "text": "🔸2. There are 47 registered psychiatrists.",
+                        "isCorrect": false,
+                        "text": "🔸2. One should never-ever reach out or meet someone in real life that one only knows from facebook without taking precautionary measures.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "2"
                         ],
-                        "response": "Correct. There are 47 psychiatrists, most of them in the Kampala area."
+                        "response": "No. If you make a meaningful connection with someone via facebook and the desire to meet in person arises from both, you may arrange a meeting. However consult these guidelines first: https://www.facebook.com/help/728437264275111"
                     },
                     {
-                        "isCorrect": false,
-                        "text": "🔸3.  There are 4 registered psychiatrists.",
+                        "isCorrect": true,
+                        "text": "🔸3.  If you feel like you want to get to know the person better, you can arrange a date offline. However you should take note of safety guidelines first. Check some of them out on: https://www.facebook.com/help/728437264275111",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "3"
                         ],
-                        "response": "Wrong. There are 47 psychiatrists, most of them in the Kampala area."
+                        "response": "Correct. And please remember to check these guidelines first: https://www.facebook.com/help/728437264275111"
                     }
                 ]
             },
@@ -68,13 +68,13 @@
                     "Let me ask you the next question."
                 ],
                 "text": [
-                    "➡ Not everybody can cope with the mental effects of being in lockdown. But for those who actually get infected and recover, coping with life can be challenging. For what reasons?"
+                    "➡ Feeling lonely and disconnected as a teenager is not just a thing in Uganda. According to The Wallstreet Journal, how many female teenagers suddenly feel lonely, that have not felt so before?"
                 ],
                 "answer": [
                     {
                         "isCorrect": false,
                         "text": [
-                            "🔸1. Stigmatization."
+                            "🔸1. 52%"
                         ],
                         "exact": [
                             ""
@@ -82,29 +82,29 @@
                         "contains": [
                             "1"
                         ],
-                        "response": "Partly correct. But all of the above would have been the correct answer, as COVID-19 is associated with neurological and mental complications such as delirium, agitation, stroke, insomnia, anxiety or depression."
+                        "response": "No. 78% of teenage girls in the US feel lonely due to the pandemic."
                     },
                     {
-                        "isCorrect": false,
-                        "text": "🔸2. COVID-19 is associated with neurological and mental complications such as delirium, agitation, stroke, insomnia, anxiety or depression.",
+                        "isCorrect": true,
+                        "text": "🔸2.  78%",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "2"
                         ],
-                        "response": "Partly correct. But all of the above would have been the correct answer, as people recovering from Covid-19 often have to fight against stigmatization."
+                        "response": "Yes, 78% of teenage girls in the US feel lonely due to the pandemic."
                     },
                     {
-                        "isCorrect": true,
-                        "text": "🔸3. All of the symptoms mentioned in answer one and two combined.",
+                        "isCorrect": false,
+                        "text": "🔸3. 34%",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "3"
                         ],
-                        "response": "Correct."
+                        "response": "No. 78% of teenage girls in the US feel lonely due to the pandemic."
                     }
                 ]
             },
@@ -116,41 +116,41 @@
                     "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes."
                 ],
                 "text": [
-                    "➡ What is the Michelangelo effect and why is it likely to occur during lockdown?"
+                    "➡ What is the difference between alone and lonely?"
                 ],
                 "answer": [
                     {
                         "isCorrect": true,
-                        "text": "🔸1. “The Michelangelo Effect” refers to the way we are more likely to develop into the kind of person we want to be if we are with a close romantic partner who supports and encourages us to behave in line with our aspirations. During lockdown we spend a lot of time with our beloved ones and this might offer a chance for personal growth.",
+                        "text": "🔸1. Lonely is a psychological state where social relationships seem to be less in quantity and quality than desired. Alone does not have to be negative.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "1"
                         ],
-                        "response": "Correct."
+                        "response": "Yes, correct."
                     },
                     {
                         "isCorrect": false,
-                        "text": "🔸2. „The Michelangelo Effect“ refers to the way we see and sculpt the world around us. During lockdown we have very little color and brush variety, hence our world becomes dark and dim.",
+                        "text": "🔸2. There is no difference. Both are the same.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "2"
                         ],
-                        "response": "Wrong. “The Michelangelo Effect” refers to the way we are more likely to develop into the kind of person we want to be if we’re with a close romantic partner who supports and encourages us to behave in line with our aspirations. During lockdown we spend a lot of time with our beloved ones and this might offer a chance for personal growth."
+                        "response": "No, there is a huge difference between the two. While being lonely is a negative feeling caused by having too little good relationships, being alone can be a state of mind to embrace. Meditate, exercise, learn new things, all these activities can be done with the one person you know so well: yourself."
                     },
                     {
                         "isCorrect": false,
-                        "text": "🔸3. „The Michelangelo Effect“ refers to the interconnectedness of actions. If a virus starts spreading in China, it will soon also be found in Italy, the home of the famous Renaissance painter.",
+                        "text": "🔸3.  Being alone is bad, being lonely is worse.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "3"
                         ],
-                        "response": "Wrong. “The Michelangelo Effect” refers to the way we are more likely to develop into the kind of person we want to be if we’re with a close romantic partner who supports and encourages us to behave in line with our aspirations. During lockdown we spend a lot of time with our beloved ones and this might offer a chance for personal growth."
+                        "response": "No. While loneliness is considered a negative feeling, being alone is not. It can in fact be a state of mind to embrace. Meditate, exercise, learn new things, all these activities can be done with the one person you know so well: yourself."
                     }
                 ]
             }
