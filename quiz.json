@@ -5,10 +5,10 @@
         "webhook": "http://localhost:3000/api/incoming-webhook"
     },
     "quiz": {
-        "id": "Pearl021",
+        "id": "Pearl022",
         "active": true,
         "preamble": [
-            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 21 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
+            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 22 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
         ],
         "postamble": [
             "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes.\nPlease contact me again. Yours, Pearl."
@@ -22,41 +22,41 @@
                     "Let me ask you the next question."
                 ],
                 "text": [
-                    "➡ When meeting a 'friend/stranger' from facebook physically for the first time, what should you keep in mind?"
+                    "➡ What is an immune system?"
                 ],
                 "answer": [
                     {
-                        "isCorrect": false,
-                        "text": "🔸1. Nothing. I know this person through their facebook site and have nothing to fear.",
+                        "isCorrect": true,
+                        "text": "🔸1. The immune system is the set of tissues which work together to resist infections.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "1"
                         ],
-                        "response": "Wrong. While we hope you have nothing to fear, there are some guidelines to follow. Please check on: https://www.facebook.com/help/728437264275111"
+                        "response": "Correct. The immune system is the set of tissues which work together to resist infections. The immune mechanisms help an organism identify a pathogen, and neutralize its threat. The immune system can detect and identify many different kinds of disease agents. Examples are viruses, bacteria and parasites."
                     },
                     {
                         "isCorrect": false,
-                        "text": "🔸2. One should never-ever reach out or meet someone in real life that one only knows from facebook without taking precautionary measures.",
+                        "text": "🔸2. The immune system is a political tool declaring immunity from the law.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "2"
                         ],
-                        "response": "No. If you make a meaningful connection with someone via facebook and the desire to meet in person arises from both, you may arrange a meeting. However consult these guidelines first: https://www.facebook.com/help/728437264275111"
+                        "response": "Wrong. Political immunity is something else. The immune system is the set of tissues which work together to resist infections. The immune mechanisms help an organism identify a pathogen, and neutralize its threat. The immune system can detect and identify many different kinds of disease agents. Examples are viruses, bacteria and parasites."
                     },
                     {
-                        "isCorrect": true,
-                        "text": "🔸3.  If you feel like you want to get to know the person better, you can arrange a date offline. However you should take note of safety guidelines first. Check some of them out on: https://www.facebook.com/help/728437264275111",
+                        "isCorrect": false,
+                        "text": "🔸3.  The immune system is an idea with no proof that it actually exists.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "3"
                         ],
-                        "response": "Correct. And please remember to check these guidelines first: https://www.facebook.com/help/728437264275111"
+                        "response": "Wrong. The immune system does exist and is very important for our health. It is the set of tissues which work together to resist infections. The immune mechanisms help an organism identify a pathogen, and neutralize its threat. The immune system can detect and identify many different kinds of disease agents. Examples are viruses, bacteria and parasites."
                     }
                 ]
             },
@@ -68,13 +68,13 @@
                     "Let me ask you the next question."
                 ],
                 "text": [
-                    "➡ Feeling lonely and disconnected as a teenager is not just a thing in Uganda. According to The Wallstreet Journal, how many female teenagers suddenly feel lonely, that have not felt so before?"
+                    "➡ What are the main organs of the immune system?"
                 ],
                 "answer": [
                     {
                         "isCorrect": false,
                         "text": [
-                            "🔸1. 52%"
+                            "🔸1. Liver and Bladder."
                         ],
                         "exact": [
                             ""
@@ -82,29 +82,29 @@
                         "contains": [
                             "1"
                         ],
-                        "response": "No. 78% of teenage girls in the US feel lonely due to the pandemic."
+                        "response": "No. Liver detoxes the body and the bladder stores urine. The main organs of the immune system are: Bone Marrow, Thymus, Lymph nodes, Spleen, Tonsils and all mucous membranes."
                     },
                     {
-                        "isCorrect": true,
-                        "text": "🔸2.  78%",
+                        "isCorrect": false,
+                        "text": "🔸2.  Tongue and Ears.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "2"
                         ],
-                        "response": "Yes, 78% of teenage girls in the US feel lonely due to the pandemic."
+                        "response": "No. The main organs of the immune system are: Bone Marrow, Thymus, Lymph nodes, Spleen, Tonsils and all mucous membranes."
                     },
                     {
-                        "isCorrect": false,
-                        "text": "🔸3. 34%",
+                        "isCorrect": true,
+                        "text": "🔸3. Bone Marrow, Thymus, Lymph nodes, spleen, tonsils and all mucous membranes.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "3"
                         ],
-                        "response": "No. 78% of teenage girls in the US feel lonely due to the pandemic."
+                        "response": "Correct."
                     }
                 ]
             },
@@ -116,41 +116,41 @@
                     "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes."
                 ],
                 "text": [
-                    "➡ What is the difference between alone and lonely?"
+                    "➡ Is drinking alcohol beneficial to boost the immune system?"
                 ],
                 "answer": [
                     {
-                        "isCorrect": true,
-                        "text": "🔸1. Lonely is a psychological state where social relationships seem to be less in quantity and quality than desired. Alone does not have to be negative.",
+                        "isCorrect": false,
+                        "text": "🔸1. Yes. It fights off bacteria.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "1"
                         ],
-                        "response": "Yes, correct."
+                        "response": "Wrong. Sooooo wrong. Alcohol weakens your immune system in two ways: it impairs the function of the immune cells and damages the microorganisms in the gut that help fight infections."
                     },
                     {
-                        "isCorrect": false,
-                        "text": "🔸2. There is no difference. Both are the same.",
+                        "isCorrect": true,
+                        "text": "🔸2. No. It makes on weak.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "2"
                         ],
-                        "response": "No, there is a huge difference between the two. While being lonely is a negative feeling caused by having too little good relationships, being alone can be a state of mind to embrace. Meditate, exercise, learn new things, all these activities can be done with the one person you know so well: yourself."
+                        "response": "Correct. Alcohol weakens your immune system in two ways: it impairs the function of the immune cells and damages the microorganisms in the gut that help fight infections."
                     },
                     {
                         "isCorrect": false,
-                        "text": "🔸3.  Being alone is bad, being lonely is worse.",
+                        "text": "🔸3.  Sometimes.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "3"
                         ],
-                        "response": "No. While loneliness is considered a negative feeling, being alone is not. It can in fact be a state of mind to embrace. Meditate, exercise, learn new things, all these activities can be done with the one person you know so well: yourself."
+                        "response": "Wrong. Alcohol weakens your immune system in two ways: it impairs the function of the immune cells and damages the microorganisms in the gut that help fight infections."
                     }
                 ]
             }

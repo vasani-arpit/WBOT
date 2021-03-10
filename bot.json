@@ -173,6 +173,12 @@
         },
         {
             "contains": [],
+            "exact": ["script 22", "s 22", "script22","s22"],
+            "response": "Read The Pearl Episode 22",
+            "file":"MiCT_ThePearl_Episode_022_ScriptENG.pdf"
+        },
+        {
+            "contains": [],
             "exact": ["audio 1", "a 1", "audio1","a1"],
             "response": "Listen to The Pearl Episode 1",
             "file":"MiCT_ThePearl_Episode_001_AudioENG.mp3"
@@ -296,6 +302,12 @@
             "exact": ["audio 21", "a 21", "audio21","a21"],
             "response": "Listen to The Pearl Episode 21",
             "file":"MiCT_ThePearl_Episode_021_AudioENG.mp3"
+        },
+        {
+            "contains": [],
+            "exact": ["audio 22", "a 22", "audio22","a22"],
+            "response": "Listen to The Pearl Episode 22",
+            "file":"MiCT_ThePearl_Episode_022_AudioENG.mp3"
         }
     ],
     "blocked": [],
