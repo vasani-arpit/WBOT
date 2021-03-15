@@ -5,10 +5,10 @@
         "webhook": "http://localhost:3000/api/incoming-webhook"
     },
     "quiz": {
-        "id": "Pearl022",
+        "id": "Pearl023",
         "active": true,
         "preamble": [
-            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 22 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
+            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 23 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
         ],
         "postamble": [
             "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes.\nPlease contact me again. Yours, Pearl."
@@ -22,41 +22,41 @@
                     "Let me ask you the next question."
                 ],
                 "text": [
-                    "➡ What is an immune system?"
+                    "➡ 70% of all emerging infectious diseases, including COVID-19, are zoonotic – meaning they originate when pathogens move from animals to humans. Consuming bushmeat increases the risk of disease transmission?"
                 ],
                 "answer": [
                     {
-                        "isCorrect": true,
-                        "text": "🔸1. The immune system is the set of tissues which work together to resist infections.",
+                        "isCorrect": false,
+                        "text": "🔸1. 10.000 Dollars.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "1"
                         ],
-                        "response": "Correct. The immune system is the set of tissues which work together to resist infections. The immune mechanisms help an organism identify a pathogen, and neutralize its threat. The immune system can detect and identify many different kinds of disease agents. Examples are viruses, bacteria and parasites."
+                        "response": "Wrong. 25,5 Million Dollars and more than 500.000 jobs are connected to wildlife tourism."
                     },
                     {
-                        "isCorrect": false,
-                        "text": "🔸2. The immune system is a political tool declaring immunity from the law.",
+                        "isCorrect": true,
+                        "text": "🔸2. 25,5 Million Dollars.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "2"
                         ],
-                        "response": "Wrong. Political immunity is something else. The immune system is the set of tissues which work together to resist infections. The immune mechanisms help an organism identify a pathogen, and neutralize its threat. The immune system can detect and identify many different kinds of disease agents. Examples are viruses, bacteria and parasites."
+                        "response": "Correct. 25,5 Million Dollars and more than 500.000 jobs are connected to wildlife tourism."
                     },
                     {
                         "isCorrect": false,
-                        "text": "🔸3.  The immune system is an idea with no proof that it actually exists.",
+                        "text": "🔸3.  5 Million Dollars.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "3"
                         ],
-                        "response": "Wrong. The immune system does exist and is very important for our health. It is the set of tissues which work together to resist infections. The immune mechanisms help an organism identify a pathogen, and neutralize its threat. The immune system can detect and identify many different kinds of disease agents. Examples are viruses, bacteria and parasites."
+                        "response": "Wrong. 25,5 Million Dollars and more than 500.000 jobs are connected to wildlife tourism."
                     }
                 ]
             },
@@ -68,13 +68,13 @@
                     "Let me ask you the next question."
                 ],
                 "text": [
-                    "➡ What are the main organs of the immune system?"
+                    "➡ How much has poaching increased in Uganda since the beginning of the Covid-19 crisis?"
                 ],
                 "answer": [
                     {
-                        "isCorrect": false,
+                        "isCorrect": true,
                         "text": [
-                            "🔸1. Liver and Bladder."
+                            "🔸1. It has doubled."
                         ],
                         "exact": [
                             ""
@@ -82,29 +82,29 @@
                         "contains": [
                             "1"
                         ],
-                        "response": "No. Liver detoxes the body and the bladder stores urine. The main organs of the immune system are: Bone Marrow, Thymus, Lymph nodes, Spleen, Tonsils and all mucous membranes."
+                        "response": "Correct."
                     },
                     {
                         "isCorrect": false,
-                        "text": "🔸2.  Tongue and Ears.",
+                        "text": "🔸2.  It is the same.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "2"
                         ],
-                        "response": "No. The main organs of the immune system are: Bone Marrow, Thymus, Lymph nodes, Spleen, Tonsils and all mucous membranes."
+                        "response": "Wrong. It has doubled."
                     },
                     {
-                        "isCorrect": true,
-                        "text": "🔸3. Bone Marrow, Thymus, Lymph nodes, spleen, tonsils and all mucous membranes.",
+                        "isCorrect": false,
+                        "text": "🔸3. It has increased by 20%.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "3"
                         ],
-                        "response": "Correct."
+                        "response": "Wrong. It has doubled."
                     }
                 ]
             },
@@ -116,41 +116,41 @@
                     "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes."
                 ],
                 "text": [
-                    "➡ Is drinking alcohol beneficial to boost the immune system?"
+                    "➡ Please give another reason why poaching for wild game meat is a public health issue:"
                 ],
                 "answer": [
                     {
-                        "isCorrect": false,
-                        "text": "🔸1. Yes. It fights off bacteria.",
+                        "isCorrect": true,
+                        "text": "🔸1. 70% of all emerging infectious diseases, including COVID-19, are zoonotic – meaning they originate when pathogens move from animals to humans. Consuming wild game meat increases the risk of disease transmission.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "1"
                         ],
-                        "response": "Wrong. Sooooo wrong. Alcohol weakens your immune system in two ways: it impairs the function of the immune cells and damages the microorganisms in the gut that help fight infections."
+                        "response": "Correct. And the WHO is calling for even more bans for consuming wild game meat, as it may cause a real health threat."
                     },
                     {
-                        "isCorrect": true,
-                        "text": "🔸2. No. It makes on weak.",
+                        "isCorrect": false,
+                        "text": "🔸2. Hunters can get injured and their wounds can become infected, causing more strain on  hospitals.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "2"
                         ],
-                        "response": "Correct. Alcohol weakens your immune system in two ways: it impairs the function of the immune cells and damages the microorganisms in the gut that help fight infections."
+                        "response": "Wrong. 70% of all emerging infectious diseases, including COVID-19, are zoonotic – meaning they originate when pathogens move from animals to humans. Consuming wild game meat increases the risk of disease transmission."
                     },
                     {
                         "isCorrect": false,
-                        "text": "🔸3.  Sometimes.",
+                        "text": "🔸3.  Wild game meat is so nutritious that people can overeat and suffer from protein poisoning.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "3"
                         ],
-                        "response": "Wrong. Alcohol weakens your immune system in two ways: it impairs the function of the immune cells and damages the microorganisms in the gut that help fight infections."
+                        "response": "Wrong. 70% of all emerging infectious diseases, including COVID-19, are zoonotic – meaning they originate when pathogens move from animals to humans. Consuming wild game meat increases the risk of disease transmission."
                     }
                 ]
             }
