@@ -1,3 +1,23 @@
+//Updating string prototype to support variables
+String.prototype.fillVariables = String.prototype.fillVariables ||
+    function () {
+        "use strict";
+        var str = this.toString();
+        if (arguments.length) {
+            var t = typeof arguments[0];
+            var key;
+            var args = ("string" === t || "number" === t) ?
+                Array.prototype.slice.call(arguments)
+                : arguments[0];
+
+            for (key in args) {
+                str = str.replace(new RegExp("\\[#" + key + "\\]", "gi"), args[key]);
+            }
+        }
+
+        return str;
+    };
+
 WAPI.waitNewMessages(false, async (data) => {
     for (let i = 0; i < data.length; i++) {
         //fetch API to send and receive response from server
@@ -21,6 +41,7 @@ WAPI.waitNewMessages(false, async (data) => {
                 //replying to the user based on response
                 if (response && response.length > 0) {
                     response.forEach(itemResponse => {
+                        itemResponse.text = itemResponse.text.fillVariables({ name: message.sender.pushname, phoneNumber: message.sender.id.user });
                         WAPI.sendMessage2(message.chatId._serialized, itemResponse.text);
                         //sending files if there is any 
                         if (itemResponse.files && itemResponse.files.length > 0) {
@@ -62,8 +83,8 @@ WAPI.waitNewMessages(false, async (data) => {
                 console.log("No partial match found");
             }
             WAPI.sendSeen(message.chatId._serialized);
+            response = response.fillVariables({ name: message.sender.pushname, phoneNumber: message.sender.id.user })
             WAPI.sendMessage2(message.chatId._serialized, response);
-            console.log();
             if ((exactMatch || PartialMatch).file != undefined) {
                 files = await resolveSpintax((exactMatch || PartialMatch).file);
                 window.getFile(files).then((base64Data) => {

@@ -66,6 +66,11 @@
             "exact": ["github"],
             "response": "Git Hub Logo",
             "file":"{github.png|github-two.png}"
+        },
+        {
+            "contains": [],
+            "exact": ["variables"],
+            "response": "this are the two variables [#name] and [#phoneNumber]"
         }
     ],
     "blocked": [],
