@@ -94,7 +94,7 @@ An array of objects. Properties of Object are self explanatory.
 - **Contains** If message has one of that word anywhere in the message
 - **exact** If message is exactly as one of the messages form array
 
-- **Response** If any of the above conditions becomes true then corresponding response string or [spintax](https://spintaxtool.appspot.com/) will be sent as message to the user or group.
+- **Response** If any of the above conditions becomes true then corresponding response string or [spintax](https://spintaxtool.appspot.com/) will be sent as message to the user or group. there is two variables name and phoneNumber which you can use to create custom message for sender. sample message with variable is in `bot.json`
 
 - **file** name of the file (from current directory) which you want to send along with response 
 
