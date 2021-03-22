@@ -1,0 +1,159 @@
+{
+    "quizconfig": {
+        "oneShot": true,
+        "isGroupReply": true,
+        "webhook": "http://localhost:3000/api/incoming-webhook"
+    },
+    "quiz": {
+        "id": "Pearl022",
+        "active": true,
+        "preamble": [
+            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 22 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
+        ],
+        "postamble": [
+            "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes.\nPlease contact me again. Yours, Pearl."
+        ],
+        "question": [
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "Let me ask you the next question."
+                ],
+                "text": [
+                    "➡ What is an immune system?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": true,
+                        "text": "🔸1. The immune system is the set of tissues which work together to resist infections.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Correct. The immune system is the set of tissues which work together to resist infections. The immune mechanisms help an organism identify a pathogen, and neutralize its threat. The immune system can detect and identify many different kinds of disease agents. Examples are viruses, bacteria and parasites."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸2. The immune system is a political tool declaring immunity from the law.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Wrong. Political immunity is something else. The immune system is the set of tissues which work together to resist infections. The immune mechanisms help an organism identify a pathogen, and neutralize its threat. The immune system can detect and identify many different kinds of disease agents. Examples are viruses, bacteria and parasites."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸3.  The immune system is an idea with no proof that it actually exists.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Wrong. The immune system does exist and is very important for our health. It is the set of tissues which work together to resist infections. The immune mechanisms help an organism identify a pathogen, and neutralize its threat. The immune system can detect and identify many different kinds of disease agents. Examples are viruses, bacteria and parasites."
+                    }
+                ]
+            },
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "Let me ask you the next question."
+                ],
+                "text": [
+                    "➡ What are the main organs of the immune system?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": false,
+                        "text": [
+                            "🔸1. Liver and Bladder."
+                        ],
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "No. Liver detoxes the body and the bladder stores urine. The main organs of the immune system are: Bone Marrow, Thymus, Lymph nodes, Spleen, Tonsils and all mucous membranes."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸2.  Tongue and Ears.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "No. The main organs of the immune system are: Bone Marrow, Thymus, Lymph nodes, Spleen, Tonsils and all mucous membranes."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸3. Bone Marrow, Thymus, Lymph nodes, spleen, tonsils and all mucous membranes.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Correct."
+                    }
+                ]
+            },
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes."
+                ],
+                "text": [
+                    "➡ Is drinking alcohol beneficial to boost the immune system?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": false,
+                        "text": "🔸1. Yes. It fights off bacteria.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Wrong. Sooooo wrong. Alcohol weakens your immune system in two ways: it impairs the function of the immune cells and damages the microorganisms in the gut that help fight infections."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸2. No. It makes on weak.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Correct. Alcohol weakens your immune system in two ways: it impairs the function of the immune cells and damages the microorganisms in the gut that help fight infections."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸3.  Sometimes.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Wrong. Alcohol weakens your immune system in two ways: it impairs the function of the immune cells and damages the microorganisms in the gut that help fight infections."
+                    }
+                ]
+            }
+        ]
+    }
+}

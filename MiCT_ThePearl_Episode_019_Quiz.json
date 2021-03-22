@@ -1,0 +1,159 @@
+{
+    "quizconfig": {
+        "oneShot": true,
+        "isGroupReply": true,
+        "webhook": "http://localhost:3000/api/incoming-webhook"
+    },
+    "quiz": {
+        "id": "Pearl019",
+        "active": true,
+        "preamble": [
+            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 19 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
+        ],
+        "postamble": [
+            "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes.\nPlease contact me again. Yours, Pearl."
+        ],
+        "question": [
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "Let me ask you the next question."
+                ],
+                "text": [
+                    "➡ The UN warns that there could be additional AIDS-related deaths due to Corona Virus. How high are the estimated numbers?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": false,
+                        "text": "🔸1. 30.000 more deaths.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Wrong. The estimated numbers are as high as 500.000."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸2. 300.000 more deaths.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Wrong. The estimated numbers are as high as 500.000."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸3.  500.000 more deaths.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Correct."
+                    }
+                ]
+            },
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "Let me ask you the next question."
+                ],
+                "text": [
+                    "➡ Besides not making it to the nearest health facility due to transportation restrictions, what is the biggest challenge regarding medication effectiveness for HIV positive patients during this pandemic?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": false,
+                        "text": [
+                            "🔸1. Access to healthy food."
+                        ],
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Access to healthy food is a challenge. But so is the availability of antiretroviral treatment. So answer three - all of the above - is the correct answer."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸2. Availability of antiretroviral treatment.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Availability of antiretroviral treatment is challenging in these times. But so is access to healthy food. So answer three - all of the above - is the correct answer."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸3. All of the above.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Correct."
+                    }
+                ]
+            },
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes."
+                ],
+                "text": [
+                    "➡ Healthy food does not need to be expensive. Which famous human rights activist wrote a cookbook on healthy, local, cheap food?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": false,
+                        "text": "🔸1. “Nelson Mandela.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Wrong. Mahatma Gandhi wrote a cookbook on how to prepare healthy local food."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸2. „Mahatma Gandhi.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Correct."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸3. „Che Guevara.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Wrong. Mahatma Gandhi wrote a cookbook on how to prepare healthy local food."
+                    }
+                ]
+            }
+        ]
+    }
+}

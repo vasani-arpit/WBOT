@@ -1,0 +1,159 @@
+{
+    "quizconfig": {
+        "oneShot": true,
+        "isGroupReply": true,
+        "webhook": "http://localhost:3000/api/incoming-webhook"
+    },
+    "quiz": {
+        "id": "Pearl020",
+        "active": true,
+        "preamble": [
+            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 20 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
+        ],
+        "postamble": [
+            "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes.\nPlease contact me again. Yours, Pearl."
+        ],
+        "question": [
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "Let me ask you the next question."
+                ],
+                "text": [
+                    "➡ What does the Uganda Vision 2040 hope to increase through education?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": false,
+                        "text": "🔸1. The amount of tourists coming to the country.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Wrong. The Uganda Vision 2040 seeks to increase the per capita income through education."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸2. Awareness about healthy food.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Wrong. The Uganda Vision 2040 seeks to increase the per capita income through education."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸3.  The per capita income: From 506 US to 9580 US.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Correct. The Uganda Vision 2040 seeks to increase the per capita income through education."
+                    }
+                ]
+            },
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "Let me ask you the next question."
+                ],
+                "text": [
+                    "➡ People who graduate are more likely to…"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": false,
+                        "text": [
+                            "🔸1. Use technologies and to develop new skills."
+                        ],
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Yes, but education also helps to earn more money. Answer 3 would have been correct."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸2.  Earn more money.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Yes, but education also helps to use technologies and develop new skills. Answer 3 would have been correct."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸3. All of the above answers.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Correct."
+                    }
+                ]
+            },
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes."
+                ],
+                "text": [
+                    "➡ Which were the first subjects taught at Makere University, the first university in Uganda?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": true,
+                        "text": "🔸1. “carpentry, construction and mechanics",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Correct."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸2. „finance, computer sciences and algebra",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Wrong. The University was the first in the country and was founded in 1922. Carpentry, construction and mechanics were the first subjects taught."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸3. „cooking, sewing and home economics",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Wrong. The University was the first in the country and was founded in 1922. Carpentry, construction and mechanics were the first subjects taught."
+                    }
+                ]
+            }
+        ]
+    }
+}

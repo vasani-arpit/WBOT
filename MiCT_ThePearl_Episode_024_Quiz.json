@@ -1,0 +1,159 @@
+{
+    "quizconfig": {
+        "oneShot": true,
+        "isGroupReply": true,
+        "webhook": "http://localhost:3000/api/incoming-webhook"
+    },
+    "quiz": {
+        "id": "Pearl024",
+        "active": true,
+        "preamble": [
+            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 24 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
+        ],
+        "postamble": [
+            "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes.\nPlease contact me again. Yours, Pearl."
+        ],
+        "question": [
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "Let me ask you the next question."
+                ],
+                "text": [
+                    "➡ Under what conditions does the Corona virus ideally spread?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": false,
+                        "text": "🔸1. When there is rain in the air.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Wrong. The Corona virus spreads ideally in any situation in which people are in close proximity to one another for long periods of time and in indoor locations with poor ventilation. "
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸2. In any situation in which people are in close proximity to one another for long periods of time and in indoor locations with poor ventilation.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Correct."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸3.  After eating junk-food.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Wrong. The Corona virus spreads ideally in any situation in which people are in close proximity to one another for long periods of time and in indoor locations with poor ventilation."
+                    }
+                ]
+            },
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "Let me ask you the next question."
+                ],
+                "text": [
+                    "➡ What is the difference between an antibody test and a viral test for Covid-19?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": false,
+                        "text": [
+                            "🔸1. In the antibody test two body parts are rubbed against each other to see how much energy erupts, while a viral test looks at one’s contacts on social media and checks their documented health status."
+                        ],
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Wrong. An antibody test (also known as a serology test) might tell you if you had a past infection. A viral test tells you if you have a current infection."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸2.  An antibody test checks for small, ant-like structures in the blood, while a viral test checks allergies that might give clues to an infection with Covid-19.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Wrong. An antibody test (also known as a serology test) might tell you if you had a past infection. A viral test tells you if you have a current infection."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸3. An antibody test (also known as a serology test) might tell you if you had a past infection. A viral test tells you if you have a current infection.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Correct."
+                    }
+                ]
+            },
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes."
+                ],
+                "text": [
+                    "➡ Why should one quarantine for 14 days when diagnosed with Covid-19?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": true,
+                        "text": "🔸1. 70% of all emerging infectious diseases, including COVID-19, are zoonotic – meaning they originate when pathogens move from animals to humans. Consuming wild game meat increases the risk of disease transmission.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Because the incubation period of COVID-19, which is the time between exposure to the virus and symptom onset, is on average 5-6 days, but can be as long as 14 days."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸2. Two weeks is half a month and double of one week. This seems about the right amount of time.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Wrong. Because the incubation period of COVID-19, which is the time between exposure to the virus and symptom onset, is on average 5-6 days, but can be as long as 14 days."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸3. Because in two weeks time all the Covid-19 bacteria will be killed.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Wrong. Covid-19 is caused by a virus and not bacteria. 14 days is the incubation period of COVID-19, which is the time between exposure to the virus and symptom onset, is on average 5-6 days, but can be as long as 14 days."
+                    }
+                ]
+            }
+        ]
+    }
+}

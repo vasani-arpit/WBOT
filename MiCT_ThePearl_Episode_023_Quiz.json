@@ -1,0 +1,159 @@
+{
+    "quizconfig": {
+        "oneShot": true,
+        "isGroupReply": true,
+        "webhook": "http://localhost:3000/api/incoming-webhook"
+    },
+    "quiz": {
+        "id": "Pearl023",
+        "active": true,
+        "preamble": [
+            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 23 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
+        ],
+        "postamble": [
+            "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes.\nPlease contact me again. Yours, Pearl."
+        ],
+        "question": [
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "Let me ask you the next question."
+                ],
+                "text": [
+                    "➡ 70% of all emerging infectious diseases, including COVID-19, are zoonotic – meaning they originate when pathogens move from animals to humans. Consuming bushmeat increases the risk of disease transmission?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": false,
+                        "text": "🔸1. 10.000 Dollars.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Wrong. 25,5 Million Dollars and more than 500.000 jobs are connected to wildlife tourism."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸2. 25,5 Million Dollars.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Correct. 25,5 Million Dollars and more than 500.000 jobs are connected to wildlife tourism."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸3.  5 Million Dollars.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Wrong. 25,5 Million Dollars and more than 500.000 jobs are connected to wildlife tourism."
+                    }
+                ]
+            },
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "Let me ask you the next question."
+                ],
+                "text": [
+                    "➡ How much has poaching increased in Uganda since the beginning of the Covid-19 crisis?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": true,
+                        "text": [
+                            "🔸1. It has doubled."
+                        ],
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Correct."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸2.  It is the same.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Wrong. It has doubled."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸3. It has increased by 20%.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Wrong. It has doubled."
+                    }
+                ]
+            },
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes."
+                ],
+                "text": [
+                    "➡ Please give another reason why poaching for wild game meat is a public health issue:"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": true,
+                        "text": "🔸1. 70% of all emerging infectious diseases, including COVID-19, are zoonotic – meaning they originate when pathogens move from animals to humans. Consuming wild game meat increases the risk of disease transmission.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Correct. And the WHO is calling for even more bans for consuming wild game meat, as it may cause a real health threat."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸2. Hunters can get injured and their wounds can become infected, causing more strain on  hospitals.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Wrong. 70% of all emerging infectious diseases, including COVID-19, are zoonotic – meaning they originate when pathogens move from animals to humans. Consuming wild game meat increases the risk of disease transmission."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸3.  Wild game meat is so nutritious that people can overeat and suffer from protein poisoning.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Wrong. 70% of all emerging infectious diseases, including COVID-19, are zoonotic – meaning they originate when pathogens move from animals to humans. Consuming wild game meat increases the risk of disease transmission."
+                    }
+                ]
+            }
+        ]
+    }
+}
