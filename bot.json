@@ -70,7 +70,7 @@
         {
             "contains": [],
             "exact": ["variables"],
-            "response": "this are the two variables [#name] and [#phoneNumber]"
+            "response": "this is sample of variables:\nHey [#name] 👋, [#greetings]. \nThis is your phone number, [#phoneNumber]"
         }
     ],
     "blocked": [],

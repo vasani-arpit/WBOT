@@ -1,3 +1,20 @@
+function greetings() {
+    let date = new Date();
+    hour = date.getHours();
+
+    if (hour >= 0 && hour < 12) {
+        return "Good Morning";
+    }
+
+    if (hour >= 12 && hour < 18) {
+        return "Good evening";
+    }
+
+    if (hour >= 18 && hour < 24) {
+        return "Good night";
+    }
+}
+
 //Updating string prototype to support variables
 String.prototype.fillVariables = String.prototype.fillVariables ||
     function () {
@@ -41,7 +58,7 @@ WAPI.waitNewMessages(false, async (data) => {
                 //replying to the user based on response
                 if (response && response.length > 0) {
                     response.forEach(itemResponse => {
-                        itemResponse.text = itemResponse.text.fillVariables({ name: message.sender.pushname, phoneNumber: message.sender.id.user });
+                        itemResponse.text = itemResponse.text.fillVariables({ name: message.sender.pushname, phoneNumber: message.sender.id.user, greetings: greetings() });
                         WAPI.sendMessage2(message.chatId._serialized, itemResponse.text);
                         //sending files if there is any 
                         if (itemResponse.files && itemResponse.files.length > 0) {
@@ -83,7 +100,7 @@ WAPI.waitNewMessages(false, async (data) => {
                 console.log("No partial match found");
             }
             WAPI.sendSeen(message.chatId._serialized);
-            response = response.fillVariables({ name: message.sender.pushname, phoneNumber: message.sender.id.user })
+            response = response.fillVariables({ name: message.sender.pushname, phoneNumber: message.sender.id.user, greetings: greetings() })
             WAPI.sendMessage2(message.chatId._serialized, response);
             if ((exactMatch || PartialMatch).file != undefined) {
                 files = await resolveSpintax((exactMatch || PartialMatch).file);
