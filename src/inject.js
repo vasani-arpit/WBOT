@@ -15,6 +15,22 @@ function greetings() {
     }
 }
 
+async function downloadFile(message) {
+    let filename = ''
+    if (message.type === "document") {
+        filename = `${message.filename.split(".")[0]}_${Math.random().toString(36).substring(4)}`
+    } else if (message.type === "image" || message.type === "video" || message.type === "ptt" || message.type === "audio") {
+        filename = `${message.chatId.user}_${Math.random().toString(36).substring(4)}`
+    } else {
+        window.log("couldn't recognize message type. Skipping download")
+        return
+    }
+    const buffer = await WAPI.downloadBuffer(message.deprecatedMms3Url)
+    const decrypted = await window.Store.CryptoLib.decryptE2EMedia(message.type, buffer, message.mediaKey, message.mimetype);
+    const data = await window.WAPI.readBlobAsync(decrypted._blob);
+    saveFile(data.split(',')[1], filename, message.mimetype)
+}
+
 //Updating string prototype to support variables
 String.prototype.fillVariables = String.prototype.fillVariables ||
     function () {
@@ -39,11 +55,15 @@ WAPI.waitNewMessages(false, async (data) => {
     for (let i = 0; i < data.length; i++) {
         //fetch API to send and receive response from server
         let message = data[i];
+        //console.log(message)
         body = {};
         body.text = message.body;
         body.type = 'message';
         body.user = message.chatId._serialized;
         //body.original = message;
+        if (intents.appconfig.downloadMedia) {
+            downloadFile(message)
+        }
         if (intents.appconfig.webhook) {
             fetch(intents.appconfig.webhook, {
                 method: "POST",

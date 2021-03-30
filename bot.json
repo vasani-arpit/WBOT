@@ -2,7 +2,8 @@
     "appconfig": {
         "headless": false,
         "isGroupReply":false,
-        "webhook":""
+        "webhook":"",
+        "downloadMedia": false
     },
     "bot": [{
             "contains": [],
