@@ -3,7 +3,7 @@
         "headless": false,
         "isGroupReply":false,
         "webhook":"",
-        "currentChrome":"http://localhost:9222/json/version"
+        "downloadMedia": false
     },
     "bot": [{
             "contains": [],
@@ -67,6 +67,11 @@
             "exact": ["github"],
             "response": "Git Hub Logo",
             "file":"{github.png|github-two.png}"
+        },
+        {
+            "contains": [],
+            "exact": ["variables"],
+            "response": "this is sample of variables:\nHey [#name] 👋, [#greetings]. \nThis is your phone number, [#phoneNumber]"
         }
     ],
     "blocked": [],
