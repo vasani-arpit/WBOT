@@ -15,7 +15,7 @@
             "contains": [],
             "exact": ["hello"],
             "response": "hi",
-            "file":"noFile.png"
+            "afterSeconds":3
         },
         {
             "contains": [],
@@ -76,7 +76,7 @@
         }
     ],
     "blocked": [],
-    "noMatch":"{🤔|👍}",
+    "noMatch":"{🤔|🤷‍♂️}",
     "smartreply":{
         "suggestions":["Hello", "Welcome to my store !!", "Thanks for reaching out 🙏"],
         "clicktosend":true

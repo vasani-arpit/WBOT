@@ -110,6 +110,8 @@ An array of objects. Properties of Object are self explanatory.
 
 - **file** name of the file (from current directory) which you want to send along with response 
 
+- **afterSeconds** number of seconds bot should wait before sending a reply. 
+
 **Blocked**
 
 Array of numbers with county code to which this bot will not reply to.

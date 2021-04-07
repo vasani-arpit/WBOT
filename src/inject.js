@@ -69,6 +69,20 @@ if (intents.appconfig.replyUnreadMsg) {
     })
 }
 
+function delay(ms) {
+    return new Promise(resolve => {
+        setTimeout(resolve, ms);
+    });
+};
+
+async function waitBeforeSending(exactMatch, PartialMatch) {
+    if (exactMatch || PartialMatch) {
+        if ((exactMatch || PartialMatch).afterSeconds) {
+            await delay((exactMatch || PartialMatch).afterSeconds * 1000)
+        }
+    }
+}
+
 async function processMessages(data) {
     for (let i = 0; i < data.length; i++) {
         //fetch API to send and receive response from server
@@ -138,6 +152,7 @@ async function processMessages(data) {
             }
             WAPI.sendSeen(message.chatId._serialized);
             response = response.fillVariables({ name: message.sender.pushname, phoneNumber: message.sender.id.user, greetings: greetings() })
+            await waitBeforeSending(exactMatch, PartialMatch)
             WAPI.sendMessage2(message.chatId._serialized, response);
             if (exactMatch != undefined || PartialMatch != undefined) {
                 //returning if there is no file
