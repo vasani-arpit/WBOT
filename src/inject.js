@@ -54,6 +54,7 @@ String.prototype.fillVariables = String.prototype.fillVariables ||
 //check if there is pending unread messages. if yes then push it to data
 if (intents.appconfig.replyUnreadMsg) {
     // check for pending unread messages
+    log("=====> Keep in mind that bot will reply to unread messages but you have to manually mark them as seen.")
     WAPI.getUnreadMessages(false, true, true, (messages) => {
         let processData = []
         data = messages.filter((m) => !m.archive)
