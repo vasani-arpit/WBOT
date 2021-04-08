@@ -193,13 +193,6 @@ async function processMessages(data) {
 
             }
 
-            // if (exactMatch != undefined || PartialMatch != undefined) {
-
-            //     url = await resolveSpintax((exactMatch).link);
-            //     description = await resolveSpintax((exactMatch || PartialMatch).text)
-            //     WAPI.sendLinkWithAutoPreview(message.chatId._serialized, url, description);
-
-            // }
 
         }
     }
