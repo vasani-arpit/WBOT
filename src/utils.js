@@ -43,3 +43,13 @@ this.delay = ms => {
         setTimeout(resolve, ms);
     });
 };
+
+this.saveFileFromBase64 = (base64Data, name, type) => {
+    console.log("save file called")
+    let extension = mime.getExtension(type)
+    try {
+        fs.writeFileSync(path.join(process.cwd(), name + "." + extension), base64Data, 'base64')
+    } catch (error) {
+        console.error("Unable to write downloaded file to disk")
+    }
+}

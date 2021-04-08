@@ -1,8 +1,10 @@
 {
     "appconfig": {
         "headless": false,
-        "isGroupReply":false,
-        "webhook":""
+        "isGroupReply": false,
+        "webhook": "",
+        "downloadMedia": false,
+        "replyUnreadMsg": true
     },
     "bot": [{
             "contains": [],
@@ -10,16 +12,23 @@
             "response": "{hello|howdy}"
         },
         {
+            "contains": [""],
+            "exact": ["link"],
+            "response": "Preview form bot.json",
+
+            "link": "https://www.google.com"
+        },
+        {
             "contains": [],
             "exact": ["hello"],
             "response": "hi",
-            "file":"noFile.png"
+            "file": "noFile.png"
         },
         {
             "contains": [],
             "exact": ["hy"],
             "response": "hi",
-            "file":"github.png"
+            "file": "github.png"
         },
         {
             "contains": [],
@@ -32,12 +41,12 @@
             "response": "hi"
         },
         {
-            "contains": ["michhami","dukkadam"],
+            "contains": ["michhami", "dukkadam"],
             "exact": [],
             "response": "Michhami Dukkadam 🙏"
         },
         {
-            "contains": ["happy","birthday","bday"],
+            "contains": ["happy", "birthday", "bday"],
             "exact": [],
             "response": "Thank you"
         },
@@ -52,12 +61,12 @@
             "response": "Thank you"
         },
         {
-            "contains": ["શુભકામના","જન્મદિન"],
+            "contains": ["શુભકામના", "જન્મદિન"],
             "exact": [],
             "response": "આભાર 🙏"
         },
         {
-            "contains": ["janmdin","hardik","shubhkaamna"],
+            "contains": ["janmdin", "hardik", "shubhkaamna"],
             "exact": [],
             "response": "aabhar 🙏"
         },
@@ -65,13 +74,18 @@
             "contains": [],
             "exact": ["github"],
             "response": "Git Hub Logo",
-            "file":"{github.png|github-two.png}"
+            "file": "{github.png|github-two.png}"
+        },
+        {
+            "contains": [],
+            "exact": ["variables"],
+            "response": "this is sample of variables:\nHey [#name] 👋, [#greetings]. \nThis is your phone number, [#phoneNumber]"
         }
     ],
     "blocked": [],
-    "noMatch":"{🤔|👍}",
-    "smartreply":{
-        "suggestions":["Hello", "Welcome to my store !!", "Thanks for reaching out 🙏"],
-        "clicktosend":true
+    "noMatch": "{🤔|👍}",
+    "smartreply": {
+        "suggestions": ["Hello", "Welcome to my store !!", "Thanks for reaching out 🙏"],
+        "clicktosend": true
     }
 }
