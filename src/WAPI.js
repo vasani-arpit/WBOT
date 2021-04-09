@@ -313,19 +313,6 @@ window.WAPI.getAllChatsWithNewMsg = function(done) {
     return chats;
 };
 
-
-window.WAPI.sendLinkWithAutoPreview = async function(chatId, url, text) {
-    text = text || "";
-    var chatSend = WAPI.getChat(chatId);
-    if (chatSend === undefined) {
-        return false;
-    }
-    const linkPreview = await Store.WapQuery.queryLinkPreview(url);
-    return (await chatSend.sendMessage(text.includes(url) ? text : `${url}\n${text}`, {
-        linkPreview
-    })) == 'OK'
-}
-
 /**
  * Fetches all chat IDs from store
  *
@@ -797,6 +784,22 @@ window.WAPI.ReplyMessage = function(idMessage, message, done) {
         return false;
     }
 };
+
+
+window.WAPI.sendLinkWithAutoPreview = async function(chatId, url, text) {
+    text = text || "";
+    var chatSend = WAPI.getChat(chatId);
+    if (chatSend === undefined) {
+        return false;
+    }
+    const linkPreview = await Store.WapQuery.queryLinkPreview(url);
+    return (await chatSend.sendMessage(text.includes(url) ? text : `${url}\n${text}`, {
+        linkPreview
+    })) == 'OK'
+}
+
+
+
 
 window.WAPI.sendMessageToID = function(id, message, done) {
     try {

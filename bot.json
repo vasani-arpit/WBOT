@@ -3,8 +3,7 @@
         "headless": false,
         "isGroupReply": false,
         "webhook": "",
-        "downloadMedia": false,
-        "replyUnreadMsg": true
+        "downloadMedia": false
     },
     "bot": [{
             "contains": [],
@@ -15,7 +14,6 @@
             "contains": [""],
             "exact": ["link"],
             "response": "Preview form bot.json",
-
             "link": "https://www.google.com"
         },
         {

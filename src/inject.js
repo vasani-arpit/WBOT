@@ -51,43 +51,11 @@ String.prototype.fillVariables = String.prototype.fillVariables ||
         return str;
     };
 
-//check if there is pending unread messages. if yes then push it to data
-if (intents.appconfig.replyUnreadMsg) {
-    // check for pending unread messages
-    log("=====> Keep in mind that bot will reply to unread messages but you have to manually mark them as seen.")
-    WAPI.getUnreadMessages(false, true, true, (messages) => {
-        let processData = []
-        data = messages.filter((m) => !m.archive)
-        for (let i = 0; i < data.length; i++) {
-            const element = data[i];
-            for (let j = 0; j < element.messages.length; j++) {
-                const message = element.messages[j];
-                processData.push(message)
-            }
-        }
-        console.log(processData)
-        processMessages(processData)
-    })
-}
-
-function delay(ms) {
-    return new Promise(resolve => {
-        setTimeout(resolve, ms);
-    });
-};
-
-async function waitBeforeSending(exactMatch, PartialMatch) {
-    if (exactMatch || PartialMatch) {
-        if ((exactMatch || PartialMatch).afterSeconds) {
-            await delay((exactMatch || PartialMatch).afterSeconds * 1000)
-        }
-    }
-}
-
-async function processMessages(data) {
+WAPI.waitNewMessages(false, async (data) => {
     for (let i = 0; i < data.length; i++) {
         //fetch API to send and receive response from server
         let message = data[i];
+        //console.log(message)
         body = {};
         body.text = message.body;
         body.type = 'message';
@@ -128,19 +96,16 @@ async function processMessages(data) {
                 console.log(error);
             });
         }
-
-
-
         window.log(`Message from ${message.chatId.user} checking..`);
         if (intents.blocked.indexOf(message.chatId.user) >= 0) {
             window.log("number is blocked by BOT. no reply");
-            continue;
+            return;
         }
         if (message.type == "chat") {
             //message.isGroupMsg to check if this is a group
             if (message.isGroupMsg == true && intents.appconfig.isGroupReply == false) {
                 window.log("Message received in group and group reply is off. so will not take any actions.");
-                continue;
+                return;
             }
             var exactMatch = intents.bot.find(obj => obj.exact.find(ex => ex == message.body.toLowerCase()));
             var response = "";
@@ -168,38 +133,28 @@ async function processMessages(data) {
             } else {
                 console.log("No partial match found");
             }
+
+
             WAPI.sendSeen(message.chatId._serialized);
             response = response.fillVariables({
                 name: message.sender.pushname,
                 phoneNumber: message.sender.id.user,
                 greetings: greetings()
             })
-            await waitBeforeSending(exactMatch, PartialMatch);
-
             WAPI.sendMessage2(message.chatId._serialized, response);
 
-            if (exactMatch != undefined || PartialMatch != undefined) {
-                //returning if there is no file
-                if ((exactMatch || PartialMatch).file != undefined) {
-                    files = await resolveSpintax((exactMatch || PartialMatch).file);
-                    window.getFile(files).then((base64Data) => {
-                        //console.log(file);
-                        WAPI.sendImage(base64Data, message.chatId._serialized, (exactMatch || PartialMatch).file);
-                    }).catch((error) => {
-                        window.log("Error in sending file\n" + error);
-                    })
-                }
 
-
+            if ((exactMatch || PartialMatch).file != undefined) {
+                files = await resolveSpintax((exactMatch || PartialMatch).file);
+                window.getFile(files).then((base64Data) => {
+                    //console.log(file);
+                    WAPI.sendImage(base64Data, message.chatId._serialized, (exactMatch || PartialMatch).file);
+                }).catch((error) => {
+                    window.log("Error in sending file\n" + error);
+                })
             }
-
-
         }
     }
-}
-
-WAPI.waitNewMessages(false, async (data) => {
-    processMessages(data)
 });
 WAPI.addOptions = function() {
     var suggestions = "";
