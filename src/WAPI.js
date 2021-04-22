@@ -31,6 +31,7 @@ if (!window.Store) {
                 { id: "UserConstructor", conditions: (module) => (module.default && module.default.prototype && module.default.prototype.isServer && module.default.prototype.isUser) ? module.default : null },
                 { id: "SendTextMsgToChat", conditions: (module) => (module.sendTextMsgToChat) ? module.sendTextMsgToChat : null },
                 { id: "SendSeen", conditions: (module) => (module.sendSeen) ? module.sendSeen : null },
+                { id: "Me", conditions: (module) => (module.PLATFORMS && module.Conn) ? module.default : null },
                 { id: "sendDelete", conditions: (module) => (module.sendDelete) ? module.sendDelete : null }
             ];
         for (let idx in modules) {
@@ -599,10 +600,10 @@ window.WAPI.getGroupAdmins = async function (id, done) {
  * @returns {Array|*|$q.all}
  */
 window.WAPI.getMe = function (done) {
-    const rawMe = window.Store.Contact.get(window.Store.Conn.me);
+    const rawMe = window.Store.Contact.get(Store.Me.wid);
 
-    if (done !== undefined) done(rawMe.all);
-    return rawMe.all;
+    if (done !== undefined) done(rawMe.attributes);
+    return rawMe.attributes;
 };
 
 window.WAPI.isLoggedIn = function (done) {
