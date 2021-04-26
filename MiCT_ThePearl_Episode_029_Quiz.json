@@ -1,0 +1,159 @@
+{
+    "quizconfig": {
+        "oneShot": true,
+        "isGroupReply": true,
+        "webhook": "http://localhost:3000/api/incoming-webhook"
+    },
+    "quiz": {
+        "id": "Pearl029",
+        "active": true,
+        "preamble": [
+            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 29 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
+        ],
+        "postamble": [
+            "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes.\nPlease contact me again. Yours, Pearl."
+        ],
+        "question": [
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "Let me ask you the next question."
+                ],
+                "text": [
+                    "➡ Do people die from rare side effects due to vaccination against Covid-19?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": false,
+                        "text": "🔸1. Yes, many people die from rare side effects due vaccination against Covid-19 because it has not been properly tested yet.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Wrong. Only a very small number, 0.0016% of all vaccinated people worldwide, have died after vaccination. Less than people being hit by lightning."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸2. No-one dies from vaccination against Covid-19.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Wrong. 0.0016% of people being vacated die form its after effects. These are less than being hit by lightning."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸3.  While there have been deaths related to rare side effects due the vaccination against Covid-19, you are more likely in danger of being hit by lightning than developing any of these rare side effects.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "True. 0.0016% of all vaccinated people worldwide have died after vaccination. These are less than being hit by lightning."
+                    }
+                ]
+            },
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "Let me ask you the next question."
+                ],
+                "text": [
+                    "➡ What is meant with the expression of a „wave“ when talking about Corona?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": true,
+                        "text": [
+                            "🔸1. Waves of infection describe the curve of an outbreak, reflecting a rise and fall in the number of cases."
+                        ],
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Correct."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸2.  As one waves good-bye, a wave of Corona means the efforts within society to get rid of the virus.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Wrong. Waves of infection describe the curve of an outbreak, reflecting a rise and fall in the number of cases."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸3. A wave of Corona refers to the rise of liquids within a body infected with Corona, eg. running noses.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Wrong. Waves of infection describe the curve of an outbreak, reflecting a rise and fall in the number of cases."
+                    }
+                ]
+            },
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes."
+                ],
+                "text": [
+                    "➡ How can one tell the difference between a scientific theory and a conspiracy theory?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": false,
+                        "text": "🔸1. A conspiracy theory can be proven wrong, while a scientific theory cannot be proven wrong.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Wrong. A scientific theory is able to be tested through methods like peer review and experimentation. A conspiracy theory may seem intuitive, but upon closer scrutiny, is not backed up by critical assessment."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸2. A scientific theory is able to be tested through methods like peer review and experimentation, while a conspiracy theory may seem intuitive but is not backed up by critical assessment.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Correct."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸3. There is no difference.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Wrong. A scientific theory is able to be tested through methods like peer review and experimentation. A conspiracy theory may seem intuitive, but upon closer scrutiny, is not backed up by critical assessment."
+                    }
+                ]
+            }
+        ]
+    }
+}
