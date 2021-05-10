@@ -221,6 +221,18 @@
         },
         {
             "contains": [],
+            "exact": ["script 30", "s 30", "script30","s30"],
+            "response": "Read The Pearl Episode 30",
+            "file":"MiCT_ThePearl_Episode_030_ScriptENG.pdf"
+        },
+        {
+            "contains": [],
+            "exact": ["script 31", "s 31", "script31","s31"],
+            "response": "Read The Pearl Episode 31",
+            "file":"MiCT_ThePearl_Episode_031_ScriptENG.pdf"
+        },
+        {
+            "contains": [],
             "exact": ["audio 1", "a 1", "audio1","a1"],
             "response": "Listen to The Pearl Episode 1",
             "file":"MiCT_ThePearl_Episode_001_AudioENG.mp3"
@@ -392,10 +404,22 @@
             "exact": ["audio 29", "a 29", "audio29","a29"],
             "response": "Listen to The Pearl Episode 29",
             "file":"MiCT_ThePearl_Episode_029_AudioENG.mp3"
+        },
+        {
+            "contains": [],
+            "exact": ["audio 30", "a 30", "audio30","a30"],
+            "response": "Listen to The Pearl Episode 30",
+            "file":"MiCT_ThePearl_Episode_030_AudioENG.mp3"
+        },
+        {
+            "contains": [],
+            "exact": ["audio 31", "a 31", "audio31","a31"],
+            "response": "Listen to The Pearl Episode 31",
+            "file":"MiCT_ThePearl_Episode_031_AudioENG.mp3"
         }
     ],
     "blocked": [],
-    "noMatch":"The pearl has many hidden treasures.\nTo listen to the current episode, type\n➡ audio 29\n or for the previous episode\n➡ audio 28",
+    "noMatch":"The pearl has many hidden treasures.\nTo listen to the current episode, type\n➡ audio 31\n or for the previous episode\n➡ audio 30",
     "smartreply":{
         "suggestions":[],
 	"clicktosend":true
