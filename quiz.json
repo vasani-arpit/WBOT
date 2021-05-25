@@ -5,10 +5,10 @@
         "webhook": "http://localhost:3000/api/incoming-webhook"
     },
     "quiz": {
-        "id": "Pearl031",
+        "id": "Pearl032",
         "active": true,
         "preamble": [
-            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 31 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
+            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 32 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
         ],
         "postamble": [
             "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes.\nPlease contact me again. Yours, Pearl."
@@ -22,41 +22,41 @@
                     "Let me ask you the next question."
                 ],
                 "text": [
-                    "➡ Does receiving a vaccination reduce virus transmission of Covid-19?"
+                    "➡ According to a Nature magazine survey, how many people believe virtual conferences will and should stay even after the pandemic?"
                 ],
                 "answer": [
                     {
-                        "isCorrect": true,
-                        "text": "🔸1. Yes. It can help prevent you from getting infected, but it also may reduce the risk of passing it on.",
+                        "isCorrect": false,
+                        "text": "🔸1. 25%.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "1"
                         ],
-                        "response": "Correct."
+                        "response": "Wrong. 75% of the surveyors said virtual conferences would and should stay."
                     },
                     {
-                        "isCorrect": false,
-                        "text": "🔸2. No. While being vaccinated means that only you yourself will not get infected, you still pass the virus on to others.",
+                        "isCorrect": true,
+                        "text": "🔸2. 75%.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "2"
                         ],
-                        "response": "Wrong. Vaccination can help prevent you from getting infected, but it also may reduce the risk of passing it on."
+                        "response": "Correct."
                     },
                     {
                         "isCorrect": false,
-                        "text": "🔸3.  Yes. Once you have been vaccinated, you will be immune and never ever have to worry about the virus again.",
+                        "text": "🔸3.  3%.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "3"
                         ],
-                        "response": "Wrong. Vaccination can help prevent you from getting infected, but it also may reduce the risk of passing it on."
+                        "response": "Wrong. 75% of the surveyors said virtual conferences would and should stay."
                     }
                 ]
             },
@@ -68,13 +68,13 @@
                     "Let me ask you the next question."
                 ],
                 "text": [
-                    "➡ What is herd immunity?"
+                    "➡ What are the benefits of hybrid conferences - conferences where in-person attendance is as much part as virtual attendance?"
                 ],
                 "answer": [
                     {
                         "isCorrect": false,
                         "text": [
-                            "🔸1. Herd immunity exists when animals become immune to vaccination."
+                            "🔸1. People who are busy with raising kids or are concerned about leaving a high carbon footprint can attend the conference from home."
                         ],
                         "exact": [
                             ""
@@ -82,29 +82,29 @@
                         "contains": [
                             "1"
                         ],
-                        "response": "Wrong. Herd immunity exists when enough people have protection against the disease through either being vaccinated or by catching it, then recovering and developing antibodies to it and hence stopping its spread."
+                        "response": "Wrong. While this answer is correct, answer 2 is correct as well."
                     },
                     {
-                        "isCorrect": true,
-                        "text": "🔸2.  Herd immunity exists when enough people have protection against the disease through either being vaccinated or by catching it, then recovering and developing antibodies to it and hence stopping its spread.",
+                        "isCorrect": false,
+                        "text": "🔸2.  People with chronic illnesses or people who have not been vaccinated yet will not be discriminated and can attend from home.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "2"
                         ],
-                        "response": "Correct."
+                        "response": "Wrong. While this answer is correct, answer 1 is correct as well."
                     },
                     {
-                        "isCorrect": false,
-                        "text": "🔸3. Herd immunity is a misspelling of Nerd immunity and means not being fooled by fake news.",
+                        "isCorrect": true,
+                        "text": "🔸3. Both of the above.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "3"
                         ],
-                        "response": "Wrong. Herd immunity exists when enough people have protection against the disease through either being vaccinated or by catching it, then recovering and developing antibodies to it and hence stopping its spread."
+                        "response": "Correct."
                     }
                 ]
             },
@@ -116,41 +116,41 @@
                     "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes."
                 ],
                 "text": [
-                    "➡ Why should one not be jealous of the people who have already been vaccinated?"
+                    "➡ What is zoom gloom?"
                 ],
                 "answer": [
                     {
                         "isCorrect": false,
-                        "text": "🔸1. Because being jealous doesn’t help staying healthy.",
+                        "text": "🔸1. A computer screen that is set too dark.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "1"
                         ],
-                        "response": "Wrong. One shouldn’t get jealous of the people who have already been vaccinated because the more people get vaccinated, the higher the herd immunity."
+                        "response": "Wrong. The expression zoom gloom describes the negative cognitive side effects when spending too much time on zoom or other virtual meeting systems."
                     },
                     {
-                        "isCorrect": false,
-                        "text": "🔸2. Because vaccination comes with an injection and hurts a bit.",
+                        "isCorrect": true,
+                        "text": "🔸2. The negative cognitive side effects when spending too much time on zoom or other virtual meeting systems.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "2"
                         ],
-                        "response": "Wrong. One shouldn’t get jealous of the people who have already been vaccinated because the more people get vaccinated, the higher the herd immunity."
+                        "response": "Correct."
                     },
                     {
-                        "isCorrect": true,
-                        "text": "🔸3. Because the more people get vaccinated, the higher the herd immunity.",
+                        "isCorrect": false,
+                        "text": "🔸3. An ice-cream flavor with charcoal and cinnamon.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "3"
                         ],
-                        "response": "Correct."
+                        "response": "Wrong. While we believe an ice-cream with such flavors might cause a zoom gloom on ones taste buds, the expression zoom gloom describes the negative cognitive side effects when spending too much time on zoom or other virtual meeting systems."
                     }
                 ]
             }
