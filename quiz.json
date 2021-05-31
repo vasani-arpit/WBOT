@@ -5,10 +5,10 @@
         "webhook": "http://localhost:3000/api/incoming-webhook"
     },
     "quiz": {
-        "id": "Pearl032",
+        "id": "Pearl033",
         "active": true,
         "preamble": [
-            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 32 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
+            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 33 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
         ],
         "postamble": [
             "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes.\nPlease contact me again. Yours, Pearl."
@@ -22,41 +22,41 @@
                     "Let me ask you the next question."
                 ],
                 "text": [
-                    "➡ According to a Nature magazine survey, how many people believe virtual conferences will and should stay even after the pandemic?"
+                    "➡ Which side effects are to be expected with the vaccination?"
                 ],
                 "answer": [
                     {
                         "isCorrect": false,
-                        "text": "🔸1. 25%.",
+                        "text": "🔸1. Fatigue and fever.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "1"
                         ],
-                        "response": "Wrong. 75% of the surveyors said virtual conferences would and should stay."
+                        "response": "This may be one of the side effects. It could also be a sore arm. But these effects only show that your immune system is boosting up."
                     },
                     {
-                        "isCorrect": true,
-                        "text": "🔸2. 75%.",
+                        "isCorrect": false,
+                        "text": "🔸2. A sore arm.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "2"
                         ],
-                        "response": "Correct."
+                        "response": "This may be one of the side effects. It could also be fatigue or fever. But these effects only show that your immune system is boosting up."
                     },
                     {
-                        "isCorrect": false,
-                        "text": "🔸3.  3%.",
+                        "isCorrect": true,
+                        "text": "🔸3.  Both of the above.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "3"
                         ],
-                        "response": "Wrong. 75% of the surveyors said virtual conferences would and should stay."
+                        "response": "Correct."
                     }
                 ]
             },
@@ -68,13 +68,13 @@
                     "Let me ask you the next question."
                 ],
                 "text": [
-                    "➡ What are the benefits of hybrid conferences - conferences where in-person attendance is as much part as virtual attendance?"
+                    "➡ Why is it important that people, even in the most far out regions, get vaccinated against Covid-19?"
                 ],
                 "answer": [
                     {
                         "isCorrect": false,
                         "text": [
-                            "🔸1. People who are busy with raising kids or are concerned about leaving a high carbon footprint can attend the conference from home."
+                            "🔸1. Because it would be unfair not to think of these people."
                         ],
                         "exact": [
                             ""
@@ -82,22 +82,22 @@
                         "contains": [
                             "1"
                         ],
-                        "response": "Wrong. While this answer is correct, answer 2 is correct as well."
+                        "response": "Wrong. It would be unfair, but it is also a health risk for the entire planet: the virus can mutate and develop new strains, even in remote places. Everyone will remain vulnerable as long as there are pockets of Covid-19 anywhere in the world."
                     },
                     {
                         "isCorrect": false,
-                        "text": "🔸2.  People with chronic illnesses or people who have not been vaccinated yet will not be discriminated and can attend from home.",
+                        "text": "🔸2.  Because the virus is smart and will hide in remote places.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "2"
                         ],
-                        "response": "Wrong. While this answer is correct, answer 1 is correct as well."
+                        "response": "Wrong. The virus itself is not smart. But it can mutate and develop new strains, even in remote places. Everyone will remain vulnerable as long as there are pockets of Covid-19 anywhere in the world."
                     },
                     {
                         "isCorrect": true,
-                        "text": "🔸3. Both of the above.",
+                        "text": "🔸3. Everyone in the world will remain vulnerable as long as there are pockets of Covid-19 anywhere in the world.",
                         "exact": [
                             ""
                         ],
@@ -116,41 +116,41 @@
                     "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes."
                 ],
                 "text": [
-                    "➡ What is zoom gloom?"
+                    "➡ Where does the spread of negative information on Covid-19 come from?"
                 ],
                 "answer": [
                     {
-                        "isCorrect": false,
-                        "text": "🔸1. A computer screen that is set too dark.",
+                        "isCorrect": true,
+                        "text": "🔸1. Social Media.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "1"
                         ],
-                        "response": "Wrong. The expression zoom gloom describes the negative cognitive side effects when spending too much time on zoom or other virtual meeting systems."
+                        "response": "Correct. 91% of negative and false information about the vaccination comes from social media."
                     },
                     {
-                        "isCorrect": true,
-                        "text": "🔸2. The negative cognitive side effects when spending too much time on zoom or other virtual meeting systems.",
+                        "isCorrect": false,
+                        "text": "🔸2. Religious Leaders.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "2"
                         ],
-                        "response": "Correct."
+                        "response": "Wrong. Only 9% of negative and false information about the vaccination comes from religious leaders, while 91% of misinformation comes from social media."
                     },
                     {
                         "isCorrect": false,
-                        "text": "🔸3. An ice-cream flavor with charcoal and cinnamon.",
+                        "text": "🔸3.  Cultural Leaders.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "3"
                         ],
-                        "response": "Wrong. While we believe an ice-cream with such flavors might cause a zoom gloom on ones taste buds, the expression zoom gloom describes the negative cognitive side effects when spending too much time on zoom or other virtual meeting systems."
+                        "response": "Wrong. Only 7% of negative and false information about the vaccination comes from cultural leaders, while 91% of misinformation comes from social media."
                     }
                 ]
             }
