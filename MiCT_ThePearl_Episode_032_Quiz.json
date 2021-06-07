@@ -1,0 +1,159 @@
+{
+    "quizconfig": {
+        "oneShot": true,
+        "isGroupReply": true,
+        "webhook": "http://localhost:3000/api/incoming-webhook"
+    },
+    "quiz": {
+        "id": "Pearl032",
+        "active": true,
+        "preamble": [
+            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 32 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
+        ],
+        "postamble": [
+            "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes.\nPlease contact me again. Yours, Pearl."
+        ],
+        "question": [
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "Let me ask you the next question."
+                ],
+                "text": [
+                    "➡ According to a Nature magazine survey, how many people believe virtual conferences will and should stay even after the pandemic?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": false,
+                        "text": "🔸1. 25%.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Wrong. 75% of the surveyors said virtual conferences would and should stay."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸2. 75%.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Correct."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸3.  3%.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Wrong. 75% of the surveyors said virtual conferences would and should stay."
+                    }
+                ]
+            },
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "Let me ask you the next question."
+                ],
+                "text": [
+                    "➡ What are the benefits of hybrid conferences - conferences where in-person attendance is as much part as virtual attendance?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": false,
+                        "text": [
+                            "🔸1. People who are busy with raising kids or are concerned about leaving a high carbon footprint can attend the conference from home."
+                        ],
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Wrong. While this answer is correct, answer 2 is correct as well."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸2.  People with chronic illnesses or people who have not been vaccinated yet will not be discriminated and can attend from home.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Wrong. While this answer is correct, answer 1 is correct as well."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸3. Both of the above.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Correct."
+                    }
+                ]
+            },
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes."
+                ],
+                "text": [
+                    "➡ What is zoom gloom?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": false,
+                        "text": "🔸1. A computer screen that is set too dark.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Wrong. The expression zoom gloom describes the negative cognitive side effects when spending too much time on zoom or other virtual meeting systems."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸2. The negative cognitive side effects when spending too much time on zoom or other virtual meeting systems.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Correct."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸3. An ice-cream flavor with charcoal and cinnamon.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Wrong. While we believe an ice-cream with such flavors might cause a zoom gloom on ones taste buds, the expression zoom gloom describes the negative cognitive side effects when spending too much time on zoom or other virtual meeting systems."
+                    }
+                ]
+            }
+        ]
+    }
+}

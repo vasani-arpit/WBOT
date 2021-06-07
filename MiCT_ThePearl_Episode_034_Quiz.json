@@ -1,0 +1,159 @@
+{
+    "quizconfig": {
+        "oneShot": true,
+        "isGroupReply": true,
+        "webhook": "http://localhost:3000/api/incoming-webhook"
+    },
+    "quiz": {
+        "id": "Pearl034",
+        "active": true,
+        "preamble": [
+            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 34 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
+        ],
+        "postamble": [
+            "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes.\nPlease contact me again. Yours, Pearl."
+        ],
+        "question": [
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "Let me ask you the next question."
+                ],
+                "text": [
+                    "➡ How big is the percentage of youth in Uganda´s population?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": true,
+                        "text": "🔸1. Youth comprise 78% of the population.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Correct."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸2. Youth comprise 35% of the population.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Wrong. Youth comprise 78% of the population."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸3.  Youth comprise 91% of the population.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Wrong. Youth comprise 78% of the population."
+                    }
+                ]
+            },
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "Let me ask you the next question."
+                ],
+                "text": [
+                    "➡ What is the recommendation on how many jabs of vaccination a person who has already suffered from a Covid-19 infection should get?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": false,
+                        "text": [
+                            "🔸1. Vaccinate as usual with two jabs so the antibodies increase."
+                        ],
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Wrong. Vaccinate with only one shot instead of two to boost the immune system and protect against variants."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸2.  Don’t vaccinate at all to not mess with the immune system.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Wrong. Vaccinate with only one shot instead of two to boost the immune system and protect against variants."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸3. Vaccinate with only one shot instead of two to boost the immune system and protect against variants.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Correct."
+                    }
+                ]
+            },
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes."
+                ],
+                "text": [
+                    "➡ Why is it necessary to be vaccinated against Covid-19 even if one already had Covid-19?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": false,
+                        "text": "🔸1. People can get runny noses many times a year. Same with Covid-19: one can recover and right away get infected again.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Wrong. Usually one is immune for 6 months after having recovered from Covid-19. A vaccination will push the antibodies up again. Additionally will protect against coronavirus mutations."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸2. Because the antibodies continually decrease and a vaccination will push them up again.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Correct. Additionally, having recovered from Covod-19 and being vaccinated additionally will protect against coronavirus mutations."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸3.  It is an economic consideration: Because the vaccination has been developed by big medical companies and they need to get a return of their investment, everyone, even people who have recovered from Covid-19, should get vaccination.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Wrong. This is a typical fake news allegation. Because the antibodies continually decrease and a vaccination will push them up again, vaccination even after recovery is highly recommended. Additionally will protect against coronavirus mutations."
+                    }
+                ]
+            }
+        ]
+    }
+}
