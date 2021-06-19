@@ -29,6 +29,7 @@ async function downloadFile(message) {
     const decrypted = await window.Store.CryptoLib.decryptE2EMedia(message.type, buffer, message.mediaKey, message.mimetype);
     const data = await window.WAPI.readBlobAsync(decrypted._blob);
     saveFile(data.split(',')[1], filename, message.mimetype)
+    return data;
 }
 
 //Updating string prototype to support variables
@@ -97,6 +98,10 @@ async function processMessages(data) {
             downloadFile(message)
         }
         if (intents.appconfig.webhook) {
+            //if message is image then download it first and then call an webhook
+            if (message.type == "image") {
+                body.base64DataFile = await downloadFile(message)
+            }
             fetch(intents.appconfig.webhook, {
                 method: "POST",
                 body: JSON.stringify(body),
@@ -159,7 +164,7 @@ async function processMessages(data) {
                 if ((exactMatch || PartialMatch).file != undefined) {
                     files = await resolveSpintax((exactMatch || PartialMatch).file);
                     window.getFile(files).then((base64Data) => {
-                        //console.log(file);
+                        console.log(base64Data);
                         WAPI.sendImage(base64Data, message.chatId._serialized, (exactMatch || PartialMatch).file, response);
                     }).catch((error) => {
                         window.log("Error in sending file\n" + error);
@@ -174,6 +179,7 @@ async function processMessages(data) {
 }
 
 WAPI.waitNewMessages(false, async (data) => {
+    console.log(data)
     processMessages(data)
 });
 WAPI.addOptions = function () {
