@@ -5,10 +5,10 @@
         "webhook": "http://localhost:3000/api/incoming-webhook"
     },
     "quiz": {
-        "id": "Pearl035",
+        "id": "Pearl036",
         "active": true,
         "preamble": [
-            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 35 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
+            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 36 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
         ],
         "postamble": [
             "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes.\nPlease contact me again. Yours, Pearl."
@@ -22,41 +22,41 @@
                     "Let me ask you the next question."
                 ],
                 "text": [
-                    "➡ What is the Delta variant?"
+                    "➡ Streaming music services seemed to be one way to deliver music in times of the pandemic. However, people are listening less to the streaming providers. Why is that so?"
                 ],
                 "answer": [
                     {
                         "isCorrect": false,
-                        "text": "🔸1. It’s a kind of snake that lives in the Nile Delta.",
+                        "text": "🔸1. People cannot bear to hear happy tunes when everything seems desolate.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "1"
                         ],
-                        "response": "Wrong. It’s an extremely contagious variant of the Corona virus, classified by the World Health Organisation as among the four variants of concern due to evidence that they spread more easily."
+                        "response": "Wrong. People spend less time on the commute, which is where they would usually listen to music and podcasts."
                     },
                     {
-                        "isCorrect": false,
-                        "text": "🔸2. It’s an airline company bringing vaccination to remote areas.",
+                        "isCorrect": true,
+                        "text": "🔸2. People spend less time on the commute, which is where they would usually listen to music and podcasts.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "2"
                         ],
-                        "response": "Wrong. It’s an extremely contagious variant of the Corona virus, classified by the World Health Organisation as among the four variants of concern due to evidence that they spread more easily."
+                        "response": "Correct."
                     },
                     {
-                        "isCorrect": true,
-                        "text": "🔸3.  It’s an extremely contagious variant of the Corona virus, classified by the World Health Organisation as among the four variants of concern due to evidence that they spread more easily.",
+                        "isCorrect": false,
+                        "text": "🔸3.  There simply is no good content on the streaming platforms.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "3"
                         ],
-                        "response": "Correct."
+                        "response": "Wrong. People spend less time on the commute, which is where they would usually listen to music and podcasts."
                     }
                 ]
             },
@@ -68,13 +68,13 @@
                     "Let me ask you the next question."
                 ],
                 "text": [
-                    "➡ What should one bring for the vaccination appointment?"
+                    "➡ What is the way forward for a musician then?"
                 ],
                 "answer": [
                     {
-                        "isCorrect": false,
+                        "isCorrect": true,
                         "text": [
-                            "🔸1. Lots of salt."
+                            "🔸1. Continuing convergence between media channels: whether that be via gaming, social media or other means of delivery."
                         ],
                         "exact": [
                             ""
@@ -82,29 +82,29 @@
                         "contains": [
                             "1"
                         ],
-                        "response": "Wrong. Passport or National Identification card must be brought to the vaccination appointment."
+                        "response": "Correct."
                     },
                     {
-                        "isCorrect": true,
-                        "text": "🔸2.  Passport or National Identification card.",
+                        "isCorrect": false,
+                        "text": "🔸2.  Stop living the dream of being a musician. Who needs musicians anyways?",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "2"
                         ],
-                        "response": "Correct."
+                        "response": "Wrong. Continuing convergence between media channels: whether that be via gaming, social media or other means of delivery."
                     },
                     {
                         "isCorrect": false,
-                        "text": "🔸3. Paracetamol or similar medicine to fight off side effects.",
+                        "text": "🔸3. Lock yourself up in a dark room and wait until the pandemic is over.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "3"
                         ],
-                        "response": "Wrong. Passport or National Identification card must be brought to the vaccination appointment."
+                        "response": "Wrong. Continuing convergence between media channels: whether that be via gaming, social media or other means of delivery."
                     }
                 ]
             },
@@ -116,41 +116,41 @@
                     "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes."
                 ],
                 "text": [
-                    "➡ What is the recommendation for the time between the two shots of the vaccination?"
+                    "➡ What kind of music suffers the most from the effects of lockdown?"
                 ],
                 "answer": [
                     {
-                        "isCorrect": false,
-                        "text": "🔸1. One week.",
+                        "isCorrect": true,
+                        "text": "🔸1. Life music.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "1"
                         ],
-                        "response": "Wrong. 12 weeks is the official recommendation."
+                        "response": "Correct."
                     },
                     {
                         "isCorrect": false,
-                        "text": "🔸2. Three days.",
+                        "text": "🔸2. Vinyl Records.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "2"
                         ],
-                        "response": "Wrong. 12 weeks is the official recommendation."
+                        "response": "Wrong. Vinyl records are actually doing okay. Life musicians suffer the most from not being able to create revenue from concerts."
                     },
                     {
-                        "isCorrect": true,
-                        "text": "🔸3.  12 weeks.",
+                        "isCorrect": false,
+                        "text": "🔸3.  Big labels.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "3"
                         ],
-                        "response": "Correct."
+                        "response": "Wrong. Big labels are actually doing okay. Life musicians suffer the most from not being able to create revenue from concerts."
                     }
                 ]
             }
