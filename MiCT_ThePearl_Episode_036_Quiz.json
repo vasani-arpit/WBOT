@@ -5,10 +5,10 @@
         "webhook": "http://localhost:3000/api/incoming-webhook"
     },
     "quiz": {
-        "id": "Pearl037",
+        "id": "Pearl036",
         "active": true,
         "preamble": [
-            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 37 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
+            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 36 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
         ],
         "postamble": [
             "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes.\nPlease contact me again. Yours, Pearl."
@@ -22,41 +22,41 @@
                     "Let me ask you the next question."
                 ],
                 "text": [
-                    "➡ Which of the following is NOT a SOP?"
+                    "➡ Streaming music services seemed to be one way to deliver music in times of the pandemic. However, people are listening less to the streaming providers. Why is that so?"
                 ],
                 "answer": [
                     {
                         "isCorrect": false,
-                        "text": "🔸1. Keeping social distance.",
+                        "text": "🔸1. People cannot bear to hear happy tunes when everything seems desolate.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "1"
                         ],
-                        "response": "Wrong. Keeping social distance is a SOP."
+                        "response": "Wrong. People spend less time on the commute, which is where they would usually listen to music and podcasts."
                     },
                     {
-                        "isCorrect": false,
-                        "text": "🔸2. Putting on a mask in public interactions.",
+                        "isCorrect": true,
+                        "text": "🔸2. People spend less time on the commute, which is where they would usually listen to music and podcasts.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "2"
                         ],
-                        "response": "C Wrong. Putting on a mask in public interactions is a SOP."
+                        "response": "Correct."
                     },
                     {
-                        "isCorrect": true,
-                        "text": "🔸3.  Chewing strong mint chewing gum.",
+                        "isCorrect": false,
+                        "text": "🔸3.  There simply is no good content on the streaming platforms.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "3"
                         ],
-                        "response": "Correct. Chewing strong mint chewing gum is something you may do whenever you like, but it is not a SOP."
+                        "response": "Wrong. People spend less time on the commute, which is where they would usually listen to music and podcasts."
                     }
                 ]
             },
@@ -68,13 +68,13 @@
                     "Let me ask you the next question."
                 ],
                 "text": [
-                    "➡ Vaccination is administered under a priority rule. Which of the following group of people does not count as legitimate for vaccination priority?"
+                    "➡ What is the way forward for a musician then?"
                 ],
                 "answer": [
                     {
                         "isCorrect": true,
                         "text": [
-                            "🔸1. Mothers."
+                            "🔸1. Continuing convergence between media channels: whether that be via gaming, social media or other means of delivery."
                         ],
                         "exact": [
                             ""
@@ -82,29 +82,29 @@
                         "contains": [
                             "1"
                         ],
-                        "response": "Correct. Mothers or pregnant women are not considered legitimate under the vaccination priority rule."
+                        "response": "Correct."
                     },
                     {
                         "isCorrect": false,
-                        "text": "🔸2.  Health workers.",
+                        "text": "🔸2.  Stop living the dream of being a musician. Who needs musicians anyways?",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "2"
                         ],
-                        "response": "Wrong. Health workers are considered legitimate under the vaccination priority rule."
+                        "response": "Wrong. Continuing convergence between media channels: whether that be via gaming, social media or other means of delivery."
                     },
                     {
                         "isCorrect": false,
-                        "text": "🔸3. People with a weak immune system.",
+                        "text": "🔸3. Lock yourself up in a dark room and wait until the pandemic is over.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "3"
                         ],
-                        "response": "Wrong. People with a weak immune system are considered legitimate under the vaccination priority rule."
+                        "response": "Wrong. Continuing convergence between media channels: whether that be via gaming, social media or other means of delivery."
                     }
                 ]
             },
@@ -116,41 +116,41 @@
                     "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes."
                 ],
                 "text": [
-                    "➡ What public places are allowed to stay open during lockdown?"
+                    "➡ What kind of music suffers the most from the effects of lockdown?"
                 ],
                 "answer": [
                     {
-                        "isCorrect": false,
-                        "text": "🔸1. Weekly markets.",
+                        "isCorrect": true,
+                        "text": "🔸1. Life music.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "1"
                         ],
-                        "response": "Wrong. Weekly markets are suspended."
+                        "response": "Correct."
                     },
                     {
-                        "isCorrect": true,
-                        "text": "🔸2. Shops.",
+                        "isCorrect": false,
+                        "text": "🔸2. Vinyl Records.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "2"
                         ],
-                        "response": "Correct. Shops remain open."
+                        "response": "Wrong. Vinyl records are actually doing okay. Life musicians suffer the most from not being able to create revenue from concerts."
                     },
                     {
                         "isCorrect": false,
-                        "text": "🔸3.  Bars.",
+                        "text": "🔸3.  Big labels.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "3"
                         ],
-                        "response": "Wrong. Bars are suspended."
+                        "response": "Wrong. Big labels are actually doing okay. Life musicians suffer the most from not being able to create revenue from concerts."
                     }
                 ]
             }
