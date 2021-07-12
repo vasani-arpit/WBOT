@@ -5,10 +5,10 @@
         "webhook": "http://localhost:3000/api/incoming-webhook"
     },
     "quiz": {
-        "id": "Pearl038",
+        "id": "Pearl039",
         "active": true,
         "preamble": [
-            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 38 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
+            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 39 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
         ],
         "postamble": [
             "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes.\nPlease contact me again. Yours, Pearl."
@@ -22,41 +22,41 @@
                     "Let me ask you the next question."
                 ],
                 "text": [
-                    "➡ As of the lockdown regulations from June 18th, from which age on must children wear a mask when leaving the house?"
+                    "➡ What does the airplane safety tip to always don one’s own oxygen mask before helping a child have to do with handling children during the pandemic?"
                 ],
                 "answer": [
                     {
                         "isCorrect": false,
-                        "text": "🔸1. From age 0.",
+                        "text": "🔸1. When you feel angry, something might fall down from above to help you.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "1"
                         ],
-                        "response": "Wrong. It is mandatory to wear a face mask outside the house from age 6."
+                        "response": "Wrong. Just like putting on one’s oxygen mask first, as a parent one has to prioritize managing one's own stress first, before dealing with the child’s: by engaging in self-care activities like exercise, good sleep hygiene and relaxation, to be able to respond calmly to a stressed child."
                     },
                     {
-                        "isCorrect": false,
-                        "text": "🔸2. From age 12.",
+                        "isCorrect": true,
+                        "text": "🔸2. Just like putting on one’s oxygen mask first, as a parent one has to prioritize managing one's own stress first, before dealing with the child’s: by engaging in self-care activities like exercise, good sleep hygiene and relaxation, to be able to respond calmly to a stressed child.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "2"
                         ],
-                        "response": "Wrong. It is mandatory to wear a face mask outside the house from age 6."
+                        "response": "Correct."
                     },
                     {
-                        "isCorrect": true,
-                        "text": "🔸3.  From age 6.",
+                        "isCorrect": false,
+                        "text": "🔸3. There are no parallels.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "3"
                         ],
-                        "response": "Correct."
+                        "response": "Wrong. Just like putting on one’s oxygen mask first, as a parent one has to prioritize managing one's own stress first, before dealing with the child’s: by engaging in self-care activities like exercise, good sleep hygiene and relaxation, to be able to respond calmly to a stressed child."
                     }
                 ]
             },
@@ -68,13 +68,13 @@
                     "Let me ask you the next question."
                 ],
                 "text": [
-                    "➡ The curfew hours are at what time since the lockdown regulations of June 18th?"
+                    "➡ What is important to keep in mind when raising resilient children, who will strive despite the challenges and hardships of a pandemic?"
                 ],
                 "answer": [
                     {
                         "isCorrect": true,
                         "text": [
-                            "🔸1. From 7pm to 5:30am."
+                            "🔸1. Raising resilient children means that one values teaching them self-compassion, gratitude, delayed gratification and self worth to facilitate the development of their sense of purpose."
                         ],
                         "exact": [
                             ""
@@ -86,25 +86,25 @@
                     },
                     {
                         "isCorrect": false,
-                        "text": "🔸2.  From 5.30 pm to 5.30 am.",
+                        "text": "🔸2. Raising resilient children means to work with strict punishments when they misbehave. One a good slap can teach a child anything.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "2"
                         ],
-                        "response": "Wrong. Curfew hours are from 7pm to 5:30am."
+                        "response": "Wrong. Raising resilient children means that one values teaching them self-compassion, gratitude, delayed gratification and self worth to facilitate the development of their sense of purpose."
                     },
                     {
                         "isCorrect": false,
-                        "text": "🔸3. From 9 pm to 5.30 am.",
+                        "text": "🔸3. Raising resilient children in times of pandemic is impossible.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "3"
                         ],
-                        "response": "Wrong. Curfew hours are from 7pm to 5:30am."
+                        "response": "Wrong. Raising resilient children means that one values teaching them self-compassion, gratitude, delayed gratification and self worth to facilitate the development of their sense of purpose."
                     }
                 ]
             },
@@ -116,41 +116,41 @@
                     "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes."
                 ],
                 "text": [
-                    "➡ Are boda-bodas still allowed to operate under the lockdown regulations of June 18th?"
+                    "➡ Does regulating and monitoring TV time of children help to keep them emotionally stable?"
                 ],
                 "answer": [
                     {
-                        "isCorrect": false,
-                        "text": "🔸1. Boda-Bodas are still allowed to function as usual, transporting goods and passengers.",
+                        "isCorrect": true,
+                        "text": "🔸1. According to the Ugandan ministry of health hand out it is important to monitor TV time of children and to engage them actively in play and songs.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "1"
                         ],
-                        "response": "Wrong. Boda-Bodas are only allowed to carry goods and must stop operating by 5pm."
+                        "response": "Correct."
                     },
                     {
                         "isCorrect": false,
-                        "text": "🔸2. Boda-Bodas are vehicles and must be off the road completely.",
+                        "text": "🔸2. Thankfully there is TV to keep the children busy.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "2"
                         ],
-                        "response": "Wrong. Boda-Bodas are only allowed to carry goods and must stop operating by 5pm."
+                        "response": "Wrong. According to the Ugandan ministry of health hand out it is important to monitor TV time of children and to engage them actively in play and songs."
                     },
                     {
-                        "isCorrect": true,
-                        "text": "🔸3.  Boda-Bodas are only allowed to carry goods and must stop operating by 5pm.",
+                        "isCorrect": false,
+                        "text": "🔸3.  TV does not transmit the disease and is therefore welcome.",
                         "exact": [
                             ""
                         ],
                         "contains": [
                             "3"
                         ],
-                        "response": "Correct."
+                        "response": "Wrong. According to the Ugandan ministry of health hand out it is important to monitor TV time of children and to engage them actively in play and songs."
                     }
                 ]
             }
