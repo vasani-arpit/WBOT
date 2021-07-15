@@ -160,7 +160,7 @@ async function processMessages(data) {
             response = response.fillVariables({ name: message.sender.pushname, phoneNumber: message.sender.id.user, greetings: greetings() })
             await waitBeforeSending(exactMatch, PartialMatch)
             if (exactMatch != undefined || PartialMatch != undefined) {
-                //returning if there is no file
+                //sending file if there is any
                 if ((exactMatch || PartialMatch).file != undefined) {
                     files = await resolveSpintax((exactMatch || PartialMatch).file);
                     window.getFile(files).then((base64Data) => {
@@ -169,11 +169,9 @@ async function processMessages(data) {
                     }).catch((error) => {
                         window.log("Error in sending file\n" + error);
                     })
-                } else {
-                    WAPI.sendMessage2(message.chatId._serialized, response);
                 }
             }
-            //sending file if there is any
+            WAPI.sendMessage2(message.chatId._serialized, response);
         }
     }
 }
