@@ -1,0 +1,159 @@
+{
+    "quizconfig": {
+        "oneShot": true,
+        "isGroupReply": true,
+        "webhook": "http://localhost:3000/api/incoming-webhook"
+    },
+    "quiz": {
+        "id": "Pearl039",
+        "active": true,
+        "preamble": [
+            "Hello #name! I’m Pearl.\nWelcome to the quiz for episode 39 of The Pearl. Let´s begin with question 1. Please answer by typing the number of the correct answer."
+        ],
+        "postamble": [
+            "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes.\nPlease contact me again. Yours, Pearl."
+        ],
+        "question": [
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "Let me ask you the next question."
+                ],
+                "text": [
+                    "➡ What does the airplane safety tip to always don one’s own oxygen mask before helping a child have to do with handling children during the pandemic?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": false,
+                        "text": "🔸1. When you feel angry, something might fall down from above to help you.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Wrong. Just like putting on one’s oxygen mask first, as a parent one has to prioritize managing one's own stress first, before dealing with the child’s: by engaging in self-care activities like exercise, good sleep hygiene and relaxation, to be able to respond calmly to a stressed child."
+                    },
+                    {
+                        "isCorrect": true,
+                        "text": "🔸2. Just like putting on one’s oxygen mask first, as a parent one has to prioritize managing one's own stress first, before dealing with the child’s: by engaging in self-care activities like exercise, good sleep hygiene and relaxation, to be able to respond calmly to a stressed child.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Correct."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸3. There are no parallels.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Wrong. Just like putting on one’s oxygen mask first, as a parent one has to prioritize managing one's own stress first, before dealing with the child’s: by engaging in self-care activities like exercise, good sleep hygiene and relaxation, to be able to respond calmly to a stressed child."
+                    }
+                ]
+            },
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "Let me ask you the next question."
+                ],
+                "text": [
+                    "➡ What is important to keep in mind when raising resilient children, who will strive despite the challenges and hardships of a pandemic?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": true,
+                        "text": [
+                            "🔸1. Raising resilient children means that one values teaching them self-compassion, gratitude, delayed gratification and self worth to facilitate the development of their sense of purpose."
+                        ],
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Correct."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸2. Raising resilient children means to work with strict punishments when they misbehave. One a good slap can teach a child anything.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Wrong. Raising resilient children means that one values teaching them self-compassion, gratitude, delayed gratification and self worth to facilitate the development of their sense of purpose."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸3. Raising resilient children in times of pandemic is impossible.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Wrong. Raising resilient children means that one values teaching them self-compassion, gratitude, delayed gratification and self worth to facilitate the development of their sense of purpose."
+                    }
+                ]
+            },
+            {
+                "preamble": [
+                    ""
+                ],
+                "postamble": [
+                    "The pearl has many hidden treasures. You answered #correct_replies questions correctly. If you answer all the quizzes you will automatically take part in a competition where you can win one of many prizes."
+                ],
+                "text": [
+                    "➡ Does regulating and monitoring TV time of children help to keep them emotionally stable?"
+                ],
+                "answer": [
+                    {
+                        "isCorrect": true,
+                        "text": "🔸1. According to the Ugandan ministry of health hand out it is important to monitor TV time of children and to engage them actively in play and songs.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "1"
+                        ],
+                        "response": "Correct."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸2. Thankfully there is TV to keep the children busy.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "2"
+                        ],
+                        "response": "Wrong. According to the Ugandan ministry of health hand out it is important to monitor TV time of children and to engage them actively in play and songs."
+                    },
+                    {
+                        "isCorrect": false,
+                        "text": "🔸3.  TV does not transmit the disease and is therefore welcome.",
+                        "exact": [
+                            ""
+                        ],
+                        "contains": [
+                            "3"
+                        ],
+                        "response": "Wrong. According to the Ugandan ministry of health hand out it is important to monitor TV time of children and to engage them actively in play and songs."
+                    }
+                ]
+            }
+        ]
+    }
+}
