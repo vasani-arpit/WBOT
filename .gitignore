@@ -63,3 +63,10 @@ ChromeSession*
 win*
 chromium-data
 .idea
+# non repo proj data 
+*.mp3
+*.pdf
+chatIdStore*/*
+linux*
+result*.txt
+test*
