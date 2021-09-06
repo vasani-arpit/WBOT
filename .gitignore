@@ -63,3 +63,6 @@ ChromeSession*
 win*
 chromium-data
 .idea
+
+linux*
+wbot*
