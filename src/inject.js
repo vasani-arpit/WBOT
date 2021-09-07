@@ -163,15 +163,31 @@ async function processMessages(data) {
                 //sending file if there is any
                 if ((exactMatch || PartialMatch).file != undefined) {
                     files = await resolveSpintax((exactMatch || PartialMatch).file);
-                    window.getFile(files).then((base64Data) => {
-                        console.log(base64Data);
-                        WAPI.sendImage(base64Data, message.chatId._serialized, (exactMatch || PartialMatch).file, response);
-                    }).catch((error) => {
-                        window.log("Error in sending file\n" + error);
-                    })
+                    //determining how to send the text. via caption or via separate message
+                    if ((exactMatch || PartialMatch).responseAsCaption != undefined) {
+                        let caption = ""
+                        if ((exactMatch || PartialMatch).responseAsCaption == true) {
+                            caption = response
+                        }
+                        window.getFile(files).then((base64Data) => {
+                            console.log(base64Data);
+                            WAPI.sendImage(base64Data, message.chatId._serialized, (exactMatch || PartialMatch).file, caption);
+                        }).catch((error) => {
+                            window.log("Error in sending file\n" + error);
+                        })
+                    } else {
+                        window.log("Please mention how to send the response text. add responseAsCaption in bot.json's image block.")
+                    }
+                }
+                //TODO: refactor this later
+                if ((exactMatch || PartialMatch).responseAsCaption == undefined) {
+                    WAPI.sendMessage2(message.chatId._serialized, response);
+                } else {
+                    if ((exactMatch || PartialMatch).responseAsCaption == false) {
+                        WAPI.sendMessage2(message.chatId._serialized, response);
+                    }
                 }
             }
-            WAPI.sendMessage2(message.chatId._serialized, response);
         }
     }
 }

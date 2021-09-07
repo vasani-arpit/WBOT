@@ -67,7 +67,8 @@
             "contains": [],
             "exact": ["github"],
             "response": "Git Hub Logo",
-            "file":"{github.png|github-two.png}"
+            "file":"{github.png|github-two.png}",
+            "responseAsCaption": false
         },
         {
             "contains": [],
