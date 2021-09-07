@@ -204,7 +204,7 @@ async function Main() {
                     //send message to the currently open chat using power of puppeteer 
                     await page.type("#main div.selectable-text[data-tab]", message);
                     if (configs.smartreply.clicktosend) {
-                        await page.click("#main > footer > div.copyable-area > div:nth-child(2) > button");
+                        await page.click("#main footer div.copyable-area div div div button");
                     }
                 });
             });
