@@ -113,6 +113,8 @@ An array of objects. Properties of Object are self explanatory.
 - **file** name of the file (from current directory) which you want to send along with response 
 
 - **afterSeconds** number of seconds bot should wait before sending a reply. 
+- **Webhook** you can call your webhook on certain keywords as well instead of calling it on every message. 
+- **responseAsCaption** this will be applied in case you want to reply with image. If true then response block will be sent as a caption of the image. If false response block will be shared as separate text message.
 
 **Blocked**
 

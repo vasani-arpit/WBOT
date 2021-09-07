@@ -9,7 +9,8 @@
     "bot": [{
             "contains": [],
             "exact": ["hi"],
-            "response": "{hello|howdy}"
+            "response": "{hello|howdy}",
+            "webhook":""
         },
         {
             "contains": [],
@@ -46,7 +47,7 @@
         {
             "contains": [],
             "exact": ["how are you"],
-            "response": "i am {good {thanks| thank you}|great}. How about you?"
+            "response": "I am {good {thanks| thank you}|great}. How about you?"
         },
         {
             "contains": [],
