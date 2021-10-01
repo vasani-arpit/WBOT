@@ -95,7 +95,7 @@ This is where all the application related (node application behavior and such th
 - **headless** whether to start chrome as headless or not. this is regarding #4. Apparently, Whatsapp doesn't allow headless instances.
 - **isGroupReply** whether to send replies in group or not. If set to false, Bot will not reply if message received in group chat.
 
-- **webhook** A URL which will be called for every message with payload data. this can be useful if you want do other operation over messages in your server. for example server code take a look [here](https://github.com/vasani-arpit/WBOT/blob/master/docs/Webhook-example.md)
+- **webhook** A URL which will be called for every message with payload data. this can be useful if you want do other operation over messages in your server. For example server code take a look [here](https://github.com/vasani-arpit/WBOT/blob/master/docs/Webhook-example.md)
 
 - **downloadMedia** Whether to download incoming message media or not. 
 
