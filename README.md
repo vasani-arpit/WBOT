@@ -78,7 +78,7 @@ chmod +x wbot-linux && wbot-linux
 ```
 
 Note: on Linux you need a running display server (X11 or Wayland).
-If you run Linux on a headless server or wan't to run chmomium without visible display try ```xvfb-run wbot-linux```.
+If you run Linux on a headless server or want to run chromium without visible display try ```xvfb-run wbot-linux```.
 
 *I haven't tested Mac and Linux binaries. If you find any issues using them feel free to raise one from [here](https://github.com/vasani-arpit/WBOT/issues/new)*
 
