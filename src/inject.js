@@ -120,6 +120,7 @@ async function processWebhook(webhook, message, body) {
 
 async function processMessages(data) {
     for (let i = 0; i < data.length; i++) {
+        let sent = false;
         //fetch API to send and receive response from server
         let message = data[i];
         body = {};
@@ -200,7 +201,13 @@ async function processMessages(data) {
                     window.log("Processing webhook from block")
                     processWebhook((exactMatch || PartialMatch).webhook, message, body)
                 }
+                sent = true;
             }
+            // A Quick fix 
+            if(!sent){
+                WAPI.sendMessage2(message.chatId._serialized, response);
+            }
+
         }
     }
 }
