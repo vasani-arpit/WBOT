@@ -151,16 +151,11 @@ async function processMessages(data) {
             if (exactMatch != undefined) {
                 response = await resolveSpintax(exactMatch.response);
                 window.log(`Replying with ${response}`);
-            } else {
-                response = await resolveSpintax(intents.noMatch);
-                window.log(`No exact match found. So replying with ${response} instead`);
             }
             var PartialMatch = intents.bot.find(obj => obj.contains.find(ex => message.body.toLowerCase().search(ex) > -1));
             if (PartialMatch != undefined) {
                 response = await resolveSpintax(PartialMatch.response);
                 window.log(`Replying with ${response}`);
-            } else {
-                console.log("No partial match found");
             }
             WAPI.sendSeen(message.chatId._serialized);
             response = response.fillVariables({ name: message.sender.pushname, phoneNumber: message.sender.id.user, greetings: greetings() })
@@ -200,6 +195,13 @@ async function processMessages(data) {
                     window.log("Processing webhook from block")
                     processWebhook((exactMatch || PartialMatch).webhook, message, body)
                 }
+            } else {
+                // We are sure we haven't found any exact or partial match
+                // as we are already checking it in the above if statement
+                // So process with the noMatch logic only
+                response = await resolveSpintax(intents.noMatch);
+                window.log(`No exact or partial match found. So replying with ${response} instead`);
+                WAPI.sendMessage2(message.chatId._serialized, response);
             }
         }
     }
