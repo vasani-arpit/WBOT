@@ -161,32 +161,40 @@ async function processMessages(data) {
             response = response.fillVariables({ name: message.sender.pushname, phoneNumber: message.sender.id.user, greetings: greetings() })
             await waitBeforeSending(exactMatch, PartialMatch)
             if (exactMatch != undefined || PartialMatch != undefined) {
-                //sending file if there is any
+
+                // sending file if there is any
+                // else send only response
                 if ((exactMatch || PartialMatch).file != undefined) {
+                    var captionStatus = (exactMatch || PartialMatch).responseAsCaption;
+                    // We consider undefined responseAsCaption as a false
+                    if(captionStatus == undefined) {
+                        captionStatus = false;
+                    }
+
                     files = await resolveSpintax((exactMatch || PartialMatch).file);
-                    //determining how to send the text. via caption or via separate message
-                    if ((exactMatch || PartialMatch).responseAsCaption != undefined) {
-                        let caption = ""
-                        if ((exactMatch || PartialMatch).responseAsCaption == true) {
-                            caption = response
-                        }
+
+                    // if responseAsCaption is true, send image with response as a caption
+                    // else send image and response seperately
+                    if(captionStatus == true) {
                         window.getFile(files).then((base64Data) => {
-                            console.log(base64Data);
-                            WAPI.sendImage(base64Data, message.chatId._serialized, (exactMatch || PartialMatch).file, caption);
+                            // send response in place of caption as a last argument in below function call
+                            WAPI.sendImage(base64Data, message.chatId._serialized, files, response);
                         }).catch((error) => {
                             window.log("Error in sending file\n" + error);
-                        })
+                        });
                     } else {
-                        window.log("Please mention how to send the response text. add responseAsCaption in bot.json's image block.")
-                    }
-                }
-                //TODO: refactor this later
-                if ((exactMatch || PartialMatch).responseAsCaption == undefined) {
-                    WAPI.sendMessage2(message.chatId._serialized, response);
-                } else {
-                    if ((exactMatch || PartialMatch).responseAsCaption == false) {
+                        window.log("Either the responseAsCaption is undefined or false, Make it true to allow caption to a file");
+                        window.getFile(files).then((base64Data) => {
+                            // send blank in place of caption as a last argument in below function call
+                            WAPI.sendImage(base64Data, message.chatId._serialized, files, "");
+                        }).catch((error) => {
+                            window.log("Error in sending file\n" + error);
+                        });
                         WAPI.sendMessage2(message.chatId._serialized, response);
                     }
+                } else {
+                    // We just need to send the response as we already checked no file is attached (in above if)
+                    WAPI.sendMessage2(message.chatId._serialized, response);
                 }
 
                 //call a webhook if there is one in (exactMatch || PartialMatch)
