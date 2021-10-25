@@ -30,6 +30,9 @@ async function Main() {
         if (configs.smartreply.suggestions.length > 0) {
             await setupSmartReply();
         }
+        // if (configs.likebutton == true) {
+        //     await setupLikeButton();
+        // }
         console.log("WBOT is ready !! Let those message come.");
     } catch (e) {
         console.error("\nLooks like you got an error. " + e);
@@ -209,6 +212,34 @@ async function Main() {
                 });
             });
         });
+    }
+
+    async function setupLikeButton() {
+        spinner.start("Setting up the like button");
+        await page.waitForSelector("#app");
+        await page.evaluate(`
+        var observer = new MutationObserver((mutations) => {
+            for (var mutation of mutations) {
+                //console.log(mutation);
+                if (mutation.addedNodes.length && mutation.addedNodes[0].id === 'main') {
+                    //newChat(mutation.addedNodes[0].querySelector('.copyable-text span').innerText);
+                    console.log("%cChat changed !!", "font-size:x-large");
+                    WAPI.addLikeButton();
+                }
+            }
+        });
+        observer.observe(document.querySelector('#app'), { attributes: false, childList: true, subtree: true });
+        `);
+        spinner.stop("Setting up the like button... Done!");
+        page.waitForSelector("#main", {timeout: 0}).then(async () => {
+            await page.exposeFunction("sendMessage", async message => {
+                return new Promise(async (resolve, reject) => {
+                    await page.type("#main div.selectable-text[data-tab]", "Like");
+                    console.log("Clicked");
+                    await page.keyboard.press("Enter");
+                })
+            })
+        })
     }
 }
 

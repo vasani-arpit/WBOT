@@ -228,6 +228,22 @@ WAPI.addOptions = function () {
     div.classList.add("grGJn");
     var mainDiv = document.querySelector("#main");
     var footer = document.querySelector("footer");
+
+    var btn = document.createElement("DIV");
+    btn.style.height = "10px";
+    btn.style.width= "10px";
+    btn.style.textAlign = "center";
+    btn.style.zIndex = "10";
+    btn.innerHTML = `
+    <span>
+    <button class="ocadv bounceIn" id="like-button"><span data-icon="ptt" class=""><svg style="color: var(--icon);" enable-background="new 0 0 561 561" version="1.1" viewBox="0 0 561 561" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path fill="currentColor" d="m0 535.5h102v-306h-102v306zm561-280.5c0-28.05-22.95-51-51-51h-160.65l25.5-117.3v-7.65c0-10.2-5.1-20.4-10.199-28.05l-28.051-25.5-168.3 168.3c-10.2 7.65-15.3 20.4-15.3 35.7v255c0 28.05 22.95 51 51 51h229.5c20.4 0 38.25-12.75 45.9-30.6l76.5-181.05c2.55-5.1 2.55-12.75 2.55-17.85v-51h2.55v1e-3z"></path></svg></span></button></span>
+    `;
+    btn.setAttribute("id", "like-button");
+    
+    var target = footer.firstChild.firstChild.firstChild.lastChild.lastChild;
+    console.log(target);
+
+    target.appendChild(btn);
     footer.insertBefore(div, footer.firstChild);
     var suggestions = document.body.querySelectorAll(".reply-options");
     for (let i = 0; i < suggestions.length; i++) {
@@ -239,3 +255,4 @@ WAPI.addOptions = function () {
     }
     mainDiv.children[mainDiv.children.length - 5].querySelector("div > div div[tabindex]").scrollTop += 100;
 }
+

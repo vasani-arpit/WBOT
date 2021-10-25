@@ -1,86 +1,124 @@
 {
     "appconfig": {
         "headless": false,
-        "isGroupReply":false,
-        "webhook":"",
+        "isGroupReply": false,
+        "webhook": "",
         "downloadMedia": false,
         "replyUnreadMsg": false
     },
-    "bot": [{
+    "bot": [
+        {
             "contains": [],
-            "exact": ["hi"],
+            "exact": [
+                "hi"
+            ],
             "response": "{hello|howdy}",
-            "webhook":""
+            "webhook": ""
         },
         {
             "contains": [],
-            "exact": ["hello"],
+            "exact": [
+                "hello"
+            ],
             "response": "hi",
-            "afterSeconds":3
+            "afterSeconds": 3
         },
         {
             "contains": [],
-            "exact": ["hy"],
+            "exact": [
+                "hy"
+            ],
             "response": "hi",
-            "file":"github.png"
+            "file": "github.png"
         },
         {
             "contains": [],
-            "exact": ["hiee"],
+            "exact": [
+                "hiee"
+            ],
             "response": "hi"
         },
         {
             "contains": [],
-            "exact": ["hey"],
+            "exact": [
+                "hey"
+            ],
             "response": "hi"
         },
         {
-            "contains": ["michhami","dukkadam"],
+            "contains": [
+                "michhami",
+                "dukkadam"
+            ],
             "exact": [],
             "response": "Michhami Dukkadam 🙏"
         },
         {
-            "contains": ["happy","birthday","bday"],
+            "contains": [
+                "happy",
+                "birthday",
+                "bday"
+            ],
             "exact": [],
             "response": "Thank you"
         },
         {
             "contains": [],
-            "exact": ["how are you"],
+            "exact": [
+                "how are you"
+            ],
             "response": "I am {good {thanks| thank you}|great}. How about you?"
         },
         {
             "contains": [],
-            "exact": ["hbd"],
+            "exact": [
+                "hbd"
+            ],
             "response": "Thank you"
         },
         {
-            "contains": ["શુભકામના","જન્મદિન"],
+            "contains": [
+                "શુભકામના",
+                "જન્મદિન"
+            ],
             "exact": [],
             "response": "આભાર 🙏"
         },
         {
-            "contains": ["janmdin","hardik","shubhkaamna"],
+            "contains": [
+                "janmdin",
+                "hardik",
+                "shubhkaamna"
+            ],
             "exact": [],
             "response": "aabhar 🙏"
         },
         {
             "contains": [],
-            "exact": ["github"],
+            "exact": [
+                "github"
+            ],
             "response": "Git Hub Logo",
-            "file":"{github.png|github-two.png}",
+            "file": "{github.png|github-two.png}",
             "responseAsCaption": false
         },
         {
             "contains": [],
-            "exact": ["variables"],
+            "exact": [
+                "variables"
+            ],
             "response": "this is sample of variables:\nHey [#name] 👋, [#greetings]. \nThis is your phone number, [#phoneNumber]"
         }
     ],
     "blocked": [],
-    "noMatch":"{🤔|🤷‍♂️}",
-    "smartreply":{
-        "suggestions":["Hello", "Welcome to my store !!", "Thanks for reaching out 🙏"],
-        "clicktosend":true
-    }
+    "noMatch": "{🤔|🤷‍♂️}",
+    "smartreply": {
+        "suggestions": [
+            "Hello",
+            "Welcome to my store !!",
+            "Thanks for reaching out 🙏"
+        ],
+        "clicktosend": true
+    },
+    "likebutton": true
 }
