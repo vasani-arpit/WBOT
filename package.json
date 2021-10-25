@@ -38,6 +38,7 @@
     "mel-spintax": "^1.0.4",
     "mime": "^2.4.4",
     "node-fetch": "^2.6.1",
+    "nodemon": "^2.0.14",
     "ora": "^3.0.0",
     "puppeteer-core": "^1.16.0",
     "qrcode-terminal": "^0.12.0",

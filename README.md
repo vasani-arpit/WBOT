@@ -136,7 +136,7 @@ here is how that looks
 ![smart reply gif](https://user-images.githubusercontent.com/6497827/58412366-f1653380-8093-11e9-8427-1ca19235faed.gif)
 
 
-## Run the latest code from Github
+## How to setup the development environment ?
 
 **This is only recommended for advanced 'node.js' users or development purpose.**
 
@@ -147,8 +147,11 @@ Now download and run the latest code from github by:
 git clone https://github.com/vasani-arpit/WBOT.git
 cd WBOT
 npm install
-node src/index.js
+node src/index.js or npm start
 ```
+
+Note: You can also use `nodemon start` command to start the development enviornment, Using this command 
+you don't need to restart your WBOT app when you make any changes in the code.
 
 If you run Linux on a headless server or want to run chromium without visible display try ```xvfb-run wbot-linux```.
 
