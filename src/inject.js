@@ -212,6 +212,10 @@ WAPI.waitNewMessages(false, async (data) => {
     processMessages(data)
 });
 WAPI.addOptions = function () {
+    var app = document.querySelector(".web");
+    console.log(app);
+    app.classList.add("dark");
+
     var suggestions = "";
     intents.smartreply.suggestions.map((item) => {
         suggestions += `<button style="background-color: #eeeeee;
