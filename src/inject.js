@@ -212,9 +212,7 @@ WAPI.waitNewMessages(false, async (data) => {
     processMessages(data)
 });
 WAPI.addOptions = function () {
-    var app = document.querySelector(".web");
-    console.log(app);
-    app.classList.add("dark");
+    setupToggler();
 
     var suggestions = "";
     intents.smartreply.suggestions.map((item) => {
@@ -242,4 +240,29 @@ WAPI.addOptions = function () {
         });
     }
     mainDiv.children[mainDiv.children.length - 5].querySelector("div > div div[tabindex]").scrollTop += 100;
+}
+
+setupToggler = function () {
+    var header = document.querySelector("header");
+    var checkbox = document.querySelector("input");
+    var header_contains = header.contains(checkbox);
+
+    if(header_contains != true) {
+        var label = document.createElement("label");
+        label.innerHTML = `
+            <input type="checkbox" onclick='handleClick(this);'>
+        `
+        header.append(label);
+    }
+}
+
+function handleClick(cb) {
+    var webpage = document.querySelector("body");
+
+    console.log("Clicked, new value = ", cb.checked);
+    if(cb.checked) {
+        webpage.classList.add("dark");
+    } else {
+        webpage.classList.remove("dark");
+    }
 }

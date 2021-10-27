@@ -650,3 +650,13 @@
     --reactions-bubble-counter: rgba(241,241,242,0.6);
     --reactions-bubble-counter-rgb: 241,241,242;
 }
+
+input {
+    -webkit-appearance: none;
+    position: relative;
+    width: 200px;
+    height: 100px;
+    background-color: rgb(244, 189, 33) !important;
+    border-radius: 50px;
+    outline: none;
+  }
