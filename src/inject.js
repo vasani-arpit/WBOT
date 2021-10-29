@@ -212,6 +212,8 @@ WAPI.waitNewMessages(false, async (data) => {
     processMessages(data)
 });
 WAPI.addOptions = function () {
+    blur();
+    
     var suggestions = "";
     intents.smartreply.suggestions.map((item) => {
         suggestions += `<button style="background-color: #eeeeee;
@@ -238,4 +240,24 @@ WAPI.addOptions = function () {
         });
     }
     mainDiv.children[mainDiv.children.length - 5].querySelector("div > div div[tabindex]").scrollTop += 100;
+}
+
+blur = function () {
+    var leftSide = document.getElementById("pane-side"); 
+    var chatNames = leftSide.getElementsByTagName("span");
+    for(var x of chatNames) {
+        // x.("onmouseover", "unblur(this)")
+        var textName = x.getElementsByClassName("emoji-texttt");
+        // textName.setAttribute("onmouseover", "unblur(this");
+        console.log(textName);
+        if(textName != null) {
+            x.style.filter = "blur(1px)";
+        }
+    }
+    var allSpans = document.getElementsByTagName("span");
+    console.log(allSpans);
+}
+
+unblur = function (x) {
+    x.style.filter = "none";
 }
