@@ -212,8 +212,6 @@ WAPI.waitNewMessages(false, async (data) => {
     processMessages(data)
 });
 WAPI.addOptions = function () {
-    setupToggler();
-
     var suggestions = "";
     intents.smartreply.suggestions.map((item) => {
         suggestions += `<button style="background-color: #eeeeee;
@@ -240,6 +238,10 @@ WAPI.addOptions = function () {
         });
     }
     mainDiv.children[mainDiv.children.length - 5].querySelector("div > div div[tabindex]").scrollTop += 100;
+}
+
+WAPI.addDarkMode = function () {
+    setupToggler();
 }
 
 setupToggler = function () {
