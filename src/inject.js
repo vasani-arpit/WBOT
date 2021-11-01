@@ -239,3 +239,46 @@ WAPI.addOptions = function () {
     }
     mainDiv.children[mainDiv.children.length - 5].querySelector("div > div div[tabindex]").scrollTop += 100;
 }
+
+
+WAPI.addPopup = function () {
+    console.log("In addPopup");
+    addFeatureButton();
+}
+
+addFeatureButton = function () {
+    console.log("In addFeatureButton");
+    var header = document.querySelector("header");
+    var featureButton = document.getElementById("featureButton");
+    var presentButton = document.contains(featureButton);
+
+    console.log("Present Button: ", presentButton);
+    if(presentButton != true) {
+        var newFeatureButton = document.createElement("div");
+        newFeatureButton.innerHTML = `
+            <button id="featureButton" onClick="openPopup()">WBOT</button>
+        `;
+        header.append(newFeatureButton);
+    }
+}
+
+openPopup = function () {
+    console.log("Opened popup");
+    var newPopup = document.createElement("div");
+    newPopup.innerHTML = `
+        <form id="popupPage">
+            <h1> Features by WBOT </h1>
+            <label>Blur name</label> <input type="checkbox">
+            <label>Blur name</label> <input type="checkbox">
+            <label>Blur name</label> <input type="checkbox">
+        </form>
+    `;
+    newPopup.style.backgroundColor = "red";
+    newPopup.style.height = "100px";
+    newPopup.style.width = "100px";
+    newPopup.style.top = "100px";
+    newPopup.style.zIndex = "100";
+    var webpage = document.querySelector("body");
+    console.log(webpage);
+    webpage.append(newPopup);
+}
