@@ -267,9 +267,9 @@ openPopup = function () {
     var newPopup = document.createElement("div");
     newPopup.innerHTML = `
         <h1> Features by WBOT </h1><br><br>
-        <label>Blur name</label> <input type="checkbox"><br><br>
-        <label>Blur photo</label> <input type="checkbox"><br><br>
-        <label>Blur chat</label> <input type="checkbox"><br><br>
+        <label>Blur name</label> <input id = "blurName" onclick = "handleFeature(this);" type="checkbox"><br><br>
+        <label>Blur photo</label> <input id = "blurPhoto" onclick = "handleFeature(this);" type="checkbox"><br><br>
+        <label>Blur chat</label> <input id = "blurChat" onclick = "handleFeature(this);" type="checkbox"><br><br>
         <button id="closePopup" onClick = "closePopup();"> Close </button>
     `;
     newPopup.setAttribute("id", "featurePopup");
@@ -288,4 +288,36 @@ closePopup = function () {
     var popup = document.getElementById("featurePopup");
     console.log(popup);
     popup.style.display = "none";
+}
+
+function handleFeature (btn) {
+    console.log("Clicked on checkbox of", btn.id);
+    console.log(btn.checked);
+    var btnId = btn.id;
+
+    if(btnId == "blurName") {
+        blurName();
+    }
+
+    if(btnId == "blurPhoto") {
+        blurPhoto();
+    }
+
+    if(btnId == "blurChat") {
+        blurChat();
+    }
+}
+
+
+function blurName () {
+
+}
+
+
+function blurPhoto () {
+
+}
+
+function blurChat () {
+    
 }
