@@ -266,19 +266,26 @@ openPopup = function () {
     console.log("Opened popup");
     var newPopup = document.createElement("div");
     newPopup.innerHTML = `
-        <form id="popupPage">
-            <h1> Features by WBOT </h1>
-            <label>Blur name</label> <input type="checkbox">
-            <label>Blur name</label> <input type="checkbox">
-            <label>Blur name</label> <input type="checkbox">
-        </form>
+        <h1> Features by WBOT </h1><br><br>
+        <label>Blur name</label> <input type="checkbox"><br><br>
+        <label>Blur photo</label> <input type="checkbox"><br><br>
+        <label>Blur chat</label> <input type="checkbox"><br><br>
+        <button id="closePopup" onClick = "closePopup();"> Close </button>
     `;
-    newPopup.style.backgroundColor = "red";
-    newPopup.style.height = "100px";
-    newPopup.style.width = "100px";
-    newPopup.style.top = "100px";
-    newPopup.style.zIndex = "100";
-    var webpage = document.querySelector("body");
+    newPopup.setAttribute("id", "featurePopup");
+    newPopup.style.backgroundColor = "#e7e7e7";
+    newPopup.style.display = "block";
+    newPopup.style.textAlign = "center";
+    var webpage = document.getElementById("pane-side");
     console.log(webpage);
     webpage.append(newPopup);
+    var button = document.getElementById("closePopup");
+    button.style.backgroundColor = "red";
+}
+
+closePopup = function () {
+    console.log("Closing popup...");
+    var popup = document.getElementById("featurePopup");
+    console.log(popup);
+    popup.style.display = "none";
 }
