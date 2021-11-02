@@ -296,28 +296,53 @@ function handleFeature (btn) {
     var btnId = btn.id;
 
     if(btnId == "blurName") {
-        blurName();
+        blurName(btn);
     }
 
     if(btnId == "blurPhoto") {
-        blurPhoto();
+        blurPhoto(btn);
     }
 
     if(btnId == "blurChat") {
-        blurChat();
+        blurChat(btn);
     }
 }
 
 
-function blurName () {
-
+function blurName (btn) {
+    var status = btn.checked;
+    if(status == true) {
+        var leftSide = document.getElementById("pane-side"); 
+        var chatNames = leftSide.getElementsByTagName("span");
+        for(var x of chatNames) {
+            var textName = x.getElementsByClassName("emoji-texttt");
+            console.log(textName);
+            if(textName != null) {
+                x.style.filter = "blur(2px)";
+            }
+        }
+        var allSpans = document.getElementsByTagName("span");
+        console.log(allSpans);
+    } else {
+        var leftSide = document.getElementById("pane-side"); 
+        var chatNames = leftSide.getElementsByTagName("span");
+        for(var x of chatNames) {
+            var textName = x.getElementsByClassName("emoji-texttt");
+            console.log(textName);
+            if(textName != null) {
+                x.style.filter = "none";
+            }
+        }
+        var allSpans = document.getElementsByTagName("span");
+        console.log(allSpans);
+    }
 }
 
 
-function blurPhoto () {
+function blurPhoto (btn) {
 
 }
 
-function blurChat () {
-    
+function blurChat (btn) {
+
 }
