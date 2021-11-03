@@ -359,5 +359,32 @@ function blurPhoto (btn) {
 }
 
 function blurChat (btn) {
-
+    var status = btn.checked;
+    if(status == true) {
+        var rightSide = document.getElementById("main");
+        console.log(rightSide);
+        var chatOut = rightSide.getElementsByClassName("message-out");
+        var chatIn = rightSide.getElementsByClassName("message-in");
+        for(var x of chatOut) {
+            x.style.filter = "blur(2px)";
+        }
+        for(var x of chatIn) {
+            x.style.filter = "blur(2px)";
+        }
+        console.log("chatOut: ", chatOut);
+        console.log("chatIn: ", chatIn);
+    } else {
+        var rightSide = document.getElementById("main");
+        console.log(rightSide);
+        var chatOut = rightSide.getElementsByClassName("message-out");
+        var chatIn = rightSide.getElementsByClassName("message-in");
+        for(var x of chatOut) {
+            x.style.filter = "none";
+        }
+        for(var x of chatIn) {
+            x.style.filter = "none";
+        }
+        console.log("chatOut: ", chatOut);
+        console.log("chatIn: ", chatIn);
+    }
 }
