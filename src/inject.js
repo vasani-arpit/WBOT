@@ -340,7 +340,22 @@ function blurName (btn) {
 
 
 function blurPhoto (btn) {
-
+    var status = btn.checked;
+    if(status == true) {
+        var leftSide = document.getElementById("pane-side");
+        var photos = leftSide.getElementsByTagName("img");
+        for(var x of photos) {
+            x.style.filter = "blur(4px)"
+        }
+        console.log(photos);
+    } else {
+        var leftSide = document.getElementById("pane-side");
+        var photos = leftSide.getElementsByTagName("img");
+        for(var x of photos) {
+            x.style.filter = "none";
+        }
+        console.log(photos);
+    }
 }
 
 function blurChat (btn) {
