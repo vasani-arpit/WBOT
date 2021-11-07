@@ -11,7 +11,9 @@ var rev = require("./detectRev");
 var constants = require("./constants");
 var configs = require("../bot");
 var settings = require('./settings');
+const fetch = require("node-fetch");
 var fs = require("fs");
+const { lt } = require('semver');
 
 //console.log(ps);
 
@@ -30,6 +32,7 @@ async function Main() {
         if (configs.smartreply.suggestions.length > 0) {
             await setupSmartReply();
         }
+        await checkForUpdate();
         console.log("WBOT is ready !! Let those message come.");
     } catch (e) {
         console.error("\nLooks like you got an error. " + e);
@@ -209,6 +212,28 @@ async function Main() {
                 });
             });
         });
+    }
+
+    async function checkForUpdate () {
+        spinner.start("Checking for an Update...");
+        // Using Github API (https://docs.github.com/en/rest/reference/repos#releases)
+        // to get the releases data
+        const url = "https://api.github.com/repos/vasani-arpit/WBOT/releases";
+        const response = await fetch(url);
+
+        // Storing data in form of JSON
+        var data = await response.json();
+        var latestVersion = data[0].tag_name;
+        var latestVersionLink = `https://github.com/vasani-arpit/WBOT/releases/tag/${latestVersion}`;
+        var myVersion = 'v' + require('../package.json').version;
+
+        spinner.stop("Checking for an Update... Completed");
+
+        if(lt(myVersion, latestVersion)) {
+            console.log(`An Update is available for you.\nPlease download the latest version ${latestVersion} of WBOT from ${latestVersionLink}`);
+        } else {
+            console.log("There is no update available.")
+        }
     }
 }
 
