@@ -12,6 +12,8 @@ var constants = require("./constants");
 var configs = require("../bot");
 var settings = require('./settings');
 var fs = require("fs");
+const fetch = require("node-fetch");
+const { lt } = require('semver');
 
 //console.log(ps);
 
@@ -31,6 +33,7 @@ async function Main() {
             await setupSmartReply();
         }
         await setupPopup();
+        await checkForUpdate();
         console.log("WBOT is ready !! Let those message come.");
     } catch (e) {
         console.error("\nLooks like you got an error. " + e);
@@ -202,10 +205,10 @@ async function Main() {
         page.waitForSelector("#main", { timeout: 0 }).then(async () => {
             await page.exposeFunction("sendMessage", async message => {
                 return new Promise(async (resolve, reject) => {
-                    //send message to the currently open chat using power of puppeteer 
-                    await page.type("#main div.selectable-text[data-tab]", message);
+                    // Type message with space to the currently open chat using power of puppeteer 
+                    await page.type("#main div.selectable-text[data-tab]", message + " ");
                     if (configs.smartreply.clicktosend) {
-                        await page.click("#main footer div.copyable-area div div div button");
+                        page.keyboard.press("Enter");
                     }
                 });
             });
@@ -229,6 +232,26 @@ async function Main() {
             observer.observe(document.querySelector('#app'), { attributes: false, childList: true, subtree: true });
         `);
         spinner.stop("Setting up the popup... Completed");
+    }
+
+    async function checkForUpdate () {
+        spinner.start("Checking for an Update...");
+        // Using Github API (https://docs.github.com/en/rest/reference/repos#releases)
+        // to get the releases data
+        const url = "https://api.github.com/repos/vasani-arpit/WBOT/releases";
+        const response = await fetch(url);
+
+        // Storing data in form of JSON
+        var data = await response.json();
+        var latestVersion = data[0].tag_name;
+        var latestVersionLink = `https://github.com/vasani-arpit/WBOT/releases/tag/${latestVersion}`;
+        var myVersion = 'v' + require('../package.json').version;
+
+        spinner.stop("Checking for an Update... Completed");
+
+        if(lt(myVersion, latestVersion)) {
+            console.log(`An Update is available for you.\nPlease download the latest version ${latestVersion} of WBOT from ${latestVersionLink}`);
+        }
     }
 }
 
