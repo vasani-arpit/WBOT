@@ -266,22 +266,37 @@ openPopup = function () {
     console.log("Opened popup");
     var newPopup = document.createElement("div");
     newPopup.innerHTML = `
-        <h1> Features by WBOT </h1><br><br>
+            <h1 style="background-color: 
+                green; color: white; 
+                height: 40px;
+                font-size: 30px;
+                top: 3px;"
+            >Features by WBOT</h1> <br><br>
         <ul>
             <li>
-                <label>Blur name</label> 
+                <label style="font-size: 20px;">Blur name</label> 
                 <input id = "blurName" onclick = "handleFeature(this);" type="checkbox"> <br><br>
             </li>
             <li>
-                <label>Blur photo</label> 
+                <label style="font-size: 20px">Blur photo</label> 
                 <input id = "blurPhoto" onclick = "handleFeature(this);" type="checkbox"><br><br>
             </li>
             <li>
-                <label>Blur chat</label>
+                <label style="font-size: 20px">Blur chat</label>
                 <input id = "blurChat" onclick = "handleFeature(this);" type="checkbox"><br><br>
             </li>
         </ul>
-        <button id="closePopup" onClick = "closePopup();"> Close </button>        
+        <button style="background-color: #4CAF50;
+                        border: none;
+                        color: white;
+                        padding: 15px 32px;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        font-size: 16px;
+                        margin: 4px 2px;
+                        cursor: pointer;"
+            id="closePopup" onClick = "closePopup();"> Close </button>        
     `;
     newPopup.setAttribute("id", "featurePopup");
     newPopup.style.backgroundColor = "rgb(255, 255, 255)";
@@ -295,15 +310,13 @@ openPopup = function () {
     var webpage = document.getElementById("main");
     console.log(webpage);
     webpage.append(newPopup);
-    var button = document.getElementById("closePopup");
-    button.style.backgroundColor = "red";
 }
 
 closePopup = function () {
     console.log("Closing popup...");
     var popup = document.getElementById("featurePopup");
     console.log(popup);
-    popup.style.display = "none";
+    popup.remove();
 }
 
 function handleFeature (btn) {
