@@ -285,6 +285,10 @@ openPopup = function () {
                 <label style="font-size: 20px">Blur chat</label>
                 <input id = "blurChat" onclick = "handleFeature(this);" type="checkbox"><br><br>
             </li>
+            <li>
+                <label style="font-size: 20px">Dark mode</label>
+                <input id = "darkMode" onclick = "handleFeature(this);" type="checkbox"><br><br>
+            </li>
         </ul>
         <button style="background-color: #4CAF50;
                         border: none;
@@ -334,6 +338,10 @@ function handleFeature (btn) {
 
     if(btnId == "blurChat") {
         blurChat(btn);
+    }
+
+    if(btnId == "darkMode") {
+        darkMode(btn);
     }
 }
 
@@ -415,5 +423,16 @@ function blurChat (btn) {
         }
         console.log("chatOut: ", chatOut);
         console.log("chatIn: ", chatIn);
+    }
+}
+
+function darkMode (btn) {
+    var webpage = document.querySelector("body");
+    var status = btn.checked;
+
+    if(status == true) {
+        webpage.classList.add("dark");
+    } else {
+        webpage.classList.remove("dark");
     }
 }
