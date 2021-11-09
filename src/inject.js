@@ -267,16 +267,32 @@ openPopup = function () {
     var newPopup = document.createElement("div");
     newPopup.innerHTML = `
         <h1> Features by WBOT </h1><br><br>
-        <label>Blur name</label> <input id = "blurName" onclick = "handleFeature(this);" type="checkbox"><br><br>
-        <label>Blur photo</label> <input id = "blurPhoto" onclick = "handleFeature(this);" type="checkbox"><br><br>
-        <label>Blur chat</label> <input id = "blurChat" onclick = "handleFeature(this);" type="checkbox"><br><br>
-        <button id="closePopup" onClick = "closePopup();"> Close </button>
+        <ul>
+            <li>
+                <label>Blur name</label> 
+                <input id = "blurName" onclick = "handleFeature(this);" type="checkbox"> <br><br>
+            </li>
+            <li>
+                <label>Blur photo</label> 
+                <input id = "blurPhoto" onclick = "handleFeature(this);" type="checkbox"><br><br>
+            </li>
+            <li>
+                <label>Blur chat</label>
+                <input id = "blurChat" onclick = "handleFeature(this);" type="checkbox"><br><br>
+            </li>
+        </ul>
+        <button id="closePopup" onClick = "closePopup();"> Close </button>        
     `;
     newPopup.setAttribute("id", "featurePopup");
-    newPopup.style.backgroundColor = "#e7e7e7";
+    newPopup.style.backgroundColor = "rgb(255, 255, 255)";
     newPopup.style.display = "block";
     newPopup.style.textAlign = "center";
-    var webpage = document.getElementById("pane-side");
+    newPopup.style.zIndex = "999999999";
+    newPopup.style.height = "100%";
+    newPopup.style.width = "100%";
+    newPopup.style.position = "absolute";
+    newPopup.style.overflow = "hidden auto";
+    var webpage = document.getElementById("main");
     console.log(webpage);
     webpage.append(newPopup);
     var button = document.getElementById("closePopup");
