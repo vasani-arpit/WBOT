@@ -355,7 +355,10 @@ function blurName (btn) {
             var textName = x.getElementsByClassName("emoji-texttt");
             console.log(textName);
             if(textName != null) {
-                x.style.filter = "blur(2px)";
+                x.style.filter = "blur(4px)";
+                x.classList.add("blur");
+                x.setAttribute("onmouseover", "toggle_blur(this)");
+                x.setAttribute("onmouseout", "toggle_blur(this)");
             }
         }
         var allSpans = document.getElementsByTagName("span");
@@ -367,6 +370,7 @@ function blurName (btn) {
             var textName = x.getElementsByClassName("emoji-texttt");
             console.log(textName);
             if(textName != null) {
+                x.classList.remove("blur");
                 x.style.filter = "none";
             }
         }
@@ -382,13 +386,17 @@ function blurPhoto (btn) {
         var leftSide = document.getElementById("pane-side");
         var photos = leftSide.getElementsByTagName("img");
         for(var x of photos) {
-            x.style.filter = "blur(4px)"
+            x.style.filter = "blur(4px)";
+            x.classList.add("blur");
+            x.setAttribute("onmouseover", "toggle_blur(this)");
+            x.setAttribute("onmouseout", "toggle_blur(this)");
         }
         console.log(photos);
     } else {
         var leftSide = document.getElementById("pane-side");
         var photos = leftSide.getElementsByTagName("img");
         for(var x of photos) {
+            x.classList.remove("blur");
             x.style.filter = "none";
         }
         console.log(photos);
@@ -403,10 +411,16 @@ function blurChat (btn) {
         var chatOut = rightSide.getElementsByClassName("message-out");
         var chatIn = rightSide.getElementsByClassName("message-in");
         for(var x of chatOut) {
-            x.style.filter = "blur(2px)";
+            x.style.filter = "blur(4px)";
+            x.classList.add("blur");
+            x.setAttribute("onmouseover", "toggle_blur(this)");
+            x.setAttribute("onmouseout", "toggle_blur(this)");
         }
         for(var x of chatIn) {
-            x.style.filter = "blur(2px)";
+            x.style.filter = "blur(4px)";
+            x.classList.add("blur");
+            x.setAttribute("onmouseover", "toggle_blur(this)");
+            x.setAttribute("onmouseout", "toggle_blur(this)");
         }
         console.log("chatOut: ", chatOut);
         console.log("chatIn: ", chatIn);
@@ -417,12 +431,22 @@ function blurChat (btn) {
         var chatIn = rightSide.getElementsByClassName("message-in");
         for(var x of chatOut) {
             x.style.filter = "none";
+            x.classList.remove("blur");
         }
         for(var x of chatIn) {
             x.style.filter = "none";
+            x.classList.remove("blur");
         }
         console.log("chatOut: ", chatOut);
         console.log("chatIn: ", chatIn);
+    }
+}
+
+function toggle_blur (x) {
+    if(x.style.filter == "blur(4px)") {
+        x.style.filter="none";
+    } else if (x.classList.contains("blur")) {
+        x.style.filter = "blur(4px)";
     }
 }
 
