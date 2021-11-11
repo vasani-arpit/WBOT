@@ -452,11 +452,14 @@ function toggle_blur (x) {
 
 function darkMode (btn) {
     var webpage = document.querySelector("body");
+    var featureButton = document.getElementById("featureButton");
     var status = btn.checked;
 
     if(status == true) {
         webpage.classList.add("dark");
+        featureButton.style.color = "white";
     } else {
         webpage.classList.remove("dark");
+        featureButton.style.color = "black";
     }
 }
