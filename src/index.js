@@ -225,7 +225,7 @@ async function Main() {
                     if (mutation.addedNodes.length && mutation.addedNodes[0].id === 'main') {
                         //newChat(mutation.addedNodes[0].querySelector('.copyable-text span').innerText);
                         console.log("%cChat changed !!", "font-size:x-large");
-                        WAPI.addPopup();
+                        WAPI.setupFeaturePage();
                     }
                 }
             });

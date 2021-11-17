@@ -241,18 +241,12 @@ WAPI.addOptions = function () {
 }
 
 
-WAPI.addPopup = function () {
-    console.log("In addPopup");
-    addFeatureButton();
-}
-
-addFeatureButton = function () {
-    console.log("In addFeatureButton");
+WAPI.setupFeaturePage = function () {
+    // Setup the WBOT button on the header
     var header = document.querySelector("header");
     var featureButton = document.getElementById("featureButton");
     var presentButton = document.contains(featureButton);
 
-    console.log("Present Button: ", presentButton);
     if(presentButton != true) {
         var newFeatureButton = document.createElement("div");
         newFeatureButton.innerHTML = `
@@ -260,10 +254,8 @@ addFeatureButton = function () {
         `;
         header.append(newFeatureButton);
     }
-    addPopup();
-}
 
-addPopup = function () {
+    // Setup the feature page on the right side of the window (i.e chat window)
     var newPopup = document.createElement("div");
     newPopup.innerHTML = `
             <h1 style="background-color: 
@@ -312,7 +304,6 @@ addPopup = function () {
     newPopup.style.position = "absolute";
     newPopup.style.overflow = "hidden auto";
     var webpage = document.getElementById("main");
-    console.log(webpage);
     webpage.append(newPopup);
 }
 
@@ -322,15 +313,11 @@ openPopup = function () {
 }
 
 closePopup = function () {
-    console.log("Closing popup...");
     var popup = document.getElementById("featurePopup");
-    console.log(popup);
     popup.style.display = "none";
 }
 
 function handleFeature (btn) {
-    console.log("Clicked on checkbox of", btn.id);
-    console.log(btn.checked);
     var btnId = btn.id;
 
     if(btnId == "blurName") {
@@ -366,8 +353,6 @@ function blurName (btn) {
                 x.setAttribute("onmouseout", "toggle_blur(this)");
             }
         }
-        var allSpans = document.getElementsByTagName("span");
-        console.log(allSpans);
     } else {
         var leftSide = document.getElementById("pane-side"); 
         var chatNames = leftSide.getElementsByTagName("span");
@@ -379,8 +364,6 @@ function blurName (btn) {
                 x.style.filter = "none";
             }
         }
-        var allSpans = document.getElementsByTagName("span");
-        console.log(allSpans);
     }
 }
 
@@ -396,7 +379,6 @@ function blurPhoto (btn) {
             x.setAttribute("onmouseover", "toggle_blur(this)");
             x.setAttribute("onmouseout", "toggle_blur(this)");
         }
-        console.log(photos);
     } else {
         var leftSide = document.getElementById("pane-side");
         var photos = leftSide.getElementsByTagName("img");
@@ -404,7 +386,6 @@ function blurPhoto (btn) {
             x.classList.remove("blur");
             x.style.filter = "none";
         }
-        console.log(photos);
     }
 }
 
@@ -412,7 +393,6 @@ function blurChat (btn) {
     var status = btn.checked;
     if(status == true) {
         var rightSide = document.getElementById("main");
-        console.log(rightSide);
         var chatOut = rightSide.getElementsByClassName("message-out");
         var chatIn = rightSide.getElementsByClassName("message-in");
         for(var x of chatOut) {
@@ -427,11 +407,8 @@ function blurChat (btn) {
             x.setAttribute("onmouseover", "toggle_blur(this)");
             x.setAttribute("onmouseout", "toggle_blur(this)");
         }
-        console.log("chatOut: ", chatOut);
-        console.log("chatIn: ", chatIn);
     } else {
         var rightSide = document.getElementById("main");
-        console.log(rightSide);
         var chatOut = rightSide.getElementsByClassName("message-out");
         var chatIn = rightSide.getElementsByClassName("message-in");
         for(var x of chatOut) {
@@ -442,8 +419,6 @@ function blurChat (btn) {
             x.style.filter = "none";
             x.classList.remove("blur");
         }
-        console.log("chatOut: ", chatOut);
-        console.log("chatIn: ", chatIn);
     }
 }
 
