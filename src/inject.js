@@ -260,10 +260,10 @@ addFeatureButton = function () {
         `;
         header.append(newFeatureButton);
     }
+    addPopup();
 }
 
-openPopup = function () {
-    console.log("Opened popup");
+addPopup = function () {
     var newPopup = document.createElement("div");
     newPopup.innerHTML = `
             <h1 style="background-color: 
@@ -304,7 +304,7 @@ openPopup = function () {
     `;
     newPopup.setAttribute("id", "featurePopup");
     newPopup.style.backgroundColor = "rgb(255, 255, 255)";
-    newPopup.style.display = "block";
+    newPopup.style.display = "none";
     newPopup.style.textAlign = "center";
     newPopup.style.zIndex = "999999999";
     newPopup.style.height = "100%";
@@ -316,11 +316,16 @@ openPopup = function () {
     webpage.append(newPopup);
 }
 
+openPopup = function () {
+    var popup = document.getElementById("featurePopup");
+    popup.style.display = "block";
+}
+
 closePopup = function () {
     console.log("Closing popup...");
     var popup = document.getElementById("featurePopup");
     console.log(popup);
-    popup.remove();
+    popup.style.display = "none";
 }
 
 function handleFeature (btn) {
