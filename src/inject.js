@@ -214,7 +214,7 @@ WAPI.waitNewMessages(false, async (data) => {
 WAPI.addOptions = function () {
     var suggestions = "";
     intents.smartreply.suggestions.map((item) => {
-        suggestions += `<button style="background-color: #eeeeee;
+        suggestions += `<button style="background-color: #dcf8c6;
                                 margin: 5px;
                                 padding: 5px 10px;
                                 font-size: inherit;
@@ -345,7 +345,6 @@ function blurName (btn) {
         var chatNames = leftSide.getElementsByTagName("span");
         for(var x of chatNames) {
             var textName = x.getElementsByClassName("emoji-texttt");
-            console.log(textName);
             if(textName != null) {
                 x.style.filter = "blur(4px)";
                 x.classList.add("blur");
@@ -434,12 +433,20 @@ function darkMode (btn) {
     var webpage = document.querySelector("body");
     var featureButton = document.getElementById("featureButton");
     var status = btn.checked;
+    var suggestions = document.getElementsByClassName("reply-options");
+    console.log(suggestions);
 
     if(status == true) {
         webpage.classList.add("dark");
         featureButton.style.color = "white";
+        for(x of suggestions) {
+            x.style.backgroundColor = '#056162';
+        }
     } else {
         webpage.classList.remove("dark");
         featureButton.style.color = "black";
+        for(x of suggestions) {
+            x.style.backgroundColor = '#dcf8c6';
+        }
     }
 }
