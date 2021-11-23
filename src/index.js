@@ -32,6 +32,10 @@ async function Main() {
         if (configs.smartreply.suggestions.length > 0) {
             await setupSmartReply();
         }
+
+        if (configs.password > 0) {
+            await setupLock();
+        }
         await setupPopup();
         await checkForUpdate();
         console.log("WBOT is ready !! Let those message come.");
@@ -232,6 +236,25 @@ async function Main() {
             observer.observe(document.querySelector('#app'), { attributes: false, childList: true, subtree: true });
         `);
         spinner.stop("Setting up the popup... Completed");
+    }
+
+    async function setupLock () {
+        spinner.start("Setting up the Lock");
+        await page.waitForSelector("#app");
+        await page.evaluate(`
+            var observer = new MutationObserver((mutations) => {
+                for (var mutation of mutations) {
+                    //console.log(mutation);
+                    if (mutation.addedNodes.length && mutation.addedNodes[0].id === 'main') {
+                        //newChat(mutation.addedNodes[0].querySelector('.copyable-text span').innerText);
+                        console.log("%cChat changed !!", "font-size:x-large");
+                        WAPI.setupLocker();
+                    }
+                }
+            });
+            observer.observe(document.querySelector('#app'), { attributes: false, childList: true, subtree: true });
+        `);
+        spinner.stop("Setting up the locker... Completed");
     }
 
     async function checkForUpdate () {

@@ -241,6 +241,29 @@ WAPI.addOptions = function () {
 }
 
 
+WAPI.setupLocker = function () {
+    var header = document.querySelector("header");
+    var lockButton = document.getElementById("lockButton");
+    var presentButton = document.contains(lockButton);
+
+    if(presentButton != true) {
+        var newLockButton = document.createElement("div");
+        newLockButton.innerHTML = `
+            <div role="button" class="_26lC3" title="Lock WhatsApp Web (CTRL+ALT+L)">
+            <span data-icon="chat" class=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 448" height="21">
+                    <path fill="currentColor" d="M352 149.333h-21.333v-42.667C330.667 47.787 282.88 0 224 0S117.333 47.787 117.333 106.667v42.667H96c-23.573 0-42.667 19.093-42.667 42.667v213.333C53.333 428.907 72.427 448 96 448h256c23.573 0 42.667-19.093 42.667-42.667V192c0-23.573-19.094-42.667-42.667-42.667zm-128 192c-23.573 0-42.667-19.093-42.667-42.667C181.333 275.093 200.427 256 224 256s42.667 19.093 42.667 42.667c0 23.573-19.094 42.666-42.667 42.666zm66.133-192H157.867v-42.667c0-36.48 29.653-66.133 66.133-66.133s66.133 29.653 66.133 66.133v42.667z">
+                    </path>
+                    </svg>
+                </span>
+            </div>
+        `;
+        newLockButton.style.zIndex = "99999999";
+        var location = header.getElementsByTagName('div')[1];
+        console.log(location);
+        location.append(newLockButton);
+    }
+}
+
 WAPI.setupFeaturePage = function () {
     // Setup the WBOT button on the header
     var header = document.querySelector("header");
