@@ -370,54 +370,33 @@ function blurName (btn) {
 function blurPhoto (btn) {
     var status = btn.checked;
     if(status == true) {
-        var leftSide = document.getElementById("pane-side");
-        var photos = leftSide.getElementsByTagName("img");
-        for(var x of photos) {
-            x.style.filter = "blur(4px)";
-            x.classList.add("blur");
-            x.setAttribute("onmouseover", "toggle_blur(this)");
-            x.setAttribute("onmouseout", "toggle_blur(this)");
-        }
+        // Injecting style in head
+        var head =  document.getElementsByTagName('head')[0];
+        var style = document.createElement("style");
+        style.setAttribute("id", "blur-photos");
+        style.innerHTML = `
+            ._8hzr9 { filter: blur(4px); } ._8hzr9:hover { filter: blur(0); }
+        `;
+        head.append(style);
     } else {
-        var leftSide = document.getElementById("pane-side");
-        var photos = leftSide.getElementsByTagName("img");
-        for(var x of photos) {
-            x.classList.remove("blur");
-            x.style.filter = "none";
-        }
+        var style = document.getElementById("blur-photos");
+        style.remove();
     }
 }
 
 function blurChat (btn) {
     var status = btn.checked;
     if(status == true) {
-        var rightSide = document.getElementById("main");
-        var chatOut = rightSide.getElementsByClassName("message-out");
-        var chatIn = rightSide.getElementsByClassName("message-in");
-        for(var x of chatOut) {
-            x.style.filter = "blur(4px)";
-            x.classList.add("blur");
-            x.setAttribute("onmouseover", "toggle_blur(this)");
-            x.setAttribute("onmouseout", "toggle_blur(this)");
-        }
-        for(var x of chatIn) {
-            x.style.filter = "blur(4px)";
-            x.classList.add("blur");
-            x.setAttribute("onmouseover", "toggle_blur(this)");
-            x.setAttribute("onmouseout", "toggle_blur(this)");
-        }
+        var head =  document.getElementsByTagName('head')[0];
+        var style = document.createElement("style");
+        style.setAttribute("id", "blur-chats");
+        style.innerHTML = `
+        .message-out, .message-in { filter: blur(4px); } .message-out:hover, .message-in:hover { filter: blur(0); }
+        `;
+        head.append(style);
     } else {
-        var rightSide = document.getElementById("main");
-        var chatOut = rightSide.getElementsByClassName("message-out");
-        var chatIn = rightSide.getElementsByClassName("message-in");
-        for(var x of chatOut) {
-            x.style.filter = "none";
-            x.classList.remove("blur");
-        }
-        for(var x of chatIn) {
-            x.style.filter = "none";
-            x.classList.remove("blur");
-        }
+        var style = document.getElementById("blur-chats");
+        style.remove();
     }
 }
 
