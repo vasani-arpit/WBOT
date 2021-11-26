@@ -278,6 +278,10 @@ WAPI.setupFeaturePage = function () {
                 <input id = "blurChat" onclick = "handleFeature(this);" type="checkbox"><br><br>
             </li>
             <li>
+                <label style="font-size: 20px">Blur recent messages</label>
+                <input id = "blurRecentMessages" onclick = "handleFeature(this);" type="checkbox"><br><br>
+            </li>
+            <li>
                 <label style="font-size: 20px">Dark mode</label>
                 <input id = "darkMode" onclick = "handleFeature(this);" type="checkbox"><br><br>
             </li>
@@ -332,6 +336,10 @@ function handleFeature (btn) {
         blurChat(btn);
     }
 
+    if(btnId == "blurRecentMessages") {
+        blurRecentMessages(btn);
+    }
+
     if(btnId == "darkMode") {
         darkMode(btn);
     }
@@ -384,6 +392,23 @@ function blurPhoto (btn) {
     }
 }
 
+function blurRecentMessages (btn) {
+    var status = btn.checked;
+    if(status == true) {
+        // Injecting style in head
+        var head =  document.getElementsByTagName('head')[0];
+        var style = document.createElement("style");
+        style.setAttribute("id", "blur-recent-messages");
+        style.innerHTML = `
+            .Hy9nV { filter: blur(4px); } .Hy9nV:hover { filter: blur(0); }
+        `;
+        head.append(style);
+    } else {
+        var style = document.getElementById("blur-recent-messages");
+        style.remove();
+    }
+}
+
 function blurChat (btn) {
     var status = btn.checked;
     if(status == true) {
@@ -397,14 +422,6 @@ function blurChat (btn) {
     } else {
         var style = document.getElementById("blur-chats");
         style.remove();
-    }
-}
-
-function toggle_blur (x) {
-    if(x.style.filter == "blur(4px)") {
-        x.style.filter="none";
-    } else if (x.classList.contains("blur")) {
-        x.style.filter = "blur(4px)";
     }
 }
 
