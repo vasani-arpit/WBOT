@@ -244,7 +244,7 @@ WAPI.addOptions = function () {
 WAPI.setupFeaturePage = function () {
     // Setup the WBOT button on the header
     var header = document.querySelector("header");
-    var featureButton = document.getElementById("featureButton");
+    var featureButton = document.querySelector("#featureButton");
     var presentButton = document.contains(featureButton);
 
     if(presentButton != true) {
@@ -307,17 +307,17 @@ WAPI.setupFeaturePage = function () {
     newPopup.style.width = "100%";
     newPopup.style.position = "absolute";
     newPopup.style.overflow = "hidden auto";
-    var webpage = document.getElementById("main");
+    var webpage = document.querySelector("#main");
     webpage.append(newPopup);
 }
 
 openPopup = function () {
-    var popup = document.getElementById("featurePopup");
+    var popup = document.querySelector("#featurePopup");
     popup.style.display = "block";
 }
 
 closePopup = function () {
-    var popup = document.getElementById("featurePopup");
+    var popup = document.querySelector("#featurePopup");
     popup.style.display = "none";
 }
 
@@ -349,28 +349,17 @@ function handleFeature (btn) {
 function blurName (btn) {
     var status = btn.checked;
     if(status == true) {
-        var leftSide = document.getElementById("pane-side"); 
-        var chatNames = leftSide.getElementsByTagName("span");
-        for(var x of chatNames) {
-            var textName = x.getElementsByClassName("emoji-texttt");
-            if(textName != null) {
-                x.style.filter = "blur(4px)";
-                x.classList.add("blur");
-                x.setAttribute("onmouseover", "toggle_blur(this)");
-                x.setAttribute("onmouseout", "toggle_blur(this)");
-            }
-        }
+        // Injecting style in head
+        var head =  document.getElementsByTagName('head')[0];
+        var style = document.createElement("style");
+        style.setAttribute("id", "blur-names");
+        style.innerHTML = `
+        ._3q9s6, ._21nHd, ._3WYXy, .hooVq, .zoWT4, ._2YPr_, .czcZD { filter: blur(4px) !important; } ._3q9s6:hover, ._21nHd:hover, ._3WYXy:hover, .hooVq:hover, .zoWT4, ._2YPr_:hover, .czcZD:hover { filter: blur(0) !important; }
+        `;
+        head.append(style);
     } else {
-        var leftSide = document.getElementById("pane-side"); 
-        var chatNames = leftSide.getElementsByTagName("span");
-        for(var x of chatNames) {
-            var textName = x.getElementsByClassName("emoji-texttt");
-            console.log(textName);
-            if(textName != null) {
-                x.classList.remove("blur");
-                x.style.filter = "none";
-            }
-        }
+        var style = document.querySelector("#blur-names");
+        style.remove();
     }
 }
 
@@ -387,7 +376,7 @@ function blurPhoto (btn) {
         `;
         head.append(style);
     } else {
-        var style = document.getElementById("blur-photos");
+        var style = document.querySelector("#blur-photos");
         style.remove();
     }
 }
@@ -404,7 +393,7 @@ function blurRecentMessages (btn) {
         `;
         head.append(style);
     } else {
-        var style = document.getElementById("blur-recent-messages");
+        var style = document.querySelector("#blur-recent-messages");
         style.remove();
     }
 }
@@ -420,16 +409,16 @@ function blurChat (btn) {
         `;
         head.append(style);
     } else {
-        var style = document.getElementById("blur-chats");
+        var style = document.querySelector("#blur-chats");
         style.remove();
     }
 }
 
 function darkMode (btn) {
     var webpage = document.querySelector("body");
-    var featureButton = document.getElementById("featureButton");
+    var featureButton = document.querySelector("#featureButton");
     var status = btn.checked;
-    var suggestions = document.getElementsByClassName("reply-options");
+    var suggestions = document.querySelector(".reply-options");
     console.log(suggestions);
 
     if(status == true) {
