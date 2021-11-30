@@ -349,6 +349,13 @@ function handleFeature (btn) {
 function blurName (btn) {
     var status = btn.checked;
     if(status == true) {
+        // If old style is present then first remove the old style
+        var style = document.querySelector("#blur-names");
+        console.log(style);
+        if(style != null) {
+            style.remove();
+        }
+
         // Injecting style in head
         var head =  document.getElementsByTagName('head')[0];
         var style = document.createElement("style");
@@ -367,6 +374,13 @@ function blurName (btn) {
 function blurPhoto (btn) {
     var status = btn.checked;
     if(status == true) {
+        // If old style is present then first remove the old style
+        var style = document.querySelector("#blur-photos");
+        console.log(style);
+        if(style != null) {
+            style.remove();
+        }
+
         // Injecting style in head
         var head =  document.getElementsByTagName('head')[0];
         var style = document.createElement("style");
@@ -384,6 +398,13 @@ function blurPhoto (btn) {
 function blurRecentMessages (btn) {
     var status = btn.checked;
     if(status == true) {
+        // If old style is present then first remove the old style
+        var style = document.querySelector("#blur-recent-messages");
+        console.log(style);
+        if(style != null) {
+            style.remove();
+        }
+
         // Injecting style in head
         var head =  document.getElementsByTagName('head')[0];
         var style = document.createElement("style");
@@ -401,6 +422,13 @@ function blurRecentMessages (btn) {
 function blurChat (btn) {
     var status = btn.checked;
     if(status == true) {
+        // If old style is present then first remove the old style
+        var style = document.querySelector("#blur-chats");
+        console.log(style);
+        if(style != null) {
+            style.remove();
+        }
+
         var head =  document.getElementsByTagName('head')[0];
         var style = document.createElement("style");
         style.setAttribute("id", "blur-chats");
