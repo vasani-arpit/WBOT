@@ -354,7 +354,7 @@ function blurName (btn) {
         var style = document.createElement("style");
         style.setAttribute("id", "blur-names");
         style.innerHTML = `
-        ._3q9s6, ._21nHd, ._3WYXy, .hooVq, .zoWT4, ._2YPr_, .czcZD { filter: blur(4px) !important; } ._3q9s6:hover, ._21nHd:hover, ._3WYXy:hover, .hooVq:hover, .zoWT4, ._2YPr_:hover, .czcZD:hover { filter: blur(0) !important; }
+        ._3q9s6, ._21nHd, ._3WYXy, .hooVq, .zoWT4, ._2YPr_, .czcZD, ._ccCW { filter: blur(4px) !important; } ._3q9s6:hover, ._21nHd:hover, ._3WYXy:hover, .hooVq:hover, .zoWT4:hover, ._2YPr_:hover, .czcZD:hover, ._ccCW:hover { filter: blur(0) !important; }
         `;
         head.append(style);
     } else {
