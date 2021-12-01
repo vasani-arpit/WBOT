@@ -309,6 +309,25 @@ WAPI.setupFeaturePage = function () {
     newPopup.style.overflow = "hidden auto";
     var webpage = document.querySelector("#main");
     webpage.append(newPopup);
+
+    var blurNamestyle = document.querySelector("#blur-names");
+    var blurPhotostyle = document.querySelector("#blur-photos");
+    var blurChatstyle = document.querySelector("#blur-chats");
+    var blurRecentMessagesstyle = document.querySelector("#blur-recent-messages");
+    var darkModestyle = document.querySelector(".dark");
+    
+    setValues(blurNamestyle, "#blurName");
+    setValues(blurPhotostyle, "#blurPhoto");
+    setValues(blurChatstyle, "#blurChat");
+    setValues(blurRecentMessagesstyle, "#blurRecentMessages");
+    setValues(darkModestyle, "#darkMode");
+}
+
+setValues = function (styleName, checkboxId) {
+    var style = document.querySelector(checkboxId);
+    if(styleName != null) {
+        style.checked = true;
+    }
 }
 
 openPopup = function () {
@@ -376,7 +395,6 @@ function blurPhoto (btn) {
     if(status == true) {
         // If old style is present then first remove the old style
         var style = document.querySelector("#blur-photos");
-        console.log(style);
         if(style != null) {
             style.remove();
         }
