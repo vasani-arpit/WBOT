@@ -1,3 +1,5 @@
+// import { decryptMedia } from '@open-wa/wa-decrypt';
+
 function greetings() {
     let date = new Date();
     hour = date.getHours();
@@ -17,6 +19,7 @@ function greetings() {
 
 async function downloadFile(message) {
     let filename = ''
+    // window.log(message);
     if (message.type === "document") {
         filename = `${message.filename.split(".")[0]}_${Math.random().toString(36).substring(4)}`
     } else if (message.type === "image" || message.type === "video" || message.type === "ptt" || message.type === "audio") {
@@ -25,11 +28,9 @@ async function downloadFile(message) {
         window.log("couldn't recognize message type. Skipping download")
         return
     }
-    const buffer = await WAPI.downloadBuffer(message.deprecatedMms3Url)
-    const decrypted = await window.Store.CryptoLib.decryptE2EMedia(message.type, buffer, message.mediaKey, message.mimetype);
-    const data = await window.WAPI.readBlobAsync(decrypted._blob);
-    saveFile(data.split(',')[1], filename, message.mimetype)
-    return data;
+    const info=await window.decryptMedia(message);
+    saveFile(info.data.split(',')[1], info.filename, message.mimetype)
+    return info.data;
 }
 
 //Updating string prototype to support variables

@@ -14,6 +14,8 @@ var settings = require('./settings');
 var fs = require("fs");
 const fetch = require("node-fetch");
 const { lt } = require('semver');
+const { decryptMedia } = require('@open-wa/wa-decrypt');
+const mime = require('mime');
 
 //console.log(ps);
 
@@ -112,6 +114,16 @@ async function Main() {
             spinner.stop("Opening Whatsapp ... done!");
             page.exposeFunction("log", (message) => {
                 console.log(message);
+            });
+
+
+            page.exposeFunction("decryptMedia", async (message) => {
+                const filename = `${message.t}`
+                const mediaData = await decryptMedia(message);
+                const data = `data:${message.mimetype};base64,${mediaData.toString(
+                  'base64'
+                )}`;
+                return {filename,mediaData,data};
             });
 
             // When the settings file is edited multiple calls are sent to function. This will help
