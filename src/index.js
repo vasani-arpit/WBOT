@@ -121,18 +121,18 @@ async function Main() {
                 const filename = `${message.t}`
                 const mediaData = await decryptMedia(message);
                 const data = `data:${message.mimetype};base64,${mediaData.toString(
-                  'base64'
+                    'base64'
                 )}`;
-                return {filename,mediaData,data};
+                return { filename, mediaData, data };
             });
 
             // When the settings file is edited multiple calls are sent to function. This will help
             // to prevent from getting corrupted settings data
             let timeout = 5000;
-            
+
             // Register a filesystem watcher
             fs.watch(constants.BOT_SETTINGS_FILE, (event, filename) => {
-                setTimeout(()=> {
+                setTimeout(() => {
                     settings.LoadBotSettings(event, filename, page);
                 }, timeout);
             });
@@ -227,7 +227,7 @@ async function Main() {
         });
     }
 
-    async function setupPopup () {
+    async function setupPopup() {
         spinner.start("Setting up the popup");
         await page.waitForSelector("#app");
         await page.evaluate(`
@@ -246,7 +246,7 @@ async function Main() {
         spinner.stop("Setting up the popup... Completed");
     }
 
-    async function checkForUpdate () {
+    async function checkForUpdate() {
         spinner.start("Checking for an Update...");
         // Using Github API (https://docs.github.com/en/rest/reference/repos#releases)
         // to get the releases data
@@ -261,7 +261,7 @@ async function Main() {
 
         spinner.stop("Checking for an Update... Completed");
 
-        if(lt(myVersion, latestVersion)) {
+        if (lt(myVersion, latestVersion)) {
             console.log(`An Update is available for you.\nPlease download the latest version ${latestVersion} of WBOT from ${latestVersionLink}`);
         }
     }

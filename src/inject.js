@@ -28,7 +28,7 @@ async function downloadFile(message) {
         window.log("couldn't recognize message type. Skipping download")
         return
     }
-    const info=await window.decryptMedia(message);
+    const info = await window.decryptMedia(message);
     saveFile(info.data.split(',')[1], info.filename, message.mimetype)
     return info.data;
 }
@@ -168,7 +168,7 @@ async function processMessages(data) {
                 if ((exactMatch || PartialMatch).file != undefined) {
                     var captionStatus = (exactMatch || PartialMatch).responseAsCaption;
                     // We consider undefined responseAsCaption as a false
-                    if(captionStatus == undefined) {
+                    if (captionStatus == undefined) {
                         captionStatus = false;
                     }
 
@@ -176,7 +176,7 @@ async function processMessages(data) {
 
                     // if responseAsCaption is true, send image with response as a caption
                     // else send image and response seperately
-                    if(captionStatus == true) {
+                    if (captionStatus == true) {
                         window.getFile(files).then((base64Data) => {
                             // send response in place of caption as a last argument in below function call
                             WAPI.sendImage(base64Data, message.chatId._serialized, files, response);
@@ -256,7 +256,7 @@ WAPI.setupFeaturePage = function () {
     var featureButton = document.querySelector("#featureButton");
     var presentButton = document.contains(featureButton);
 
-    if(presentButton != true) {
+    if (presentButton != true) {
         var newFeatureButton = document.createElement("div");
         newFeatureButton.innerHTML = `
             <button id="featureButton" onClick="openPopup()">WBOT</button>
@@ -324,7 +324,7 @@ WAPI.setupFeaturePage = function () {
     var blurChatstyle = document.querySelector("#blur-chats");
     var blurRecentMessagesstyle = document.querySelector("#blur-recent-messages");
     var darkModestyle = document.querySelector(".dark");
-    
+
     setValues(blurNamestyle, "#blurName");
     setValues(blurPhotostyle, "#blurPhoto");
     setValues(blurChatstyle, "#blurChat");
@@ -334,7 +334,7 @@ WAPI.setupFeaturePage = function () {
 
 setValues = function (styleName, checkboxId) {
     var style = document.querySelector(checkboxId);
-    if(styleName != null) {
+    if (styleName != null) {
         style.checked = true;
     }
 }
@@ -349,43 +349,43 @@ closePopup = function () {
     popup.style.display = "none";
 }
 
-function handleFeature (btn) {
+function handleFeature(btn) {
     var btnId = btn.id;
 
-    if(btnId == "blurName") {
+    if (btnId == "blurName") {
         blurName(btn);
     }
 
-    if(btnId == "blurPhoto") {
+    if (btnId == "blurPhoto") {
         blurPhoto(btn);
     }
 
-    if(btnId == "blurChat") {
+    if (btnId == "blurChat") {
         blurChat(btn);
     }
 
-    if(btnId == "blurRecentMessages") {
+    if (btnId == "blurRecentMessages") {
         blurRecentMessages(btn);
     }
 
-    if(btnId == "darkMode") {
+    if (btnId == "darkMode") {
         darkMode(btn);
     }
 }
 
 
-function blurName (btn) {
+function blurName(btn) {
     var status = btn.checked;
-    if(status == true) {
+    if (status == true) {
         // If old style is present then first remove the old style
         var style = document.querySelector("#blur-names");
         console.log(style);
-        if(style != null) {
+        if (style != null) {
             style.remove();
         }
 
         // Injecting style in head
-        var head =  document.getElementsByTagName('head')[0];
+        var head = document.getElementsByTagName('head')[0];
         var style = document.createElement("style");
         style.setAttribute("id", "blur-names");
         style.innerHTML = `
@@ -399,17 +399,17 @@ function blurName (btn) {
 }
 
 
-function blurPhoto (btn) {
+function blurPhoto(btn) {
     var status = btn.checked;
-    if(status == true) {
+    if (status == true) {
         // If old style is present then first remove the old style
         var style = document.querySelector("#blur-photos");
-        if(style != null) {
+        if (style != null) {
             style.remove();
         }
 
         // Injecting style in head
-        var head =  document.getElementsByTagName('head')[0];
+        var head = document.getElementsByTagName('head')[0];
         var style = document.createElement("style");
         style.setAttribute("id", "blur-photos");
         style.innerHTML = `
@@ -422,18 +422,18 @@ function blurPhoto (btn) {
     }
 }
 
-function blurRecentMessages (btn) {
+function blurRecentMessages(btn) {
     var status = btn.checked;
-    if(status == true) {
+    if (status == true) {
         // If old style is present then first remove the old style
         var style = document.querySelector("#blur-recent-messages");
         console.log(style);
-        if(style != null) {
+        if (style != null) {
             style.remove();
         }
 
         // Injecting style in head
-        var head =  document.getElementsByTagName('head')[0];
+        var head = document.getElementsByTagName('head')[0];
         var style = document.createElement("style");
         style.setAttribute("id", "blur-recent-messages");
         style.innerHTML = `
@@ -446,17 +446,17 @@ function blurRecentMessages (btn) {
     }
 }
 
-function blurChat (btn) {
+function blurChat(btn) {
     var status = btn.checked;
-    if(status == true) {
+    if (status == true) {
         // If old style is present then first remove the old style
         var style = document.querySelector("#blur-chats");
         console.log(style);
-        if(style != null) {
+        if (style != null) {
             style.remove();
         }
 
-        var head =  document.getElementsByTagName('head')[0];
+        var head = document.getElementsByTagName('head')[0];
         var style = document.createElement("style");
         style.setAttribute("id", "blur-chats");
         style.innerHTML = `
@@ -469,23 +469,23 @@ function blurChat (btn) {
     }
 }
 
-function darkMode (btn) {
+function darkMode(btn) {
     var webpage = document.querySelector("body");
     var featureButton = document.querySelector("#featureButton");
     var status = btn.checked;
     var suggestions = document.querySelector(".reply-options");
     console.log(suggestions);
 
-    if(status == true) {
+    if (status == true) {
         webpage.classList.add("dark");
         featureButton.style.color = "white";
-        for(x of suggestions) {
+        for (x of suggestions) {
             x.style.backgroundColor = '#056162';
         }
     } else {
         webpage.classList.remove("dark");
         featureButton.style.color = "black";
-        for(x of suggestions) {
+        for (x of suggestions) {
             x.style.backgroundColor = '#dcf8c6';
         }
     }

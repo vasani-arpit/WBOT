@@ -3,7 +3,7 @@
         "headless": false,
         "isGroupReply":false,
         "webhook":"",
-        "downloadMedia": true,
+        "downloadMedia": false,
         "replyUnreadMsg": false
     },
     "bot": [{
