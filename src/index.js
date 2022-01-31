@@ -19,6 +19,7 @@ const mime = require('mime');
 
 //console.log(ps);
 
+
 //console.log(process.cwd());
 
 async function Main() {
@@ -144,6 +145,7 @@ async function Main() {
     }
 
     async function injectScripts(page) {
+
         return await page.waitForSelector('[data-icon=laptop]')
             .then(async () => {
                 var filepath = path.join(__dirname, "WAPI.js");
@@ -158,6 +160,34 @@ async function Main() {
             })
     }
 
+    async function AddCustomJsFiles(page) {
+
+        spinner.info('Adding Custom Js Files')
+
+        try {
+            let appconfig = await utils.externalInjection("bot.json");
+            appconfig = JSON.parse(appconfig)
+            const directoryPath = appconfig.appconfig.CustomFilePath;
+            // console.log(directoryPath);
+            const folder = fs.readdirSync(directoryPath)
+            if (!folder) {
+                return console.log('Unable to scan directory: ' + err);
+            } else {
+                folder.forEach(async function (file) {
+                    // spinner.start(`Load ${file} file in browser`);
+                    //console.log(revisionInfo.executablePath);
+                    var filepath = directoryPath + '/' + file;
+                    await page.addScriptTag({ path: require.resolve(filepath) });
+                    // console.log(`Load ${file} file in browser ... done`);
+                    spinner.info(`Load ${file} file in browser ... done!`);
+                    // console.log(file);
+                });
+            }
+        } catch (e) {
+            spinner.info('Path not found')
+        }
+    }
+
     async function checkLogin() {
         spinner.start("Page is loading");
         //TODO: avoid using delay and make it in a way that it would react to the event. 
@@ -167,6 +197,7 @@ async function Main() {
         //console.log("\n" + output);
         if (output) {
             spinner.stop("Looks like you are already logged in");
+            await AddCustomJsFiles(page);
             await injectScripts(page);
         } else {
             spinner.info("You are not logged in. Please scan the QR below");
@@ -189,6 +220,7 @@ async function Main() {
             //console.log("page is loading");
             //TODO: avoid using delay and make it in a way that it would react to the event. 
             await utils.delay(300);
+
             isLoggedIn = await injectScripts(page);
         }
         if (isLoggedIn) {

@@ -4,7 +4,8 @@
         "isGroupReply":false,
         "webhook":"",
         "downloadMedia": false,
-        "replyUnreadMsg": false
+        "replyUnreadMsg": false,
+        "CustomFilePath": ""
     },
     "bot": [{
             "contains": [],
