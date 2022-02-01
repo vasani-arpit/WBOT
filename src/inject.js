@@ -158,12 +158,10 @@ async function processMessages(data) {
                 response = await resolveSpintax(PartialMatch.response);
                 window.log(`Replying with ${response}`);
             }
-
+            WAPI.sendSeen(message.chatId._serialized);
+            response = response.fillVariables({ name: message.sender.pushname, phoneNumber: message.sender.id.user, greetings: greetings() })
+            await waitBeforeSending(exactMatch, PartialMatch)
             if (exactMatch != undefined || PartialMatch != undefined) {
-
-                WAPI.sendSeen(message.chatId._serialized);
-                response = response.fillVariables({ name: message.sender.pushname, phoneNumber: message.sender.id.user, greetings: greetings() })
-                await waitBeforeSending(exactMatch, PartialMatch)
 
                 // sending file if there is any
                 // else send only response
@@ -211,8 +209,8 @@ async function processMessages(data) {
                 // as we are already checking it in the above if statement
                 // So process with the noMatch logic only
                 response = await resolveSpintax(intents.noMatch);
-                window.log(`No exact or partial match found. doing nothing`);
-                // WAPI.sendMessage2(message.chatId._serialized, response);
+                window.log(`No exact or partial match found. So replying with ${response} instead`);
+                WAPI.sendMessage2(message.chatId._serialized, response);
             }
         }
     }
