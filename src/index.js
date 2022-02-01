@@ -162,29 +162,35 @@ async function Main() {
 
     async function AddCustomJsFiles(page) {
 
-        spinner.info('Adding Custom Js Files')
+        //check if appconfig.appconfig.CustomInjectionFolder has something in it otherwise call this entire thing off
 
-        try {
-            let appconfig = await utils.externalInjection("bot.json");
-            appconfig = JSON.parse(appconfig)
-            const directoryPath = appconfig.appconfig.CustomFilePath;
-            // console.log(directoryPath);
-            const folder = fs.readdirSync(directoryPath)
-            if (!folder) {
-                return console.log('Unable to scan directory: ' + err);
-            } else {
-                folder.forEach(async function (file) {
-                    // spinner.start(`Load ${file} file in browser`);
-                    //console.log(revisionInfo.executablePath);
-                    var filepath = directoryPath + '/' + file;
-                    await page.addScriptTag({ path: require.resolve(filepath) });
-                    // console.log(`Load ${file} file in browser ... done`);
-                    spinner.info(`Load ${file} file in browser ... done!`);
-                    // console.log(file);
-                });
+        spinner.info('Adding Custom Js Files')
+        let appconfig = JSON.parse(await utils.externalInjection("bot.json"))
+        // console.log(appconfig)
+        if (appconfig.appconfig.CustomInjectionFolder) {
+            try {
+                const directoryPath = path.resolve(appconfig.appconfig.CustomInjectionFolder);
+                // console.log(directoryPath);
+                const folder = fs.readdirSync(directoryPath)
+                if (!folder) {
+                    return console.log('Unable to scan directory: ' + err);
+                } else {
+                    folder.forEach(async function (file) {
+                        // spinner.start(`Load ${file} file in browser`);
+                        //console.log(revisionInfo.executablePath);
+                        var filepath = directoryPath + '/' + file;
+                        await page.addScriptTag({ path: require.resolve(filepath) });
+                        // console.log(`Load ${file} file in browser ... done`);
+                        spinner.info(`Load ${file} file in browser ... done!`);
+                        // console.log(file);
+                    });
+                }
+            } catch (e) {
+                spinner.info('Path not found')
+                console.error(e)
             }
-        } catch (e) {
-            spinner.info('Path not found')
+        } else {
+            spinner.info('No files to inject')
         }
     }
 

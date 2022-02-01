@@ -5,7 +5,7 @@
         "webhook":"",
         "downloadMedia": false,
         "replyUnreadMsg": false,
-        "CustomFilePath": ""
+        "CustomInjectionFolder": ""
     },
     "bot": [{
             "contains": [],
