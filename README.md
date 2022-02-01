@@ -101,6 +101,20 @@ This is where all the application related (node application behavior and such th
 
 - **replyUnreadMsg:** If there are pending unread messages which bot hasn't replied to then by making this flag true, bot will respond to those messages. Keep in mind that bot will not be able to mark those messages as read/seen. Please open the chat manually in the phone to mark that chat as read otherwise bot will reply to it at every start. 
 
+- **CustomInjectionFolder** relative path of the folder from current directory which has JS file which needs to be injected in the browser. for example if you have something like following 
+```
+└── WBOT  /
+    ├── bot.json
+    ├── github-two.png
+    ├── github.png
+    ├── wbot-win.exe
+    └── injection/
+        ├── index.js
+        └── utils.js
+```
+
+then you need to set the value of this property as ```./injection```
+
 **bot**
 
 An array of objects. Properties of Object are self explanatory. 
