@@ -3,7 +3,7 @@
         "headless": false,
         "isGroupReply":false,
         "webhook":"",
-        "downloadMedia": false,
+        "downloadMedia": true,
         "replyUnreadMsg": false,
         "CustomInjectionFolder": ""
     },
