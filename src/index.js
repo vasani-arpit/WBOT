@@ -104,9 +104,9 @@ async function Main() {
             qrcode.generate(qr, { small: true });
         });
 
-        client.on('ready', () => {
+        client.on('ready', async () => {
             spinner.info('WBOT is spinning up!');
-            await delay(5000)
+            await utils.delay(5000)
             //TODO: if replyUnreadMsg is true then get the unread messages and reply to them.
         });
 
@@ -141,7 +141,7 @@ async function Main() {
                 fs.writeFileSync(path.join(process.cwd(), "media", msg.from + msg.id.id + "." + extension), media.data, 'base64')
                 console.log("Media has been downloaded");
             } else {
-                console.log("Message has media but not downloading it as it is not enabled in bot.config.json");
+                console.log("Message doesn't have media or it is not enabled in bot.config.json");
             }
 
             //TODO: reply according to the bot.config.json
