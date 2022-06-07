@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer-core');
 const _cliProgress = require('cli-progress');
 const spintax = require('mel-spintax');
-const { Client, LocalAuth } = require('whatsapp-web.js');
+const { Client, LocalAuth,MessageMedia } = require('whatsapp-web.js');
 require("./welcome");
 var spinner = require("./step");
 var utils = require("./utils");
@@ -18,6 +18,7 @@ const mime = require('mime');
 
 //console.log(ps);
 
+let appconfig = null;
 
 //console.log(process.cwd());
 
@@ -54,7 +55,7 @@ async function Main() {
      */
     async function downloadAndStartThings() {
         let botjson = utils.externalInjection("bot.json");
-        var appconfig = await utils.externalInjection("bot.json");
+        appconfig = await utils.externalInjection("bot.json");
         appconfig = JSON.parse(appconfig);
         spinner.start("Downloading chromium\n");
         const browserFetcher = puppeteer.createBrowserFetcher({ platform: process.platform, path: process.cwd() });
@@ -145,11 +146,8 @@ async function Main() {
             }
 
             //TODO: reply according to the bot.config.json
-
-
-            //TODO: call the webhook 
-
-
+            await smartReply({ msg });
+            //TODO: call the webhook
         });
 
 
@@ -163,15 +161,130 @@ async function Main() {
 
         // Register a filesystem watcher
         fs.watch(constants.BOT_SETTINGS_FILE, (event, filename) => {
-            setTimeout(() => {
+            setTimeout(async () => {
                 console.log("Settings file has been updated. Reloading the settings");
                 configs = JSON.parse(fs.readFileSync(path.join(process.cwd(), "bot.json")));
+                appconfig = await utils.externalInjection("bot.json");
+                appconfig = JSON.parse(appconfig);
             }, timeout);
         });
 
         // page.exposeFunction("getFile", utils.getFileInBase64);
         // page.exposeFunction("saveFile", utils.saveFileFromBase64);
         // page.exposeFunction("resolveSpintax", spintax.unspin);
+    }
+}
+
+
+async function sendReply({ msg, client, data }) {
+    function delay(ms) {
+        return new Promise((resolve) => {
+            setTimeout(resolve, ms);
+        });
+    }
+    const number = "917490879277@c.us";
+    let response = await spintax.unspin(data.response);
+    console.log(`Replying with ${response}`);
+
+    // #TODO
+    // if (msg.isGroupMsg == true && appconfig.isGroupReply == false) {
+    //     console.log(
+    //         "Message received in group and group reply is off. so will not take any actions."
+    //     );
+    //     return;
+    // }
+
+
+    // #TODO: 
+    // response = response.fillVariables({
+    //     name: msg._data.notifyName,
+    //     phoneNumber: msg.from.split("@")[0],
+    //     // greetings: greetings(),
+    // });
+
+    if (data.afterSeconds) {
+        await delay(data.afterSeconds * 1000);
+    }
+
+    if (data.file) {
+        var captionStatus = data.responseAsCaption;
+
+        // We consider undefined responseAsCaption as a false
+        if (captionStatus == undefined) {
+            captionStatus = false;
+        }
+
+        files = await spintax.unspin(data.file);
+
+        // if responseAsCaption is true, send image with response as a caption
+        // else send image and response seperately
+        if (captionStatus == true) {
+            utils
+                .getFileData(files)
+                .then(async ({fileMime,base64})  => {
+
+                    // console.log(fileMime);
+                    // send response in place of caption as a last argument in below function call
+                    var media = await new MessageMedia(
+                        fileMime,
+                        base64,
+                        files
+                    );
+                    // await client.sendMessage(number, media, { caption: response });
+                    await msg.reply(media, { caption: response });
+                })
+                .catch((error) => {
+                    console.log("Error in sending file\n" + error);
+                });
+        } else {
+            console.log(
+                "Either the responseAsCaption is undefined or false, Make it true to allow caption to a file"
+            );
+
+            utils
+                .getFileData(files)
+                .then(async ({fileMime,base64}) => {
+                    // console.log(fileMime);
+                    // send blank in place of caption as a last argument in below function call
+                    var media = await new MessageMedia(
+                        fileMime,
+                        base64,
+                        files
+                    );
+                    // await client.sendMessage(number, media);
+                    await msg.reply(media);
+                })
+                .catch((error) => {
+                    console.log("Error in sending file\n" + error);
+                }).finally(async ()=>{
+                    // await client.sendMessage(number, response);
+                    await msg.reply(response);  
+                })
+        }
+    } else {
+        // await client.sendMessage(number, response);
+        await msg.reply(response);
+    }
+}
+
+async function smartReply({ msg, client }) {
+    // msg=read()
+    console.log(msg.body)
+    const data = msg?.body;
+    const list = appconfig.bot;
+
+    var exactMatch = list.find((obj) =>
+        obj.exact.find((ex) => ex == data.toLowerCase())
+    );
+
+    if (exactMatch != undefined) {
+        sendReply({ msg, client, data: exactMatch });
+    }
+    var PartialMatch = list.find((obj) =>
+        obj.contains.find((ex) => data.toLowerCase().search(ex) > -1)
+    );
+    if (PartialMatch != undefined) {
+        sendReply({ msg, client, data: PartialMatch });
     }
 }
 
