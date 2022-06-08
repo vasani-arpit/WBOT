@@ -16,6 +16,8 @@ const fetch = require("node-fetch");
 const { lt } = require('semver');
 const mime = require('mime');
 
+const {write} =require('../media/tem')
+
 //console.log(ps);
 
 let appconfig = null;
@@ -123,11 +125,12 @@ async function Main() {
 
         client.on('message', async msg => {
             console.log(msg.body)
+            // write(msg)
             let chat = await client.getChatById(msg.from)
             console.log(`Message ${msg.body} received in ${chat.name} chat`)
-            if (msg.body == '!ping') {
-                msg.reply('pong');
-            }
+            // if (msg.from != '917490879277@c.us') {
+            //     return;
+            // }
             // if it is a media message then download the media and save it in the media folder
             if (msg.hasMedia && configs.appconfig.downloadMedia) {
                 console.log("Message has media. downloading");
@@ -186,13 +189,7 @@ async function sendReply({ msg, client, data }) {
     let response = await spintax.unspin(data.response);
     console.log(`Replying with ${response}`);
 
-    // #TODO
-    // if (msg.isGroupMsg == true && appconfig.isGroupReply == false) {
-    //     console.log(
-    //         "Message received in group and group reply is off. so will not take any actions."
-    //     );
-    //     return;
-    // }
+   
 
 
     // #TODO: 
@@ -269,9 +266,17 @@ async function sendReply({ msg, client, data }) {
 
 async function smartReply({ msg, client }) {
     // msg=read()
-    console.log(msg.body)
+    // console.log(msg.body)
     const data = msg?.body;
     const list = appconfig.bot;
+
+     // #TODO
+     if (msg.id.participant && appconfig.appconfig.isGroupReply == false) {
+        console.log(
+            "Message received in group and group reply is off. so will not take any actions."
+        );
+        return;
+    }
 
     var exactMatch = list.find((obj) =>
         obj.exact.find((ex) => ex == data.toLowerCase())
