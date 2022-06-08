@@ -125,12 +125,10 @@ async function Main() {
 
         client.on('message', async msg => {
             console.log(msg.body)
+
             // write(msg)
             let chat = await client.getChatById(msg.from)
             console.log(`Message ${msg.body} received in ${chat.name} chat`)
-            // if (msg.from != '917490879277@c.us') {
-            //     return;
-            // }
             // if it is a media message then download the media and save it in the media folder
             if (msg.hasMedia && configs.appconfig.downloadMedia) {
                 console.log("Message has media. downloading");
@@ -179,26 +177,58 @@ async function Main() {
 }
 
 
-async function sendReply({ msg, client, data }) {
+async function sendReply({ msg, client, data,noMatch }) {
     function delay(ms) {
         return new Promise((resolve) => {
             setTimeout(resolve, ms);
         });
     }
-    const number = "917490879277@c.us";
-    let response = await spintax.unspin(data.response);
-    console.log(`Replying with ${response}`);
 
+    function greetings() {
+        let date = new Date();
+        hour = date.getHours();
+    
+        if (hour >= 0 && hour < 12) {
+            return "Good Morning";
+        }
+    
+        if (hour >= 12 && hour < 18) {
+            return "Good evening";
+        }
+    
+        if (hour >= 18 && hour < 24) {
+            return "Good night";
+        }
+    }
+
+    async function getResponse(message){
+        let response = await spintax.unspin(message);
+        
+        // Adding variables: 
+        response = response.replace('[#name]', msg._data.notifyName)
+        response = response.replace('[#greetings]', greetings())
+        response = response.replace('[#phoneNumber]', msg.from.split("@")[0])
+        
+        
+        return response;
+    }
+
+    // const number = "@c.us";
+
+    if(noMatch) {
+        if(appconfig.noMatch.length!=0){
+            let response = await getResponse(appconfig.noMatch);;
+            console.log(`No match fount Replying with ${response}`); 
+            // await client.sendMessage(number, response);
+            await msg.reply(response);
+        }
+        return;
+    }
+
+
+    let response= await getResponse(data.response);
+    console.log(`Replying with ${response}`); 
    
-
-
-    // #TODO: 
-    // response = response.fillVariables({
-    //     name: msg._data.notifyName,
-    //     phoneNumber: msg.from.split("@")[0],
-    //     // greetings: greetings(),
-    // });
-
     if (data.afterSeconds) {
         await delay(data.afterSeconds * 1000);
     }
@@ -270,7 +300,7 @@ async function smartReply({ msg, client }) {
     const data = msg?.body;
     const list = appconfig.bot;
 
-     // #TODO
+     // Don't do group reply if isGroupReply is off
      if (msg.id.participant && appconfig.appconfig.isGroupReply == false) {
         console.log(
             "Message received in group and group reply is off. so will not take any actions."
@@ -283,14 +313,15 @@ async function smartReply({ msg, client }) {
     );
 
     if (exactMatch != undefined) {
-        sendReply({ msg, client, data: exactMatch });
+        return sendReply({ msg, client, data: exactMatch });
     }
     var PartialMatch = list.find((obj) =>
         obj.contains.find((ex) => data.toLowerCase().search(ex) > -1)
     );
     if (PartialMatch != undefined) {
-        sendReply({ msg, client, data: PartialMatch });
+        return sendReply({ msg, client, data: PartialMatch });
     }
+    sendReply({ msg, client, data: exactMatch , noMatch:true});
 }
 
 // async function injectScripts(page) {
