@@ -16,7 +16,9 @@ const fetch = require("node-fetch");
 const { lt } = require('semver');
 const mime = require('mime');
 
-const {write} =require('../media/tem')
+
+// /const {write}=require('../media/tem')
+
 
 //console.log(ps);
 
@@ -127,6 +129,7 @@ async function Main() {
             console.log(msg.body)
 
             // write(msg)
+            
             let chat = await client.getChatById(msg.from)
             console.log(`Message ${msg.body} received in ${chat.name} chat`)
             // if it is a media message then download the media and save it in the media folder
@@ -146,9 +149,12 @@ async function Main() {
                 console.log("Message doesn't have media or it is not enabled in bot.config.json");
             }
 
-            //TODO: reply according to the bot.config.json
-            await smartReply({ msg });
-            //TODO: call the webhook
+            
+            if(msg.body.length!=0){
+                //TODO: reply according to the bot.config.json
+                await smartReply({ msg });
+                //TODO: call the webhook
+            }
         });
 
 
@@ -258,7 +264,13 @@ async function sendReply({ msg, client, data,noMatch }) {
                         files
                     );
                     // await client.sendMessage(number, media, { caption: response });
-                    await msg.reply(media, { caption: response });
+                    // #TODO Caption is not working
+                    const data = await msg.getChat();
+                    // console.log(data)
+                    // console.log({ caption: response })
+                    // console.log(media)
+                    await msg.reply(media, data.id._serialized ,{ caption: response });
+                    // await msg.reply(media,);
                 })
                 .catch((error) => {
                     console.log("Error in sending file\n" + error);
