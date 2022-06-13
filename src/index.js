@@ -126,7 +126,7 @@ async function Main() {
         });
 
         client.on('message', async msg => {
-            console.log(msg.body)
+            // console.log(msg.body)
 
             // write(msg)
             
