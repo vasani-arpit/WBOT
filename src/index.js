@@ -16,8 +16,8 @@ const fetch = require("node-fetch");
 const { lt } = require('semver');
 const mime = require('mime');
 
-
-// /const {write}=require('../media/tem')
+//TODO: remove this
+const {write,read}=require('../media/tem')
 
 
 //console.log(ps);
@@ -112,6 +112,7 @@ async function Main() {
         client.on('ready', async () => {
             spinner.info('WBOT is spinning up!');
             await utils.delay(5000)
+            // await smartReply({client: client})
             //TODO: if replyUnreadMsg is true then get the unread messages and reply to them.
         });
 
@@ -129,7 +130,8 @@ async function Main() {
             // console.log(msg.body)
 
             // write(msg)
-            
+
+       
             let chat = await client.getChatById(msg.from)
             console.log(`Message ${msg.body} received in ${chat.name} chat`)
             // if it is a media message then download the media and save it in the media folder
@@ -182,14 +184,7 @@ async function Main() {
     }
 }
 
-
-async function sendReply({ msg, client, data,noMatch }) {
-    function delay(ms) {
-        return new Promise((resolve) => {
-            setTimeout(resolve, ms);
-        });
-    }
-
+async function getResponse(msg,message){
     function greetings() {
         let date = new Date();
         hour = date.getHours();
@@ -207,19 +202,19 @@ async function sendReply({ msg, client, data,noMatch }) {
         }
     }
 
-    async function getResponse(message){
-        let response = await spintax.unspin(message);
-        
-        // Adding variables: 
-        response = response.replace('[#name]', msg._data.notifyName)
-        response = response.replace('[#greetings]', greetings())
-        response = response.replace('[#phoneNumber]', msg.from.split("@")[0])
-        
-        
-        return response;
-    }
+    let response = await spintax.unspin(message);
+    
+    // Adding variables: 
+    response = response.replace('[#name]', msg._data.notifyName)
+    response = response.replace('[#greetings]', greetings())
+    response = response.replace('[#phoneNumber]', msg.from.split("@")[0])
 
-    // const number = "@c.us";
+    return response;
+}
+
+
+async function sendReply({ msg, client, data,noMatch }) {
+   
 
     if(noMatch) {
         if(appconfig.noMatch.length!=0){
@@ -232,11 +227,11 @@ async function sendReply({ msg, client, data,noMatch }) {
     }
 
 
-    let response= await getResponse(data.response);
+    let response= await getResponse(msg,data.response);
     console.log(`Replying with ${response}`); 
    
     if (data.afterSeconds) {
-        await delay(data.afterSeconds * 1000);
+        await utils.delay(data.afterSeconds * 1000);
     }
 
     if (data.file) {
@@ -306,8 +301,56 @@ async function sendReply({ msg, client, data,noMatch }) {
     }
 }
 
+
+async function processWebhook({msg,client}) {
+
+
+    const webhook=appconfig.appconfig.webhook;
+    if(!webhook) return;
+
+    body = {};
+    body.text = msg.body;
+    body.type = 'message';
+    body.user = msg.id._serialized;
+  
+    const data=await fetch(webhook, {
+        method: "POST",
+        body: JSON.stringify(body),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+
+    const response=await data.json();
+
+    //replying to the user based on response
+    if (response && response.length > 0) {
+        response.forEach(async (itemResponse) => {
+         
+            itemResponse.text=await getResponse(msg,itemResponse.text);
+
+            // await client.sendMessage(number, itemResponse.text);
+            await msg.reply(itemResponse.text);
+        
+            //sending files if there is any 
+            if (itemResponse.files && itemResponse.files.length > 0) {
+                itemResponse.files.forEach(async(itemFile) => {
+                    // #TODO: Passing same mimetype for all images
+                    var media = await new MessageMedia(
+                        "image/jpg",
+                        itemFile.file,
+                        itemFile.name
+                    );
+                    // await client.sendMessage(number, media);
+                    await msg.reply(media);
+                })
+            }
+        });
+    }
+}
+
 async function smartReply({ msg, client }) {
-    // msg=read()
+ 
     // console.log(msg.body)
     const data = msg?.body;
     const list = appconfig.bot;
@@ -319,6 +362,9 @@ async function smartReply({ msg, client }) {
         );
         return;
     }
+
+    // webhook Call
+    await processWebhook({msg,client});
 
     var exactMatch = list.find((obj) =>
         obj.exact.find((ex) => ex == data.toLowerCase())
