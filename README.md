@@ -16,12 +16,6 @@
 <a href="#goals">Goals</a> •
 <a href="#faq">FAQ</a>
 
-## ✨Update 30th Mar 2021
-Started as small side project, WBOT has become essential tool for small business owners who runs their business on whatsapp. WBOT helps them simplify business transitions by saving time and resources. I am overwhelmed by the support I received from all people on my email and telegram. I will continue updating WBOT. 
-
-Thank you 🙏
-
-
 
 ## 🔍 Preview 
 
@@ -152,7 +146,7 @@ here is how that looks
 
 ## Run the latest code from Github
 
-**This is only recommended for advanced 'node.js' users or development purpose.**
+**This is only recommended for advanced 'node.js' users or for development purpose.**
 
 Open a Terminal and create a new directory in your home directory, e.g. 'node' and goto there.
 Now download and run the latest code from github by:
