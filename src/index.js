@@ -218,11 +218,13 @@ async function sendReply({ msg, client, data,noMatch }) {
 
     if(noMatch) {
         if(appconfig.noMatch.length!=0){
-            let response = await getResponse(appconfig.noMatch);;
+            let response = await getResponse(msg,appconfig.noMatch);;
             console.log(`No match fount Replying with ${response}`); 
             // await client.sendMessage(number, response);
             await msg.reply(response);
+            return;
         }
+        console.log(`No match found`); 
         return;
     }
 
