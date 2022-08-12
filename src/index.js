@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer-core');
 const _cliProgress = require('cli-progress');
 const spintax = require('mel-spintax');
-const { Client, LocalAuth,MessageMedia } = require('whatsapp-web.js');
+const { Client, LocalAuth, MessageMedia } = require('whatsapp-web.js');
 require("./welcome");
 var spinner = require("./step");
 var utils = require("./utils");
@@ -131,7 +131,6 @@ async function Main() {
 
             // write(msg)
 
-       
             let chat = await client.getChatById(msg.from)
             console.log(`Message ${msg.body} received in ${chat.name} chat`)
             // if it is a media message then download the media and save it in the media folder
@@ -143,16 +142,20 @@ async function Main() {
                     fs.mkdirSync(path.join(process.cwd(), "media"));
                 }
 
-                // write the data to a file
-                let extension = mime.getExtension(media.mimetype)
-                fs.writeFileSync(path.join(process.cwd(), "media", msg.from + msg.id.id + "." + extension), media.data, 'base64')
-                console.log("Media has been downloaded");
+                if (media) {
+                    // write the data to a file
+                    let extension = mime.getExtension(media.mimetype)
+                    fs.writeFileSync(path.join(process.cwd(), "media", msg.from + msg.id.id + "." + extension), media.data, 'base64')
+                    console.log("Media has been downloaded");
+                } else {
+                    console.log("There was an issue in downloading the media");
+                }
             } else {
                 console.log("Message doesn't have media or it is not enabled in bot.config.json");
             }
 
-            
-            if(msg.body.length!=0){
+
+            if (msg.body.length != 0) {
                 //TODO: reply according to the bot.config.json
                 await smartReply({ msg });
                 //TODO: call the webhook
@@ -184,26 +187,26 @@ async function Main() {
     }
 }
 
-async function getResponse(msg,message){
+async function getResponse(msg, message) {
     function greetings() {
         let date = new Date();
         hour = date.getHours();
-    
+
         if (hour >= 0 && hour < 12) {
             return "Good Morning";
         }
-    
+
         if (hour >= 12 && hour < 18) {
             return "Good evening";
         }
-    
+
         if (hour >= 18 && hour < 24) {
             return "Good night";
         }
     }
 
     let response = await spintax.unspin(message);
-    
+
     // Adding variables: 
     response = response.replace('[#name]', msg._data.notifyName)
     response = response.replace('[#greetings]', greetings())
@@ -213,25 +216,25 @@ async function getResponse(msg,message){
 }
 
 
-async function sendReply({ msg, client, data,noMatch }) {
-   
+async function sendReply({ msg, client, data, noMatch }) {
 
-    if(noMatch) {
-        if(appconfig.noMatch.length!=0){
-            let response = await getResponse(msg,appconfig.noMatch);;
-            console.log(`No match fount Replying with ${response}`); 
+
+    if (noMatch) {
+        if (appconfig.noMatch.length != 0) {
+            let response = await getResponse(msg, appconfig.noMatch);;
+            console.log(`No match fount Replying with ${response}`);
             // await client.sendMessage(number, response);
             await msg.reply(response);
             return;
         }
-        console.log(`No match found`); 
+        console.log(`No match found`);
         return;
     }
 
 
-    let response= await getResponse(msg,data.response);
-    console.log(`Replying with ${response}`); 
-   
+    let response = await getResponse(msg, data.response);
+    console.log(`Replying with ${response}`);
+
     if (data.afterSeconds) {
         await utils.delay(data.afterSeconds * 1000);
     }
@@ -251,7 +254,7 @@ async function sendReply({ msg, client, data,noMatch }) {
         if (captionStatus == true) {
             utils
                 .getFileData(files)
-                .then(async ({fileMime,base64})  => {
+                .then(async ({ fileMime, base64 }) => {
 
                     // console.log(fileMime);
                     // send response in place of caption as a last argument in below function call
@@ -266,7 +269,7 @@ async function sendReply({ msg, client, data,noMatch }) {
                     // console.log(data)
                     // console.log({ caption: response })
                     // console.log(media)
-                    await msg.reply(media, data.id._serialized ,{ caption: response });
+                    await msg.reply(media, data.id._serialized, { caption: response });
                     // await msg.reply(media,);
                 })
                 .catch((error) => {
@@ -279,7 +282,7 @@ async function sendReply({ msg, client, data,noMatch }) {
 
             utils
                 .getFileData(files)
-                .then(async ({fileMime,base64}) => {
+                .then(async ({ fileMime, base64 }) => {
                     // console.log(fileMime);
                     // send blank in place of caption as a last argument in below function call
                     var media = await new MessageMedia(
@@ -292,9 +295,9 @@ async function sendReply({ msg, client, data,noMatch }) {
                 })
                 .catch((error) => {
                     console.log("Error in sending file\n" + error);
-                }).finally(async ()=>{
+                }).finally(async () => {
                     // await client.sendMessage(number, response);
-                    await msg.reply(response);  
+                    await msg.reply(response);
                 })
         }
     } else {
@@ -304,18 +307,18 @@ async function sendReply({ msg, client, data,noMatch }) {
 }
 
 
-async function processWebhook({msg,client}) {
+async function processWebhook({ msg, client }) {
 
 
-    const webhook=appconfig.appconfig.webhook;
-    if(!webhook) return;
+    const webhook = appconfig.appconfig.webhook;
+    if (!webhook) return;
 
     body = {};
     body.text = msg.body;
     body.type = 'message';
     body.user = msg.id._serialized;
-  
-    const data=await fetch(webhook, {
+
+    const data = await fetch(webhook, {
         method: "POST",
         body: JSON.stringify(body),
         headers: {
@@ -323,20 +326,20 @@ async function processWebhook({msg,client}) {
         }
     })
 
-    const response=await data.json();
+    const response = await data.json();
 
     //replying to the user based on response
     if (response && response.length > 0) {
         response.forEach(async (itemResponse) => {
-         
-            itemResponse.text=await getResponse(msg,itemResponse.text);
+
+            itemResponse.text = await getResponse(msg, itemResponse.text);
 
             // await client.sendMessage(number, itemResponse.text);
             await msg.reply(itemResponse.text);
-        
+
             //sending files if there is any 
             if (itemResponse.files && itemResponse.files.length > 0) {
-                itemResponse.files.forEach(async(itemFile) => {
+                itemResponse.files.forEach(async (itemFile) => {
                     // #TODO: Passing same mimetype for all images
                     var media = await new MessageMedia(
                         "image/jpg",
@@ -352,13 +355,13 @@ async function processWebhook({msg,client}) {
 }
 
 async function smartReply({ msg, client }) {
- 
+
     // console.log(msg.body)
     const data = msg?.body;
     const list = appconfig.bot;
 
-     // Don't do group reply if isGroupReply is off
-     if (msg.id.participant && appconfig.appconfig.isGroupReply == false) {
+    // Don't do group reply if isGroupReply is off
+    if (msg.id.participant && appconfig.appconfig.isGroupReply == false) {
         console.log(
             "Message received in group and group reply is off. so will not take any actions."
         );
@@ -366,7 +369,7 @@ async function smartReply({ msg, client }) {
     }
 
     // webhook Call
-    await processWebhook({msg,client});
+    await processWebhook({ msg, client });
 
     var exactMatch = list.find((obj) =>
         obj.exact.find((ex) => ex == data.toLowerCase())
@@ -381,7 +384,7 @@ async function smartReply({ msg, client }) {
     if (PartialMatch != undefined) {
         return sendReply({ msg, client, data: PartialMatch });
     }
-    sendReply({ msg, client, data: exactMatch , noMatch:true});
+    sendReply({ msg, client, data: exactMatch, noMatch: true });
 }
 
 // async function injectScripts(page) {
