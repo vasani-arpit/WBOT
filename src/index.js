@@ -96,6 +96,7 @@ async function Main() {
                 defaultViewport: null,
                 headless: appconfig.appconfig.headless,
                 devtools: false,
+                slowMo: 500,
                 args: [...constants.DEFAULT_CHROMIUM_ARGS, ...pptrArgv], ...extraArguments
             }
         });
@@ -222,7 +223,7 @@ async function sendReply({ msg, client, data, noMatch }) {
     if (noMatch) {
         if (appconfig.noMatch.length != 0) {
             let response = await getResponse(msg, appconfig.noMatch);;
-            console.log(`No match fount Replying with ${response}`);
+            console.log(`No match found Replying with ${response}`);
             // await client.sendMessage(number, response);
             await msg.reply(response);
             return;
