@@ -7,11 +7,11 @@
 
 > A simple Nodejs BOT for whatsapp web
 
-<a href="#preview">Preview</a> •
-<a href="#features">Features</a> •
-<a href="#downloads">Downloads</a> •
+<a href="#-preview">Preview</a> •
+<a href="#-features">Features</a> •
+<a href="#-downloads-">Downloads</a> •
 <a href="#how-to-start-the-bot">How to?</a> •
-<a href="#technologies">Technologies Used</a> •
+<a href="#-technologies">Technologies Used</a> •
 <a href="#why">Why?</a> •
 <a href="#goals">Goals</a> •
 <a href="#faq">FAQ</a>
@@ -192,7 +192,7 @@ If you think WBOT delivers these, let me know by putting a **star ⭐** on this 
 
 * **Is this app built with NodeJS?**
 
-  Yes, it's built with [NodeJS](https://nodejs.org/en/). Please see the [Technologies](#technologies) section for more info.
+  Yes, it's built with [NodeJS](https://nodejs.org/en/). Please see the [Technologies](#-technologies) section for more info.
 
 * **What boilerplate did you use?**
 
