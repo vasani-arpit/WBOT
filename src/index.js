@@ -158,7 +158,7 @@ async function Main() {
 
             if (msg.body.length != 0) {
                 //TODO: reply according to the bot.config.json
-                await smartReply({ msg });
+                await smartReply({ msg, client });
                 //TODO: call the webhook
             }
         });
@@ -224,8 +224,12 @@ async function sendReply({ msg, client, data, noMatch }) {
         if (appconfig.noMatch.length != 0) {
             let response = await getResponse(msg, appconfig.noMatch);;
             console.log(`No match found Replying with ${response}`);
-            // await client.sendMessage(number, response);
-            await msg.reply(response);
+            if (!configs.appconfig.quoteMessageInReply) {
+                await client.sendMessage(msg.from, response);
+            }
+            else {
+                await msg.reply(response);
+            }
             return;
         }
         console.log(`No match found`);
@@ -264,14 +268,18 @@ async function sendReply({ msg, client, data, noMatch }) {
                         base64,
                         files
                     );
-                    // await client.sendMessage(number, media, { caption: response });
-                    // #TODO Caption is not working
-                    const data = await msg.getChat();
-                    // console.log(data)
-                    // console.log({ caption: response })
-                    // console.log(media)
-                    await msg.reply(media, data.id._serialized, { caption: response });
-                    // await msg.reply(media,);
+                    if (!configs.appconfig.quoteMessageInReply) {
+                        await client.sendMessage(msg.from, media, { caption: response });
+                    }
+                    else {
+                        // #TODO Caption is not working
+                        const data = await msg.getChat();
+                        // console.log(data)
+                        // console.log({ caption: response })
+                        // console.log(media)
+                        await msg.reply(media, data.id._serialized, { caption: response });
+                        // await msg.reply(media,);
+                    }
                 })
                 .catch((error) => {
                     console.log("Error in sending file\n" + error);
@@ -291,19 +299,31 @@ async function sendReply({ msg, client, data, noMatch }) {
                         base64,
                         files
                     );
-                    // await client.sendMessage(number, media);
-                    await msg.reply(media);
+                    if (!configs.appconfig.quoteMessageInReply) {
+                        await client.sendMessage(msg.from, media);
+                    }
+                    else {
+                        await msg.reply(media);
+                    }
                 })
                 .catch((error) => {
                     console.log("Error in sending file\n" + error);
                 }).finally(async () => {
-                    // await client.sendMessage(number, response);
-                    await msg.reply(response);
+                    if (!configs.appconfig.quoteMessageInReply) {
+                        await client.sendMessage(msg.from, response);
+                    }
+                    else {
+                        await msg.reply(response);
+                    }
                 })
         }
     } else {
-        // await client.sendMessage(number, response);
-        await msg.reply(response);
+        if (!configs.appconfig.quoteMessageInReply) {
+            await client.sendMessage(msg.from, response);
+        }
+        else {
+            await msg.reply(response);
+        }
     }
 }
 
@@ -335,8 +355,12 @@ async function processWebhook({ msg, client }) {
 
             itemResponse.text = await getResponse(msg, itemResponse.text);
 
-            // await client.sendMessage(number, itemResponse.text);
-            await msg.reply(itemResponse.text);
+            if (!configs.appconfig.quoteMessageInReply) {
+                await client.sendMessage(msg.from, itemResponse.text);
+            }
+            else {
+                await msg.reply(itemResponse.text);
+            }
 
             //sending files if there is any 
             if (itemResponse.files && itemResponse.files.length > 0) {
@@ -347,8 +371,12 @@ async function processWebhook({ msg, client }) {
                         itemFile.file,
                         itemFile.name
                     );
-                    // await client.sendMessage(number, media);
-                    await msg.reply(media);
+                    if (!configs.appconfig.quoteMessageInReply) {
+                        await client.sendMessage(msg.from, media);
+                    }
+                    else {
+                        await msg.reply(media);
+                    }
                 })
             }
         });
