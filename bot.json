@@ -6,7 +6,7 @@
         "downloadMedia": true,
         "replyUnreadMsg": false,
         "CustomInjectionFolder": "",
-        "quoteMessageInReply": false
+        "quoteMessageInReply": true
     },
     "bot": [{
             "contains": [],
