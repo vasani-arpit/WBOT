@@ -38,6 +38,25 @@ this.getFileInBase64 = function (filename) {
     });
 }
 
+/**
+ * resolves path and returns file data in base64
+ * @param {filepath} filename absolute or relative file path including extension
+ * @returns {fileMime,base64}
+ */
+this.getFileData = function (filename) {
+    return new Promise((resolve, reject) => {
+        try {
+            filename = path.join(process.cwd(), filename);
+            // get the mimetype
+            const fileMime = mime.getType(filename);
+            var file = fs.readFileSync(filename, { encoding: 'base64' });
+            resolve({ fileMime, base64: file });
+        } catch (error) {
+            reject(error);
+        }
+    });
+}
+
 this.delay = ms => {
     return new Promise(resolve => {
         setTimeout(resolve, ms);

@@ -3,13 +3,15 @@
         "headless": false,
         "isGroupReply":false,
         "webhook":"",
-        "downloadMedia": false,
-        "replyUnreadMsg": false
+        "downloadMedia": true,
+        "replyUnreadMsg": false,
+        "CustomInjectionFolder": ""
     },
     "bot": [{
             "contains": [],
             "exact": ["hi"],
-            "response": "{hello|howdy}"
+            "response": "{hello|howdy}",
+            "webhook":""
         },
         {
             "contains": [],
@@ -46,7 +48,7 @@
         {
             "contains": [],
             "exact": ["how are you"],
-            "response": "i am {good {thanks| thank you}|great}. How about you?"
+            "response": "I am {good {thanks| thank you}|great}. How about you?"
         },
         {
             "contains": [],
@@ -67,7 +69,8 @@
             "contains": [],
             "exact": ["github"],
             "response": "Git Hub Logo",
-            "file":"{github.png|github-two.png}"
+            "file":"{github.png|github-two.png}",
+            "responseAsCaption": false
         },
         {
             "contains": [],
