@@ -365,17 +365,33 @@ async function processWebhook({ msg, client }) {
             //sending files if there is any 
             if (itemResponse.files && itemResponse.files.length > 0) {
                 itemResponse.files.forEach(async (itemFile) => {
+
                     // #TODO: Passing same mimetype for all images
-                    var media = await new MessageMedia(
-                        "image/jpg",
+                    // var imageMedia = await new MessageMedia(
+                    //     "image/jpg",
+                    //     itemFile.file,
+                    //     itemFile.name
+                    // );
+
+                    // #TODO: Passing same mimetype for all pdf files
+                    var pdfMedia = await new MessageMedia(
+                        "application/pdf",
                         itemFile.file,
                         itemFile.name
                     );
+
+                    // #TODO: Passing same mimetype for all mp3 files
+                    // var mp3Media = await new MessageMedia(
+                    //     "audio/mp3",
+                    //     itemFile.file,
+                    //     itemFile.name
+                    // );
+                    
                     if (!configs.appconfig.quoteMessageInReply) {
-                        await client.sendMessage(msg.from, media);
+                        await client.sendMessage(msg.from, pdfMedia);
                     }
                     else {
-                        await msg.reply(media);
+                        await msg.reply(pdfMedia);
                     }
                 })
             }
