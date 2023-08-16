@@ -366,32 +366,23 @@ async function processWebhook({ msg, client }) {
             if (itemResponse.files && itemResponse.files.length > 0) {
                 itemResponse.files.forEach(async (itemFile) => {
 
-                    // #TODO: Passing same mimetype for all images
-                    // var imageMedia = await new MessageMedia(
-                    //     "image/jpg",
-                    //     itemFile.file,
-                    //     itemFile.name
-                    // );
+                    const mimeTypeMatch = itemFile.file.match(/^data:(.*?);/);
 
-                    // #TODO: Passing same mimetype for all pdf files
-                    var pdfMedia = await new MessageMedia(
-                        "application/pdf",
-                        itemFile.file,
+                    const base64Data = mimeTypeMatch ? itemFile.file.split(',')[1] : itemFile.file ; 
+                    
+                    const mimeType = mimeTypeMatch ? itemFile.file.split(':')[1].split(';')[0] : "image/jpg" ;
+
+                    var media = await new MessageMedia(
+                        mimeType,
+                        base64Data,
                         itemFile.name
                     );
 
-                    // #TODO: Passing same mimetype for all mp3 files
-                    // var mp3Media = await new MessageMedia(
-                    //     "audio/mp3",
-                    //     itemFile.file,
-                    //     itemFile.name
-                    // );
-                    
                     if (!configs.appconfig.quoteMessageInReply) {
-                        await client.sendMessage(msg.from, pdfMedia);
+                        await client.sendMessage(msg.from, media);
                     }
                     else {
-                        await msg.reply(pdfMedia);
+                        await msg.reply(media);
                     }
                 })
             }
