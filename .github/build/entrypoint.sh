@@ -2,7 +2,6 @@
 set -x
 
 npm install
-npm run postinstall
 npm run pack
 
 zip "WBOT-linux.zip"  bot.json github.png github-two.png wbot-linux
