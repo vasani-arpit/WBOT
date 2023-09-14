@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -x
 
+pwd && ls -la
 npm install
 npm run pack
 
