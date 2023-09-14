@@ -1,4 +1,4 @@
-FROM node:10.19.0-alpine3.10
+FROM node:16.20-alpine
 
 RUN apk add bash zip
 
