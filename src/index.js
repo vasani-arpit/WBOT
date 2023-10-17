@@ -258,11 +258,11 @@ async function sendReply({ msg, client, data, noMatch }) {
          if(Array.isArray(files))
          {
             files.forEach(file => {
-                sendFile(msg,client,file,response,captionStatus)
+                sendFile(file)
             })
          }
          else{
-            sendFile(msg,client,files,response,captionStatus)
+            sendFile(files)
          }
         // if responseAsCaption is true, send image with response as a caption
         // else send image and response seperately
@@ -400,6 +400,29 @@ async function smartReply({ msg, client }) {
     // console.log(msg.body)
     const data = msg?.body;
     const list = appconfig.bot;
+
+    //Don't reply is sender is blocked
+    const senderNumber = msg.from.split("@")[0]
+    var blockedNumbers = appconfig.blocked
+    var count = 0;
+    if(blockedNumbers)
+    {
+        blockedNumbers.forEach(num => {
+            num.replace(/\s+/g, '')
+            num.replace('+','')
+            
+            if(num == senderNumber)
+            {
+                console.log("Message received but sender is blocked so will not reply.")
+                count++
+                return;
+            }
+        })
+    }
+    if(count != 0)
+    {
+        return;
+    }
 
     // Don't do group reply if isGroupReply is off
     if (msg.id.participant && appconfig.appconfig.isGroupReply == false) {
