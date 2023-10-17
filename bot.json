@@ -6,7 +6,7 @@
         "downloadMedia": true,
         "replyUnreadMsg": false,
         "CustomInjectionFolder": "",
-        "quoteMessageInReply": true
+        "quoteMessageInReply": false
     },
     "bot": [{
             "contains": [],
@@ -70,7 +70,7 @@
             "contains": [],
             "exact": ["github"],
             "response": "Git Hub Logo",
-            "file":"{github.png|github-two.png}",
+            "file":["github.png","github-two.png"],
             "responseAsCaption": false
         },
         {

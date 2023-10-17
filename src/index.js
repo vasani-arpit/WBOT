@@ -217,6 +217,7 @@ async function getResponse(msg, message) {
 }
 
 
+
 async function sendReply({ msg, client, data, noMatch }) {
 
 
@@ -252,21 +253,40 @@ async function sendReply({ msg, client, data, noMatch }) {
             captionStatus = false;
         }
 
-        files = await spintax.unspin(data.file);
-
+        // files = await spintax.unspin(data.file);
+        files = data.file
+         if(Array.isArray(files))
+         {
+            files.forEach(file => {
+                sendFile(msg,client,file,response,captionStatus)
+            })
+         }
+         else{
+            sendFile(msg,client,files,response,captionStatus)
+         }
         // if responseAsCaption is true, send image with response as a caption
         // else send image and response seperately
+        await client.sendMessage(msg.from, response);
+    } else {
+        if (!configs.appconfig.quoteMessageInReply) {
+            await client.sendMessage(msg.from, response);
+        }
+        else {
+            await msg.reply(response);
+        }
+    }
+    function sendFile(file){
         if (captionStatus == true) {
             utils
-                .getFileData(files)
+                .getFileData(file)
                 .then(async ({ fileMime, base64 }) => {
-
+    
                     // console.log(fileMime);
                     // send response in place of caption as a last argument in below function call
                     var media = await new MessageMedia(
                         fileMime,
                         base64,
-                        files
+                        file
                     );
                     if (!configs.appconfig.quoteMessageInReply) {
                         await client.sendMessage(msg.from, media, { caption: response });
@@ -288,16 +308,16 @@ async function sendReply({ msg, client, data, noMatch }) {
             console.log(
                 "Either the responseAsCaption is undefined or false, Make it true to allow caption to a file"
             );
-
+    
             utils
-                .getFileData(files)
+                .getFileData(file)
                 .then(async ({ fileMime, base64 }) => {
                     // console.log(fileMime);
                     // send blank in place of caption as a last argument in below function call
                     var media = await new MessageMedia(
                         fileMime,
                         base64,
-                        files
+                        file
                     );
                     if (!configs.appconfig.quoteMessageInReply) {
                         await client.sendMessage(msg.from, media);
@@ -308,25 +328,10 @@ async function sendReply({ msg, client, data, noMatch }) {
                 })
                 .catch((error) => {
                     console.log("Error in sending file\n" + error);
-                }).finally(async () => {
-                    if (!configs.appconfig.quoteMessageInReply) {
-                        await client.sendMessage(msg.from, response);
-                    }
-                    else {
-                        await msg.reply(response);
-                    }
                 })
-        }
-    } else {
-        if (!configs.appconfig.quoteMessageInReply) {
-            await client.sendMessage(msg.from, response);
-        }
-        else {
-            await msg.reply(response);
-        }
-    }
+        }}
+    
 }
-
 
 async function processWebhook({ msg, client }) {
 
