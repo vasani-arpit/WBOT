@@ -255,15 +255,14 @@ async function sendReply({ msg, client, data, noMatch }) {
 
         // files = await spintax.unspin(data.file);
         files = data.file
-         if(Array.isArray(files))
-         {
+        if (Array.isArray(files)) {
             files.forEach(file => {
                 sendFile(file)
             })
-         }
-         else{
+        }
+        else {
             sendFile(files)
-         }
+        }
         // if responseAsCaption is true, send image with response as a caption
         // else send image and response seperately
         await client.sendMessage(msg.from, response);
@@ -275,12 +274,12 @@ async function sendReply({ msg, client, data, noMatch }) {
             await msg.reply(response);
         }
     }
-    function sendFile(file){
+    function sendFile(file) {
         if (captionStatus == true) {
             utils
                 .getFileData(file)
                 .then(async ({ fileMime, base64 }) => {
-    
+
                     // console.log(fileMime);
                     // send response in place of caption as a last argument in below function call
                     var media = await new MessageMedia(
@@ -308,7 +307,7 @@ async function sendReply({ msg, client, data, noMatch }) {
             console.log(
                 "Either the responseAsCaption is undefined or false, Make it true to allow caption to a file"
             );
-    
+
             utils
                 .getFileData(file)
                 .then(async ({ fileMime, base64 }) => {
@@ -329,8 +328,9 @@ async function sendReply({ msg, client, data, noMatch }) {
                 .catch((error) => {
                     console.log("Error in sending file\n" + error);
                 })
-        }}
-    
+        }
+    }
+
 }
 
 async function processWebhook({ msg, client }) {
@@ -373,9 +373,9 @@ async function processWebhook({ msg, client }) {
 
                     const mimeTypeMatch = itemFile.file.match(/^data:(.*?);/);
 
-                    const base64Data = mimeTypeMatch ? itemFile.file.split(',')[1] : itemFile.file ; 
-                    
-                    const mimeType = mimeTypeMatch ? itemFile.file.split(':')[1].split(';')[0] : "image/jpg" ;
+                    const base64Data = mimeTypeMatch ? itemFile.file.split(',')[1] : itemFile.file;
+
+                    const mimeType = mimeTypeMatch ? itemFile.file.split(':')[1].split(';')[0] : "image/jpg";
 
                     var media = await new MessageMedia(
                         mimeType,
@@ -404,23 +404,16 @@ async function smartReply({ msg, client }) {
     //Don't reply is sender is blocked
     const senderNumber = msg.from.split("@")[0]
     var blockedNumbers = appconfig.blocked
-    var count = 0;
-    if(blockedNumbers)
-    {
-        blockedNumbers.forEach(num => {
-            num.replace(/\s+/g, '')
-            num.replace('+','')
-            
-            if(num == senderNumber)
-            {
-                console.log("Message received but sender is blocked so will not reply.")
-                count++
-                return;
-            }
-        })
+    var allowedNumbers = appconfig.allowed
+    // check if blocked numnbers are there or not. 
+    // if current number is init then return
+    if (Array.isArray(blockedNumbers) && blockedNumbers.includes(senderNumber)) {
+        console.log("Message received but sender is blocked so will not reply.")
+        return;
     }
-    if(count != 0)
-    {
+
+    if (Array.isArray(allowedNumbers) && allowedNumbers.length > 0 && !allowedNumbers.includes(senderNumber)) {
+        console.log("Message received but user is not in allowed list so will not reply.")
         return;
     }
 

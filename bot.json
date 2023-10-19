@@ -80,6 +80,7 @@
         }
     ],
     "blocked": [],
+    "allowed":[],
     "noMatch":"{🤔|🤷‍♂️}",
     "smartreply":{
         "suggestions":["Hello", "Welcome to my store !!", "Thanks for reaching out 🙏"],
