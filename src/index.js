@@ -237,15 +237,19 @@ async function sendReply({ msg, client, data, noMatch }) {
         return;
     }
 
-
-    let response = await getResponse(msg, data.response);
-    console.log(`Replying with ${response}`);
+   
+    
+        let response = await getResponse(msg, data.response);
+        console.log(`Replying with ${response}`);
+    
 
     if (data.afterSeconds) {
         await utils.delay(data.afterSeconds * 1000);
     }
+    
 
     if (data.file) {
+
         var captionStatus = data.responseAsCaption;
 
         // We consider undefined responseAsCaption as a false
@@ -275,6 +279,7 @@ async function sendReply({ msg, client, data, noMatch }) {
         }
     }
     function sendFile(file) {
+    
         if (captionStatus == true) {
             utils
                 .getFileData(file)
