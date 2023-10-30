@@ -12,7 +12,7 @@
         "contains":["audio"],
         "exact": [],
         "response": "Sending audio",
-        "file": ["file_example_MP3_700KB.mp3","file_example_MP3_1MG.mp3"]
+        "file": ["file_example_MP3_700KB.mp3"]
     },
     {
             "contains": [],
