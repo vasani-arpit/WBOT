@@ -6,12 +6,18 @@
         "downloadMedia": true,
         "replyUnreadMsg": false,
         "CustomInjectionFolder": "",
-        "quoteMessageInReply": true
+        "quoteMessageInReply": false
     },
     "bot": [{
+        "contains":["audio"],
+        "exact": [],
+        "response": "Sending audio",
+        "file": ["file_example_MP3_700KB.mp3","file_example_MP3_1MG.mp3"]
+    },
+    {
             "contains": [],
             "exact": ["hi"],
-            "response": "{hello|howdy}",
+            "response": ["hello","howdy"],
             "webhook":""
         },
         {
@@ -70,7 +76,7 @@
             "contains": [],
             "exact": ["github"],
             "response": "Git Hub Logo",
-            "file":"{github.png|github-two.png}",
+            "file":["github.png","github-two.png"],
             "responseAsCaption": false
         },
         {
@@ -80,6 +86,7 @@
         }
     ],
     "blocked": [],
+    "allowed":[],
     "noMatch":"{🤔|🤷‍♂️}",
     "smartreply":{
         "suggestions":["Hello", "Welcome to my store !!", "Thanks for reaching out 🙏"],
