@@ -17,7 +17,7 @@
     {
             "contains": [],
             "exact": ["hi"],
-            "response": ["hello","howdy"],
+            "response": "{hello|howdy}",
             "webhook":""
         },
         {
