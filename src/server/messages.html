@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" charset="utf8"
+        src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8"
+        src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+        <style>
+            body{
+                font-family: sans-serif;
+            }
+            .header {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    height: 30px;
+    background-color: rgb(50,50,50);
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 2;
+}
+.header ul {
+    display: flex;
+    gap: 25px;
+    width: fit-content;
+    text-align: center;
+    list-style: none;
+    align-items: center;
+
+}
+.header ul li {
+    margin-inline: auto;
+    text-align: center;
+    font-weight: 500;
+}
+.header ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.15em;
+}
+.header ul li a:hover{
+    text-decoration: underline;
+}
+        </style>
+</head>
+
+<body>
+    <div class="header">
+        <ul>
+            <li>
+                <a href="/">Flow</a>
+            </li>
+            <li>
+                <span style="color: white;">|</span>
+            </li>
+            <li>
+                <a href="/messages">Messages</a>
+            </li>
+        </ul>
+    </div>
+    <!-- Your HTML table goes here -->
+    <div style="padding-top: 50px;">
+        <table id="msgTable" class="display">
+            <thead>
+                <tr>
+                    <th>Timestamp</th>
+                    <th>Sender</th>
+                    <th>Message</th>
+                    <!-- Add more columns as needed -->
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+    </div>
+    <script>
+        var tbody = document.getElementById('tbody');
+        var today = moment()
+        fetch('/messages.json')
+            .then(response => response.json())
+            .then(data => {
+                data.map(msg => {
+                    tbody.innerHTML += `<tr><td>${msg.timestamp}</td><td>${msg._data.chatName}</td><td>${msg.body}</td></tr>`;
+                });
+                $(document).ready(function () {
+                    $('#msgTable').DataTable({
+                        language: {
+                            emptyTable: 'No messages available for today'
+                        }
+                    });
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            })
+    </script>
+</body>
+
+</html>

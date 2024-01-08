@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>WBot Flow</title>
+</head>
+
+<body>
+    <i class="fas fa-plus fa-2x plus" data-toggle="modal" data-target="#myModal"></i>
+    <div class="container" id="container">
+        <div class="rule" id="msg">
+            <span class="text">On Message</span>
+        </div>
+        <table id="table"></table>
+    </div>
+    <form enctype="multipart/form-data" onsubmit="return validate()" action="/newNode" method="post">
+        <div id="myModal" class="modal fade" role="dialog" style="top:25%">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <table id="popupTable">
+                            <h4 class="modal-title">Add Node</h4>
+                            <i class="fas fa-times fa-2x close-icon" data-dismiss="modal"></i>
+                        </div>
+                    <div class="modal-body">
+                        <tr>
+                            <td><label for="contains">Contains </label></td>
+                            <td><input type="text" id="contains" name="contains" ></td>
+                        </tr>
+                        <tr>
+                            <td><label for="exact">Exact </label></td>
+                            <td><input type="text" id="exact" name="exact" ></td>
+                        </tr>
+                        <tr>
+                            <td><label for="response">Response </label></td>
+                            <td><input type="text" id="response" name="response" ></td>
+                        </tr>
+                        <tr>
+                            <td><label for="file">File </label></td>
+                            <td><input type="file" id="file" name="file" multiple></td>
+                        </tr>
+                        <tr>
+                            <td><label for="responseAsCaption">Response as Caption </label></td>
+                            <td><input type="radio" name="responseAsCaption" id="responseAsCaptionTrue"
+                                    value="true">True
+                                <input type="radio" name="responseAsCaption" id="responseAsCaptionFalse"
+                                    value="false">False
+                            </td>
+                        </tr>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <span id="error"></span>
+                        <input type="submit" class="btn btn-default" value="Submit">
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </form>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leader-line/1.0.7/leader-line.min.js"
+    integrity="sha512-0dNdzMjpT6pJdFGF1DwybFCfm3K/lzHhxaMXC/92J9/DZujHlqYFqmhTOAoD0o+LkeEsVK2ar/ESs7/Q2B6wJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+<script>
+    const table = document.getElementById('table');
+    let count = 0;
+    let nodesData = [];
+    let leaderLines = [];
+    fetch('../bot.json')
+        .then(response => response.json())
+        .then(data => {
+            nodesData = data.bot;
+            nodesData.map(rule => {
+                const row = `<tr><td><div class="rule" id="${count.toString()}"><a href="/deleteNode/${count.toString()}"><i class="fas fa-minus minus"></i></a></div></td></tr>`;
+                table.innerHTML += row;
+                createLines(count.toString())
+                const tb = document.createElement('table');
+                document.getElementById(count.toString()).appendChild(tb);
+                Object.keys(rule).map(prop => {
+                    if (!rule[prop] || rule[prop].length === 0) {
+                        rule[prop] = '---'
+                    }
+                    const innerData = `<tr><td style="text-align: right">${prop}:</td><td style="text-align: left">${rule[prop]}</td></tr>`;
+                    tb.innerHTML += innerData;
+                    tb.className = 'text';
+                })
+                count++;
+            })
+        })
+        .catch(error => console.error('Error fetching bot data:', error));
+    window.addEventListener('resize', function (event) {
+        leaderLines.map(leaderLine => leaderLine.remove())
+        let count = 0;
+        nodesData.map(node => {
+            createLines(count.toString());
+            count++;
+        })
+    });
+    function validate()
+    {
+        if((!document.getElementById('contains').value && !document.getElementById('exact').value) || (document.getElementById('contains').value && document.getElementById('exact').value))
+        {
+            document.getElementById('error').innerHTML=  "Either contains or exact field should be filled.";
+            return false;
+        }
+        if(!document.getElementById('response').value)
+        {
+            document.getElementById('error').innerHTML = "Response field is required."
+            return false;
+        }
+        return true
+    }
+    function createLines(id)
+    {
+        let leaderLine = new LeaderLine(
+                    LeaderLine.pointAnchor(document.getElementById('msg'), { x: 95, y: 70 }),
+                    LeaderLine.pointAnchor(document.getElementById(id), { x: 0, y: 50 }),
+                    { color: 'rgb(55,57,95)', size: 3, path: 'straight' }
+                );
+        leaderLines.push(leaderLine)
+    }
+</script>
+
+</html>

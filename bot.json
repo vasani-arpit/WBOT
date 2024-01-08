@@ -1,95 +1,118 @@
 {
-    "appconfig": {
-        "headless": false,
-        "isGroupReply":false,
-        "webhook":"",
-        "downloadMedia": true,
-        "replyUnreadMsg": false,
-        "CustomInjectionFolder": "",
-        "quoteMessageInReply": false
-    },
-    "bot": [{
-        "contains":["audio"],
-        "exact": [],
-        "response": "Sending audio",
-        "file": ["file_example_MP3_700KB.mp3","file_example_MP3_1MG.mp3"]
+  "appconfig": {
+    "headless": false,
+    "isGroupReply": false,
+    "webhook": "",
+    "downloadMedia": true,
+    "replyUnreadMsg": false,
+    "CustomInjectionFolder": "",
+    "quoteMessageInReply": false,
+    "server": {
+      "port": 8080,
+      "username": "admin",
+      "password": "admin",
+      "display": true
+    }
+  },
+  "bot": [
+    {
+      "contains": [
+        "audio"
+      ],
+      "exact": [],
+      "response": "Sending audio",
+      "file": [
+        "file_example_MP3_700KB.mp3",
+        "file_example_MP3_1MG.mp3"
+      ]
     },
     {
-            "contains": [],
-            "exact": ["hi"],
-            "response": "{hello|howdy}",
-            "webhook":""
-        },
-        {
-            "contains": [],
-            "exact": ["hello"],
-            "response": "hi",
-            "afterSeconds":3
-        },
-        {
-            "contains": [],
-            "exact": ["hy"],
-            "response": "hi",
-            "file":"github.png"
-        },
-        {
-            "contains": [],
-            "exact": ["hiee"],
-            "response": "hi"
-        },
-        {
-            "contains": [],
-            "exact": ["hey"],
-            "response": "hi"
-        },
-        {
-            "contains": ["michhami","dukkadam"],
-            "exact": [],
-            "response": "Michhami Dukkadam 🙏"
-        },
-        {
-            "contains": ["happy","birthday","bday"],
-            "exact": [],
-            "response": "Thank you"
-        },
-        {
-            "contains": [],
-            "exact": ["how are you"],
-            "response": "I am {good {thanks| thank you}|great}. How about you?"
-        },
-        {
-            "contains": [],
-            "exact": ["hbd"],
-            "response": "Thank you"
-        },
-        {
-            "contains": ["શુભકામના","જન્મદિન"],
-            "exact": [],
-            "response": "આભાર 🙏"
-        },
-        {
-            "contains": ["janmdin","hardik","shubhkaamna"],
-            "exact": [],
-            "response": "aabhar 🙏"
-        },
-        {
-            "contains": [],
-            "exact": ["github"],
-            "response": "Git Hub Logo",
-            "file":["github.png","github-two.png"],
-            "responseAsCaption": false
-        },
-        {
-            "contains": [],
-            "exact": ["variables"],
-            "response": "this is sample of variables:\nHey [#name] 👋, [#greetings]. \nThis is your phone number, [#phoneNumber]"
-        }
-    ],
-    "blocked": [],
-    "allowed":[],
-    "noMatch":"{🤔|🤷‍♂️}",
-    "smartreply":{
-        "suggestions":["Hello", "Welcome to my store !!", "Thanks for reaching out 🙏"],
-        "clicktosend":true
+      "contains": [],
+      "exact": [
+        "hi"
+      ],
+      "response": "{hello|howdy}",
+      "webhook": ""
+    },
+    {
+      "contains": [],
+      "exact": [
+        "hello"
+      ],
+      "response": "hi",
+      "afterSeconds": 3
+    },
+    {
+      "contains": [],
+      "exact": [
+        "hy"
+      ],
+      "response": "hi",
+      "file": "github.png"
+    },
+    {
+      "contains": [],
+      "exact": [
+        "hiee"
+      ],
+      "response": "hi"
+    },
+    {
+      "contains": [],
+      "exact": [
+        "hey"
+      ],
+      "response": "hi"
+    },
+    {
+      "contains": [
+        "michhami",
+        "dukkadam"
+      ],
+      "exact": [],
+      "response": "Michhami Dukkadam 🙏"
+    },
+    {
+      "contains": [],
+      "exact": [
+        "how are you"
+      ],
+      "response": "I am {good {thanks| thank you}|great}. How about you?"
+    },
+    {
+      "contains": [
+        "શુભકામના",
+        "જન્મદિન"
+      ],
+      "exact": [],
+      "response": "આભાર 🙏"
+    },
+    {
+      "contains": [
+        "janmdin",
+        "hardik",
+        "shubhkaamna"
+      ],
+      "exact": [],
+      "response": "aabhar 🙏"
+    },
+    {
+      "contains": [],
+      "exact": [
+        "variables"
+      ],
+      "response": "this is sample of variables:\nHey [#name] 👋, [#greetings]. \nThis is your phone number, [#phoneNumber]"
     }
+  ],
+  "blocked": [],
+  "allowed": [],
+  "noMatch": "{🤔|🤷‍♂️}",
+  "smartreply": {
+    "suggestions": [
+      "Hello",
+      "Welcome to my store !!",
+      "Thanks for reaching out 🙏"
+    ],
+    "clicktosend": true
+  }
 }

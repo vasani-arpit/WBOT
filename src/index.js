@@ -15,12 +15,16 @@ var fs = require("fs");
 const fetch = require("node-fetch");
 const { lt } = require('semver');
 const mime = require('mime');
-
+const openurl = require('openurl')
+const moment = require('moment')
+// only when server object is there in bot.json
+// take parameter from json 
+// only after authentication success from whatsapp
+const graphicalInterface = require('./server/server')
 //TODO: remove this
 // const {write,read}=require('../media/tem')
 
 
-//console.log(ps);
 
 let appconfig = null;
 
@@ -113,6 +117,17 @@ async function Main() {
         client.on('ready', async () => {
             spinner.info('WBOT is spinning up!');
             await utils.delay(5000)
+            let server = appconfig.appconfig.server
+            if(server.display){
+
+                //Graphical interface to edit bot.json
+                const USERNAME = server.username ;
+                const PASSWORD = server.password ;
+                const PORT = server.port;
+
+                graphicalInterface(USERNAME, PASSWORD, PORT);
+                openurl.open(`http://localhost:${PORT}`)
+            }
             // await smartReply({client: client})
             //TODO: if replyUnreadMsg is true then get the unread messages and reply to them.
         });
@@ -134,19 +149,24 @@ async function Main() {
 
             let chat = await client.getChatById(msg.from)
             console.log(`Message ${msg.body} received in ${chat.name} chat`)
+            const messages = require(path.resolve('messages.json'));
+            msg.timestamp = moment().format('DD/MM/YYYY HH:mm');
+            msg._data['chatName'] = chat.name
+            messages.push(msg)
+            fs.writeFileSync(path.resolve('messages.json'),JSON.stringify(messages, null, 2))
             // if it is a media message then download the media and save it in the media folder
             if (msg.hasMedia && configs.appconfig.downloadMedia) {
                 console.log("Message has media. downloading");
                 const media = await msg.downloadMedia()
                 // checking if director is present or not
-                if (!fs.existsSync(path.join(process.cwd(), "media"))) {
-                    fs.mkdirSync(path.join(process.cwd(), "media"));
+                if (!fs.existsSync(path.join(process.cwd(), "receivedMedia"))) {
+                    fs.mkdirSync(path.join(process.cwd(), "receivedMedia"));
                 }
 
                 if (media) {
                     // write the data to a file
                     let extension = mime.getExtension(media.mimetype)
-                    fs.writeFileSync(path.join(process.cwd(), "media", msg.from + msg.id.id + "." + extension), media.data, 'base64')
+                    fs.writeFileSync(path.join(process.cwd(), "receivedMedia", msg.from + msg.id.id + "." + extension), media.data, 'base64')
                     console.log("Media has been downloaded");
                 } else {
                     console.log("There was an issue in downloading the media");
@@ -167,7 +187,7 @@ async function Main() {
         await client.initialize();
 
         spinner.stop("Launching browser ... done!");
-
+        
         // When the settings file is edited multiple calls are sent to function. This will help
         // to prevent from getting corrupted settings data
         let timeout = 5000;
