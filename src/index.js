@@ -15,7 +15,6 @@ var fs = require("fs");
 const fetch = require("node-fetch");
 const { lt } = require('semver');
 const mime = require('mime');
-const openurl = require('openurl')
 const moment = require('moment')
 // only when server object is there in bot.json
 // take parameter from json 
@@ -118,7 +117,6 @@ async function Main() {
             spinner.info('WBOT is spinning up!');
             await utils.delay(5000)
             let server = appconfig.appconfig.server
-            if(server.display){
 
                 //Graphical interface to edit bot.json
                 const USERNAME = server.username ;
@@ -126,8 +124,6 @@ async function Main() {
                 const PORT = server.port;
 
                 graphicalInterface(USERNAME, PASSWORD, PORT);
-                openurl.open(`http://localhost:${PORT}`)
-            }
             // await smartReply({client: client})
             //TODO: if replyUnreadMsg is true then get the unread messages and reply to them.
         });
