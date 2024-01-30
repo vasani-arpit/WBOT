@@ -76,7 +76,7 @@ If you run Linux on a headless server or want to run chmomium without visible di
 
 *I haven't tested Mac and Linux binaries. If you find any issues using them feel free to raise one from [here](https://github.com/vasani-arpit/WBOT/issues/new)*
 
-<a href="https://github.com/Kashvigandhi/WBOT/blob/master/DEPLOY.md">![deploy-button](https://github.com/Kashvigandhi/WBOT/assets/114830226/1f2eb23c-1d18-4669-8f24-d34795e17d91)</a>
+<a href="./DEPLOY.md">![deploy-button](https://github.com/Kashvigandhi/WBOT/assets/114830226/1f2eb23c-1d18-4669-8f24-d34795e17d91)</a>
 
 
 ### Configurations 
