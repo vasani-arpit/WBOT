@@ -76,6 +76,9 @@ If you run Linux on a headless server or want to run chmomium without visible di
 
 *I haven't tested Mac and Linux binaries. If you find any issues using them feel free to raise one from [here](https://github.com/vasani-arpit/WBOT/issues/new)*
 
+<a href="https://github.com/Kashvigandhi/WBOT/blob/master/DEPLOY.md">![deploy-button](https://github.com/Kashvigandhi/WBOT/assets/114830226/1f2eb23c-1d18-4669-8f24-d34795e17d91)</a>
+
+
 ### Configurations 
 
 Basic configuration is in ```bot.json``` file like replying to ```Hi, hello and happy birthday```. You can change this config file as per your need. Keep in mind that you need to restart the wbot to see the effects of your changes. Make sure the JSON is valid. Use VSCode or [jsonlint](https://jsonlint.com/) to validate the JSON.
