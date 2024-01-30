@@ -1,6 +1,6 @@
 {
   "appconfig": {
-    "headless": false,
+    "headless": true,
     "isGroupReply": false,
     "webhook": "",
     "downloadMedia": true,
