@@ -24,7 +24,7 @@
 8. Now open the terminal on your device and give the following command.
    
 ```java-script 
-root@[your_ipv4_address]
+ssh root@[your_ipv4_address]
 ```
 Replace [your_ipv4_address] with the ipv4 address you copied. You will be asked the password you just made. You will not be able to see what you are typing, but don't worry! You will be authenticated if you enter the correct password.
 
