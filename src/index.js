@@ -283,9 +283,17 @@ async function sendReply({ msg, client, data, noMatch }) {
         else {
             sendFile(files)
         }
+        if(!captionStatus)
+        {
+            if (!configs.appconfig.quoteMessageInReply) {
+                await client.sendMessage(msg.from, response);
+            }
+            else {
+                await msg.reply(response);
+            }
+        }
         // if responseAsCaption is true, send image with response as a caption
         // else send image and response seperately
-        await client.sendMessage(msg.from, response);
     } else {
         if (!configs.appconfig.quoteMessageInReply) {
             await client.sendMessage(msg.from, response);

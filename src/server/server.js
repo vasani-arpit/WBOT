@@ -113,7 +113,7 @@ const graphicalInterface = (USERNAME, PASSWORD, PORT) => {
   });
 
   app.listen(PORT, () => {
-    console.log(`You can use the graphical interface at http://localhost:${PORT}`)
+    console.log(`You can use the graphical interface at [your_ipv4_address]:${PORT}`)
   });
 }
 module.exports = graphicalInterface
