@@ -9,3 +9,4 @@ sudo apt-get install libatk-bridge2.0-0
 sudo apt-get install libcups2
 sudo apt-get install libxkbcommon-x11-0
 sudo apt-get install libxdamage1
+echo "Setup Complete."
