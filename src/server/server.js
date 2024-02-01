@@ -90,13 +90,13 @@ const graphicalInterface = (USERNAME, PASSWORD, PORT) => {
     }
 
     if (response.exact.includes(',')) {
-      response.exact = response.exact.split(',');
+    response.exact = response.exact.split(',').map(value => value.trim());
     }
     else {
       response.exact = [response.exact]
     }
     if (response.contains.includes(',')) {
-      response.contains = response.contains.split(',');
+  response.contains = response.contains.split(',').map(value => value.trim());
     }
     else {
       response.contains = [response.contains]
