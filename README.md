@@ -63,7 +63,7 @@ Windows 7 and later are supported.
 
 ### STEPS
 
-After downloading, extract the zip file and navigate to that location in your terminal. There will be a file named ```wbot-*``` . Run it and you should be good to go.
+After downloading, extract the zip file and open the bot.json file and in the third line change the value of "headless" from true to false. Now, navigate to the location of the WBOT folder in your terminal. There will be a file named ```wbot-*``` . Run it and you should be good to go.
 
 For Linux you need to provide executable permission before you execute the binary. 
 Run the command - 
@@ -130,6 +130,10 @@ An array of objects. Properties of Object are self explanatory.
 **Blocked**
 
 Array of numbers with county code to which this bot will not reply to.
+
+**Allowed**
+
+If not empty, only messages from numbers in this list will be replied to.
 
 **noMatch**
 
