@@ -7,7 +7,7 @@
 
 3. This will take you to a page like below. Select 'Spin up a Droplet'.
    
- ![Screenshot (55)](https://github.com/Kashvigandhi/WBOT/assets/114830226/2d66dbe4-c7a9-401f-9691-5e61f1ad3b3e)
+   ![Screenshot (55)](https://github.com/Kashvigandhi/WBOT/assets/114830226/2d66dbe4-c7a9-401f-9691-5e61f1ad3b3e)
 
 4. Now, you need to select the specifications for the droplet. First select the server location that is closest to you. For instance, if you are in India, choose the Bangalore server.
    
