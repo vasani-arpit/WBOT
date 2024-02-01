@@ -62,7 +62,7 @@ const graphicalInterface = (USERNAME, PASSWORD, PORT) => {
     let today = moment()
     messages.map(msg => {
       let inputDate = moment(msg.timestamp, 'DD/MM/YYYY HH:mm')
-      if (today.isSame(inputDate, 'day'))
+      if (today.isSame(inputDate, 'day') && !(msg.hasMedia))
         todayMessages.push(msg)
     })
     res.send(todayMessages)
