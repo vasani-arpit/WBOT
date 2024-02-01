@@ -63,7 +63,7 @@ const graphicalInterface = (USERNAME, PASSWORD, PORT) => {
     messages.map(msg => {
       let inputDate = moment(msg.timestamp, 'DD/MM/YYYY HH:mm')
       if (today.isSame(inputDate, 'day'))
-        if(msg.body === '')
+        if(msg.hasMedia)
         {
           msg.body = "[Media Received]"
         }
