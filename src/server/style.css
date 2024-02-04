@@ -1,0 +1,142 @@
+body{
+    width: 100vw;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(235, 239, 244);
+    flex-direction: column;
+    font-family: sans-serif;
+
+}
+.container{
+    height: 100%;
+    width: 85%;
+    background-color: rgb(217, 226, 243);
+    margin-top: 70px;
+    margin-bottom: 50px;
+    padding: 30px 0 30px 0;
+}
+#msg{
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    height: 20%;
+    z-index: 1;
+}
+.rule{
+    height: auto;
+    width: fit-content;
+    background-color: rgb(55,57,95);
+    border-radius: 20px;
+    text-align: center;
+    border: 5px solid rgb(207,199,255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 50%;
+    position: relative;
+
+}
+
+.text{
+    color: white;
+    font-size: 1em;
+    margin: 5px;
+    overflow-wrap: break-word
+}
+
+#table{
+    position: relative;
+    left: 40%;
+}
+#table tr, #table td, #popupTable tr, #popupTable td{
+    padding: 2px 5px 2px 5px;
+}
+ul, ol {
+    list-style: none;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+.plus{
+    position: fixed;
+    top:9%;
+    right: 2%;
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    z-index: 1;
+}
+.minus{
+    position: absolute;
+    top: -5px;
+    right: -7px;
+    font-size: 12px;
+    background-color: rgb(150, 53, 53);
+    color: white;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    z-index: 1;
+}
+.close-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+legend
+{
+    font-size: 1.5em;
+    text-align: center;
+}
+#form{
+    margin: 0 auto 30px auto;
+    font-size: 1.2em;
+    text-align: center;
+}
+#error{
+    color: red;
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+}
+
+
+.header {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    height: 30px;
+    background-color: rgb(50,50,50);
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 2;
+    padding-top: 7px;
+}
+.header ul {
+    display: flex;
+    gap: 25px;
+    width: fit-content;
+    text-align: center;
+    list-style: none;
+    align-items: center;
+
+}
+.header ul li {
+    margin-inline: auto;
+    text-align: center;
+    font-weight: 500;
+}
+.header ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18.4px;
+}
+.header ul li a:hover{
+    text-decoration: underline;
+}

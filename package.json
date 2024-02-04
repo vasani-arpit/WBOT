@@ -8,10 +8,12 @@
     "pack": "pkg .",
     "start": "node src/index.js"
   },
-  "bin": "src/index.js",
+  "bin": {
+    "wbot": "src/index.js"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vasani-arpit/WBOT"
+    "url": "git+https://github.com/vasani-arpit/WBOT.git"
   },
   "keywords": [
     "whatsapp",
@@ -20,7 +22,7 @@
   ],
   "private": true,
   "pkg": {
-    "scripts": "src/**/*.js",
+    "scripts": "src/**/*.js", 
     "targets": [
       "node14-win",
       "node14-linux",
@@ -38,7 +40,11 @@
     "mel-spintax": "^1.0.4",
     "mime": "^2.4.4",
     "mime-types": "^2.1.35",
+    "moment": "^2.29.4",
+    "multer": "^1.4.5-lts.1",
     "node-fetch": "^2.6.1",
+    "open": "^9.1.0",
+    "openurl": "^1.1.1",
     "ora": "^3.0.0",
     "puppeteer-core": "^13.6.0",
     "qrcode-terminal": "^0.12.0",
@@ -48,5 +54,8 @@
   },
   "devDependencies": {
     "pkg": "^5.6.0"
+  },
+  "directories": {
+    "doc": "docs"
   }
 }

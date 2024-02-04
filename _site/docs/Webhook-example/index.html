@@ -1,0 +1,82 @@
+<h2>What is webhook?</h2>
+<p>Webhook is a URL which wbot will hit on each incoming messages it receives. It can be any server just it should be able to interpret and provide proper json response in return.</p>
+<p>Based on that response wbot will reply to that message.</p>
+<h2>How to implement webhook with ExpressJS Server?</h2>
+<ol>
+<li>Create a simple expressJS server using by following simple <a href="https://expressjs.com/en/starter/installing.html">Hello World</a> tutorial</li>
+<li>Add a new route. Final result should look like this.<pre><code class="language-js">const express = require('express')
+const app = express()
+const port = 3001
+//allowing requests from outside of the domain 
+app.use(function(req, res, next) {
+  res.header(&quot;Access-Control-Allow-Origin&quot;, &quot;*&quot;); // update to match the domain you will make the request from
+  res.header(&quot;Access-Control-Allow-Headers&quot;, &quot;Origin, X-Requested-With, Content-Type,Accept&quot;);
+  next();
+});
+
+app.post('/api/incoming-webhook', (req, res) =&gt; res.send(
+    [{
+      &quot;text&quot;: &quot;Look, Reply from Webhook!&quot;,
+      &quot;type&quot;: &quot;message&quot;
+    }]
+))
+app.get('/', (req, res) =&gt; res.send('Hello World!'))
+
+app.listen(port, () =&gt; console.log(`Example app listening on port ${port}!`))
+</code></pre>
+</li>
+<li>Restart the wbot process wait for incoming message and voilà !!</li>
+</ol>
+<p>It doesn't have to be node server. Any server would be fine as long as it returns valid JSON response.</p>
+<p>you can send multiple files in response as well. format for that will be same as following</p>
+<pre><code class="language-json">{
+  &quot;text&quot;: &quot;Look, quick replies!&quot;,
+  &quot;type&quot;: &quot;message&quot;,
+  &quot;files&quot;:[{
+      &quot;name&quot;:&quot;Name of the file&quot;,
+      &quot;file&quot;:&quot;&lt;Base64-string-of-the-file&gt;&quot;
+  }]
+}
+</code></pre>
+<h2>How to implement webhook with a PHP Server?</h2>
+<ol>
+<li>Create a server Apache or Nginx. You can use WampServer, Xampp etc for windows <br />
+* Get Apache Servers from here: <a href="https://www.apachefriends.org/download.html">Xampp</a> or <a href="https://sourceforge.net/projects/wampserver/">WampServer</a><br />
+* Get Nginx and php from here: <a href="http://nginx.org/en/download.html">Nginx</a> and <a href="https://windows.php.net/download/">PHP</a><br /></li>
+<li>Use the following php code snippet on your server</li>
+</ol>
+<pre><code class="language-php">&lt;?php
+header(&quot;Content-Type: application/json&quot;);
+header(&quot;Access-Control-Allow-Origin: *&quot;);
+header(&quot;Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type,Accept&quot;);
+
+$x = file_get_contents(&quot;php://input&quot;);
+$x = json_decode($x);
+$message = $x-&gt;text;
+$msg_typ = $x-&gt;type;
+
+$response = array(array('text' =&gt; '', 'type' =&gt; 'message'));
+
+if($message == 'hi')
+{
+	$response = array(array('text' =&gt; 'hello my dear friend', 'type' =&gt; 'message'));
+    $response = json_encode($response);
+    echo($response);
+}
+?&gt;
+</code></pre>
+<ol start="3">
+<li>Save the file as filename.php</li>
+<li>Edit the bot.json file</li>
+</ol>
+<pre><code class="language-json">{
+    &quot;appconfig&quot;:
+    {
+        &quot;headless&quot;: false,
+        &quot;isGroupReply&quot;:false,
+        &quot;webhook&quot;:&quot;http://url-where-php-server-is-on/filename.php&quot;
+    }
+}
+</code></pre>
+<h5>You can add a local server with localhost too.</h5>
+<p>If you have any issues you can raise one <a href="https://github.com/vasani-arpit/wbot/issues/new/choose">here</a></p>

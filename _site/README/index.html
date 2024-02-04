@@ -1,0 +1,214 @@
+<h1>WBOT</h1>
+<p><a href="https://www.patreon.com/arpit_vasani"><img src="https://user-images.githubusercontent.com/6497827/53698102-4af3f400-3dfe-11e9-9749-4104ceb6ea3c.png" alt="Support me on Patreon"></a> <a href="http://amzn.in/iCUjhKZ"><img src="https://user-images.githubusercontent.com/6497827/53698105-51826b80-3dfe-11e9-9e63-b14ad6ad7c19.png" alt="Buy me a book"></a> <a href="https://www.paypal.me/arpitvasani"><img src="https://user-images.githubusercontent.com/6497827/53698092-42032280-3dfe-11e9-8054-1597c62d344e.png" alt="PayPal"></a></p>
+<blockquote>
+<p>A simple Nodejs BOT for whatsapp web</p>
+</blockquote>
+<p><a href="#-preview">Preview</a> •
+<a href="#-features">Features</a> •
+<a href="#-downloads-">Downloads</a> •
+<a href="#how-to-start-the-bot">How to?</a> •
+<a href="#-technologies">Technologies Used</a> •
+<a href="#why">Why?</a> •
+<a href="#goals">Goals</a> •
+<a href="#faq">FAQ</a></p>
+<h2>🔍 Preview</h2>
+<h3>Quick preview</h3>
+<p><img src="https://user-images.githubusercontent.com/6497827/58411958-1dcc8000-8093-11e9-8aeb-5747efe10266.gif" alt="Screenshot gif"></p>
+<!---
+### Full YouTube Video
+
+[![Video thumbnail](https://img.youtube.com/vi/y7LAbdoNBJA/0.jpg)](https://www.youtube.com/watch?v=y7LAbdoNBJA)
+
+-->
+<h2>⚡ Features</h2>
+<ul>
+<li>🎨 Highly customizable json</li>
+<li>💯 Totally Free for personal use</li>
+<li>🔒 Complete Privacy. Your data stays with you always</li>
+<li>💻 Download media files automatically</li>
+<li>👥 Multiple instances</li>
+</ul>
+<h2>⬇ Downloads ⬇</h2>
+<table>
+<thead>
+<tr>
+<th>macOS</th>
+<th>Windows</th>
+<th>Linux</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/vasani-arpit/WBOT/releases/latest/download/WBOT-mac.zip">Download Latest Release</a></td>
+<td><a href="https://github.com/vasani-arpit/WBOT/releases/latest/download/WBOT-win.zip">Download Latest Release</a></td>
+<td><a href="https://github.com/vasani-arpit/WBOT/releases/latest/download/WBOT-linux.zip">Download Latest Release</a></td>
+</tr>
+</tbody>
+</table>
+<h2>Supported Platforms</h2>
+<p>Following platforms are supported by Wbot:</p>
+<p><strong>macOS:</strong>
+The minimum version supported is macOS 10.9.</p>
+<p><strong>Windows:</strong>
+Windows 7 and later are supported.</p>
+<p><strong>Linux:</strong></p>
+<ul>
+<li>Ubuntu 12.04 and later</li>
+<li>Fedora 21</li>
+<li>Debian 8</li>
+</ul>
+<h2>How to start the BOT?</h2>
+<h3>STEPS</h3>
+<p>After downloading, extract the zip file and navigate to that location in your terminal. There will be a file named <code>wbot-*</code> . Run it and you should be good to go.</p>
+<p>For Linux you need to provide executable permission before you execute the binary.
+Run the command -</p>
+<pre><code>chmod +x wbot-linux &amp;&amp; wbot-linux
+</code></pre>
+<p>Note: On Linux you need a running display server (X11 or Wayland).
+If you run Linux on a headless server or want to run chmomium without visible display try <code>xvfb-run wbot-linux</code>.</p>
+<p><em>I haven't tested Mac and Linux binaries. If you find any issues using them feel free to raise one from <a href="https://github.com/vasani-arpit/WBOT/issues/new">here</a></em></p>
+<h3>Configurations</h3>
+<p>Basic configuration is in <code>bot.json</code> file like replying to <code>Hi, hello and happy birthday</code>. You can change this config file as per your need. Keep in mind that you need to restart the wbot to see the effects of your changes. Make sure the JSON is valid. Use VSCode or <a href="https://jsonlint.com/">jsonlint</a> to validate the JSON.</p>
+<h3>bot.json</h3>
+<p><strong>appconfig</strong></p>
+<p>This is where all the application related (node application behavior and such things) config will stay. Will add more in future.</p>
+<ul>
+<li>
+<p><strong>headless:</strong> whether to start chrome as headless or not. this is regarding #4. Apparently, Whatsapp doesn't allow headless instances.</p>
+</li>
+<li>
+<p><strong>isGroupReply:</strong> whether to send replies in group or not. If set to false, Bot will not reply if message received in group chat.</p>
+</li>
+<li>
+<p><strong>webhook:</strong> A URL which will be called for every message with payload data. This can be useful if you want to do other operation over messages in your server. For example: server code take a look <a href="https://github.com/vasani-arpit/WBOT/blob/master/docs/Webhook-example.md">here</a></p>
+</li>
+<li>
+<p><strong>downloadMedia:</strong> Whether to download incoming message media or not.</p>
+</li>
+<li>
+<p><strong>replyUnreadMsg:</strong> If there are pending unread messages which bot hasn't replied to then by making this flag true, bot will respond to those messages. Keep in mind that bot will not be able to mark those messages as read/seen. Please open the chat manually in the phone to mark that chat as read otherwise bot will reply to it at every start.</p>
+</li>
+<li>
+<p><strong>CustomInjectionFolder</strong> relative path of the folder from current directory which has JS file which needs to be injected in the browser. for example if you have something like following</p>
+</li>
+</ul>
+<pre><code>└── WBOT  /
+    ├── bot.json
+    ├── github-two.png
+    ├── github.png
+    ├── wbot-win.exe
+    └── injection/
+        ├── index.js
+        └── utils.js
+</code></pre>
+<p>then you need to set the value of this property as <code>./injection</code></p>
+<p><strong>bot</strong></p>
+<p>An array of objects. Properties of Object are self explanatory.</p>
+<ul>
+<li>
+<p><strong>Contains:</strong> If message has one of that word anywhere in the message</p>
+</li>
+<li>
+<p><strong>exact:</strong> If message is exactly as one of the messages form array</p>
+</li>
+<li>
+<p><strong>Response:</strong> If any of the above conditions becomes true then corresponding response string or <a href="https://spintaxtool.appspot.com/">spintax</a> will be sent as message to the user or group. There are two variable: <code>name</code> and <code>phoneNumber</code> which you can use to create custom message for sender. Sample message with variable is in <code>bot.json</code>.</p>
+</li>
+<li>
+<p><strong>file:</strong> Name of the file (from current directory) which you want to send along with response.</p>
+</li>
+<li>
+<p><strong>afterSeconds:</strong> Number of seconds bot should wait before sending a reply.</p>
+</li>
+<li>
+<p><strong>Webhook:</strong> You can call your webhook on certain keywords as well instead of calling it on every message.</p>
+</li>
+<li>
+<p><strong>responseAsCaption:</strong> This will be applied in case you want to reply with image. If true then response block will be sent as a caption of the image. If false then response block will be shared as separate text message.</p>
+</li>
+</ul>
+<p><strong>Blocked</strong></p>
+<p>Array of numbers with county code to which this bot will not reply to.</p>
+<p><strong>noMatch</strong></p>
+<p>Default reply message or <a href="https://spintaxtool.appspot.com/">spintax</a> when no exact match found in WBOT</p>
+<p><strong>smartreply</strong> <em>(This feature is under maintenance at the moment.)</em></p>
+<p>An object which contains suggestions and it's configs.</p>
+<ul>
+<li><strong>suggestions</strong> An Array of suggestions</li>
+<li><strong>clicktosend</strong> Whether to send or just write message when user clicks on suggestion</li>
+</ul>
+<p>here is how that looks</p>
+<p><img src="https://user-images.githubusercontent.com/6497827/58412366-f1653380-8093-11e9-8427-1ca19235faed.gif" alt="smart reply gif"></p>
+<h2>Run the latest code from Github</h2>
+<p><strong>This is only recommended for advanced 'node.js' users or for development purpose.</strong></p>
+<p>Open a Terminal and create a new directory in your home directory, e.g. 'node' and goto there.
+Now download and run the latest code from github by:</p>
+<pre><code>git clone https://github.com/vasani-arpit/WBOT.git
+cd WBOT
+npm install
+node src/index.js
+</code></pre>
+<p>If you run Linux on a headless server or want to run chromium without visible display try <code>xvfb-run wbot-linux</code>.</p>
+<h2>Known bugs</h2>
+<p>Sometimes, closing the <code>node</code> server directly does not clear browser cache. Next time when the bot is started, it runs into errors due to which smart reply is not setup correctly. A temporary fix to this is to clear <code>node</code> cache.</p>
+<pre><code class="language-java-script">npm cache clean
+</code></pre>
+<h2>💻 Technologies</h2>
+<ul>
+<li><a href="https://nodejs.org/en/">Node</a></li>
+<li><a href="https://github.com/GoogleChrome/puppeteer">puppeteer</a></li>
+</ul>
+<h2>Why?</h2>
+<p>The main reason I decided to build this is that I needed a simple tool to reply to my &quot;happy birthday&quot; messages. I know it is kind of blunt and rude but it would take me 2-3 days to reply to all and by that time that moment would be gone. I needed a good solution to this problem. I really don't need a full-fledged AI-BOT or BOT with NLU (or some other acronym). I believe there are many people who also have such needs.</p>
+<h2>Goals</h2>
+<p>With that in mind, I know that WBOT would need to satisfy these criteria:</p>
+<ul>
+<li>🚀 Fast!!!</li>
+<li>👍 Friendly CLI UX</li>
+<li>🔒 Does not touch user’s data</li>
+<li>💰 Free! for personal use</li>
+</ul>
+<p>If you think WBOT delivers these, let me know by putting a <strong>star ⭐</strong> on this project</p>
+<h2>FAQ</h2>
+<ul>
+<li>
+<p><strong>Is this app built with NodeJS?</strong></p>
+<p>Yes, it's built with <a href="https://nodejs.org/en/">NodeJS</a>. Please see the <a href="#-technologies">Technologies</a> section for more info.</p>
+</li>
+<li>
+<p><strong>What boilerplate did you use?</strong></p>
+<p>None. The idea was to get a better understanding of how things work together, But I do take a cue from other projects.</p>
+</li>
+<li>
+<p><strong>What npm modules did you use?</strong></p>
+<ul>
+<li><a href="https://www.npmjs.com/package/ora">Ora</a> for spinner</li>
+<li><a href="https://www.npmjs.com/package/cli-progress">cli-progress</a> for download progress bar in terminal</li>
+<li><a href="https://www.npmjs.com/package/qrcode-terminal">qrcode-terminal</a> to generate QRCode in terminal</li>
+<li><a href="https://www.npmjs.com/package/mime">mime</a> detect mime file sent</li>
+<li><a href="https://www.npmjs.com/package/mel-spintax">mel-spintax</a> to support spintax</li>
+</ul>
+</li>
+<li>
+<p><strong>Apart from development, What else do you do?</strong></p>
+<p>I do motion design and UI/UX development.</p>
+</li>
+<li>
+<p><strong>Are you available for hire?</strong></p>
+<p>I have a full-time job as a software developer at technobrains.net and at mindtechconsultancy.com. I am available as a freelance consultant during my spare time please let me know what you have in mind.</p>
+</li>
+<li>
+<p><strong>How do I contact you?</strong></p>
+<p>If you find an issue, please report it here. For everything else, please drop me a line at vasani.arpit@gmail.com</p>
+</li>
+<li>
+<p><strong>Do you have any other projects?</strong></p>
+<p>I thought you'd never ask. Yes, I do. <a href="https://github.com/vasani-arpit/Social-Media-Automation">SMA</a> is one of them.</p>
+</li>
+</ul>
+<h2>📃 Legal</h2>
+<p>This code is in no way affiliated with, authorized, maintained, sponsored or endorsed by WhatsApp or any of its affiliates or subsidiaries. This is an independent and unofficial software. Use at your own risk. <strong>Commercial use of this code/repo is strictly prohibited.</strong></p>
+<h2>👋 Contact Me 👋</h2>
+<p><a href="https://twitter.com/ArpitVasani"><img src="https://user-images.githubusercontent.com/6497827/57843958-c30e6b00-77ec-11e9-97bd-dfbc800f96a9.png" alt="Contact me on twitter"></a>
+<a href="http://t.me/Arpit_Vasani"><img src="https://user-images.githubusercontent.com/6497827/57844175-2ac4b600-77ed-11e9-8488-f2d45efa7497.png" alt="Contact me on telegram"></a>
+<a href="mailto:vasani.arpit@gmail.com?subject=Regarding%20Wbot&amp;body=Hi"><img src="https://user-images.githubusercontent.com/6497827/62424751-c1b85480-b6f0-11e9-97de-096c0a980829.png" alt="Mail me"></a></p>

@@ -1,0 +1,39 @@
+<h1>Wbot API</h1>
+<ul>
+<li><a href="#appconfig">appconfig</a>
+<ul>
+<li><a href="#Headless-Boolean">headless</a></li>
+<li><a href="#darkmode-Boolean">darkmode</a></li>
+<li><a href="#isGroupReply-Boolean">isGroupReply</a></li>
+<li>webhook</li>
+</ul>
+</li>
+<li>bot
+<ul>
+<li>contains</li>
+<li>exact</li>
+<li>response</li>
+<li>file</li>
+</ul>
+</li>
+<li>blocked</li>
+<li>noMatch</li>
+<li>smartreply
+<ul>
+<li>suggestions</li>
+<li>clicktosend</li>
+</ul>
+</li>
+</ul>
+<h2>appconfig</h2>
+<p>These are configs related to wbot features and way of working and other parts but not the bot itself.</p>
+<h3>Headless: Boolean</h3>
+<p>Decides whether to show chrome window or not. If set to false then chrome window will be visible.
+this is useful when running wbot on linux VPS'.</p>
+<p>Default:false</p>
+<h3>darkmode: Boolean</h3>
+<p>Only works when headless is false. Adds css to the page which enables dark UI of the whatspapp.</p>
+<p><em>This feature is not currently working and I have dropped it off as there is not much audience to it. If you want to develop it then PRs are welcome</em></p>
+<h3>isGroupReply: Boolean</h3>
+<p>Decides whether to send reply in groups or not. If set to true then BOT will also reply if incoming message is in a group.</p>
+<p>Default: false</p>

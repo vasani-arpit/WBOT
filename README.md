@@ -63,7 +63,7 @@ Windows 7 and later are supported.
 
 ### STEPS
 
-After downloading, extract the zip file and navigate to that location in your terminal. There will be a file named ```wbot-*``` . Run it and you should be good to go.
+After downloading, extract the zip file and open the bot.json file and in the third line change the value of "headless" from true to false. Now, navigate to the location of the WBOT folder in your terminal. There will be a file named ```wbot-*``` . Run it and you should be good to go.
 
 For Linux you need to provide executable permission before you execute the binary. 
 Run the command - 
@@ -75,6 +75,9 @@ Note: On Linux you need a running display server (X11 or Wayland).
 If you run Linux on a headless server or want to run chmomium without visible display try ```xvfb-run wbot-linux```.
 
 *I haven't tested Mac and Linux binaries. If you find any issues using them feel free to raise one from [here](https://github.com/vasani-arpit/WBOT/issues/new)*
+
+<a href="./DEPLOY.md">![deploy-button](https://github.com/Kashvigandhi/WBOT/assets/114830226/1f2eb23c-1d18-4669-8f24-d34795e17d91)</a>
+
 
 ### Configurations 
 
@@ -127,6 +130,10 @@ An array of objects. Properties of Object are self explanatory.
 **Blocked**
 
 Array of numbers with county code to which this bot will not reply to.
+
+**Allowed**
+
+If not empty, only messages from numbers in this list will be replied to.
 
 **noMatch**
 
