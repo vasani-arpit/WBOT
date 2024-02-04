@@ -1,6 +1,6 @@
 {
   "name": "wbot",
-  "version": "0.51.0",
+  "version": "0.52.0",
   "description": "A simple whatsapp reply bot using puppeteer.",
   "main": "src/index.js",
   "scripts": {
@@ -22,7 +22,7 @@
   ],
   "private": true,
   "pkg": {
-    "scripts": "src/**/*.js", 
+    "scripts": "src/**/*.js",
     "targets": [
       "node14-win",
       "node14-linux",
