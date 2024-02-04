@@ -21,12 +21,14 @@
    
 7. Finally, click on 'Create Droplet'. Your droplet had been created. Copy the ipv4 address of the droplet.
   
-8. Now open the terminal on your device and give the following command.
+8. Now open the terminal on your device and give the following command. 
    
 ```bash 
-root@[your_ipv4_address]
+ssh root@[your_ipv4_address]
 ```
 Replace [your_ipv4_address] with the ipv4 address you copied. You will be asked the password you just made. You will not be able to see what you are typing, but don't worry! You will be authenticated if you enter the correct password.
+
+_If this command doesn't work in your machine then you can go to digitalOcean and click on console. you can do rest of the commands there as well._
 
 9. Clone our WBOT repository and move to that directory.
    
