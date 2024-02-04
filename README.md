@@ -197,7 +197,7 @@ With that in mind, I know that WBOT would need to satisfy these criteria:
 
 If you want to run wbot 24x7 then running your computer on for 24x7 is not a good idea. You can host it on linux cloud. You can use something like Digital Ocean. Instructions on how to do that is avalible at below image link. 
 
-[![Deploy to DO](https://raw.githubusercontent.com/open-wa/wa-automate-deploy-heroku/main/assets/do_deploy.png)](./deploy.md)
+[![Deploy to DO](https://raw.githubusercontent.com/open-wa/wa-automate-deploy-heroku/main/assets/do_deploy.png)](./DEPLOY.md)
 
 
 
