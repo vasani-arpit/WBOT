@@ -1,5 +1,5 @@
-### How to deploy WBOT on DigitalOcean?
-1. Visit https://www.digitalocean.com/ and create an account.
+## How to deploy WBOT on DigitalOcean?
+1. Visit [Here](https://m.do.co/c/dd173aa6d77d) and create an account. you'll get $200 worth of free credits for 2 months. You can thank me for that later 😉
 
 2. After creating an account you will see a page like below. Click on 'Deploy a virtual machine'.
    
@@ -13,40 +13,40 @@
    
    ![Screenshot (56)](https://github.com/Kashvigandhi/WBOT/assets/114830226/63266c24-c0f1-4180-a71e-3e6d7ee111ce)
 
-5. Choose the ubuntu operating system. The CPU specifications are up to you.
+5. Choose the ubuntu operating system with version 22 LTS. The CPU specifications are up to you. but we recommand you go with atleast 1 GB of RAM. 
 
    ![Screenshot (57)](https://github.com/Kashvigandhi/WBOT/assets/114830226/a4cdf1c7-e81e-48bf-836e-19e4fb3db2b6)
 
-6. For the authentication, choose the password method and create one according to the requirements. Make sure to remember this password.
+6. For the authentication, choose the password method and create one according to the requirements. Make sure to remember this password or copy it somewhere safe.
    
 7. Finally, click on 'Create Droplet'. Your droplet had been created. Copy the ipv4 address of the droplet.
   
 8. Now open the terminal on your device and give the following command.
    
-```java-script 
+```bash 
 root@[your_ipv4_address]
 ```
 Replace [your_ipv4_address] with the ipv4 address you copied. You will be asked the password you just made. You will not be able to see what you are typing, but don't worry! You will be authenticated if you enter the correct password.
 
 9. Clone our WBOT repository and move to that directory.
    
-```java-script 
+```bash 
 git clone https://github.com/vasani-arpit/WBOT.git
 cd WBOT
 ```
 
 10. Run the following command to install requirements.
        
-```java-script 
+```bash 
 sh setup/setup.sh
 ```
 11. After you get the 'Setup Complete' message, you can run the WBOT using this command.
        
-```java-script 
+```bash 
 npm start
 ```
 12. You can graphically modify bot.json as well as view the current day's messages by going to your browser and entering the following site in the address bar.
        
-```java-script 
+```bash 
 [your_ipv4_address]:8080
 ```

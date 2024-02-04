@@ -14,6 +14,7 @@
 <a href="#-technologies">Technologies Used</a> •
 <a href="#why">Why?</a> •
 <a href="#goals">Goals</a> •
+<a href="#deploy">deploy</a> •
 <a href="#faq">FAQ</a>
 
 
@@ -75,8 +76,6 @@ Note: On Linux you need a running display server (X11 or Wayland).
 If you run Linux on a headless server or want to run chmomium without visible display try ```xvfb-run wbot-linux```.
 
 *I haven't tested Mac and Linux binaries. If you find any issues using them feel free to raise one from [here](https://github.com/vasani-arpit/WBOT/issues/new)*
-
-<a href="./DEPLOY.md">![deploy-button](https://github.com/Kashvigandhi/WBOT/assets/114830226/1f2eb23c-1d18-4669-8f24-d34795e17d91)</a>
 
 
 ### Configurations 
@@ -192,7 +191,14 @@ With that in mind, I know that WBOT would need to satisfy these criteria:
 * 🔒 Does not touch user’s data
 * 💰 Free! for personal use
 
-If you think WBOT delivers these, let me know by putting a **star ⭐** on this project
+**If you think WBOT delivers these, let me know by putting a star ⭐ on this project**
+
+## Deploy
+
+If you want to run wbot 24x7 then running your computer on for 24x7 is not a good idea. You can host it on linux cloud. You can use something like Digital Ocean. Instructions on how to do that is avalible at below image link. 
+
+[![Deploy to DO](https://raw.githubusercontent.com/open-wa/wa-automate-deploy-heroku/main/assets/do_deploy.png)](./deploy.md)
+
 
 
 ## FAQ
@@ -235,13 +241,16 @@ If you think WBOT delivers these, let me know by putting a **star ⭐** on this 
 [twitter_logo]: https://user-images.githubusercontent.com/6497827/57843958-c30e6b00-77ec-11e9-97bd-dfbc800f96a9.png
 [telegram_logo]: https://user-images.githubusercontent.com/6497827/57844175-2ac4b600-77ed-11e9-8488-f2d45efa7497.png
 [gmail_logo]: https://user-images.githubusercontent.com/6497827/62424751-c1b85480-b6f0-11e9-97de-096c0a980829.png
+[DO_logo]: https://raw.githubusercontent.com/open-wa/wa-automate-deploy-heroku/main/assets/do_deploy.png
 
 [patreon]: https://www.patreon.com/arpit_vasani
-[amazon]: http://amzn.in/iCUjhKZ
+[amazon]: https://amzn.in/iCUjhKZ
 [paypal-donations]: https://www.paypal.me/arpitvasani
 [twitter]: https://twitter.com/ArpitVasani
-[telegram]: http://t.me/Arpit_Vasani
+[telegram]: https://t.me/Arpit_Vasani
 [gmail]: mailto:vasani.arpit@gmail.com?subject=Regarding%20Wbot&body=Hi
+
+[digitalOceanLink]: https://m.do.co/c/dd173aa6d77d
 
 ## 📃 Legal
 This code is in no way affiliated with, authorized, maintained, sponsored or endorsed by WhatsApp or any of its affiliates or subsidiaries. This is an independent and unofficial software. Use at your own risk. **Commercial use of this code/repo is strictly prohibited.**
