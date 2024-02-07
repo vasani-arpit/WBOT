@@ -37,6 +37,7 @@
   "homepage": "https://github.com/vasani-arpit/WBOT#readme",
   "dependencies": {
     "cli-progress": "^2.1.1",
+    "express": "^4.18.2",
     "mel-spintax": "^1.0.4",
     "mime": "^2.4.4",
     "mime-types": "^2.1.35",
