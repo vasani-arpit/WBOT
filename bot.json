@@ -26,6 +26,27 @@
             ]
         },
         {
+            "contains": [
+                "github"
+            ],
+            "exact": [],
+            "response": "Sending images",
+            "file": [
+                "./mediaToBeSent/github.png",
+                "./mediaToBeSent/github-two.png"
+            ]
+        },
+        {
+            "contains": [
+                "bill","order"
+            ],
+            "exact": [],
+            "response": "Please wait",
+            "file": [
+            ],
+            "webhook":""
+        },
+        {
             "contains": [],
             "exact": [
                 "hi"
@@ -40,14 +61,6 @@
             ],
             "response": "hi",
             "afterSeconds": 3
-        },
-        {
-            "contains": [],
-            "exact": [
-                "hy"
-            ],
-            "response": "hi",
-            "file": "github.png"
         },
         {
             "contains": [],
@@ -110,18 +123,6 @@
             ],
             "exact": [],
             "response": "aabhar 🙏"
-        },
-        {
-            "contains": [],
-            "exact": [
-                "github"
-            ],
-            "response": "Git Hub Logo",
-            "file": [
-                "github.png",
-                "github-two.png"
-            ],
-            "responseAsCaption": false
         },
         {
             "contains": [],

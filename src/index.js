@@ -235,7 +235,7 @@ async function getResponse(msg, message) {
 
 
 async function sendReply({ msg, client, data, noMatch }) {
-
+    let globalWebhook = appconfig.appconfig.webhook;
 
     if (noMatch) {
         if (appconfig.noMatch.length != 0) {
@@ -247,6 +247,8 @@ async function sendReply({ msg, client, data, noMatch }) {
             else {
                 await msg.reply(response);
             }
+            await processWebhook({ msg, client,webhook:globalWebhook });
+
             return;
         }
         console.log(`No match found`);
@@ -302,6 +304,13 @@ async function sendReply({ msg, client, data, noMatch }) {
             await msg.reply(response);
         }
     }
+    if(data.hasOwnProperty('webhook') && data.webhook.length > 0)
+    {
+        let localWebhook = data.webhook;
+        await processWebhook({ msg, client,webhook: localWebhook });
+    }
+    await processWebhook({ msg, client,webhook:globalWebhook });
+
     function sendFile(file) {
     
         if (captionStatus == true) {
@@ -362,16 +371,14 @@ async function sendReply({ msg, client, data, noMatch }) {
 
 }
 
-async function processWebhook({ msg, client }) {
+async function processWebhook({ msg, client,webhook }) {
 
-
-    const webhook = appconfig.appconfig.webhook;
     if (!webhook) return;
 
     body = {};
     body.text = msg.body;
     body.type = 'message';
-    body.user = msg.id._serialized;
+    body.user = msg.id.remote;
 
     const data = await fetch(webhook, {
         method: "POST",
@@ -455,7 +462,6 @@ async function smartReply({ msg, client }) {
     }
 
     // webhook Call
-    await processWebhook({ msg, client });
 
     var exactMatch = list.find((obj) =>
         obj.exact.find((ex) => ex == data.toLowerCase())
