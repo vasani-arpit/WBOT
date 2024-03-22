@@ -117,13 +117,15 @@ async function Main() {
             spinner.info('WBOT is spinning up!');
             await utils.delay(5000)
             let server = appconfig.appconfig.server
+            if (server) {
 
                 //Graphical interface to edit bot.json
-                const USERNAME = server.username ;
-                const PASSWORD = server.password ;
+                const USERNAME = server.username;
+                const PASSWORD = server.password;
                 const PORT = server.port;
 
                 graphicalInterface(USERNAME, PASSWORD, PORT);
+            }
             // await smartReply({client: client})
             //TODO: if replyUnreadMsg is true then get the unread messages and reply to them.
         });
