@@ -74,3 +74,5 @@ wbot*
 media
 
 .wwebjs_cache
+
+messages.json

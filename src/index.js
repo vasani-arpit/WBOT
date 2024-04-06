@@ -93,6 +93,7 @@ async function Main() {
         //     args: [...constants.DEFAULT_CHROMIUM_ARGS, ...pptrArgv], ...extraArguments
         // });
 
+        const wwebVersion = '2.2412.54';
         const client = new Client({
             puppeteer: {
                 executablePath: revisionInfo.executablePath,
@@ -101,7 +102,11 @@ async function Main() {
                 devtools: false,
                 slowMo: 500,
                 args: [...constants.DEFAULT_CHROMIUM_ARGS, ...pptrArgv], ...extraArguments
-            }
+            },
+            webVersionCache: {
+                type: 'remote',
+                remotePath: `https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/${wwebVersion}.html`,
+            },
         });
         if (argv.proxyURI) {
             spinner.info("Using a Proxy Server");
@@ -151,7 +156,7 @@ async function Main() {
             msg.timestamp = moment().format('DD/MM/YYYY HH:mm');
             msg._data['chatName'] = chat.name
             messages.push(msg)
-            fs.writeFileSync(path.resolve('messages.json'),JSON.stringify(messages, null, 2))
+            fs.writeFileSync(path.resolve('messages.json'), JSON.stringify(messages, null, 2))
             // if it is a media message then download the media and save it in the media folder
             if (msg.hasMedia && configs.appconfig.downloadMedia) {
                 console.log("Message has media. downloading");
@@ -185,7 +190,7 @@ async function Main() {
         await client.initialize();
 
         spinner.stop("Launching browser ... done!");
-        
+
         // When the settings file is edited multiple calls are sent to function. This will help
         // to prevent from getting corrupted settings data
         let timeout = 5000;
@@ -249,7 +254,7 @@ async function sendReply({ msg, client, data, noMatch }) {
             else {
                 await msg.reply(response);
             }
-            await processWebhook({ msg, client,webhook:globalWebhook });
+            await processWebhook({ msg, client, webhook: globalWebhook });
 
             return;
         }
@@ -257,16 +262,16 @@ async function sendReply({ msg, client, data, noMatch }) {
         return;
     }
 
-   
-    
-        let response = await getResponse(msg, data.response);
-        console.log(`Replying with ${response}`);
-    
+
+
+    let response = await getResponse(msg, data.response);
+    console.log(`Replying with ${response}`);
+
 
     if (data.afterSeconds) {
         await utils.delay(data.afterSeconds * 1000);
     }
-    
+
 
     if (data.file) {
 
@@ -287,8 +292,7 @@ async function sendReply({ msg, client, data, noMatch }) {
         else {
             sendFile(files)
         }
-        if(!captionStatus)
-        {
+        if (!captionStatus) {
             if (!configs.appconfig.quoteMessageInReply) {
                 await client.sendMessage(msg.from, response);
             }
@@ -306,15 +310,14 @@ async function sendReply({ msg, client, data, noMatch }) {
             await msg.reply(response);
         }
     }
-    if(data.hasOwnProperty('webhook') && data.webhook.length > 0)
-    {
+    if (data.hasOwnProperty('webhook') && data.webhook.length > 0) {
         let localWebhook = data.webhook;
-        await processWebhook({ msg, client,webhook: localWebhook });
+        await processWebhook({ msg, client, webhook: localWebhook });
     }
-    await processWebhook({ msg, client,webhook:globalWebhook });
+    await processWebhook({ msg, client, webhook: globalWebhook });
 
     function sendFile(file) {
-    
+
         if (captionStatus == true) {
             utils
                 .getFileData(file)
@@ -373,7 +376,7 @@ async function sendReply({ msg, client, data, noMatch }) {
 
 }
 
-async function processWebhook({ msg, client,webhook }) {
+async function processWebhook({ msg, client, webhook }) {
 
     if (!webhook) return;
 

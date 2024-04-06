@@ -50,7 +50,7 @@
     "puppeteer-core": "^13.6.0",
     "qrcode-terminal": "^0.12.0",
     "semver": "^7.3.5",
-    "whatsapp-web.js": "github:brunox64/whatsapp-web.js#patch-1",
+    "whatsapp-web.js": "^1.23.0",
     "yargs": "^13.2.2"
   },
   "devDependencies": {
