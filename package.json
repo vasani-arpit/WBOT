@@ -47,10 +47,10 @@
     "open": "^9.1.0",
     "openurl": "^1.1.1",
     "ora": "^3.0.0",
-    "puppeteer-core": "^13.6.0",
+    "puppeteer-core": "^22.11.2",
     "qrcode-terminal": "^0.12.0",
     "semver": "^7.3.5",
-    "whatsapp-web.js": "^1.23.0",
+    "whatsapp-web.js": "^1.24.0",
     "yargs": "^13.2.2"
   },
   "devDependencies": {
