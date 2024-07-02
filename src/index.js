@@ -102,11 +102,7 @@ async function Main() {
                 devtools: false,
                 slowMo: 500,
                 args: [...constants.DEFAULT_CHROMIUM_ARGS, ...pptrArgv], ...extraArguments
-            },
-            webVersionCache: {
-                type: 'remote',
-                remotePath: `https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/${wwebVersion}.html`,
-            },
+            }
         });
         if (argv.proxyURI) {
             spinner.info("Using a Proxy Server");
