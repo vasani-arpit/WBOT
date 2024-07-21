@@ -2,6 +2,7 @@ const puppeteer = require('puppeteer-core');
 const _cliProgress = require('cli-progress');
 const spintax = require('mel-spintax');
 const { Client, LocalAuth, MessageMedia } = require('whatsapp-web.js');
+const venom = require('venom-bot');
 require("./welcome");
 var spinner = require("./step");
 var utils = require("./utils");
@@ -92,18 +93,24 @@ async function Main() {
         //     devtools: false,
         //     args: [...constants.DEFAULT_CHROMIUM_ARGS, ...pptrArgv], ...extraArguments
         // });
-
-        const wwebVersion = '2.2412.54';
-        const client = new Client({
-            puppeteer: {
-                executablePath: revisionInfo.executablePath,
-                defaultViewport: null,
-                headless: appconfig.appconfig.headless,
-                devtools: false,
-                slowMo: 500,
-                args: [...constants.DEFAULT_CHROMIUM_ARGS, ...pptrArgv], ...extraArguments
-            }
-        });
+        const client = venom
+            .create({
+                session: 'wbot' //name of session
+            })
+            .then((client) => start(client))
+            .catch((erro) => {
+                console.log(erro);
+            });
+        // const client = new Client({
+        //     puppeteer: {
+        //         executablePath: revisionInfo.executablePath,
+        //         defaultViewport: null,
+        //         headless: appconfig.appconfig.headless,
+        //         devtools: false,
+        //         slowMo: 500,
+        //         args: [...constants.DEFAULT_CHROMIUM_ARGS, ...pptrArgv], ...extraArguments
+        //     }
+        // });
         if (argv.proxyURI) {
             spinner.info("Using a Proxy Server");
         }

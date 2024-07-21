@@ -6,7 +6,8 @@
   "scripts": {
     "app": "node src/index.js",
     "pack": "pkg .",
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "postinstall": "patch-package"
   },
   "bin": {
     "wbot": "src/index.js"
@@ -50,6 +51,7 @@
     "puppeteer-core": "^13.6.0",
     "qrcode-terminal": "^0.12.0",
     "semver": "^7.3.5",
+    "venom-bot": "github:orkestral/venom",
     "whatsapp-web.js": "github:pedroslopez/whatsapp-web.js#webpack-exodus",
     "yargs": "^13.2.2"
   },

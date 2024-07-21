@@ -1,0 +1,17 @@
+diff --git a/node_modules/venom-bot/dist/controllers/initializer.js b/node_modules/venom-bot/dist/controllers/initializer.js
+index 300d15e..c599971 100644
+--- a/node_modules/venom-bot/dist/controllers/initializer.js
++++ b/node_modules/venom-bot/dist/controllers/initializer.js
+@@ -61,9 +61,9 @@ async function create(sessionOrOption, catchQR, statusFind, options, browserInst
+         spinnies.add(`donate-${session}`, {
+             text: `....`
+         });
+-        spinnies.fail(`donate-${session}`, {
+-            text: `Help Keep This Project Going! Know more: https://github.com/orkestral/venom/blob/master/docs/getting-started/donate.md`
+-        });
++        // spinnies.fail(`donate-${session}`, {
++        //     text: `Help Keep This Project Going! Know more: https://github.com/orkestral/venom/blob/master/docs/getting-started/donate.md`
++        // });
+         spinnies.add(`node-version-${session}`, {
+             text: `check nodeJs version...`
+         });
