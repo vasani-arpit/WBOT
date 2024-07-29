@@ -76,3 +76,5 @@ media
 .wwebjs_cache
 
 messages.json
+.wwebjs_auth
+session

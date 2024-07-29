@@ -24,9 +24,9 @@
   "pkg": {
     "scripts": "src/**/*.js",
     "targets": [
-      "node14-win",
-      "node14-linux",
-      "node14-macos"
+      "node18-win",
+      "node18-linux",
+      "node18-macos"
     ]
   },
   "author": "Arpit Vasani",
@@ -50,11 +50,11 @@
     "puppeteer-core": "^13.6.0",
     "qrcode-terminal": "^0.12.0",
     "semver": "^7.3.5",
-    "whatsapp-web.js": "github:pedroslopez/whatsapp-web.js#webpack-exodus",
+    "whatsapp-web.js": "^1.25.0",
     "yargs": "^13.2.2"
   },
   "devDependencies": {
-    "pkg": "^5.6.0"
+    "@yao-pkg/pkg": "^5.12.0"
   },
   "directories": {
     "doc": "docs"

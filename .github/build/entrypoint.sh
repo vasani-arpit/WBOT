@@ -3,6 +3,7 @@ set -x
 
 pwd && ls -la
 npm install
+npm install -g @yao-pkg/pkg
 npm run pack
 
 zip "WBOT-linux.zip"  bot.json github.png github-two.png wbot-linux file_example_MP3_700KB.mp3 messages.json

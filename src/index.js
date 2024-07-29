@@ -61,7 +61,6 @@ async function Main() {
      * If local chrome is not there then this function will download it first. then use it for automation. 
      */
     async function downloadAndStartThings() {
-        let botjson = utils.externalInjection("bot.json");
         appconfig = await utils.externalInjection("bot.json");
         appconfig = JSON.parse(appconfig);
         spinner.start("Downloading chromium\n");
@@ -69,7 +68,7 @@ async function Main() {
         const progressBar = new _cliProgress.Bar({}, _cliProgress.Presets.shades_grey);
         progressBar.start(100, 0);
         //var revNumber = await rev.getRevNumber();
-        const revisionInfo = await browserFetcher.download("982053", (download, total) => {
+        const revisionInfo = await browserFetcher.download("1313161", (download, total) => {
             //console.log(download);
             var percentage = (download * 100) / total;
             progressBar.update(percentage);
@@ -93,20 +92,22 @@ async function Main() {
         //     args: [...constants.DEFAULT_CHROMIUM_ARGS, ...pptrArgv], ...extraArguments
         // });
 
-        const wwebVersion = '2.2412.54';
         const client = new Client({
             puppeteer: {
                 executablePath: revisionInfo.executablePath,
                 defaultViewport: null,
                 headless: appconfig.appconfig.headless,
                 devtools: false,
-                slowMo: 500,
-                args: [...constants.DEFAULT_CHROMIUM_ARGS, ...pptrArgv], ...extraArguments
+                args: [...pptrArgv], ...extraArguments
             }
         });
         if (argv.proxyURI) {
             spinner.info("Using a Proxy Server");
         }
+
+        client.on('loading_screen', (percent, message) => {
+            console.log('LOADING SCREEN', percent, message);
+        });
 
         client.on('qr', (qr) => {
             // Generate and scan this code with your phone
