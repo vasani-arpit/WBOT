@@ -1,4 +1,4 @@
-FROM node:16.20-alpine
+FROM node:hydrogen-alpine
 
 RUN apk add bash zip
 
