@@ -50,7 +50,7 @@
     "puppeteer-core": "^13.6.0",
     "qrcode-terminal": "^0.12.0",
     "semver": "^7.3.5",
-    "whatsapp-web.js": "^1.32.0",
+    "whatsapp-web.js": "^1.34.1",
     "yargs": "^13.2.2"
   },
   "devDependencies": {
