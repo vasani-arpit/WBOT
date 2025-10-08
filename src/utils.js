@@ -1,6 +1,7 @@
 var path = require("path");
 const mime = require('mime');
 var fs = require("fs");
+const argv = require("yargs").argv;
 this.injection = function (filename) {
     return new Promise((resolve, reject) => {
         var filepath = path.join(__dirname, filename);
@@ -72,3 +73,28 @@ this.saveFileFromBase64 = (base64Data, name, type) => {
         console.error("Unable to write downloaded file to disk")
     }
 }
+
+this.isMacArm64 = () => {
+  return process.platform === "darwin" && process.arch === "arm64";
+};
+
+this.getChromePathMacArm = () => {
+  if (argv.chromePath && String(argv.chromePath).trim()) {
+    return String(argv.chromePath).trim();
+  }
+  if (process.env.CHROME_PATH && String(process.env.CHROME_PATH).trim()) {
+    return String(process.env.CHROME_PATH).trim();
+  }
+
+  const candidate =
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
+  if (fs.existsSync(candidate)) return candidate;
+
+  throw new Error(
+    [
+      `Chrome not found in: ${candidate}`,
+      "Download and install Google Chrome for macOS first:",
+      "https://www.google.com/chrome/",
+    ].join("\n")
+  );
+};
