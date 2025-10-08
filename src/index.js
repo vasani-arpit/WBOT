@@ -63,19 +63,26 @@ async function Main() {
     async function downloadAndStartThings() {
         appconfig = await utils.externalInjection("bot.json");
         appconfig = JSON.parse(appconfig);
-        spinner.start("Downloading chromium\n");
-        const browserFetcher = puppeteer.createBrowserFetcher({ platform: process.platform, path: process.cwd() });
-        const progressBar = new _cliProgress.Bar({}, _cliProgress.Presets.shades_grey);
-        progressBar.start(100, 0);
-        //var revNumber = await rev.getRevNumber();
-        const revisionInfo = await browserFetcher.download("1313161", (download, total) => {
-            //console.log(download);
-            var percentage = (download * 100) / total;
-            progressBar.update(percentage);
-        });
-        progressBar.update(100);
-        spinner.stop("Downloading chromium ... done!");
-        //console.log(revisionInfo.executablePath);
+        if (utils.isMacArm64()) {
+            spinner.start('Detected mac-arm64. Using local Google Chrome\n');
+            executablePath = utils.getChromePathMacArm();
+            spinner.stop('Google Chrome found ✔\n');
+        } else {
+            spinner.start("Downloading chromium\n");
+            const browserFetcher = puppeteer.createBrowserFetcher({ platform: process.platform, path: process.cwd() });
+            const progressBar = new _cliProgress.Bar({}, _cliProgress.Presets.shades_grey);
+            progressBar.start(100, 0);
+            //var revNumber = await rev.getRevNumber();
+            const revisionInfo = await browserFetcher.download("1313161", (download, total) => {
+                //console.log(download);
+                var percentage = (download * 100) / total;
+                progressBar.update(percentage);
+            });
+            progressBar.update(100);
+            spinner.stop("Downloading chromium ... done!");
+            //console.log(revisionInfo.executablePath);
+            executablePath = revisionInfo.executablePath;
+        }
         spinner.start("Launching browser\n");
         var pptrArgv = [];
         if (argv.proxyURI) {
@@ -94,7 +101,7 @@ async function Main() {
 
         const client = new Client({
             puppeteer: {
-                executablePath: revisionInfo.executablePath,
+                executablePath,
                 defaultViewport: null,
                 headless: appconfig.appconfig.headless,
                 devtools: false,
